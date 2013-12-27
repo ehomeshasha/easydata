@@ -22,6 +22,9 @@ DATABASES = {
         'PASSWORD': 'zzy8945620',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
+        'OPTIONS': {  
+                    'init_command': 'SET storage_engine=MyISAM',  
+        },
     }
 }
 
@@ -153,6 +156,7 @@ INSTALLED_APPS = [
     
     #myapps
     "datafinder",
+    "blog",
 ]
 
 # A sample logging configuration. The only tangible logging
