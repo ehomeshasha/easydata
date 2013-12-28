@@ -1,0 +1,36 @@
+{% extends "site_base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block head_title %}{% trans "Upload PDF" %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-4">
+            <form id="upload_pdf_form" method="post" action="{% url "pdf_upload" %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+                <legend>{% trans "Upload PDF" %}</legend>
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit" class="btn btn-primary">{% trans "Upload PDF" %}</button>
+            </form>
+        </div>
+        <!-- 
+        <div class="col-lg-4">
+            {% include "account/_signup_sidebar.html" %}
+        </div>
+        -->
+    </div>
+{% endblock %}
+
+{% block extra_script %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#id_title').focus();
+        });
+    </script>
+{% endblock %}

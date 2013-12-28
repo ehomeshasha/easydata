@@ -157,6 +157,7 @@ INSTALLED_APPS = [
     #myapps
     "datafinder",
     "blog",
+    "pdf",
 ]
 
 # A sample logging configuration. The only tangible logging
@@ -248,3 +249,5 @@ GV = {
     },
 }
 
+FILE_UPLOAD_MAX_MEMORY_SIZE = '2621440'
+FILE_UPLOAD_TEMP_DIR = os.path.join(PROJECT_ROOT, "tmp")

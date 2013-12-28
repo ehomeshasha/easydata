@@ -5,14 +5,14 @@ from easydata.db.mysql.fields import C_AutoField, C_IntegerField, C_SmallInteger
 class blog(models.Model):
     bid = C_AutoField(max_length=8, primary_key=True)
     uid = C_IntegerField(max_length=11, default=0)
-    username = models.CharField(max_length=30, default="''")
-    groupids = models.CharField(max_length=255, default="''")
-    title = models.CharField(max_length=100, default="''")
+    username = models.CharField(max_length=30)
+    groupids = models.CharField(max_length=255)
+    title = models.CharField(max_length=100)
     content = models.TextField()
     cate_id = C_SmallIntegerField(max_length=5, default=0)
     dateline = C_IntegerField(max_length=10, default=0)
     rate_count = C_IntegerField(max_length=10, default=0)
-    rate_score = models.CharField(max_length=5, default="''")
+    rate_score = models.CharField(max_length=5)
     comment_count = C_IntegerField(max_length=10, default=0)
     #tag = C_CharField(max_length=50, default="''")
 
@@ -20,8 +20,8 @@ class comment(models.Model):
     cid = C_AutoField(max_length=10, primary_key=True)
     bid = C_IntegerField(max_length=8, default=0)
     uid = C_IntegerField(max_length=11, default=0)
-    username = models.CharField(max_length=30, default="''")
-    title = models.CharField(max_length=100, default="''")
+    username = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     content = models.TextField()
     rate_score = C_TinyIntegerField(max_length=2)
     dateline = C_IntegerField(max_length=10, default=0)
@@ -31,21 +31,21 @@ class mark(models.Model):
     mid = C_AutoField(max_length=10, primary_key=True)
     bid = C_IntegerField(max_length=8, default=0)
     uid = C_IntegerField(max_length=11, default=0)
-    username = models.CharField(max_length=30, default="''")
-    title = models.CharField(max_length=100, default="''")
-    content = models.CharField(max_length=255, default="''")
+    username = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
+    content = models.CharField(max_length=255)
     dateline = C_IntegerField(max_length=10, default=0)
     
 class relatelinks(models.Model):
     id = C_AutoField(max_length=10, primary_key=True)
     bid = C_IntegerField(max_length=8, default=0)
-    url_text = models.CharField(max_length=100, default="''")
-    url = models.URLField(default="''")
+    url_text = models.CharField(max_length=100)
+    url = models.URLField()
     
 
 
 class category(models.Model):
     id = C_AutoSmallIntegerField(max_length=5, primary_key=True)
     fid = C_SmallIntegerField(max_length=5, default=0)
-    catename = models.CharField(max_length=30, default="''")
-    description = models.CharField(max_length=255, default="''")
+    catename = models.CharField(max_length=30)
+    description = models.CharField(max_length=255)

@@ -1,8 +1,7 @@
 from django.db import models
 import datetime
 from django.utils import timezone
-from easydata.db.mysql.fields import NormalTextField
-from django.contrib.auth.models import User, Group
+from easydata.db.mysql.fields import NormalTextField, C_IntegerField, C_SmallIntegerField
 # Create your models here.
 class Poll(models.Model):
     title = models.CharField(max_length=50)
@@ -18,17 +17,17 @@ class Poll(models.Model):
     
     
 class Data(models.Model):
-    user = models.ForeignKey(User)
+    
+    uid = C_IntegerField(max_length=11, default=0)
     username = models.CharField(max_length=30)
     groupids = models.CharField(max_length=255)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
-    store_file = models.FileField(upload_to='upload')
+    store_file = models.FileField(upload_to='data/upload')
     store_filepath = models.FilePathField(verbose_name='Store Path')
     tag = models.CharField(max_length=255)
-    category = models.CharField(max_length=30)
-    dateline = models.PositiveIntegerField(max_length=10, default=0)
-    download_date = models.DateTimeField('date download')
+    cate_id = C_SmallIntegerField(max_length=5, default=0)
+    dateline = C_IntegerField(max_length=10, default=0)
     code = NormalTextField()
     def __unicode__(self):
         return self.title

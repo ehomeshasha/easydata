@@ -4,7 +4,8 @@ from django.template import Context, loader
 from django.core.urlresolvers import reverse
 from django.conf import settings
 # ...
-context = {'GV': settings.GV, 'LANG': settings.LANG}
+#context = {'GV': settings.GV, 'LANG': settings.LANG}
+context = {}
 
 def detail(request, data_id):
     context['data_id'] = data_id
