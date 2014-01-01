@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0240</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0240.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 240 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">Java method. Let's call this simulated method </span></div>
+<div style="position:absolute;top:81;left:374"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:81;left:449"><span class="ft1">. The initial call to </span></div>
+<div style="position:absolute;top:81;left:560"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:81;left:635"><span class="ft1"> </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft1">(at case 1) pushes the value entered by the user and a return value of 6 onto the stack </span></div>
+<div style="position:absolute;top:114;left:90"><span class="ft1">and moves to the entry point of </span></div>
+<div style="position:absolute;top:114;left:285"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:114;left:360"><span class="ft1"> (case 2).</span></div>
+<div style="position:absolute;top:111;left:418"><span class="ft0"> </span></div>
+<div style="position:absolute;top:115;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:134;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:182;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:151;left:90"><span class="ft1"> At its entry (case 2), </span></div>
+<div style="position:absolute;top:151;left:218"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:151;left:293"><span class="ft1"> tests whether its argument is 1. It accesses the </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft1">argument by peeking at the top of the stack. If the argument is 1, this is the base case </span></div>
+<div style="position:absolute;top:184;left:90"><span class="ft1">and control goes to </span></div>
+<div style="position:absolute;top:184;left:212"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:184;left:287"><span class="ft1">'s exit (case 5). If not, it calls itself recursively (case 3). </span></div>
+<div style="position:absolute;top:201;left:90"><span class="ft1">This recursive call consists of pushing </span></div>
+<div style="position:absolute;top:201;left:327"><span class="ft2">n-1</span></div>
+<div style="position:absolute;top:201;left:352"><span class="ft1"> and a return address of 4 onto the stack, and </span></div>
+<div style="position:absolute;top:218;left:90"><span class="ft1">going to the method entry at case 2.</span></div>
+<div style="position:absolute;top:215;left:312"><span class="ft0"> </span></div>
+<div style="position:absolute;top:182;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:90"><span class="ft1"> On the return from the recursive call, </span></div>
+<div style="position:absolute;top:253;left:320"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:253;left:395"><span class="ft1"> adds its argument </span></div>
+<div style="position:absolute;top:253;left:513"><span class="ft2">n</span></div>
+<div style="position:absolute;top:253;left:521"><span class="ft1"> to the value </span></div>
+<div style="position:absolute;top:270;left:90"><span class="ft1">returned from the call. Finally it exits (case 5). When it exits, it pops the last </span></div>
+<div style="position:absolute;top:270;left:555"><span class="ft2">Params</span></div>
+<div style="position:absolute;top:270;left:605"><span class="ft1"> </span></div>
+<div style="position:absolute;top:287;left:90"><span class="ft1">object off the stack; this information is no longer needed.</span></div>
+<div style="position:absolute;top:284;left:438"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:287;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:306;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:322;left:90"><span class="ft1"> The return address given in the initial call was 6, so case 6 is where control goes when </span></div>
+<div style="position:absolute;top:339;left:90"><span class="ft1">the method returns. This code returns </span></div>
+<div style="position:absolute;top:339;left:326"><span class="ft2">true</span></div>
+<div style="position:absolute;top:339;left:359"><span class="ft1"> to let the </span></div>
+<div style="position:absolute;top:339;left:420"><span class="ft2">while</span></div>
+<div style="position:absolute;top:339;left:462"><span class="ft1"> loop in </span></div>
+<div style="position:absolute;top:339;left:510"><span class="ft2">recTriangle()</span></div>
+<div style="position:absolute;top:339;left:619"><span class="ft1"> </span></div>
+<div style="position:absolute;top:355;left:90"><span class="ft1">know that the loop is over.</span></div>
+<div style="position:absolute;top:352;left:252"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:356;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:375;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:405;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:391;left:90"><span class="ft1"> Note that in this description of </span></div>
+<div style="position:absolute;top:391;left:277"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:391;left:352"><span class="ft1">'s operation we use terms like argument, </span></div>
+<div style="position:absolute;top:408;left:90"><span class="ft3">recursive call, and return address to mean simulations of these features, not the normal </span></div>
+<div style="position:absolute;top:424;left:90"><span class="ft1">Java versions.</span></div>
+<div style="position:absolute;top:421;left:179"><span class="ft0"> </span></div>
+<div style="position:absolute;top:405;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:424;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:465;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:459;left:90"><span class="ft1"> If you inserted some output statements in each </span></div>
+<div style="position:absolute;top:459;left:382"><span class="ft2">case</span></div>
+<div style="position:absolute;top:459;left:415"><span class="ft1"> to see what </span></div>
+<div style="position:absolute;top:459;left:494"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:459;left:573"><span class="ft1"> was doing, </span></div>
+<div style="position:absolute;top:476;left:90"><span class="ft1">you could arrange for output like this:</span></div>
+<div style="position:absolute;top:473;left:318"><span class="ft0"> </span></div>
+<div style="position:absolute;top:465;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:476;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:495;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:511;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:510;left:113"><span class="ft2"> Enter a number: 4</span></div>
+<div style="position:absolute;top:507;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:511;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:515;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:530;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:529;left:113"><span class="ft2"> case 1. theAnswer=0  Stack:</span></div>
+<div style="position:absolute;top:526;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:530;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:534;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:113"><span class="ft2"> case 2. theAnswer=0  Stack: (4, 6)</span></div>
+<div style="position:absolute;top:546;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:553;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:113"><span class="ft2"> case 3. theAnswer=0  Stack: (4, 6)</span></div>
+<div style="position:absolute;top:565;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:572;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:113"><span class="ft2"> case 2. theAnswer=0  Stack: (4, 6) (3, 4)</span></div>
+<div style="position:absolute;top:584;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:591;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:606;left:113"><span class="ft2"> case 3. theAnswer=0  Stack: (4, 6) (3, 4)</span></div>
+<div style="position:absolute;top:603;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:610;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:625;left:113"><span class="ft2"> case 2. theAnswer=0  Stack: (4, 6) (3, 4) (2, 4)</span></div>
+<div style="position:absolute;top:622;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:630;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:645;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:644;left:113"><span class="ft2"> case 3. theAnswer=0  Stack: (4, 6) (3, 4) (2, 4)</span></div>
+<div style="position:absolute;top:641;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:645;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:649;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:664;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:664;left:113"><span class="ft2"> case 2. theAnswer=0  Stack: (4, 6) (3, 4) (2, 4) (1, 4)</span></div>
+<div style="position:absolute;top:661;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:664;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:668;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:683;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:683;left:113"><span class="ft2"> case 5. theAnswer=1  Stack: (4, 6) (3, 4) (2, 4) (1, 4)</span></div>
+<div style="position:absolute;top:680;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:683;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:687;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:113"><span class="ft2"> case 4. theAnswer=1  Stack: (4, 6) (3, 4) (2, 4)</span></div>
+<div style="position:absolute;top:699;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:722;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:721;left:113"><span class="ft2"> case 5. theAnswer=3  Stack: (4, 6) (3, 4) (2, 4)</span></div>
+<div style="position:absolute;top:718;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:722;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:725;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:740;left:113"><span class="ft2"> case 4. theAnswer=3  Stack: (4, 6) (3, 4)</span></div>
+<div style="position:absolute;top:737;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:745;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:760;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:759;left:113"><span class="ft2"> case 5. theAnswer=6  Stack: (4, 6) (3, 4)</span></div>
+<div style="position:absolute;top:756;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:760;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:764;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:113"><span class="ft2"> case 4. theAnswer=6  Stack: (4, 6)</span></div>
+<div style="position:absolute;top:776;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:783;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:113"><span class="ft2"> case 5. theAnswer=10 Stack: (4, 6)</span></div>
+<div style="position:absolute;top:795;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:802;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:817;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:817;left:113"><span class="ft2"> case 6. theAnswer=10 Stack:</span></div>
+<div style="position:absolute;top:814;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:817;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:821;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:113"><span class="ft2"> Triangle=10</span></div>
+<div style="position:absolute;top:833;left:205"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:840;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:859;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:907;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:875;left:90"><span class="ft1"> The case number shows what section of code is being executed. The contents of the </span></div>
+<div style="position:absolute;top:892;left:90"><span class="ft1">stack (consisting of </span></div>
+<div style="position:absolute;top:892;left:212"><span class="ft2">Params</span></div>
+<div style="position:absolute;top:892;left:262"><span class="ft1"> objects containing </span></div>
+<div style="position:absolute;top:892;left:381"><span class="ft2">n</span></div>
+<div style="position:absolute;top:892;left:389"><span class="ft1"> followed by a return address) are also </span></div>
+<div style="position:absolute;top:909;left:90"><span class="ft1">shown. The </span></div>
+<div style="position:absolute;top:909;left:166"><span class="ft2">simMeth()</span></div>
+<div style="position:absolute;top:909;left:241"><span class="ft1"> method is entered 4 times (case 2) and returns 4 times (case 5). </span></div>
+<div style="position:absolute;top:926;left:90"><span class="ft1">It's only when it starts returning that </span></div>
+<div style="position:absolute;top:926;left:312"><span class="ft2">theAnswer</span></div>
+<div style="position:absolute;top:926;left:387"><span class="ft1"> begins to accumulate the results of the </span></div>
+<div style="position:absolute;top:943;left:90"><span class="ft1">calculations.</span></div>
+<div style="position:absolute;top:940;left:167"><span class="ft0"> </span></div>
+<div style="position:absolute;top:907;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:943;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:962;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:978;left:90"><span class="ft4"> What Does This Prove.</span></div>
+<div style="position:absolute;top:980;left:300"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:984;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1003;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1019;left:90"><span class="ft1"> In </span></div>
+<div style="position:absolute;top:1019;left:106"><span class="ft2">stackTriangle.java</span></div>
+<div style="position:absolute;top:1019;left:256"><span class="ft1"> we have a program that more or less systematically </span></div>
+<div style="position:absolute;top:1036;left:90"><span class="ft1">transforms a program that uses recursion into a program that uses a stack. This suggests </span></div>
+<div style="position:absolute;top:1052;left:90"><span class="ft1">that such a transformation is possible for any program that uses recursion, and in fact this </span></div>
+<div style="position:absolute;top:1068;left:90"><span class="ft1">is the case.</span></div>
+<div style="position:absolute;top:1065;left:161"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1068;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

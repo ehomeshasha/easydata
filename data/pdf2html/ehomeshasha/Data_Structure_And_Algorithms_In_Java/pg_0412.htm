@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0412</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft6{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0412.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 412 -</span></div>
+<div style="position:absolute;top:203;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:319"><span class="ft0">  </span></div>
+<div style="position:absolute;top:203;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:136"><span class="ft1"> Figure 11.13:  Quadratic-probe and double-hashing performance</span></div>
+<div style="position:absolute;top:361;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:387;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:385;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:385;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:421;left:90"><span class="ft4"> Separate Chaining</span></div>
+<div style="position:absolute;top:423;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:428;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:447;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:468;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:463;left:90"><span class="ft2"> The efficiency analysis for separate chaining is different, and generally easier, than for </span></div>
+<div style="position:absolute;top:478;left:90"><span class="ft2">open addressing.</span></div>
+<div style="position:absolute;top:475;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:468;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:479;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:498;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:552;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:514;left:90"><span class="ft2"> We want to know how long it takes to search for or insert an item into a separate-chaining </span></div>
+<div style="position:absolute;top:530;left:90"><span class="ft2">hash table. We'll assume that the most time-consuming part of these operations is </span></div>
+<div style="position:absolute;top:546;left:90"><span class="ft2">comparing the search key of the item with the keys of other items in the list. We'll also </span></div>
+<div style="position:absolute;top:562;left:90"><span class="ft2">assume that the time required to hash to the appropriate list, and to determine when the </span></div>
+<div style="position:absolute;top:578;left:90"><span class="ft2">end of a list has been reached, is equivalent to one key comparison. Thus all operations </span></div>
+<div style="position:absolute;top:594;left:90"><span class="ft2">require 1+</span></div>
+<div style="position:absolute;top:594;left:153"><span class="ft5">nComps</span></div>
+<div style="position:absolute;top:594;left:203"><span class="ft2"> time, where </span></div>
+<div style="position:absolute;top:594;left:283"><span class="ft5">nComps</span></div>
+<div style="position:absolute;top:594;left:333"><span class="ft2"> is the number of key comparisons.</span></div>
+<div style="position:absolute;top:591;left:548"><span class="ft0"> </span></div>
+<div style="position:absolute;top:552;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:595;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:614;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:646;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:630;left:90"><span class="ft2"> Let's say that the hash table consists of </span></div>
+<div style="position:absolute;top:630;left:336"><span class="ft5">arraySize</span></div>
+<div style="position:absolute;top:630;left:415"><span class="ft2"> elements, each of which holds a list, </span></div>
+<div style="position:absolute;top:648;left:90"><span class="ft2">and that </span></div>
+<div style="position:absolute;top:648;left:144"><span class="ft5">N</span></div>
+<div style="position:absolute;top:648;left:153"><span class="ft2"> data items have been inserted in the table. Then, on the average, each list will </span></div>
+<div style="position:absolute;top:665;left:90"><span class="ft2">hold </span></div>
+<div style="position:absolute;top:665;left:120"><span class="ft5">N</span></div>
+<div style="position:absolute;top:665;left:129"><span class="ft2"> divided by </span></div>
+<div style="position:absolute;top:665;left:199"><span class="ft5">arraySize</span></div>
+<div style="position:absolute;top:665;left:274"><span class="ft2"> items:</span></div>
+<div style="position:absolute;top:662;left:315"><span class="ft0"> </span></div>
+<div style="position:absolute;top:646;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:666;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:685;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:90"><span class="ft2"> Average List Length = N / arraySize</span></div>
+<div style="position:absolute;top:698;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:704;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:723;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:90"><span class="ft2"> This is the same as the definition of the load factor:</span></div>
+<div style="position:absolute;top:736;left:404"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:742;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:761;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:90"><span class="ft2"> loadFactor = N / arraySize</span></div>
+<div style="position:absolute;top:774;left:252"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:781;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:800;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:815;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:90"><span class="ft2"> so the average list length equals the load factor.</span></div>
+<div style="position:absolute;top:813;left:385"><span class="ft0"> </span></div>
+<div style="position:absolute;top:815;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:819;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:838;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:853;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:90"><span class="ft6"> Searching</span></div>
+<div style="position:absolute;top:854;left:171"><span class="ft0"> </span></div>
+<div style="position:absolute;top:853;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:857;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:876;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:906;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:892;left:90"><span class="ft2"> In a successful search, the algorithm hashes to the appropriate list and then searches </span></div>
+<div style="position:absolute;top:908;left:90"><span class="ft2">along the list for the item. On the average, half the items must be examined before the </span></div>
+<div style="position:absolute;top:924;left:90"><span class="ft2">correct one is located. Thus the search time is</span></div>
+<div style="position:absolute;top:921;left:374"><span class="ft0">  </span></div>
+<div style="position:absolute;top:906;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:924;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:943;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:90"><span class="ft2"> 1 + loadFactor / 2</span></div>
+<div style="position:absolute;top:956;left:199"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:963;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:982;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1004;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:90"><span class="ft2"> This is true whether the lists are ordered or not. In an unsuccessful search, if the lists are </span></div>
+<div style="position:absolute;top:1014;left:90"><span class="ft2">unordered, all the items must be searched, so the time is</span></div>
+<div style="position:absolute;top:1011;left:439"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1004;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1014;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1033;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1048;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1049;left:90"><span class="ft2"> 1 + loadFactor</span></div>
+<div style="position:absolute;top:1046;left:179"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1048;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1052;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1071;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

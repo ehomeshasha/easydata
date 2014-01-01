@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0485</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0485.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 485 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">we'll see in a moment.</span></div>
+<div style="position:absolute;top:78;left:227"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1"> In step 3, the edge with the minimum weight is removed from the priority queue. This </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">edge and its destination vertex are added to the tree, and the source vertex </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">(</span></div>
+<div style="position:absolute;top:148;left:95"><span class="ft2">currentVert</span></div>
+<div style="position:absolute;top:148;left:187"><span class="ft1">) and destination vertex are displayed.</span></div>
+<div style="position:absolute;top:145;left:421"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:149;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:168;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:207;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:184;left:90"><span class="ft1"> At the end of </span></div>
+<div style="position:absolute;top:184;left:173"><span class="ft2">mstw()</span></div>
+<div style="position:absolute;top:184;left:223"><span class="ft1">, the vertices are removed from the tree by resetting their </span></div>
+<div style="position:absolute;top:202;left:90"><span class="ft2">isInTree</span></div>
+<div style="position:absolute;top:202;left:157"><span class="ft1"> variables. That isn't strictly necessary in this program, because only one tree </span></div>
+<div style="position:absolute;top:218;left:90"><span class="ft1">is created from the data. However, it's good housekeeping to restore the data to its </span></div>
+<div style="position:absolute;top:234;left:90"><span class="ft1">original form when you finish with it.</span></div>
+<div style="position:absolute;top:231;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:207;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:234;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:254;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:335;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:269;left:90"><span class="ft1"> As we noted, the priority queue should contain only one edge with a given destination </span></div>
+<div style="position:absolute;top:286;left:90"><span class="ft1">vertex. The </span></div>
+<div style="position:absolute;top:286;left:164"><span class="ft2">putInPQ()</span></div>
+<div style="position:absolute;top:286;left:239"><span class="ft1"> method makes sure this is true. It calls the </span></div>
+<div style="position:absolute;top:286;left:506"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:286;left:556"><span class="ft1"> method of </span></div>
+<div style="position:absolute;top:303;left:90"><span class="ft1">the </span></div>
+<div style="position:absolute;top:303;left:113"><span class="ft2">PriorityQ</span></div>
+<div style="position:absolute;top:303;left:188"><span class="ft1"> class, which has been doctored to find the edge with a specified </span></div>
+<div style="position:absolute;top:320;left:90"><span class="ft1">destination vertex. If there is no such vertex, and </span></div>
+<div style="position:absolute;top:320;left:393"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:320;left:443"><span class="ft1"> therefore returns ¨C1, then </span></div>
+<div style="position:absolute;top:338;left:90"><span class="ft2">putInPQ()</span></div>
+<div style="position:absolute;top:338;left:165"><span class="ft1"> simply inserts the edge into the priority queue. However, if such an edge </span></div>
+<div style="position:absolute;top:355;left:90"><span class="ft1">does exist, </span></div>
+<div style="position:absolute;top:355;left:160"><span class="ft2">putInPQ()</span></div>
+<div style="position:absolute;top:355;left:235"><span class="ft1"> checks to see whether the existing edge or the new proposed </span></div>
+<div style="position:absolute;top:371;left:90"><span class="ft1">edge has the lower weight. If it's the old edge, no change is necessary. If the new one </span></div>
+<div style="position:absolute;top:387;left:90"><span class="ft1">has a lower weight, the old edge is removed from the queue and the new one is installed. </span></div>
+<div style="position:absolute;top:404;left:90"><span class="ft1">Here's the code for </span></div>
+<div style="position:absolute;top:404;left:211"><span class="ft2">putInPQ()</span></div>
+<div style="position:absolute;top:404;left:286"><span class="ft1">:</span></div>
+<div style="position:absolute;top:401;left:290"><span class="ft0"> </span></div>
+<div style="position:absolute;top:335;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:405;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:424;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:113"><span class="ft2"> public void putInPQ(int newVert, int newDist)</span></div>
+<div style="position:absolute;top:436;left:488"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:443;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:455;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:462;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:478;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:477;left:113"><span class="ft2">    // is there another edge with the same destination vertex.</span></div>
+<div style="position:absolute;top:474;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:481;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:497;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:496;left:113"><span class="ft2">    int queueIndex = thePQ.find(newVert);  // got edge's index</span></div>
+<div style="position:absolute;top:493;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:501;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:516;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:515;left:113"><span class="ft2">    if(queueIndex != -1)              // if there is one,</span></div>
+<div style="position:absolute;top:512;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:516;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:520;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:113"><span class="ft2">       {                              // get edge</span></div>
+<div style="position:absolute;top:532;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:539;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:113"><span class="ft2">       Edge tempEdge = thePQ.peekN(queueIndex);</span></div>
+<div style="position:absolute;top:551;left:496"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:558;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:573;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:573;left:113"><span class="ft2">       int oldDist = tempEdge.distance;</span></div>
+<div style="position:absolute;top:570;left:430"><span class="ft0"> </span></div>
+<div style="position:absolute;top:573;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:577;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:593;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:592;left:113"><span class="ft2">       if(oldDist &gt; newDist)          // if new edge shorter,</span></div>
+<div style="position:absolute;top:589;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:596;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:612;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:611;left:113"><span class="ft2">          {</span></div>
+<div style="position:absolute;top:608;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:612;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:616;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:630;left:113"><span class="ft2">          thePQ.removeN(queueIndex);  // remove old edge</span></div>
+<div style="position:absolute;top:627;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:635;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:656;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:650;left:113"><span class="ft2">          Edge theEdge = new Edge(currentVert, newVert, </span></div>
+<div style="position:absolute;top:665;left:113"><span class="ft2">newDist);</span></div>
+<div style="position:absolute;top:662;left:188"><span class="ft0"> </span></div>
+<div style="position:absolute;top:656;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:666;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:682;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:681;left:113"><span class="ft2">          thePQ.insert(theEdge);      // insert new edge</span></div>
+<div style="position:absolute;top:678;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:682;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:685;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:113"><span class="ft2">          }</span></div>
+<div style="position:absolute;top:697;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:705;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:719;left:113"><span class="ft2">       // else no action; just leave the old vertex there</span></div>
+<div style="position:absolute;top:716;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:724;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:113"><span class="ft2">       }  // end if</span></div>
+<div style="position:absolute;top:736;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:743;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:113"><span class="ft2">    else  // no edge with same destination vertex</span></div>
+<div style="position:absolute;top:755;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:762;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:113"><span class="ft2">       {                              // so insert new one</span></div>
+<div style="position:absolute;top:774;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:781;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:796;left:113"><span class="ft2">       Edge theEdge = new Edge(currentVert, newVert, newDist);</span></div>
+<div style="position:absolute;top:793;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:800;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:815;left:113"><span class="ft2">       thePQ.insert(theEdge);</span></div>
+<div style="position:absolute;top:812;left:347"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:820;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:835;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:834;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:831;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:835;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:839;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:858;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:113"><span class="ft2">    }  // end putInPQ()</span></div>
+<div style="position:absolute;top:870;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:877;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:896;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:914;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:90"><span class="ft3"> The </span></div>
+<div style="position:absolute;top:912;left:129"><span class="ft4">mstw.java</span></div>
+<div style="position:absolute;top:912;left:230"><span class="ft3"> Program</span></div>
+<div style="position:absolute;top:914;left:312"><span class="ft0"> </span></div>
+<div style="position:absolute;top:914;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:919;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:938;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1003;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:955;left:118"><span class="ft2">PriorityQ</span></div>
+<div style="position:absolute;top:955;left:193"><span class="ft1"> class uses an array to hold the members. As we noted, in a program </span></div>
+<div style="position:absolute;top:972;left:90"><span class="ft1">dealing with large graphs a heap would be more appropriate than the array shown here. </span></div>
+<div style="position:absolute;top:988;left:90"><span class="ft1">The </span></div>
+<div style="position:absolute;top:988;left:118"><span class="ft2">PriorityQ</span></div>
+<div style="position:absolute;top:988;left:193"><span class="ft1"> class has been augmented with various methods. It can, as we've seen, </span></div>
+<div style="position:absolute;top:1005;left:90"><span class="ft1">find an edge with a given destination vertex with </span></div>
+<div style="position:absolute;top:1005;left:389"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:1005;left:439"><span class="ft1">. It can also peek at an arbitrary </span></div>
+<div style="position:absolute;top:1022;left:90"><span class="ft1">member with </span></div>
+<div style="position:absolute;top:1022;left:174"><span class="ft2">peekN()</span></div>
+<div style="position:absolute;top:1022;left:232"><span class="ft1"> and remove an arbitrary member with </span></div>
+<div style="position:absolute;top:1022;left:470"><span class="ft2">removeN()</span></div>
+<div style="position:absolute;top:1022;left:545"><span class="ft1">. Most of the </span></div>
+<div style="position:absolute;top:1040;left:90"><span class="ft1">rest of this program you've seen before. Listing 14.1 shows the complete </span></div>
+<div style="position:absolute;top:1040;left:540"><span class="ft2">mstw.java</span></div>
+<div style="position:absolute;top:1040;left:615"><span class="ft1"> </span></div>
+<div style="position:absolute;top:1056;left:90"><span class="ft1">program.</span></div>
+<div style="position:absolute;top:1053;left:146"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1003;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1056;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1076;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

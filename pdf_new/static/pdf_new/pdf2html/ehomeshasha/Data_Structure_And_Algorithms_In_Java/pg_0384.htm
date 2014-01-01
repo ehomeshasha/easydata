@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0384</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Times New Roman;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0384.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 384 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:113"><span class="ft1"> public DataItem delete(int key)  // delete a DataItem</span></div>
+<div style="position:absolute;top:96;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:103;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:113"><span class="ft1">    {</span></div>
+<div style="position:absolute;top:115;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:137;left:113"><span class="ft1">    int hashVal = hashFunc(key);  // hash the key</span></div>
+<div style="position:absolute;top:134;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:141;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:157;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:175;left:113"><span class="ft1">    while(hashArray[hashVal] != null)  // until empty cell,</span></div>
+<div style="position:absolute;top:172;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:180;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:113"><span class="ft1">       {                               // found the key.</span></div>
+<div style="position:absolute;top:192;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:199;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:113"><span class="ft1">       if(hashArray[hashVal].iData == key)</span></div>
+<div style="position:absolute;top:211;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:113"><span class="ft1">          {</span></div>
+<div style="position:absolute;top:230;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:252;left:113"><span class="ft1">          DataItem temp = hashArray[hashVal]; // save item</span></div>
+<div style="position:absolute;top:249;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:113"><span class="ft1">          hashArray[hashVal] = nonItem;       // delete item</span></div>
+<div style="position:absolute;top:268;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:276;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:113"><span class="ft1">          return temp;                        // return item</span></div>
+<div style="position:absolute;top:287;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:295;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:113"><span class="ft1">          }</span></div>
+<div style="position:absolute;top:307;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:314;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:113"><span class="ft1">       ++hashVal;                 // go to next cell</span></div>
+<div style="position:absolute;top:326;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:333;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:113"><span class="ft1">       hashVal %= arraySize;      // wrap around if necessary</span></div>
+<div style="position:absolute;top:345;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:352;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:367;left:113"><span class="ft1">       }</span></div>
+<div style="position:absolute;top:364;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:386;left:113"><span class="ft1">    return null;                  // can't find item</span></div>
+<div style="position:absolute;top:383;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:391;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:113"><span class="ft1">    }  // end delete()</span></div>
+<div style="position:absolute;top:422;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:429;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:448;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:464;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:464;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:464;left:124"><span class="ft3">hash.java</span></div>
+<div style="position:absolute;top:464;left:214"><span class="ft2"> Program</span></div>
+<div style="position:absolute;top:464;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:464;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:469;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:488;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:527;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:504;left:90"><span class="ft4"> Here's the complete </span></div>
+<div style="position:absolute;top:504;left:217"><span class="ft1">hash.java</span></div>
+<div style="position:absolute;top:504;left:292"><span class="ft4"> program. A </span></div>
+<div style="position:absolute;top:504;left:369"><span class="ft1">DataItem</span></div>
+<div style="position:absolute;top:504;left:439"><span class="ft4"> object contains just one field, an </span></div>
+<div style="position:absolute;top:521;left:90"><span class="ft4">integer that is its key. As in other data structures we've discussed, these objects could </span></div>
+<div style="position:absolute;top:537;left:90"><span class="ft4">contain more data, or a reference to an object of another class (such as </span></div>
+<div style="position:absolute;top:537;left:533"><span class="ft1">employee</span></div>
+<div style="position:absolute;top:537;left:600"><span class="ft4"> or </span></div>
+<div style="position:absolute;top:555;left:90"><span class="ft1">partNumber</span></div>
+<div style="position:absolute;top:555;left:174"><span class="ft4">).</span></div>
+<div style="position:absolute;top:552;left:182"><span class="ft0"> </span></div>
+<div style="position:absolute;top:527;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:555;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:574;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:591;left:90"><span class="ft4"> The major field in class </span></div>
+<div style="position:absolute;top:591;left:236"><span class="ft1">HashTable</span></div>
+<div style="position:absolute;top:591;left:311"><span class="ft4"> is an array called </span></div>
+<div style="position:absolute;top:591;left:424"><span class="ft1">hashArray</span></div>
+<div style="position:absolute;top:591;left:499"><span class="ft4">. Other fields are the </span></div>
+<div style="position:absolute;top:608;left:90"><span class="ft4">size of the array and the special </span></div>
+<div style="position:absolute;top:608;left:290"><span class="ft1">nonItem</span></div>
+<div style="position:absolute;top:608;left:349"><span class="ft4"> object used for deletions.</span></div>
+<div style="position:absolute;top:605;left:507"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:609;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:628;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:643;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:644;left:90"><span class="ft4"> Here's the listing for </span></div>
+<div style="position:absolute;top:644;left:216"><span class="ft1">hash.java</span></div>
+<div style="position:absolute;top:644;left:291"><span class="ft4">:</span></div>
+<div style="position:absolute;top:641;left:295"><span class="ft0"> </span></div>
+<div style="position:absolute;top:643;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:647;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:666;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:682;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:681;left:113"><span class="ft1"> // hash.java</span></div>
+<div style="position:absolute;top:678;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:682;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:686;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:113"><span class="ft1"> // demonstrates hash table with linear probing</span></div>
+<div style="position:absolute;top:697;left:496"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:705;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:113"><span class="ft1"> // to run this program: C:&gt;java HashTableApp</span></div>
+<div style="position:absolute;top:717;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:724;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:113"><span class="ft1"> import java.io.*;                   // for I/O</span></div>
+<div style="position:absolute;top:736;left:496"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:743;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:113"><span class="ft1"> import java.util.*;                 // for Stack class</span></div>
+<div style="position:absolute;top:755;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:762;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:777;left:113"><span class="ft1"> import java.lang.Integer;           // for parseInt()</span></div>
+<div style="position:absolute;top:774;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:781;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:796;left:110"><span class="ft1"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:793;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:815;left:113"><span class="ft1"> class DataItem</span></div>
+<div style="position:absolute;top:812;left:230"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:820;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:835;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:835;left:113"><span class="ft1">    {                                // (could have more data)</span></div>
+<div style="position:absolute;top:832;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:839;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:113"><span class="ft1">    public int iData;                // data item (key)</span></div>
+<div style="position:absolute;top:851;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:858;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:877;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:899;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:892;left:113"><span class="ft1"> //-------------------------------------------------------------</span></div>
+<div style="position:absolute;top:908;left:113"><span class="ft1">-</span></div>
+<div style="position:absolute;top:905;left:122"><span class="ft0"> </span></div>
+<div style="position:absolute;top:899;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:909;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:924;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:924;left:113"><span class="ft1">    public DataItem(int ii)          // constructor</span></div>
+<div style="position:absolute;top:921;left:530"><span class="ft0"> </span></div>
+<div style="position:absolute;top:924;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:928;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:943;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:943;left:113"><span class="ft1">       { iData = ii; }</span></div>
+<div style="position:absolute;top:940;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:943;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:947;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:966;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:988;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:981;left:113"><span class="ft1"> //-------------------------------------------------------------</span></div>
+<div style="position:absolute;top:997;left:113"><span class="ft1">-</span></div>
+<div style="position:absolute;top:994;left:122"><span class="ft0"> </span></div>
+<div style="position:absolute;top:988;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:113"><span class="ft1">    }  // end class DataItem</span></div>
+<div style="position:absolute;top:1010;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1017;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1051;left:110"><span class="ft1"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:1048;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1051;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1055;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1074;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0034</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft5{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+.ft6{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0034.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 34 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">faster (but more complex) algorithms. We'll see one, the binary search on an ordered array, </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft2">later in this chapter</span></div>
+<div style="position:absolute;top:97;left:208"><span class="ft3">, and others throughout this book.</span></div>
+<div style="position:absolute;top:94;left:415"><span class="ft0"> </span></div>
+<div style="position:absolute;top:97;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:113;left:79"><span class="ft4"> </span></div>
+<div style="position:absolute;top:132;left:79"><span class="ft5">The Basics of Arrays in Java</span></div>
+<div style="position:absolute;top:134;left:334"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:158;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:187;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:173;left:90"><span class="ft1"> The preceding section showed graphically the primary algorithms used for arrays. Now </span></div>
+<div style="position:absolute;top:189;left:90"><span class="ft1">we'll see how to write programs to carry out these algorithms, but we first want to cover a </span></div>
+<div style="position:absolute;top:205;left:90"><span class="ft1">few of the fundamentals of arrays in Java.</span></div>
+<div style="position:absolute;top:202;left:347"><span class="ft0"> </span></div>
+<div style="position:absolute;top:187;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:206;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:225;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:262;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:241;left:90"><span class="ft1"> If you're a Java expert, you can skip ahead to the next section, but even C and C++ </span></div>
+<div style="position:absolute;top:257;left:90"><span class="ft1">programmers should stick around. Arrays in Java use syntax similar to that in C and C++ </span></div>
+<div style="position:absolute;top:272;left:90"><span class="ft1">(and not that different from other languages), but there are nevertheless some unique </span></div>
+<div style="position:absolute;top:288;left:90"><span class="ft1">aspects to the Java approach.</span></div>
+<div style="position:absolute;top:285;left:276"><span class="ft0"> </span></div>
+<div style="position:absolute;top:262;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:289;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:308;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:323;left:90"><span class="ft6"> Creating an Array</span></div>
+<div style="position:absolute;top:325;left:247"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:90"><span class="ft1"> As we noted in</span></div>
+<div style="position:absolute;top:364;left:181"><span class="ft2"> Chapter 1</span></div>
+<div style="position:absolute;top:364;left:246"><span class="ft3">, there are two kinds of data in Java: primitive types (such as </span></div>
+<div style="position:absolute;top:381;left:90"><span class="ft7">int</span></div>
+<div style="position:absolute;top:381;left:115"><span class="ft3"> and </span></div>
+<div style="position:absolute;top:381;left:146"><span class="ft7">double</span></div>
+<div style="position:absolute;top:381;left:196"><span class="ft3">), and objects. In many programming languages (even object-oriented </span></div>
+<div style="position:absolute;top:397;left:90"><span class="ft3">ones like C++) arrays are a primitive type, but in Java they're treated as objects. </span></div>
+<div style="position:absolute;top:414;left:90"><span class="ft3">Accordingly you must use the </span></div>
+<div style="position:absolute;top:414;left:275"><span class="ft7">new</span></div>
+<div style="position:absolute;top:414;left:300"><span class="ft3"> operator to create an array:</span></div>
+<div style="position:absolute;top:411;left:473"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:415;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:434;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:449;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:449;left:113"><span class="ft8"> int[] intArray;             // defines a reference to an array</span></div>
+<div style="position:absolute;top:446;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:453;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:472;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:488;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:487;left:113"><span class="ft8"> intArray = new int[100];    // creates the array, and</span></div>
+<div style="position:absolute;top:484;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:488;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:491;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:511;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:526;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:525;left:113"><span class="ft8">                             // sets intArray to refer to it</span></div>
+<div style="position:absolute;top:522;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:530;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:564;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:565;left:90"><span class="ft1"> or the equivalent single-statement approach:</span></div>
+<div style="position:absolute;top:562;left:364"><span class="ft0"> </span></div>
+<div style="position:absolute;top:564;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:568;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:603;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:602;left:113"><span class="ft8"> int[] intArray = new int[100];</span></div>
+<div style="position:absolute;top:599;left:363"><span class="ft0"> </span></div>
+<div style="position:absolute;top:603;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:606;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:656;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:642;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:642;left:118"><span class="ft8">[]</span></div>
+<div style="position:absolute;top:642;left:135"><span class="ft1"> operator is the sign to the compiler we're naming an array object and not an </span></div>
+<div style="position:absolute;top:659;left:90"><span class="ft1">ordinary variable. You can also use an alternative syntax for this operator, placing it after </span></div>
+<div style="position:absolute;top:675;left:90"><span class="ft1">the name instead of the type:</span></div>
+<div style="position:absolute;top:672;left:269"><span class="ft0"> </span></div>
+<div style="position:absolute;top:656;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:675;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:694;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:709;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:709;left:113"><span class="ft8"> int intArray[] = new int[100];  // alternative syntax</span></div>
+<div style="position:absolute;top:706;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:709;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:713;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:732;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:90"><span class="ft1"> However, placing the </span></div>
+<div style="position:absolute;top:749;left:224"><span class="ft8">[]</span></div>
+<div style="position:absolute;top:749;left:241"><span class="ft1"> after the </span></div>
+<div style="position:absolute;top:749;left:299"><span class="ft8">int</span></div>
+<div style="position:absolute;top:749;left:324"><span class="ft1"> makes it clear that the </span></div>
+<div style="position:absolute;top:749;left:468"><span class="ft8">[]</span></div>
+<div style="position:absolute;top:749;left:484"><span class="ft1"> is part of the type, not </span></div>
+<div style="position:absolute;top:765;left:90"><span class="ft1">the name.</span></div>
+<div style="position:absolute;top:762;left:152"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:765;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:785;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:90"><span class="ft1"> Because an array is an object, its name¡ª</span></div>
+<div style="position:absolute;top:801;left:347"><span class="ft8">intArray</span></div>
+<div style="position:absolute;top:801;left:414"><span class="ft1"> in the code above¡ªis a reference </span></div>
+<div style="position:absolute;top:818;left:90"><span class="ft1">to an array; it's not the array itself. The array is stored at an address elsewhere in </span></div>
+<div style="position:absolute;top:834;left:90"><span class="ft1">memory, and </span></div>
+<div style="position:absolute;top:834;left:175"><span class="ft8">intArray</span></div>
+<div style="position:absolute;top:834;left:242"><span class="ft1"> holds only this address.</span></div>
+<div style="position:absolute;top:831;left:391"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:835;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:869;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:870;left:90"><span class="ft1"> Arrays have a </span></div>
+<div style="position:absolute;top:870;left:180"><span class="ft8">length</span></div>
+<div style="position:absolute;top:870;left:230"><span class="ft1"> field, which you can use to find the size, in bytes, of an array:</span></div>
+<div style="position:absolute;top:867;left:608"><span class="ft0">   </span></div>
+<div style="position:absolute;top:873;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:892;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:908;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:907;left:113"><span class="ft8"> int arrayLength = intArray.length;   // find array length</span></div>
+<div style="position:absolute;top:904;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:908;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:912;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:960;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:947;left:90"><span class="ft1"> Remember that this is the total number of bytes occupied by the array, not the number of </span></div>
+<div style="position:absolute;top:963;left:90"><span class="ft1">data items you have placed in it. As in most programming languages, you can't change </span></div>
+<div style="position:absolute;top:979;left:90"><span class="ft1">the size of an array after it's been created.</span></div>
+<div style="position:absolute;top:976;left:349"><span class="ft0"> </span></div>
+<div style="position:absolute;top:960;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1014;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:90"><span class="ft6"> Accessing Array Elements</span></div>
+<div style="position:absolute;top:1015;left:327"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1014;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1019;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1039;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1054;left:90"><span class="ft1"> Array elements are accessed using square brackets. This is similar to how other </span></div>
+<div style="position:absolute;top:1070;left:90"><span class="ft1">languages work:</span></div>
+<div style="position:absolute;top:1067;left:192"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1071;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

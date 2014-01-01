@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0301</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0301.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 301 -</span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:90"><span class="ft1"> Case 3: The Node to be Deleted Has Two Children</span></div>
+<div style="position:absolute;top:82;left:534"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:86;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:105;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:159;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:121;left:90"><span class="ft2"> Now the fun begins. If the deleted node has two children, you can't just replace it with </span></div>
+<div style="position:absolute;top:137;left:90"><span class="ft2">one of these children, at least if the child has its own children. Why not. Examine </span></div>
+<div style="position:absolute;top:137;left:592"><span class="ft3">Figure </span></div>
+<div style="position:absolute;top:153;left:90"><span class="ft3">8.15</span></div>
+<div style="position:absolute;top:153;left:117"><span class="ft4">, and imagine deleting node 25 and replacing it with its right subtree, whose root is </span></div>
+<div style="position:absolute;top:169;left:90"><span class="ft4">35. Which left child would 35 have. The deleted node's left child, 15, or the new node's </span></div>
+<div style="position:absolute;top:185;left:90"><span class="ft4">left child, 30. In either case 30 would be in the wrong place, but we can't just throw it </span></div>
+<div style="position:absolute;top:201;left:90"><span class="ft4">away.</span></div>
+<div style="position:absolute;top:198;left:127"><span class="ft0"> </span></div>
+<div style="position:absolute;top:159;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:201;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:220;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:266;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:236;left:90"><span class="ft2"> We need another approach. The good news is that there's a trick. The bad news is that, </span></div>
+<div style="position:absolute;top:252;left:90"><span class="ft2">even with the trick, there are a lot of special cases to consider. Remember that in a </span></div>
+<div style="position:absolute;top:268;left:90"><span class="ft2">binary search tree the nodes are arranged in order of ascending keys. For each node, the </span></div>
+<div style="position:absolute;top:284;left:90"><span class="ft2">node with the next-highest key is called its inorder successor, or simply its successor. In</span></div>
+<div style="position:absolute;top:284;left:630"><span class="ft3"> </span></div>
+<div style="position:absolute;top:300;left:90"><span class="ft3">Figure 8.15a</span></div>
+<div style="position:absolute;top:300;left:168"><span class="ft4">, node 30 is the successor of node 25.</span></div>
+<div style="position:absolute;top:297;left:403"><span class="ft0"> </span></div>
+<div style="position:absolute;top:266;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:300;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:319;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:357;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:335;left:90"><span class="ft2"> Here's the trick: To delete a node with two children, replace the node with its inorder </span></div>
+<div style="position:absolute;top:351;left:90"><span class="ft5">successor.</span></div>
+<div style="position:absolute;top:351;left:157"><span class="ft3"> Figure 8.16</span></div>
+<div style="position:absolute;top:351;left:231"><span class="ft4"> shows a deleted node being replaced by its successor. Notice </span></div>
+<div style="position:absolute;top:367;left:90"><span class="ft4">that the nodes are still in order. (There's more to it if the successor itself has children; </span></div>
+<div style="position:absolute;top:383;left:90"><span class="ft4">we'll look at that possibility in a moment.)</span></div>
+<div style="position:absolute;top:380;left:342"><span class="ft0"> </span></div>
+<div style="position:absolute;top:357;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:383;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:402;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:495;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:575;left:412"><span class="ft0">  </span></div>
+<div style="position:absolute;top:495;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:575;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:594;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:136"><span class="ft6"> Figure 8.15:  Can't replace with subtree</span></div>
+<div style="position:absolute;top:607;left:382"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:633;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:631;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:633;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:652;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:751;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:839;left:396"><span class="ft0">  </span></div>
+<div style="position:absolute;top:751;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:839;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:859;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:136"><span class="ft6"> Figure 8.16:  Node replaced by its successor</span></div>
+<div style="position:absolute;top:871;left:415"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:897;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:895;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:895;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:897;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:916;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:90"><span class="ft8"> Finding the Successor</span></div>
+<div style="position:absolute;top:932;left:269"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:935;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:954;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1008;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:90"><span class="ft2"> How do you find the successor of a node. As a human being, you can do this quickly (for </span></div>
+<div style="position:absolute;top:986;left:90"><span class="ft2">small trees, anyway). Just take a quick glance at the tree and find the next-largest </span></div>
+<div style="position:absolute;top:1002;left:90"><span class="ft2">number following the key of the node to be deleted. In Figure 8.16 it doesn't take long to </span></div>
+<div style="position:absolute;top:1018;left:90"><span class="ft2">see that the successor of 25 is 30. There's just no other number which is greater than 25 </span></div>
+<div style="position:absolute;top:1034;left:90"><span class="ft2">and also smaller than 35. However, the computer can't do things &quot;at a glance,&quot; it needs </span></div>
+<div style="position:absolute;top:1050;left:90"><span class="ft2">an algorithm.</span></div>
+<div style="position:absolute;top:1047;left:171"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1008;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1050;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1069;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

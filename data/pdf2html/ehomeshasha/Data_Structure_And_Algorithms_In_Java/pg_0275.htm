@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0275</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0275.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 275 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:113"><span class="ft1">       {</span></div>
+<div style="position:absolute;top:77;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:113"><span class="ft1">       int in, out;</span></div>
+<div style="position:absolute;top:96;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:103;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:125;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:113"><span class="ft1">                                        //  sorted on left of </span></div>
+<div style="position:absolute;top:134;left:113"><span class="ft1">out</span></div>
+<div style="position:absolute;top:131;left:138"><span class="ft0"> </span></div>
+<div style="position:absolute;top:125;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:135;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:150;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:149;left:113"><span class="ft1">       for(out=left+1; out&lt;=right; out++)</span></div>
+<div style="position:absolute;top:146;left:446"><span class="ft0"> </span></div>
+<div style="position:absolute;top:150;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:154;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:169;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:169;left:113"><span class="ft1">          {</span></div>
+<div style="position:absolute;top:166;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:169;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:173;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:188;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:188;left:113"><span class="ft1">          double temp = theArray[out];  // remove marked item</span></div>
+<div style="position:absolute;top:185;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:192;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:207;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:207;left:113"><span class="ft1">          in = out;                     // start shifts at out</span></div>
+<div style="position:absolute;top:204;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:211;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:226;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:226;left:113"><span class="ft1">                                        // until one is smaller,</span></div>
+<div style="position:absolute;top:223;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:230;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:246;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:245;left:113"><span class="ft1">          while(in&gt;left &amp;&amp; theArray[in-1] &gt;= temp)</span></div>
+<div style="position:absolute;top:242;left:521"><span class="ft0"> </span></div>
+<div style="position:absolute;top:246;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:249;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:265;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:264;left:113"><span class="ft1">             {</span></div>
+<div style="position:absolute;top:261;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:265;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:269;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:283;left:113"><span class="ft1">             theArray[in] = theArray[in-1]; // shift item to </span></div>
+<div style="position:absolute;top:299;left:113"><span class="ft1">right</span></div>
+<div style="position:absolute;top:296;left:155"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:300;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:315;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:315;left:113"><span class="ft1">             --in;                      // go left one position</span></div>
+<div style="position:absolute;top:312;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:319;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:335;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:334;left:113"><span class="ft1">             }</span></div>
+<div style="position:absolute;top:331;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:335;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:338;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:353;left:113"><span class="ft1">          theArray[in] = temp;          // insert marked item</span></div>
+<div style="position:absolute;top:350;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:358;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:373;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:372;left:113"><span class="ft1">          }  // end for</span></div>
+<div style="position:absolute;top:369;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:373;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:377;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:392;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:392;left:113"><span class="ft1">       }  // end insertionSort()</span></div>
+<div style="position:absolute;top:389;left:371"><span class="ft0"> </span></div>
+<div style="position:absolute;top:392;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:396;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:415;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:437;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:113"><span class="ft1"> //-------------------------------------------------------------</span></div>
+<div style="position:absolute;top:446;left:113"><span class="ft1">-</span></div>
+<div style="position:absolute;top:443;left:122"><span class="ft0"> </span></div>
+<div style="position:absolute;top:437;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:447;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:462;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:461;left:113"><span class="ft1">    }  // end class ArrayIns</span></div>
+<div style="position:absolute;top:458;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:462;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:466;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:485;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:500;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:500;left:110"><span class="ft1"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:497;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:500;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:504;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:539;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:538;left:113"><span class="ft1"> class QuickSort3App</span></div>
+<div style="position:absolute;top:535;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:539;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:542;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:558;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:557;left:113"><span class="ft1">    {</span></div>
+<div style="position:absolute;top:554;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:558;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:562;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:576;left:113"><span class="ft1">    public static void main(String[] args)</span></div>
+<div style="position:absolute;top:573;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:581;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:596;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:596;left:113"><span class="ft1">       {</span></div>
+<div style="position:absolute;top:593;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:596;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:600;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:615;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:615;left:113"><span class="ft1">       int maxSize = 16;             // array size</span></div>
+<div style="position:absolute;top:612;left:521"><span class="ft0"> </span></div>
+<div style="position:absolute;top:615;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:619;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:634;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:634;left:113"><span class="ft1">       ArrayIns arr;                 // reference to array</span></div>
+<div style="position:absolute;top:631;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:634;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:638;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:653;left:113"><span class="ft1">       arr = new ArrayIns(maxSize);  // create the array</span></div>
+<div style="position:absolute;top:650;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:657;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:673;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:673;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:677;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:692;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:691;left:113"><span class="ft1">       for(int j=0; j&lt;maxSize; j++)  // fill array with</span></div>
+<div style="position:absolute;top:688;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:692;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:113"><span class="ft1">          {                          // random numbers</span></div>
+<div style="position:absolute;top:708;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:715;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:730;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:730;left:113"><span class="ft1">          double n = (int)(java.lang.Math.random()*99);</span></div>
+<div style="position:absolute;top:727;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:730;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:734;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:113"><span class="ft1">          arr.insert(n);</span></div>
+<div style="position:absolute;top:746;left:305"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:753;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:769;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:768;left:113"><span class="ft1">          }</span></div>
+<div style="position:absolute;top:765;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:769;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:772;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:788;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:113"><span class="ft1">       arr.display();                // display items</span></div>
+<div style="position:absolute;top:784;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:788;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:792;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:807;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:806;left:113"><span class="ft1">       arr.quickSort();              // quicksort them</span></div>
+<div style="position:absolute;top:803;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:807;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:811;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:113"><span class="ft1">       arr.display();                // display them again</span></div>
+<div style="position:absolute;top:823;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:830;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:845;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:845;left:113"><span class="ft1">       }  // end main()</span></div>
+<div style="position:absolute;top:842;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:845;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:849;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:868;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:884;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:883;left:113"><span class="ft1">    }  // end class QuickSort3App</span></div>
+<div style="position:absolute;top:880;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:884;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:887;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:906;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:969;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:922;left:90"><span class="ft2"> Using the insertion sort for small subarrays turns out to be the fastest approach on our </span></div>
+<div style="position:absolute;top:938;left:90"><span class="ft2">particular installation, but it is not much faster than sorting subarrays of 3 or fewer cells </span></div>
+<div style="position:absolute;top:955;left:90"><span class="ft2">by hand, as in </span></div>
+<div style="position:absolute;top:955;left:181"><span class="ft1">quickSort2.java</span></div>
+<div style="position:absolute;top:955;left:306"><span class="ft2">. The numbers of comparisons and copies are </span></div>
+<div style="position:absolute;top:972;left:90"><span class="ft2">reduced substantially in the quicksort phase, but are increased by an almost equal </span></div>
+<div style="position:absolute;top:987;left:90"><span class="ft2">amount in the insertion sort, so the time savings are not dramatic. However, it's probably </span></div>
+<div style="position:absolute;top:1003;left:90"><span class="ft2">a worthwhile approach if you are trying to squeeze the last ounce of performance out of </span></div>
+<div style="position:absolute;top:1019;left:90"><span class="ft2">quicksort.</span></div>
+<div style="position:absolute;top:1016;left:150"><span class="ft0"> </span></div>
+<div style="position:absolute;top:969;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1020;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1039;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1054;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1054;left:90"><span class="ft3"> Insertion Sort Following Quicksort</span></div>
+<div style="position:absolute;top:1054;left:363"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1054;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1058;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

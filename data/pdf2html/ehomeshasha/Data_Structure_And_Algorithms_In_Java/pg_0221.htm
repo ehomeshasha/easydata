@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0221</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+.ft6{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft7{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft8{font-style:normal;font-weight:bold;font-size:13px;font-family:Times New Roman;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0221.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 221 -</span></div>
+<div style="position:absolute;top:102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> How do you move a subtree of two disks from A to C. Move the subtree consisting of </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">only one disk (1) from A to B. This is the base case: when you're moving only one disk, </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">you just move it; there's nothing else to do. Then move the larger disk (2) from A to C, </span></div>
+<div style="position:absolute;top:128;left:90"><span class="ft1">and replace the subtree (disk 1) on it.</span></div>
+<div style="position:absolute;top:125;left:320"><span class="ft0"> </span></div>
+<div style="position:absolute;top:102;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:129;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:148;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:285;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:411;left:365"><span class="ft0">  </span></div>
+<div style="position:absolute;top:285;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:411;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:136"><span class="ft2"> Figure 6.13:  Recursive solution to Towers puzzle</span></div>
+<div style="position:absolute;top:443;left:444"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:469;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:467;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:469;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:488;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:503;left:90"><span class="ft4"> The </span></div>
+<div style="position:absolute;top:503;left:129"><span class="ft5">towers.java</span></div>
+<div style="position:absolute;top:503;left:253"><span class="ft4"> Program</span></div>
+<div style="position:absolute;top:505;left:335"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:511;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:530;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:547;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:547;left:118"><span class="ft6">towers.java</span></div>
+<div style="position:absolute;top:547;left:210"><span class="ft1"> program solves the Towers of Hanoi puzzle using this recursive </span></div>
+<div style="position:absolute;top:563;left:90"><span class="ft1">approach. It communicates the moves by displaying them; this requires much less code </span></div>
+<div style="position:absolute;top:579;left:90"><span class="ft1">than displaying the towers. It's up to the human reading the list to actually carry out the </span></div>
+<div style="position:absolute;top:595;left:90"><span class="ft1">moves.</span></div>
+<div style="position:absolute;top:592;left:135"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:595;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:614;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:653;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:90"><span class="ft1"> The code is simplicity itself. The </span></div>
+<div style="position:absolute;top:631;left:290"><span class="ft6">main()</span></div>
+<div style="position:absolute;top:631;left:340"><span class="ft1"> routine makes a single call to the recursive </span></div>
+<div style="position:absolute;top:648;left:90"><span class="ft1">method </span></div>
+<div style="position:absolute;top:648;left:141"><span class="ft6">doTowers()</span></div>
+<div style="position:absolute;top:648;left:224"><span class="ft1">. This method then calls itself recursively until the puzzle is solved. </span></div>
+<div style="position:absolute;top:665;left:90"><span class="ft1">In this version, shown in Listing 6.4, there are initially only 3 disks, but you can recompile </span></div>
+<div style="position:absolute;top:681;left:90"><span class="ft1">the program with any number.</span></div>
+<div style="position:absolute;top:678;left:275"><span class="ft0"> </span></div>
+<div style="position:absolute;top:653;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:681;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:716;left:90"><span class="ft7"> Listing 6.4 The </span></div>
+<div style="position:absolute;top:716;left:191"><span class="ft8">towers.java</span></div>
+<div style="position:absolute;top:716;left:283"><span class="ft7"> Program</span></div>
+<div style="position:absolute;top:713;left:344"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:719;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:753;left:113"><span class="ft6"> // towers.java</span></div>
+<div style="position:absolute;top:750;left:230"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:757;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:773;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:113"><span class="ft6"> // evaluates triangular numbers</span></div>
+<div style="position:absolute;top:769;left:371"><span class="ft0"> </span></div>
+<div style="position:absolute;top:773;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:777;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:792;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:791;left:113"><span class="ft6"> // to run this program: C&gt;java TowersApp</span></div>
+<div style="position:absolute;top:788;left:446"><span class="ft0"> </span></div>
+<div style="position:absolute;top:792;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:796;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:113"><span class="ft6"> import java.io.*;                 // for I/O</span></div>
+<div style="position:absolute;top:808;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:815;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:110"><span class="ft6"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:827;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:834;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:113"><span class="ft6"> class TowersApp</span></div>
+<div style="position:absolute;top:846;left:238"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:853;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:869;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:868;left:113"><span class="ft6">    {</span></div>
+<div style="position:absolute;top:865;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:869;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:872;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:888;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:887;left:113"><span class="ft6">    static int nDisks = 3;</span></div>
+<div style="position:absolute;top:884;left:322"><span class="ft0"> </span></div>
+<div style="position:absolute;top:888;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:892;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:907;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:907;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:911;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:113"><span class="ft6">    public static void main(String[] args)</span></div>
+<div style="position:absolute;top:923;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:930;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:945;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:945;left:113"><span class="ft6">       {</span></div>
+<div style="position:absolute;top:942;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:945;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:949;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:113"><span class="ft6">       doTowers(nDisks, 'A', 'B', 'C');</span></div>
+<div style="position:absolute;top:961;left:430"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:968;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:984;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:983;left:113"><span class="ft6">       }</span></div>
+<div style="position:absolute;top:980;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:984;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:987;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1007;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:113"><span class="ft6">    //----------------------------------------------------------</span></div>
+<div style="position:absolute;top:1037;left:113"><span class="ft6">-</span></div>
+<div style="position:absolute;top:1034;left:122"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1038;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:113"><span class="ft6">    public static void doTowers(int topN,</span></div>
+<div style="position:absolute;top:1050;left:446"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1057;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1073;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1072;left:113"><span class="ft6">                                char from, char inter, char to)</span></div>
+<div style="position:absolute;top:1069;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1076;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

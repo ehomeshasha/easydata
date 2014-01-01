@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0310</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0310.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 310 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">shown for </span></div>
+<div style="position:absolute;top:81;left:154"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:81;left:221"><span class="ft1">, and in the Workshop applet, a node with a duplicate key will be </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft1">inserted as the right child of its twin.</span></div>
+<div style="position:absolute;top:95;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:98;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:117;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:156;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:90"><span class="ft1"> The problem is that the </span></div>
+<div style="position:absolute;top:133;left:236"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:133;left:286"><span class="ft1"> routine will find only the first of two (or more) duplicate </span></div>
+<div style="position:absolute;top:151;left:90"><span class="ft1">nodes. The </span></div>
+<div style="position:absolute;top:151;left:164"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:151;left:214"><span class="ft1"> routine could be modified to check an additional data item, to </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft1">distinguish data items even when the keys were the same, but this would be (at least </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft1">somewhat) time-consuming.</span></div>
+<div style="position:absolute;top:180;left:264"><span class="ft0"> </span></div>
+<div style="position:absolute;top:156;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:183;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:202;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:241;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:218;left:90"><span class="ft1"> One option is to simply forbid duplicate keys. When duplicate keys are excluded by the </span></div>
+<div style="position:absolute;top:234;left:90"><span class="ft1">nature of the data (employee ID numbers, for example) there's no problem. Otherwise, </span></div>
+<div style="position:absolute;top:251;left:90"><span class="ft1">you need to modify the </span></div>
+<div style="position:absolute;top:251;left:235"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:251;left:301"><span class="ft1"> routine to check for equality during the insertion </span></div>
+<div style="position:absolute;top:268;left:90"><span class="ft1">process, and abort the insertion if a duplicate is found.</span></div>
+<div style="position:absolute;top:265;left:423"><span class="ft0"> </span></div>
+<div style="position:absolute;top:241;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:268;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:287;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:308;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:303;left:90"><span class="ft1"> The Fill routine in the Workshop applet excludes duplicates when generating the random </span></div>
+<div style="position:absolute;top:319;left:90"><span class="ft1">keys.</span></div>
+<div style="position:absolute;top:316;left:123"><span class="ft0"> </span></div>
+<div style="position:absolute;top:319;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:79"><span class="ft3"> </span></div>
+<div style="position:absolute;top:355;left:79"><span class="ft4">Duplicate Keys</span></div>
+<div style="position:absolute;top:357;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:356;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:361;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:380;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:396;left:90"><span class="ft1"> As in other data structures, the problem of duplicate keys must be addressed. In the code </span></div>
+<div style="position:absolute;top:412;left:90"><span class="ft1">shown for </span></div>
+<div style="position:absolute;top:412;left:154"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:412;left:221"><span class="ft1">, and in the Workshop applet, a node with a duplicate key will be </span></div>
+<div style="position:absolute;top:429;left:90"><span class="ft1">inserted as the right child of its twin.</span></div>
+<div style="position:absolute;top:426;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:429;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:448;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:487;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:464;left:90"><span class="ft1"> The problem is that the </span></div>
+<div style="position:absolute;top:464;left:236"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:464;left:286"><span class="ft1"> routine will find only the first of two (or more) duplicate </span></div>
+<div style="position:absolute;top:482;left:90"><span class="ft1">nodes. The </span></div>
+<div style="position:absolute;top:482;left:164"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:482;left:214"><span class="ft1"> routine could be modified to check an additional data item, to </span></div>
+<div style="position:absolute;top:498;left:90"><span class="ft1">distinguish data items even when the keys were the same, but this would be (at least </span></div>
+<div style="position:absolute;top:514;left:90"><span class="ft1">somewhat) time-consuming.</span></div>
+<div style="position:absolute;top:511;left:264"><span class="ft0"> </span></div>
+<div style="position:absolute;top:487;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:514;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:533;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:90"><span class="ft1"> One option is to simply forbid duplicate keys. When duplicate keys are excluded by the </span></div>
+<div style="position:absolute;top:565;left:90"><span class="ft1">nature of the data (employee ID numbers, for example) there's no problem. Otherwise, </span></div>
+<div style="position:absolute;top:582;left:90"><span class="ft1">you need to modify the </span></div>
+<div style="position:absolute;top:582;left:235"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:582;left:301"><span class="ft1"> routine to check for equality during the insertion </span></div>
+<div style="position:absolute;top:599;left:90"><span class="ft1">process, and abort the insertion if a duplicate is found.</span></div>
+<div style="position:absolute;top:596;left:423"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:599;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:618;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:639;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:634;left:90"><span class="ft1"> The Fill routine in the Workshop applet excludes duplicates when generating the random </span></div>
+<div style="position:absolute;top:650;left:90"><span class="ft1">keys.</span></div>
+<div style="position:absolute;top:647;left:123"><span class="ft0"> </span></div>
+<div style="position:absolute;top:650;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:667;left:79"><span class="ft3"> </span></div>
+<div style="position:absolute;top:686;left:79"><span class="ft4">Summary</span></div>
+<div style="position:absolute;top:688;left:164"><span class="ft0"> </span></div>
+<div style="position:absolute;top:687;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:692;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:726;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:727;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:724;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:727;left:107"><span class="ft5">Trees consist of nodes (circles) connected by edges (lines).</span></div>
+<div style="position:absolute;top:724;left:473"><span class="ft0"> </span></div>
+<div style="position:absolute;top:726;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:730;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:765;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:762;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:765;left:107"><span class="ft5">The root is the topmost node in a tree; it has no parent.</span></div>
+<div style="position:absolute;top:762;left:445"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:768;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:803;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:803;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:800;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:803;left:107"><span class="ft5">In a binary tree, a node has at most two children.</span></div>
+<div style="position:absolute;top:800;left:408"><span class="ft0"> </span></div>
+<div style="position:absolute;top:803;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:807;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:842;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:839;left:95"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:842;left:107"><span class="ft5">In a binary search tree, all the nodes that are left descendants of node A have key </span></div>
+<div style="position:absolute;top:858;left:107"><span class="ft5">values less than A; all the nodes that are A's right descendants have key values </span></div>
+<div style="position:absolute;top:874;left:107"><span class="ft5">greater than (or equal to) A.</span></div>
+<div style="position:absolute;top:871;left:278"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:874;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:893;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:908;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:909;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:906;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:909;left:107"><span class="ft5">Trees perform searches, insertions, and deletions in O(log N) time.</span></div>
+<div style="position:absolute;top:906;left:517"><span class="ft0"> </span></div>
+<div style="position:absolute;top:908;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:912;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:946;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:947;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:944;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:947;left:107"><span class="ft5">Nodes represent the data-objects being stored in the tree.</span></div>
+<div style="position:absolute;top:944;left:463"><span class="ft0"> </span></div>
+<div style="position:absolute;top:946;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:950;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:969;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:991;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:985;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:982;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:985;left:107"><span class="ft5">Edges are most commonly represented in a program by references to a node's </span></div>
+<div style="position:absolute;top:1001;left:107"><span class="ft5">children (and sometimes to its parent).</span></div>
+<div style="position:absolute;top:998;left:344"><span class="ft0"> </span></div>
+<div style="position:absolute;top:991;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1001;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1036;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:1033;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1036;left:107"><span class="ft5">Traversing a tree means visiting all its nodes in some order.</span></div>
+<div style="position:absolute;top:1033;left:474"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1040;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1059;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

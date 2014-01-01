@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0469</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0469.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 469 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> Step 2: Delete this vertex from the graph, and insert its label at the beginning of a list.</span></div>
+<div style="position:absolute;top:78;left:614"><span class="ft0">   </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:103;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:125;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:119;left:90"><span class="ft1"> Steps 1 and 2 are repeated until all the vertices are gone. At this point, the list shows the </span></div>
+<div style="position:absolute;top:135;left:90"><span class="ft1">vertices arranged in topological order.</span></div>
+<div style="position:absolute;top:132;left:323"><span class="ft0"> </span></div>
+<div style="position:absolute;top:125;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:135;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:154;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:170;left:90"><span class="ft1"> You can see the process at work by using the GraphD applet. Construct the graph of </span></div>
+<div style="position:absolute;top:186;left:90"><span class="ft2">Figure 13.11</span></div>
+<div style="position:absolute;top:186;left:168"><span class="ft3"> (or any other graph, if you prefer) by double-clicking to make vertices and </span></div>
+<div style="position:absolute;top:202;left:90"><span class="ft3">dragging to make edges. Then repeatedly click the Topo button. As each vertex is </span></div>
+<div style="position:absolute;top:218;left:90"><span class="ft3">removed, its label is placed at the beginning of the list below the graph.</span></div>
+<div style="position:absolute;top:215;left:527"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:90"><span class="ft1"> Deleting a vertex may seem like a drastic step, but it's the heart of the algorithm. The </span></div>
+<div style="position:absolute;top:269;left:90"><span class="ft1">algorithm can't figure out the second vertex to remove until the first vertex is gone. If you </span></div>
+<div style="position:absolute;top:285;left:90"><span class="ft1">need to, you can save the graph's data (the vertex list and the adjacency matrix) </span></div>
+<div style="position:absolute;top:301;left:90"><span class="ft1">elsewhere and restore it when the sort is completed, as we do in the GraphD applet.</span></div>
+<div style="position:absolute;top:298;left:607"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:301;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:320;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:350;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:90"><span class="ft1"> The algorithm works because if a vertex has no successors, it must be the last one in the </span></div>
+<div style="position:absolute;top:352;left:90"><span class="ft1">topological ordering. As soon as it's removed, one of the remaining vertices must have no </span></div>
+<div style="position:absolute;top:368;left:90"><span class="ft1">successors, so it will be the next-to-last one in the ordering, and so on.</span></div>
+<div style="position:absolute;top:365;left:523"><span class="ft0"> </span></div>
+<div style="position:absolute;top:350;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:368;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:417;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:403;left:90"><span class="ft1"> The topological sorting algorithm works on unconnected graphs as well as connected </span></div>
+<div style="position:absolute;top:419;left:90"><span class="ft1">graphs. This models the situation in which you have two unrelated goals, such as getting </span></div>
+<div style="position:absolute;top:435;left:90"><span class="ft1">a degree in mathematics and at the same time obtaining a certificate in first aid.</span></div>
+<div style="position:absolute;top:432;left:578"><span class="ft0"> </span></div>
+<div style="position:absolute;top:417;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:435;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:454;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:471;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:470;left:90"><span class="ft4"> Cycles and Trees</span></div>
+<div style="position:absolute;top:472;left:244"><span class="ft0"> </span></div>
+<div style="position:absolute;top:471;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:476;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:495;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:525;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:511;left:90"><span class="ft1"> One kind of graph the topological-sort algorithm cannot handle is a graph with cycles. </span></div>
+<div style="position:absolute;top:527;left:90"><span class="ft1">What's a cycle. It's a path that ends up where it started. In Figure 13.14 the path B-C-D-</span></div>
+<div style="position:absolute;top:543;left:90"><span class="ft1">B forms a cycle. (Notice that A-B-C-A is not a cycle because you can't go from C to A.)</span></div>
+<div style="position:absolute;top:540;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:543;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:562;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:240"><span class="ft0">  </span></div>
+<div style="position:absolute;top:617;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:661;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:680;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:136"><span class="ft6"> Figure 13.14:  Graph with a cycle</span></div>
+<div style="position:absolute;top:693;left:344"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:719;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:717;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:717;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:719;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:768;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:90"><span class="ft1"> A cycle models the Catch-22 situation (which some students claim to have actually </span></div>
+<div style="position:absolute;top:770;left:90"><span class="ft1">encountered at certain institutions), where course B is a prerequisite for course C, C is a </span></div>
+<div style="position:absolute;top:786;left:90"><span class="ft1">prerequisite for D, and D is a prerequisite for B.</span></div>
+<div style="position:absolute;top:783;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:768;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:786;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:805;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:851;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:90"><span class="ft1"> A graph with no cycles is called a tree. The binary and multiway trees we saw earlier in </span></div>
+<div style="position:absolute;top:837;left:90"><span class="ft1">this book are trees in this sense. However, the trees that arise in graphs are more </span></div>
+<div style="position:absolute;top:853;left:90"><span class="ft1">general than binary and multiway trees, which have a fixed maximum number of child </span></div>
+<div style="position:absolute;top:869;left:90"><span class="ft1">nodes. In a graph, a vertex in a tree can be connected to any number of other vertices, </span></div>
+<div style="position:absolute;top:885;left:90"><span class="ft1">provided that no cycles are created.</span></div>
+<div style="position:absolute;top:882;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:851;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:885;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:904;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:920;left:90"><span class="ft1"> A</span></div>
+<div style="position:absolute;top:920;left:100"><span class="ft1"> topological sort is carried out on a directed graph with no cycles. Such a graph is called </span></div>
+<div style="position:absolute;top:936;left:90"><span class="ft1">a directed, acyclic graph, often abbreviated DAG.</span></div>
+<div style="position:absolute;top:933;left:393"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:972;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:971;left:90"><span class="ft4"> Java Code</span></div>
+<div style="position:absolute;top:973;left:184"><span class="ft0"> </span></div>
+<div style="position:absolute;top:972;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:977;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:996;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1011;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1012;left:90"><span class="ft1"> Here's the Java code for the </span></div>
+<div style="position:absolute;top:1012;left:267"><span class="ft8">topo()</span></div>
+<div style="position:absolute;top:1012;left:317"><span class="ft1"> method, which carries out the topological sort:</span></div>
+<div style="position:absolute;top:1009;left:604"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1015;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1034;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1049;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1049;left:113"><span class="ft8"> public void topo()            // toplogical sort</span></div>
+<div style="position:absolute;top:1046;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1049;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1053;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1069;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1068;left:113"><span class="ft8">    {</span></div>
+<div style="position:absolute;top:1065;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1069;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1072;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

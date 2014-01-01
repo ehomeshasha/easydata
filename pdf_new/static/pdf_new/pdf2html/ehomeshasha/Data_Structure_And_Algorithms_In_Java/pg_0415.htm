@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0415</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0415.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 415 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">design, not full.</span></div>
+<div style="position:absolute;top:78;left:184"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1"> To implement this scheme the hash function and the size of the hash table must be </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">chosen with some care, so that a limited number of keys hash to the same value. In our </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">example we want only 8 records per key, on the average.</span></div>
+<div style="position:absolute;top:145;left:442"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:148;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:182;left:90"><span class="ft2"> Full Blocks</span></div>
+<div style="position:absolute;top:184;left:190"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:188;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:208;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:223;left:90"><span class="ft1"> Even with a good hash function, a block will occasionally become full. This can be </span></div>
+<div style="position:absolute;top:239;left:90"><span class="ft1">handled using variations of the collision-resolution schemes discussed for internal hash </span></div>
+<div style="position:absolute;top:255;left:90"><span class="ft1">tables: open addressing and separate chaining.</span></div>
+<div style="position:absolute;top:252;left:382"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:320;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:90"><span class="ft1"> In open addressing, if during insertion one block is found to be full, the algorithm inserts </span></div>
+<div style="position:absolute;top:307;left:90"><span class="ft1">the new record in a neighboring block. In linear probing this is the next block, but it could </span></div>
+<div style="position:absolute;top:322;left:90"><span class="ft1">also be selected using a quadratic probe or double hashing. In separate chaining, special </span></div>
+<div style="position:absolute;top:338;left:90"><span class="ft1">overflow blocks are made available; when a primary block is found to be full, the new </span></div>
+<div style="position:absolute;top:354;left:90"><span class="ft1">record is inserted in the overflow block.</span></div>
+<div style="position:absolute;top:351;left:330"><span class="ft0"> </span></div>
+<div style="position:absolute;top:320;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:355;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:374;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:403;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:390;left:90"><span class="ft1"> Full blocks are undesirable because an additional disk access is necessary for the </span></div>
+<div style="position:absolute;top:406;left:90"><span class="ft1">second block; this doubles the access time. However, this is acceptable if it happens </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft1">rarely.</span></div>
+<div style="position:absolute;top:419;left:129"><span class="ft0"> </span></div>
+<div style="position:absolute;top:403;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:422;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:441;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:462;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:457;left:90"><span class="ft1"> We've discussed only the simplest hash table implementation for external storage. There </span></div>
+<div style="position:absolute;top:473;left:90"><span class="ft1">are many more complex approaches that are beyond the scope of this book.</span></div>
+<div style="position:absolute;top:470;left:559"><span class="ft0"> </span></div>
+<div style="position:absolute;top:473;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:490;left:79"><span class="ft3"> </span></div>
+<div style="position:absolute;top:510;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:509;left:90"><span class="ft4"> Summary</span></div>
+<div style="position:absolute;top:511;left:176"><span class="ft0"> </span></div>
+<div style="position:absolute;top:510;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:515;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:534;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:550;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:547;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:550;left:107"><span class="ft1">A hash table is based on an array.</span></div>
+<div style="position:absolute;top:547;left:318"><span class="ft0"> </span></div>
+<div style="position:absolute;top:549;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:553;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:588;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:585;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:588;left:107"><span class="ft1">The range of key values is usually greater than the size of the array.</span></div>
+<div style="position:absolute;top:585;left:525"><span class="ft0"> </span></div>
+<div style="position:absolute;top:587;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:591;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:626;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:623;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:626;left:107"><span class="ft1">A key value is hashed to an array index by a hash function.</span></div>
+<div style="position:absolute;top:623;left:470"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:630;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:649;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:670;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:665;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:662;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:665;left:107"><span class="ft1">An English-language dictionary is a typical example of a database that can be </span></div>
+<div style="position:absolute;top:681;left:107"><span class="ft1">efficiently handled with a hash table.</span></div>
+<div style="position:absolute;top:678;left:331"><span class="ft0"> </span></div>
+<div style="position:absolute;top:670;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:681;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:716;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:713;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:716;left:107"><span class="ft1">The hashing of a key to an already filled array cell is called a collision.</span></div>
+<div style="position:absolute;top:713;left:536"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:719;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:754;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:751;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:754;left:107"><span class="ft1">Collisions can be handled in two major ways: open addressing and separate chaining.</span></div>
+<div style="position:absolute;top:751;left:635"><span class="ft0">  </span></div>
+<div style="position:absolute;top:757;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:776;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:792;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:789;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:792;left:107"><span class="ft1">In open addressing, data items that hash to a full array cell are placed in another cell </span></div>
+<div style="position:absolute;top:808;left:107"><span class="ft1">in the array.</span></div>
+<div style="position:absolute;top:805;left:181"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:808;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:828;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:843;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:840;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:843;left:107"><span class="ft1">In separate chaining, each array element consists of a linked list. All data items </span></div>
+<div style="position:absolute;top:859;left:107"><span class="ft1">hashing to a given array index are inserted in that list.</span></div>
+<div style="position:absolute;top:856;left:436"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:860;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:879;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:900;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:895;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:892;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:895;left:107"><span class="ft1">We discussed three kinds of open addressing: linear probing, quadratic probing, and </span></div>
+<div style="position:absolute;top:911;left:107"><span class="ft1">double hashing.</span></div>
+<div style="position:absolute;top:908;left:205"><span class="ft0"> </span></div>
+<div style="position:absolute;top:900;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:911;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:930;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:946;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:943;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:946;left:107"><span class="ft1">In linear probing the step size is always 1, so if x is the array index calculated by the </span></div>
+<div style="position:absolute;top:962;left:107"><span class="ft1">hash function, the probe goes to x, x+1, x+2, x+3, and so on.</span></div>
+<div style="position:absolute;top:959;left:481"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:962;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:981;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:996;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:997;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:994;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:997;left:107"><span class="ft1">The number of such steps required to find a specified item is called the probe length.</span></div>
+<div style="position:absolute;top:994;left:627"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1000;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1019;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1035;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:1032;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1035;left:107"><span class="ft1">In linear probing, contiguous sequences of filled cells appear. These are called primary </span></div>
+<div style="position:absolute;top:1051;left:107"><span class="ft1">clusters, and they reduce performance.</span></div>
+<div style="position:absolute;top:1048;left:348"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1070;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

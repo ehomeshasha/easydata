@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0046</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft5{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft6{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#ffffff;}
+.ft7{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0046.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 46 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">no point looking further.</span></div>
+<div style="position:absolute;top:78;left:235"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft2"> Try out the Ins and Del buttons as well. Use Ins to insert an item with a key value that will </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft2">go somewhere in the middle of the existing items. You'll see that insertion requires </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft2">moving all the items with larger key values larger than the item being inserted.</span></div>
+<div style="position:absolute;top:145;left:569"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:148;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:205;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft2"> Use the Del button to delete an item from the middle of the array. Deletion works much </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft2">the same as it did in the Array applet, shifting items with higher index numbers down to fill </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft2">in the hole left by the deletion. In the ordered array, however, the deletion algorithm can </span></div>
+<div style="position:absolute;top:231;left:90"><span class="ft2">quit partway through if it doesn't find the item, just as the search routine can.</span></div>
+<div style="position:absolute;top:228;left:559"><span class="ft0"> </span></div>
+<div style="position:absolute;top:205;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:231;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:250;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:266;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:265;left:90"><span class="ft3"> Binary Search</span></div>
+<div style="position:absolute;top:267;left:216"><span class="ft0"> </span></div>
+<div style="position:absolute;top:266;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:312;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:307;left:90"><span class="ft2"> The payoff for using an ordered array comes when we use a binary search. This kind of </span></div>
+<div style="position:absolute;top:322;left:90"><span class="ft2">search is much faster than a linear search, especially for large arrays.</span></div>
+<div style="position:absolute;top:319;left:518"><span class="ft0"> </span></div>
+<div style="position:absolute;top:312;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:323;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:342;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:357;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:357;left:90"><span class="ft4"> The Guess-a-Number Game</span></div>
+<div style="position:absolute;top:357;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:357;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:361;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:380;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:426;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:396;left:90"><span class="ft2"> Binary search uses the same approach you did as a kid (if you were smart) to guess a </span></div>
+<div style="position:absolute;top:412;left:90"><span class="ft2">number in the well-known children's guessing game. In this game, a friend asks you to </span></div>
+<div style="position:absolute;top:428;left:90"><span class="ft2">guess a number she's thinking of between 1 and 100. When you guess a number, she'll </span></div>
+<div style="position:absolute;top:444;left:90"><span class="ft2">tell you one of three things: your guess is larger than the number she's thinking of, it's </span></div>
+<div style="position:absolute;top:460;left:90"><span class="ft2">smaller, or you guessed correctly.</span></div>
+<div style="position:absolute;top:457;left:298"><span class="ft0"> </span></div>
+<div style="position:absolute;top:426;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:460;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:479;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:517;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:495;left:90"><span class="ft2"> To find the number in the fewest guesses, you should always start by guessing 50. If she </span></div>
+<div style="position:absolute;top:511;left:90"><span class="ft2">says your guess is too low, you deduce the number is between 51 and 100, so your next </span></div>
+<div style="position:absolute;top:527;left:90"><span class="ft2">guess should be 75 (halfway between 51 and 100). If she says it's too high, you deduce </span></div>
+<div style="position:absolute;top:543;left:90"><span class="ft2">the number is between 1 and 49, so your next guess should be 25.</span></div>
+<div style="position:absolute;top:540;left:500"><span class="ft0"> </span></div>
+<div style="position:absolute;top:517;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:543;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:562;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:584;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:90"><span class="ft2"> Each guess allows you to divide the range of possible values in half. Finally, the range is </span></div>
+<div style="position:absolute;top:594;left:90"><span class="ft2">only one number long, and that's the answer.</span></div>
+<div style="position:absolute;top:591;left:367"><span class="ft0"> </span></div>
+<div style="position:absolute;top:584;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:594;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:613;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:659;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:629;left:90"><span class="ft2"> Notice how few guesses are required to find the number. If you used a linear search, </span></div>
+<div style="position:absolute;top:645;left:90"><span class="ft2">guessing first 1, then 2, then 3, and so on, it would take you, on the average, 50 guesses </span></div>
+<div style="position:absolute;top:661;left:90"><span class="ft2">to find the number. In a binary search each guess divides the range of possible values in </span></div>
+<div style="position:absolute;top:677;left:90"><span class="ft2">half, so the number of quesses required is far fewer. Table 2.2 shows a game session </span></div>
+<div style="position:absolute;top:693;left:90"><span class="ft2">when the number to be guessed is 33.</span></div>
+<div style="position:absolute;top:690;left:326"><span class="ft0"> </span></div>
+<div style="position:absolute;top:659;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:693;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:728;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:728;left:90"><span class="ft5"> Table 2.2: Guessing a Number</span></div>
+<div style="position:absolute;top:725;left:289"><span class="ft0"> </span></div>
+<div style="position:absolute;top:728;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:731;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:751;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:766;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:770;left:91"><span class="ft6">  </span></div>
+<div style="position:absolute;top:773;left:90"><span class="ft7"> </span></div>
+<div style="position:absolute;top:766;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:770;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:805;left:95"><span class="ft5">  </span></div>
+<div style="position:absolute;top:821;left:95"><span class="ft5">Step Number</span></div>
+<div style="position:absolute;top:818;left:181"><span class="ft0">   </span></div>
+<div style="position:absolute;top:821;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:805;left:222"><span class="ft5"> </span></div>
+<div style="position:absolute;top:821;left:222"><span class="ft5">Number Guessed</span></div>
+<div style="position:absolute;top:818;left:337"><span class="ft0">   </span></div>
+<div style="position:absolute;top:821;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:805;left:365"><span class="ft5"> </span></div>
+<div style="position:absolute;top:821;left:365"><span class="ft5">Result</span></div>
+<div style="position:absolute;top:818;left:408"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:494"><span class="ft0">  </span></div>
+<div style="position:absolute;top:821;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:805;left:508"><span class="ft5">Range of Possible </span></div>
+<div style="position:absolute;top:821;left:508"><span class="ft5">Values</span></div>
+<div style="position:absolute;top:818;left:553"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:821;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:840;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:859;left:91"><span class="ft6">  </span></div>
+<div style="position:absolute;top:862;left:90"><span class="ft7"> </span></div>
+<div style="position:absolute;top:855;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:859;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:95"><span class="ft2"> 0</span></div>
+<div style="position:absolute;top:891;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:215"><span class="ft0">  </span></div>
+<div style="position:absolute;top:898;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:894;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:351"><span class="ft0"> </span></div>
+<div style="position:absolute;top:898;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:894;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:494"><span class="ft0"> </span></div>
+<div style="position:absolute;top:898;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:894;left:508"><span class="ft2">  1-100</span></div>
+<div style="position:absolute;top:891;left:552"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:898;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:884;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:917;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:933;left:95"><span class="ft2"> 1</span></div>
+<div style="position:absolute;top:930;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:215"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:917;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:933;left:222"><span class="ft2">50</span></div>
+<div style="position:absolute;top:930;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:351"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:917;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:933;left:365"><span class="ft2">Too high</span></div>
+<div style="position:absolute;top:930;left:419"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:494"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:917;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:933;left:508"><span class="ft2">  1-49</span></div>
+<div style="position:absolute;top:930;left:544"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:923;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:955;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:971;left:95"><span class="ft2"> 2</span></div>
+<div style="position:absolute;top:968;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:215"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:971;left:222"><span class="ft2">25</span></div>
+<div style="position:absolute;top:968;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:351"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:971;left:365"><span class="ft2">Too low</span></div>
+<div style="position:absolute;top:968;left:414"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:494"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:971;left:508"><span class="ft2">26-49</span></div>
+<div style="position:absolute;top:968;left:544"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:961;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:993;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:95"><span class="ft2"> 3</span></div>
+<div style="position:absolute;top:1006;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:215"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1013;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1009;left:222"><span class="ft2">37</span></div>
+<div style="position:absolute;top:1006;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:351"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1013;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1009;left:365"><span class="ft2">Too high</span></div>
+<div style="position:absolute;top:1006;left:419"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:494"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1013;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1009;left:508"><span class="ft2">26-36</span></div>
+<div style="position:absolute;top:1006;left:544"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1013;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:999;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1032;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1048;left:95"><span class="ft2"> 4</span></div>
+<div style="position:absolute;top:1045;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:215"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1032;left:223"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1048;left:222"><span class="ft2">31</span></div>
+<div style="position:absolute;top:1045;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:351"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1032;left:366"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1048;left:365"><span class="ft2">Too low</span></div>
+<div style="position:absolute;top:1045;left:414"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:494"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:365"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1032;left:509"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1048;left:508"><span class="ft2">32-36</span></div>
+<div style="position:absolute;top:1045;left:544"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:637"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:508"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1037;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1070;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1070;left:223"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1070;left:366"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1070;left:509"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:646"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

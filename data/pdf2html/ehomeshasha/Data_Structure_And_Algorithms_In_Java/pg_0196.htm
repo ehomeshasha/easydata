@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0196</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0196.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 196 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:113"><span class="ft1"> 20 40 100 7 60 80</span></div>
+<div style="position:absolute;top:77;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:103;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:119;left:90"><span class="ft2"> Experimenting with the </span></div>
+<div style="position:absolute;top:119;left:235"><span class="ft1">interIterator.java</span></div>
+<div style="position:absolute;top:119;left:385"><span class="ft2"> program will give you a feeling for how </span></div>
+<div style="position:absolute;top:136;left:90"><span class="ft2">the iterator moves along the links and how it can insert and delete links anywhere in the </span></div>
+<div style="position:absolute;top:152;left:90"><span class="ft2">list.</span></div>
+<div style="position:absolute;top:149;left:111"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:152;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:171;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:188;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:187;left:90"><span class="ft3"> Where Does It Point.</span></div>
+<div style="position:absolute;top:189;left:279"><span class="ft0"> </span></div>
+<div style="position:absolute;top:188;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:193;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:212;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:234;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:228;left:90"><span class="ft2"> One of the design issues in an iterator class is deciding where the iterator should point </span></div>
+<div style="position:absolute;top:244;left:90"><span class="ft2">following various operations.</span></div>
+<div style="position:absolute;top:241;left:266"><span class="ft0"> </span></div>
+<div style="position:absolute;top:234;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:244;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:263;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:334;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:280;left:90"><span class="ft2"> When you delete an item with </span></div>
+<div style="position:absolute;top:280;left:276"><span class="ft1">deleteCurrent()</span></div>
+<div style="position:absolute;top:280;left:401"><span class="ft2">, should the iterator end up pointing to </span></div>
+<div style="position:absolute;top:296;left:90"><span class="ft2">the next item, to the previous item, or back at the beginning of the list. It's convenient to </span></div>
+<div style="position:absolute;top:312;left:90"><span class="ft2">keep it in the vicinity of the deleted item, because the chances are the class user will be </span></div>
+<div style="position:absolute;top:328;left:90"><span class="ft2">carrying out other operations there. However, you can't move it to the previous item </span></div>
+<div style="position:absolute;top:345;left:90"><span class="ft2">because there's no way to reset the list's </span></div>
+<div style="position:absolute;top:345;left:343"><span class="ft1">previous</span></div>
+<div style="position:absolute;top:345;left:410"><span class="ft2"> field to the previous item. (You'd </span></div>
+<div style="position:absolute;top:361;left:90"><span class="ft2">need a doubly linked list for that.) Our solution is to move the iterator to the link following </span></div>
+<div style="position:absolute;top:377;left:90"><span class="ft2">the deleted link. If we've just deleted the item at the end of the list, the iterator is set to </span></div>
+<div style="position:absolute;top:393;left:90"><span class="ft2">the beginning of the list.</span></div>
+<div style="position:absolute;top:390;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:334;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:393;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:412;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:435;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:429;left:90"><span class="ft2"> Following calls to </span></div>
+<div style="position:absolute;top:429;left:200"><span class="ft1">insertBefore()</span></div>
+<div style="position:absolute;top:429;left:317"><span class="ft2"> and </span></div>
+<div style="position:absolute;top:429;left:347"><span class="ft1">insertAfter()</span></div>
+<div style="position:absolute;top:429;left:456"><span class="ft2">, we return with </span></div>
+<div style="position:absolute;top:429;left:554"><span class="ft1">current</span></div>
+<div style="position:absolute;top:429;left:612"><span class="ft2"> </span></div>
+<div style="position:absolute;top:446;left:90"><span class="ft2">pointing to the newly inserted item.</span></div>
+<div style="position:absolute;top:443;left:304"><span class="ft0"> </span></div>
+<div style="position:absolute;top:435;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:446;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:465;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:482;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:480;left:90"><span class="ft3"> The </span></div>
+<div style="position:absolute;top:480;left:129"><span class="ft4">atEnd()</span></div>
+<div style="position:absolute;top:480;left:208"><span class="ft3"> Method</span></div>
+<div style="position:absolute;top:482;left:279"><span class="ft0"> </span></div>
+<div style="position:absolute;top:482;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:488;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:507;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:538;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:524;left:90"><span class="ft2"> There's another question about the </span></div>
+<div style="position:absolute;top:524;left:309"><span class="ft1">atEnd()</span></div>
+<div style="position:absolute;top:524;left:367"><span class="ft2"> method. It could return </span></div>
+<div style="position:absolute;top:524;left:514"><span class="ft1">true</span></div>
+<div style="position:absolute;top:524;left:547"><span class="ft2"> when the </span></div>
+<div style="position:absolute;top:541;left:90"><span class="ft2">iterator points to the last valid link in the list, or it could return </span></div>
+<div style="position:absolute;top:541;left:466"><span class="ft1">true</span></div>
+<div style="position:absolute;top:541;left:500"><span class="ft2"> when the iterator </span></div>
+<div style="position:absolute;top:558;left:90"><span class="ft2">points past the last link (and is thus not pointing to a valid link).</span></div>
+<div style="position:absolute;top:555;left:475"><span class="ft0"> </span></div>
+<div style="position:absolute;top:538;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:558;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:606;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:593;left:90"><span class="ft2"> With the first approach, a loop condition used to iterate through the list becomes awkward </span></div>
+<div style="position:absolute;top:609;left:90"><span class="ft2">because you need to perform an operation on the last link before checking whether it is </span></div>
+<div style="position:absolute;top:625;left:90"><span class="ft2">the last link (and terminating the loop if it is).</span></div>
+<div style="position:absolute;top:622;left:361"><span class="ft0"> </span></div>
+<div style="position:absolute;top:606;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:625;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:644;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:690;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:660;left:90"><span class="ft2"> However, the second approach doesn't allow you to find out you're at the end of the list </span></div>
+<div style="position:absolute;top:676;left:90"><span class="ft2">until it's too late to do anything with the last link. (You couldn't look for the last link and </span></div>
+<div style="position:absolute;top:692;left:90"><span class="ft2">then delete it, for example.) This is because when </span></div>
+<div style="position:absolute;top:692;left:400"><span class="ft1">atEnd()</span></div>
+<div style="position:absolute;top:692;left:458"><span class="ft2"> became true, the iterator </span></div>
+<div style="position:absolute;top:709;left:90"><span class="ft2">would no longer point to the last link (or indeed any valid link), and you can't &quot;back up&quot; </span></div>
+<div style="position:absolute;top:725;left:90"><span class="ft2">the iterator in a singly linked list.</span></div>
+<div style="position:absolute;top:722;left:287"><span class="ft0"> </span></div>
+<div style="position:absolute;top:690;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:725;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:744;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:766;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:760;left:90"><span class="ft2"> We take the first approach. This way the iterator always points to a valid link, although </span></div>
+<div style="position:absolute;top:776;left:90"><span class="ft2">you must be careful when writing a loop that iterates through the list, as we'll see next.</span></div>
+<div style="position:absolute;top:773;left:619"><span class="ft0">   </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:812;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:90"><span class="ft3"> Iterative Operations</span></div>
+<div style="position:absolute;top:813;left:266"><span class="ft0"> </span></div>
+<div style="position:absolute;top:812;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:817;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:866;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:852;left:90"><span class="ft2"> As we noted, an iterator allows you to traverse the list, performing operations on certain </span></div>
+<div style="position:absolute;top:868;left:90"><span class="ft2">data items. Here's a code fragment that displays the list contents, using an iterator </span></div>
+<div style="position:absolute;top:884;left:90"><span class="ft2">instead of the list's </span></div>
+<div style="position:absolute;top:884;left:208"><span class="ft1">displayList()</span></div>
+<div style="position:absolute;top:884;left:316"><span class="ft2"> method:</span></div>
+<div style="position:absolute;top:881;left:370"><span class="ft0"> </span></div>
+<div style="position:absolute;top:866;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:885;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:904;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:920;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:919;left:113"><span class="ft1"> iter1.reset();                               // start at first</span></div>
+<div style="position:absolute;top:916;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:923;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:939;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:938;left:113"><span class="ft1"> double value = iter1.getCurrent().dData;     // display link</span></div>
+<div style="position:absolute;top:935;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:943;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:958;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:957;left:113"><span class="ft1"> System.out.println(value + &quot; &quot;);</span></div>
+<div style="position:absolute;top:954;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:958;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:962;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:977;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:977;left:113"><span class="ft1"> while( !iter1.atEnd() )                      // until end,</span></div>
+<div style="position:absolute;top:974;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:981;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:996;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:996;left:113"><span class="ft1">    {</span></div>
+<div style="position:absolute;top:993;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:996;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1000;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1022;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1015;left:113"><span class="ft1">    iter1.nextLink();                         // go to next </span></div>
+<div style="position:absolute;top:1031;left:113"><span class="ft1">link,</span></div>
+<div style="position:absolute;top:1028;left:155"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1022;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1032;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1046;left:113"><span class="ft1">    double value = iter1.getCurrent().dData;  // display it</span></div>
+<div style="position:absolute;top:1043;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:113"><span class="ft1">    System.out.println(value + &quot; &quot;);</span></div>
+<div style="position:absolute;top:1063;left:405"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1070;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

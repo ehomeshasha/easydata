@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0486</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0486.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 486 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> Listing 14.1 The mstw.java Program</span></div>
+<div style="position:absolute;top:78;left:326"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:103;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:113"><span class="ft2"> // mstw.java</span></div>
+<div style="position:absolute;top:115;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:137;left:113"><span class="ft2"> // demonstrates minimum spanning tree with weighted graphs</span></div>
+<div style="position:absolute;top:134;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:141;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:156;left:113"><span class="ft2"> // to run this program: C&gt;java MSTWApp</span></div>
+<div style="position:absolute;top:153;left:430"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:175;left:113"><span class="ft2"> import java.awt.*;</span></div>
+<div style="position:absolute;top:172;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:180;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:110"><span class="ft2"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:192;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:199;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:113"><span class="ft2"> class Edge</span></div>
+<div style="position:absolute;top:211;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:230;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:252;left:113"><span class="ft2">    public int srcVert;   // index of a vertex starting edge</span></div>
+<div style="position:absolute;top:249;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:113"><span class="ft2">    public int destVert;  // index of a vertex ending edge</span></div>
+<div style="position:absolute;top:268;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:276;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:113"><span class="ft2">    public int distance;  // distance from src to dest</span></div>
+<div style="position:absolute;top:287;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:295;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:310;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:314;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:113"><span class="ft2">    public Edge(int sv, int dv, int d)  // constructor</span></div>
+<div style="position:absolute;top:326;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:333;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:345;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:352;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:367;left:113"><span class="ft2">       srcVert = sv;</span></div>
+<div style="position:absolute;top:364;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:386;left:113"><span class="ft2">       destVert = dv;</span></div>
+<div style="position:absolute;top:383;left:280"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:391;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:405;left:113"><span class="ft2">       distance = d;</span></div>
+<div style="position:absolute;top:402;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:410;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:422;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:429;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:113"><span class="ft2">    }  // end class Edge</span></div>
+<div style="position:absolute;top:441;left:305"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:448;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:482;left:110"><span class="ft2"> ////////////////////////////////////////////////////////////////</span></div>
+<div style="position:absolute;top:479;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:643"><span class="ft0"> </span></div>
+<div style="position:absolute;top:486;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:520;left:113"><span class="ft2"> class PriorityQ</span></div>
+<div style="position:absolute;top:517;left:238"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:525;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:540;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:540;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:537;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:540;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:544;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:113"><span class="ft2">    // array in sorted order, from max at 0 to min at size-1</span></div>
+<div style="position:absolute;top:556;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:563;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:113"><span class="ft2">    private final int SIZE = 20;</span></div>
+<div style="position:absolute;top:575;left:371"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:582;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:113"><span class="ft2">    private Edge[] queArray;</span></div>
+<div style="position:absolute;top:594;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:601;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:616;left:113"><span class="ft2">    private int size;</span></div>
+<div style="position:absolute;top:613;left:280"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:620;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:636;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:636;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:640;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:113"><span class="ft2">    public PriorityQ()            // constructor</span></div>
+<div style="position:absolute;top:651;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:659;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:671;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:678;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:113"><span class="ft2">       queArray = new Edge[SIZE];</span></div>
+<div style="position:absolute;top:690;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:697;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:113"><span class="ft2">       size = 0;</span></div>
+<div style="position:absolute;top:709;left:238"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:716;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:732;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:731;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:728;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:732;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:735;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:751;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:751;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:769;left:113"><span class="ft2">    public void insert(Edge item)  // insert item in sorted </span></div>
+<div style="position:absolute;top:785;left:113"><span class="ft2">order</span></div>
+<div style="position:absolute;top:782;left:155"><span class="ft0"> </span></div>
+<div style="position:absolute;top:776;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:786;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:798;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:805;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:820;left:113"><span class="ft2">       int j;</span></div>
+<div style="position:absolute;top:817;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:824;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:840;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:840;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:844;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:859;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:858;left:113"><span class="ft2">       for(j=0; j&lt;size; j++)           // find place to insert</span></div>
+<div style="position:absolute;top:855;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:863;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:113"><span class="ft2">          if( item.distance &gt;= queArray[j].distance )</span></div>
+<div style="position:absolute;top:875;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:882;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:897;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:897;left:113"><span class="ft2">             break;</span></div>
+<div style="position:absolute;top:894;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:897;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:901;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:916;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:916;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:920;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:936;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:935;left:113"><span class="ft2">       for(int k=size-1; k&gt;=j; k--)    // move items up</span></div>
+<div style="position:absolute;top:932;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:936;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:939;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:954;left:113"><span class="ft2">          queArray[k+1] = queArray[k];</span></div>
+<div style="position:absolute;top:951;left:421"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:959;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:974;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:978;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:113"><span class="ft2">       queArray[j] = item;             // insert item</span></div>
+<div style="position:absolute;top:990;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:997;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1012;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1012;left:113"><span class="ft2">       size++;</span></div>
+<div style="position:absolute;top:1009;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1012;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1016;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:1028;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1035;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1054;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1070;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1069;left:113"><span class="ft2">    public Edge removeMin()            // remove minimum item</span></div>
+<div style="position:absolute;top:1066;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1074;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

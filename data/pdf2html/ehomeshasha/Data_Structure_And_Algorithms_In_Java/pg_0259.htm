@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0259</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0259.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 259 -</span></div>
+<div style="position:absolute;top:112;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> Once the array is partitioned, </span></div>
+<div style="position:absolute;top:81;left:272"><span class="ft2">recQuickSort()</span></div>
+<div style="position:absolute;top:81;left:389"><span class="ft1"> calls itself recursively, once for the left </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft1">part of its array, from </span></div>
+<div style="position:absolute;top:98;left:222"><span class="ft2">left</span></div>
+<div style="position:absolute;top:98;left:255"><span class="ft1"> to </span></div>
+<div style="position:absolute;top:98;left:275"><span class="ft2">partition-1</span></div>
+<div style="position:absolute;top:98;left:366"><span class="ft1">, and once for the right part, from </span></div>
+<div style="position:absolute;top:115;left:90"><span class="ft2">partition+1</span></div>
+<div style="position:absolute;top:115;left:182"><span class="ft1"> to </span></div>
+<div style="position:absolute;top:115;left:201"><span class="ft2">right</span></div>
+<div style="position:absolute;top:115;left:243"><span class="ft1">. Note that the data item at the index </span></div>
+<div style="position:absolute;top:115;left:471"><span class="ft2">partition</span></div>
+<div style="position:absolute;top:115;left:549"><span class="ft1"> is not included </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">in either of the recursive calls. Why not. Doesn't it need to be sorted. The explanation </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">lies in how the pivot value is chosen.</span></div>
+<div style="position:absolute;top:145;left:315"><span class="ft0"> </span></div>
+<div style="position:absolute;top:112;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:148;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:184;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft3"> Choosing a Pivot Value</span></div>
+<div style="position:absolute;top:185;left:299"><span class="ft0"> </span></div>
+<div style="position:absolute;top:184;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:189;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:208;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:230;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:224;left:90"><span class="ft1"> What pivot value should the </span></div>
+<div style="position:absolute;top:224;left:265"><span class="ft2">partitionIt()</span></div>
+<div style="position:absolute;top:224;left:373"><span class="ft1"> method use. Here are some relevant </span></div>
+<div style="position:absolute;top:241;left:90"><span class="ft1">ideas:</span></div>
+<div style="position:absolute;top:238;left:127"><span class="ft0"> </span></div>
+<div style="position:absolute;top:230;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:241;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:260;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:282;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:276;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:273;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:276;left:107"><span class="ft4">The pivot value should be the key value of an actual data item; this item is called the </span></div>
+<div style="position:absolute;top:292;left:107"><span class="ft5">p</span></div>
+<div style="position:absolute;top:292;left:115"><span class="ft5">ivot.</span></div>
+<div style="position:absolute;top:289;left:141"><span class="ft0"> </span></div>
+<div style="position:absolute;top:282;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:292;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:311;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:333;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:327;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:324;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:327;left:107"><span class="ft4">You can pick a data item to be the pivot more or less at random. For simplicity, let's </span></div>
+<div style="position:absolute;top:343;left:107"><span class="ft4">say we always pick the item on the right end of the subarray being partitioned.</span></div>
+<div style="position:absolute;top:340;left:586"><span class="ft0"> </span></div>
+<div style="position:absolute;top:333;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:344;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:363;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:384;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:379;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:376;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:379;left:107"><span class="ft4">After the partition, if the pivot is inserted at the boundary between the left and right </span></div>
+<div style="position:absolute;top:394;left:107"><span class="ft4">subarrays, it will be in its final sorted position.</span></div>
+<div style="position:absolute;top:391;left:385"><span class="ft0"> </span></div>
+<div style="position:absolute;top:384;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:395;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:414;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:90"><span class="ft1"> This last point may sound unlikely, but remember that, because the pivot's key value is </span></div>
+<div style="position:absolute;top:446;left:90"><span class="ft1">used to partition the array, then following the partition the left subarray holds items </span></div>
+<div style="position:absolute;top:462;left:90"><span class="ft1">smaller than the pivot, and the right subarray holds items larger. The pivot starts out on </span></div>
+<div style="position:absolute;top:478;left:90"><span class="ft1">the right, but if it could somehow be placed between these two subarrays, it would be in </span></div>
+<div style="position:absolute;top:494;left:90"><span class="ft1">the right place; that is, in its final sorted position. Figure 7.9 shows how this looks with a </span></div>
+<div style="position:absolute;top:509;left:90"><span class="ft1">pivot whose key value is 36.</span></div>
+<div style="position:absolute;top:506;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:510;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:529;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:627;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:714;left:402"><span class="ft0">  </span></div>
+<div style="position:absolute;top:627;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:714;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:733;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:136"><span class="ft6"> Figure 7.9:  The pivot and the subarrays</span></div>
+<div style="position:absolute;top:746;left:386"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:772;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:770;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:770;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:772;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:791;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:813;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:807;left:90"><span class="ft1"> This figure is somewhat fanciful because you can't actually take an array apart as we've </span></div>
+<div style="position:absolute;top:823;left:90"><span class="ft1">shown. So how do we move the pivot to its proper place.</span></div>
+<div style="position:absolute;top:820;left:442"><span class="ft0"> </span></div>
+<div style="position:absolute;top:813;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:823;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:842;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:880;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:858;left:90"><span class="ft1"> We could shift all the items in the right subarray to the right one cell to make room for the </span></div>
+<div style="position:absolute;top:874;left:90"><span class="ft1">pivot. However, this is inefficient and unnecessary. Remember that all the items in the </span></div>
+<div style="position:absolute;top:890;left:90"><span class="ft1">right subarray, although they are larger than the pivot, are not yet sorted, so they can be </span></div>
+<div style="position:absolute;top:906;left:90"><span class="ft1">moved around within the right subarray without affecting anything. </span></div>
+<div style="position:absolute;top:903;left:499"><span class="ft0"> </span></div>
+<div style="position:absolute;top:880;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:906;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:925;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:971;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:941;left:90"><span class="ft1"> Therefore, to simplify inserting the pivot in its proper place, we can simply swap the pivot </span></div>
+<div style="position:absolute;top:957;left:90"><span class="ft1">(36) and the left item in the right subarray, which is 63. This places the pivot in its proper </span></div>
+<div style="position:absolute;top:973;left:90"><span class="ft1">position between the left and right groups. The 63 is switched to the right end, but </span></div>
+<div style="position:absolute;top:989;left:90"><span class="ft1">because it remains in the right (larger) group, the partitioning is undisturbed. This is </span></div>
+<div style="position:absolute;top:1005;left:90"><span class="ft1">shown in Figure 7.10</span></div>
+<div style="position:absolute;top:1005;left:219"><span class="ft4">.</span></div>
+<div style="position:absolute;top:1002;left:223"><span class="ft0"> </span></div>
+<div style="position:absolute;top:971;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1005;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1024;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0229</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft6{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0229.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 229 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">resulting patterns show clearly how each range is sorted individually and merged with its </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">other half, and how the ranges grow larger and larger.</span></div>
+<div style="position:absolute;top:94;left:421"><span class="ft0"> </span></div>
+<div style="position:absolute;top:97;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:131;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:131;left:129"><span class="ft3">mergeSort.java</span></div>
+<div style="position:absolute;top:131;left:286"><span class="ft2"> Program</span></div>
+<div style="position:absolute;top:133;left:369"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:139;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:158;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:181;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:175;left:90"><span class="ft1"> In a moment we'll look at the entire </span></div>
+<div style="position:absolute;top:175;left:308"><span class="ft4">mergeSort.java</span></div>
+<div style="position:absolute;top:175;left:425"><span class="ft1"> program. First, let's focus on the </span></div>
+<div style="position:absolute;top:191;left:90"><span class="ft1">method that carries out the mergesort. Here it is:</span></div>
+<div style="position:absolute;top:188;left:388"><span class="ft0"> </span></div>
+<div style="position:absolute;top:181;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:191;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:210;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:226;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:225;left:113"><span class="ft4"> private void recMergeSort(double[] workSpace, int lowerBound,</span></div>
+<div style="position:absolute;top:222;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:230;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:245;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:245;left:113"><span class="ft4">                                              int upperBound)</span></div>
+<div style="position:absolute;top:242;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:249;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:264;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:264;left:113"><span class="ft4">    {</span></div>
+<div style="position:absolute;top:261;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:264;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:268;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:283;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:283;left:113"><span class="ft4">    if(lowerBound == upperBound)            // if range is 1,</span></div>
+<div style="position:absolute;top:280;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:287;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:303;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:302;left:113"><span class="ft4">       return;                              // no use sorting</span></div>
+<div style="position:absolute;top:299;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:306;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:322;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:321;left:113"><span class="ft4">    else</span></div>
+<div style="position:absolute;top:318;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:322;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:326;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:341;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:340;left:113"><span class="ft4">       {                                    // find midpoint</span></div>
+<div style="position:absolute;top:337;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:345;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:360;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:360;left:113"><span class="ft4">       int mid = (lowerBound+upperBound) / 2;</span></div>
+<div style="position:absolute;top:357;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:360;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:364;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:379;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:379;left:113"><span class="ft4">                                            // sort low half</span></div>
+<div style="position:absolute;top:376;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:383;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:398;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:398;left:113"><span class="ft4">       recMergeSort(workSpace, lowerBound, mid);</span></div>
+<div style="position:absolute;top:395;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:398;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:402;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:418;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:417;left:113"><span class="ft4">                                            // sort high half</span></div>
+<div style="position:absolute;top:414;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:421;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:437;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:113"><span class="ft4">       recMergeSort(workSpace, mid+1, upperBound);</span></div>
+<div style="position:absolute;top:433;left:521"><span class="ft0"> </span></div>
+<div style="position:absolute;top:437;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:441;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:456;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:455;left:113"><span class="ft4">                                            // merge them</span></div>
+<div style="position:absolute;top:452;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:456;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:460;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:475;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:475;left:113"><span class="ft4">       merge(workSpace, lowerBound, mid+1, upperBound);</span></div>
+<div style="position:absolute;top:472;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:475;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:479;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:494;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:494;left:113"><span class="ft4">       }  // end else</span></div>
+<div style="position:absolute;top:491;left:280"><span class="ft0"> </span></div>
+<div style="position:absolute;top:494;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:498;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:517;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:533;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:532;left:113"><span class="ft4">    }  // end recMergeSort</span></div>
+<div style="position:absolute;top:529;left:322"><span class="ft0"> </span></div>
+<div style="position:absolute;top:533;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:536;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:555;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:603;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:571;left:90"><span class="ft1"> As you can see, beside the base case, there are only four statements in this method. </span></div>
+<div style="position:absolute;top:588;left:90"><span class="ft1">One computes the midpoint, there are two recursive calls to </span></div>
+<div style="position:absolute;top:588;left:460"><span class="ft4">recMergeSort()</span></div>
+<div style="position:absolute;top:588;left:577"><span class="ft1"> (one for </span></div>
+<div style="position:absolute;top:605;left:90"><span class="ft1">each half of the array), and finally a call to </span></div>
+<div style="position:absolute;top:605;left:351"><span class="ft4">merge()</span></div>
+<div style="position:absolute;top:605;left:409"><span class="ft1"> to merge the two sorted halves. The </span></div>
+<div style="position:absolute;top:622;left:90"><span class="ft1">base case occurs when the range contains only one element </span></div>
+<div style="position:absolute;top:638;left:90"><span class="ft1">(</span></div>
+<div style="position:absolute;top:638;left:95"><span class="ft4">lowerBound==upperBound</span></div>
+<div style="position:absolute;top:638;left:278"><span class="ft1">) and results in an immediate return.</span></div>
+<div style="position:absolute;top:635;left:501"><span class="ft0"> </span></div>
+<div style="position:absolute;top:603;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:639;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:658;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:675;left:90"><span class="ft1"> In the </span></div>
+<div style="position:absolute;top:675;left:129"><span class="ft4">mergeSort.java</span></div>
+<div style="position:absolute;top:675;left:246"><span class="ft1"> program, the </span></div>
+<div style="position:absolute;top:675;left:332"><span class="ft4">mergeSort()</span></div>
+<div style="position:absolute;top:675;left:424"><span class="ft1"> method is the one actually seen </span></div>
+<div style="position:absolute;top:692;left:90"><span class="ft1">by the class user. It creates the array </span></div>
+<div style="position:absolute;top:692;left:322"><span class="ft4">workSpace[]</span></div>
+<div style="position:absolute;top:692;left:413"><span class="ft1">, and then calls the recursive routine </span></div>
+<div style="position:absolute;top:709;left:90"><span class="ft4">recMergeSort()</span></div>
+<div style="position:absolute;top:709;left:207"><span class="ft1"> to carry out the sort. The creation of the workspace array is handled </span></div>
+<div style="position:absolute;top:726;left:90"><span class="ft1">in </span></div>
+<div style="position:absolute;top:726;left:105"><span class="ft4">mergeSort()</span></div>
+<div style="position:absolute;top:726;left:197"><span class="ft1"> because doing it in </span></div>
+<div style="position:absolute;top:726;left:320"><span class="ft4">recMergeSort()</span></div>
+<div style="position:absolute;top:726;left:437"><span class="ft1"> would cause the array to be </span></div>
+<div style="position:absolute;top:743;left:90"><span class="ft1">created anew with each recursive call, an inefficiency.</span></div>
+<div style="position:absolute;top:740;left:421"><span class="ft0"> </span></div>
+<div style="position:absolute;top:706;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:743;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:762;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:778;left:118"><span class="ft4">merge()</span></div>
+<div style="position:absolute;top:778;left:176"><span class="ft1"> method in the previous </span></div>
+<div style="position:absolute;top:778;left:325"><span class="ft4">merge.java</span></div>
+<div style="position:absolute;top:778;left:408"><span class="ft1"> program operated on three separate </span></div>
+<div style="position:absolute;top:796;left:90"><span class="ft1">arrays: two source arrays and a destination array. The </span></div>
+<div style="position:absolute;top:796;left:427"><span class="ft4">merge()</span></div>
+<div style="position:absolute;top:796;left:485"><span class="ft1"> routine in the </span></div>
+<div style="position:absolute;top:813;left:90"><span class="ft4">mergeSort.java</span></div>
+<div style="position:absolute;top:813;left:207"><span class="ft1"> program operates on a single array: the </span></div>
+<div style="position:absolute;top:813;left:458"><span class="ft4">theArray</span></div>
+<div style="position:absolute;top:813;left:525"><span class="ft1"> member of the </span></div>
+<div style="position:absolute;top:830;left:90"><span class="ft4">DArray</span></div>
+<div style="position:absolute;top:830;left:140"><span class="ft1"> class. The arguments to this </span></div>
+<div style="position:absolute;top:830;left:322"><span class="ft4">merge()</span></div>
+<div style="position:absolute;top:830;left:380"><span class="ft1"> method are the starting point of the low-</span></div>
+<div style="position:absolute;top:847;left:90"><span class="ft1">half subarray, the starting point of the high-half subarray, and the upper bound of the </span></div>
+<div style="position:absolute;top:863;left:90"><span class="ft1">high-half subarray. The method calculates the sizes of the subarrays based on this </span></div>
+<div style="position:absolute;top:879;left:90"><span class="ft1">information.</span></div>
+<div style="position:absolute;top:876;left:163"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:879;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:898;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:938;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:914;left:90"><span class="ft1"> Listing 6.6 shows the complete </span></div>
+<div style="position:absolute;top:914;left:284"><span class="ft4">mergeSort.java</span></div>
+<div style="position:absolute;top:914;left:401"><span class="ft1"> program. This program uses a variant </span></div>
+<div style="position:absolute;top:932;left:90"><span class="ft1">of the array classes from </span></div>
+<div style="position:absolute;top:932;left:246"><span class="ft5">Chapter 2</span></div>
+<div style="position:absolute;top:932;left:307"><span class="ft6">, adding the </span></div>
+<div style="position:absolute;top:932;left:384"><span class="ft7">mergeSort()</span></div>
+<div style="position:absolute;top:932;left:475"><span class="ft6"> and </span></div>
+<div style="position:absolute;top:932;left:506"><span class="ft7">recMergeSort()</span></div>
+<div style="position:absolute;top:932;left:623"><span class="ft6"> </span></div>
+<div style="position:absolute;top:949;left:90"><span class="ft6">methods to the </span></div>
+<div style="position:absolute;top:949;left:186"><span class="ft7">DArray</span></div>
+<div style="position:absolute;top:949;left:236"><span class="ft6"> class. The </span></div>
+<div style="position:absolute;top:949;left:307"><span class="ft7">main()</span></div>
+<div style="position:absolute;top:949;left:357"><span class="ft6"> routine creates an array, inserts 12 items, </span></div>
+<div style="position:absolute;top:966;left:90"><span class="ft6">displays the array, sorts the items with </span></div>
+<div style="position:absolute;top:966;left:330"><span class="ft7">mergeSort()</span></div>
+<div style="position:absolute;top:966;left:421"><span class="ft6">, and displays the array again.</span></div>
+<div style="position:absolute;top:963;left:607"><span class="ft0"> </span></div>
+<div style="position:absolute;top:938;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:967;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:986;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1001;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1002;left:90"><span class="ft8"> Listing 6.6 The mergeSort.java Program</span></div>
+<div style="position:absolute;top:999;left:353"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1001;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1005;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1024;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1039;left:113"><span class="ft4"> // mergeSort.java</span></div>
+<div style="position:absolute;top:1036;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1043;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1059;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1058;left:113"><span class="ft4"> // demonstrates recursive mergesort</span></div>
+<div style="position:absolute;top:1055;left:405"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1059;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1063;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

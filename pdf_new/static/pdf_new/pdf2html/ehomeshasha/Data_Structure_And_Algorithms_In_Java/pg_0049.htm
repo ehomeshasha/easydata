@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0049</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft5{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft6{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0049.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 49 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">is set to the middle of this range.</span></div>
+<div style="position:absolute;top:78;left:290"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:123;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1"> If we're lucky, </span></div>
+<div style="position:absolute;top:116;left:178"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:116;left:219"><span class="ft1"> may already be pointing to the desired item, so we first check if this </span></div>
+<div style="position:absolute;top:133;left:90"><span class="ft1">is true. If it is, we've found the item so we return with its index, </span></div>
+<div style="position:absolute;top:133;left:474"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:133;left:516"><span class="ft1">.</span></div>
+<div style="position:absolute;top:130;left:520"><span class="ft0"> </span></div>
+<div style="position:absolute;top:123;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:134;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:226;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:169;left:90"><span class="ft1"> Each time through the loop we divide the range in half. Eventually it will get so small it </span></div>
+<div style="position:absolute;top:186;left:90"><span class="ft1">can't be divided any more. We check for this in the next statement: If </span></div>
+<div style="position:absolute;top:186;left:514"><span class="ft2">lowerBound</span></div>
+<div style="position:absolute;top:186;left:598"><span class="ft1"> is </span></div>
+<div style="position:absolute;top:203;left:90"><span class="ft1">greater than </span></div>
+<div style="position:absolute;top:203;left:169"><span class="ft2">upperBound</span></div>
+<div style="position:absolute;top:203;left:252"><span class="ft1">, the range has ceased to exist. (When </span></div>
+<div style="position:absolute;top:203;left:494"><span class="ft2">lowerBound</span></div>
+<div style="position:absolute;top:203;left:577"><span class="ft1"> equals </span></div>
+<div style="position:absolute;top:220;left:90"><span class="ft2">upperBound</span></div>
+<div style="position:absolute;top:220;left:174"><span class="ft1"> the range is one and we need one more pass through the loop.) We can't </span></div>
+<div style="position:absolute;top:237;left:90"><span class="ft1">continue the search without a valid range, but we haven't found the desired item, so we </span></div>
+<div style="position:absolute;top:253;left:90"><span class="ft1">return </span></div>
+<div style="position:absolute;top:253;left:130"><span class="ft2">nElems</span></div>
+<div style="position:absolute;top:253;left:180"><span class="ft1">, the total number of items. This isn't a valid index, because the last filled </span></div>
+<div style="position:absolute;top:270;left:90"><span class="ft1">cell in the array is </span></div>
+<div style="position:absolute;top:270;left:202"><span class="ft2">nElems-1</span></div>
+<div style="position:absolute;top:270;left:269"><span class="ft1">. The class user interprets this value to mean that the item </span></div>
+<div style="position:absolute;top:287;left:90"><span class="ft1">wasn't found.</span></div>
+<div style="position:absolute;top:284;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:226;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:287;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:306;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:338;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:323;left:90"><span class="ft1"> If </span></div>
+<div style="position:absolute;top:323;left:102"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:323;left:143"><span class="ft1"> is not pointing at the desired item, and the range is still big enough, then we're </span></div>
+<div style="position:absolute;top:340;left:90"><span class="ft1">ready to divide the range in half. We compare the value at the current index, </span></div>
+<div style="position:absolute;top:340;left:561"><span class="ft2">a[curIn]</span></div>
+<div style="position:absolute;top:340;left:628"><span class="ft1">, </span></div>
+<div style="position:absolute;top:357;left:90"><span class="ft1">which is in the middle of the range, with the value to be found, </span></div>
+<div style="position:absolute;top:357;left:474"><span class="ft2">searchKey</span></div>
+<div style="position:absolute;top:357;left:549"><span class="ft1">.</span></div>
+<div style="position:absolute;top:354;left:553"><span class="ft0"> </span></div>
+<div style="position:absolute;top:338;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:358;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:377;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:400;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:394;left:90"><span class="ft1"> If </span></div>
+<div style="position:absolute;top:394;left:102"><span class="ft2">searchKey</span></div>
+<div style="position:absolute;top:394;left:177"><span class="ft1"> is larger, then we know we should look in the upper half of the range. </span></div>
+<div style="position:absolute;top:411;left:90"><span class="ft1">Accordingly, we move </span></div>
+<div style="position:absolute;top:411;left:229"><span class="ft2">lowerBound</span></div>
+<div style="position:absolute;top:411;left:312"><span class="ft1"> up to </span></div>
+<div style="position:absolute;top:411;left:351"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:411;left:393"><span class="ft1">.</span></div>
+<div style="position:absolute;top:408;left:397"><span class="ft0"> </span></div>
+<div style="position:absolute;top:400;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:412;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:431;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:453;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:447;left:90"><span class="ft1"> Actually we move it one cell beyond </span></div>
+<div style="position:absolute;top:447;left:314"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:447;left:356"><span class="ft1">, because we've already checked </span></div>
+<div style="position:absolute;top:447;left:564"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:447;left:605"><span class="ft1"> itself </span></div>
+<div style="position:absolute;top:464;left:90"><span class="ft1">at the beginning of the loop.</span></div>
+<div style="position:absolute;top:461;left:262"><span class="ft0"> </span></div>
+<div style="position:absolute;top:453;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:464;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:514;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:499;left:90"><span class="ft1"> If </span></div>
+<div style="position:absolute;top:499;left:102"><span class="ft2">searchKey</span></div>
+<div style="position:absolute;top:499;left:177"><span class="ft1"> is smaller than </span></div>
+<div style="position:absolute;top:499;left:274"><span class="ft2">a[curIn]</span></div>
+<div style="position:absolute;top:499;left:341"><span class="ft1">, we know we should look in the lower half of the </span></div>
+<div style="position:absolute;top:517;left:90"><span class="ft1">range. So we move </span></div>
+<div style="position:absolute;top:517;left:214"><span class="ft2">upperBound</span></div>
+<div style="position:absolute;top:517;left:297"><span class="ft1"> down to one cell below </span></div>
+<div style="position:absolute;top:517;left:445"><span class="ft2">curIn</span></div>
+<div style="position:absolute;top:517;left:487"><span class="ft1">. Figure 2.8 shows how </span></div>
+<div style="position:absolute;top:533;left:90"><span class="ft1">the range is altered in these two situations. </span></div>
+<div style="position:absolute;top:530;left:357"><span class="ft0"> </span></div>
+<div style="position:absolute;top:514;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:533;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:553;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:651;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:737;left:475"><span class="ft0">  </span></div>
+<div style="position:absolute;top:651;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:737;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:756;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:136"><span class="ft3"> Figure 2.8:  Dividing the range in a binary search</span></div>
+<div style="position:absolute;top:769;left:440"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:136"><span class="ft4">  </span></div>
+<div style="position:absolute;top:793;left:640"><span class="ft4">  </span></div>
+<div style="position:absolute;top:795;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:814;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:829;left:90"><span class="ft5"> The </span></div>
+<div style="position:absolute;top:829;left:129"><span class="ft6">OrdArray</span></div>
+<div style="position:absolute;top:829;left:219"><span class="ft5"> Class</span></div>
+<div style="position:absolute;top:831;left:274"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:837;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:856;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:879;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:90"><span class="ft1"> In general, the </span></div>
+<div style="position:absolute;top:873;left:183"><span class="ft2">orderedArray.java</span></div>
+<div style="position:absolute;top:873;left:325"><span class="ft1"> program is similar to </span></div>
+<div style="position:absolute;top:873;left:457"><span class="ft2">highArray.java</span></div>
+<div style="position:absolute;top:873;left:574"><span class="ft1">. The main </span></div>
+<div style="position:absolute;top:890;left:90"><span class="ft1">difference is that </span></div>
+<div style="position:absolute;top:890;left:196"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:890;left:246"><span class="ft1"> uses a binary search, as we've seen.</span></div>
+<div style="position:absolute;top:887;left:477"><span class="ft0"> </span></div>
+<div style="position:absolute;top:879;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:891;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:910;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:982;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:90"><span class="ft1"> We could have used a binary search to locate the position where a new item will be </span></div>
+<div style="position:absolute;top:942;left:90"><span class="ft1">inserted. This involves a variation on the </span></div>
+<div style="position:absolute;top:942;left:342"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:942;left:392"><span class="ft1"> routine, but for simplicity we retain the </span></div>
+<div style="position:absolute;top:959;left:90"><span class="ft1">linear search in </span></div>
+<div style="position:absolute;top:959;left:188"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:959;left:255"><span class="ft1">. The speed penalty may not be important because, as we've </span></div>
+<div style="position:absolute;top:976;left:90"><span class="ft1">seen, an average of half the items must be moved anyway when an insertion is </span></div>
+<div style="position:absolute;top:992;left:90"><span class="ft1">performed, so insertion will not be very fast even if we locate the item with a binary </span></div>
+<div style="position:absolute;top:1008;left:90"><span class="ft1">search. However, for the last ounce of speed, you could change the initial part of </span></div>
+<div style="position:absolute;top:1024;left:90"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:1024;left:157"><span class="ft1"> to a binary search (as is done in the Ordered Workshop applet). Similarly, the </span></div>
+<div style="position:absolute;top:1042;left:90"><span class="ft2">delete()</span></div>
+<div style="position:absolute;top:1042;left:157"><span class="ft1"> method could call </span></div>
+<div style="position:absolute;top:1042;left:273"><span class="ft2">find()</span></div>
+<div style="position:absolute;top:1042;left:323"><span class="ft1"> to figure out the location of the item to be deleted.</span></div>
+<div style="position:absolute;top:1039;left:632"><span class="ft0"> </span></div>
+<div style="position:absolute;top:982;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1042;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1062;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

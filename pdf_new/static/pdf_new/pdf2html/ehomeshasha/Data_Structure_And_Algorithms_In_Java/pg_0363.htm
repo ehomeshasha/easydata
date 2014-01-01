@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0363</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0363.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 363 -</span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:433"><span class="ft0">  </span></div>
+<div style="position:absolute;top:176;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:275;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:294;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:136"><span class="ft1"> Figure 10.19:  A node in a B-tree of order 17</span></div>
+<div style="position:absolute;top:307;left:413"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:332;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:331;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:331;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:333;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:352;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:90"><span class="ft2"> Within each node the data is ordered sequentially  by key, as in a 2-3-4 tree. In fact, the </span></div>
+<div style="position:absolute;top:383;left:90"><span class="ft2">structure of a B-tree is similar to that of a 2-3-4 tree, except that there are more data </span></div>
+<div style="position:absolute;top:399;left:90"><span class="ft2">items per node and more links to children. The order of a B-tree is the number of children </span></div>
+<div style="position:absolute;top:415;left:90"><span class="ft2">each node can potentially have. In our example this is 17, so the tree is an order 17 B-</span></div>
+<div style="position:absolute;top:431;left:90"><span class="ft2">tree.</span></div>
+<div style="position:absolute;top:428;left:118"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:432;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:451;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:466;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:466;left:90"><span class="ft4"> Searching</span></div>
+<div style="position:absolute;top:466;left:171"><span class="ft0"> </span></div>
+<div style="position:absolute;top:466;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:470;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:90"><span class="ft2"> A search for a record with a specified key is carried out in much the same way it is in an </span></div>
+<div style="position:absolute;top:521;left:90"><span class="ft2">in-memory 2-3-4 tree. First, the block containing the root is read into memory. The search </span></div>
+<div style="position:absolute;top:537;left:90"><span class="ft2">algorithm then starts examining each of the 15 records (or, if it's not full, as many as the </span></div>
+<div style="position:absolute;top:553;left:90"><span class="ft2">node actually holds), starting at 0. When it finds a record with a greater key, it knows to </span></div>
+<div style="position:absolute;top:569;left:90"><span class="ft2">go to the child whose link lies between this record and the preceding one.</span></div>
+<div style="position:absolute;top:566;left:541"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:569;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:588;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:604;left:90"><span class="ft2"> This process continues until the correct node is found. If a leaf is reached without finding </span></div>
+<div style="position:absolute;top:620;left:90"><span class="ft2">the specified key, the search is unsuccessful.</span></div>
+<div style="position:absolute;top:617;left:368"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:620;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:639;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:90"><span class="ft4"> Insertion</span></div>
+<div style="position:absolute;top:655;left:161"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:658;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:90"><span class="ft2"> The insertion process in a B-tree is somewhat different than it is in a 2-3-4 tree. Recall </span></div>
+<div style="position:absolute;top:709;left:90"><span class="ft2">that in a 2-3-4 tree many nodes are not full, and in fact contain only one data item. In </span></div>
+<div style="position:absolute;top:725;left:90"><span class="ft2">particular, a node split always produces two nodes with one item in each. This is not an </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft2">optimum approach in a B-tree.</span></div>
+<div style="position:absolute;top:738;left:277"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:741;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:760;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:790;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:776;left:90"><span class="ft2"> In a B-tree it's important to keep the nodes as full as possible so that each disk access, </span></div>
+<div style="position:absolute;top:792;left:90"><span class="ft2">which reads an entire node, can acquire the maximum amount of data. To help achieve </span></div>
+<div style="position:absolute;top:808;left:90"><span class="ft2">this end, the insertion process differs from that of 2-3-4 trees in three ways:</span></div>
+<div style="position:absolute;top:805;left:551"><span class="ft0"> </span></div>
+<div style="position:absolute;top:790;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:808;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:828;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:843;left:90"><span class="ft2"> .</span></div>
+<div style="position:absolute;top:840;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:843;left:107"><span class="ft2">A node split divides the data items equally: half go to the newly created node, and half </span></div>
+<div style="position:absolute;top:859;left:107"><span class="ft2">remain in the old one.</span></div>
+<div style="position:absolute;top:856;left:241"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:860;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:879;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:895;left:90"><span class="ft2"> .</span></div>
+<div style="position:absolute;top:892;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:895;left:107"><span class="ft2">Node splits are performed from the bottom up rather than from the top down.</span></div>
+<div style="position:absolute;top:892;left:578"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:898;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:917;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:939;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:933;left:90"><span class="ft2"> .</span></div>
+<div style="position:absolute;top:930;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:933;left:107"><span class="ft2">It's not the middle item in a node that's promoted upward, but the middle item in the </span></div>
+<div style="position:absolute;top:949;left:107"><span class="ft2">sequence formed from the items in the node plus the new item.</span></div>
+<div style="position:absolute;top:946;left:495"><span class="ft0"> </span></div>
+<div style="position:absolute;top:939;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:949;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:968;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:984;left:90"><span class="ft2"> We'll demonstrate these features of the insertion process by building a small B-tree, as </span></div>
+<div style="position:absolute;top:1000;left:90"><span class="ft2">shown in Figure 10.20</span></div>
+<div style="position:absolute;top:1000;left:227"><span class="ft5">. There isn't room to show a realistic number of records per node, </span></div>
+<div style="position:absolute;top:1016;left:90"><span class="ft5">so we'll show only four; thus the tree is an order 5 B-tree.</span></div>
+<div style="position:absolute;top:1013;left:440"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1016;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1035;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

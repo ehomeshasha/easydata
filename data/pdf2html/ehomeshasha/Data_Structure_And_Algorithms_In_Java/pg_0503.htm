@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0503</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0503.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 503 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">method. This routine is straightforward; it steps across the </span></div>
+<div style="position:absolute;top:81;left:450"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:81;left:508"><span class="ft1"> entries and returns </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft1">with the column number (the array index) of the entry with the minimum distance.</span></div>
+<div style="position:absolute;top:95;left:587"><span class="ft0"> </span></div>
+<div style="position:absolute;top:98;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:117;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:113"><span class="ft2"> public int getMin()               // get entry from sPath</span></div>
+<div style="position:absolute;top:129;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:136;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:152;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:151;left:113"><span class="ft2">    {                              //    with minimum distance</span></div>
+<div style="position:absolute;top:148;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:155;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:171;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:170;left:113"><span class="ft2">    int minDist = INFINITY;        // assume large minimum</span></div>
+<div style="position:absolute;top:167;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:171;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:175;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:190;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:189;left:113"><span class="ft2">    int indexMin = 0;</span></div>
+<div style="position:absolute;top:186;left:280"><span class="ft0"> </span></div>
+<div style="position:absolute;top:190;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:194;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:209;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:209;left:113"><span class="ft2">    for(int j=1; j&lt;nVerts; j++)    // for each vertex,</span></div>
+<div style="position:absolute;top:206;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:209;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:213;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:228;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:228;left:113"><span class="ft2">       {                           // if it's in tree and</span></div>
+<div style="position:absolute;top:225;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:228;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:232;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:247;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:247;left:113"><span class="ft2">       if( !vertexList[j].isInTree &amp;&amp;  // smaller than old one</span></div>
+<div style="position:absolute;top:244;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:251;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:267;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:266;left:113"><span class="ft2">                             sPath[j].distance &lt; minDist )</span></div>
+<div style="position:absolute;top:263;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:267;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:270;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:286;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:285;left:113"><span class="ft2">          {</span></div>
+<div style="position:absolute;top:282;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:286;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:290;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:305;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:304;left:113"><span class="ft2">          minDist = sPath[j].distance;</span></div>
+<div style="position:absolute;top:301;left:421"><span class="ft0"> </span></div>
+<div style="position:absolute;top:305;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:309;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:113"><span class="ft2">          indexMin = j;            // update minimum</span></div>
+<div style="position:absolute;top:321;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:328;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:343;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:343;left:113"><span class="ft2">          }</span></div>
+<div style="position:absolute;top:340;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:343;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:347;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:362;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:362;left:113"><span class="ft2">       }  // end for</span></div>
+<div style="position:absolute;top:359;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:362;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:366;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:382;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:381;left:113"><span class="ft2">    return indexMin;               // return index of minimum</span></div>
+<div style="position:absolute;top:378;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:385;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:404;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:420;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:419;left:113"><span class="ft2">    }  // end getMin()</span></div>
+<div style="position:absolute;top:416;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:420;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:424;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:459;left:90"><span class="ft1"> We could have used a priority queue as the basis for the shortest-path algorithm, as we </span></div>
+<div style="position:absolute;top:475;left:90"><span class="ft1">did in the last section to find the minimum spanning tree. If we had, the </span></div>
+<div style="position:absolute;top:475;left:528"><span class="ft2">getMin()</span></div>
+<div style="position:absolute;top:475;left:595"><span class="ft1"> </span></div>
+<div style="position:absolute;top:492;left:90"><span class="ft1">method would not have been necessary; the minimum-weight edge would have appeared </span></div>
+<div style="position:absolute;top:508;left:90"><span class="ft1">automatically at the front of the queue. However, the array approach shown makes it </span></div>
+<div style="position:absolute;top:524;left:90"><span class="ft1">easier to see what's going on.</span></div>
+<div style="position:absolute;top:521;left:274"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:524;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:543;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:90"><span class="ft3"> Updating </span></div>
+<div style="position:absolute;top:559;left:167"><span class="ft4">sPath[]</span></div>
+<div style="position:absolute;top:559;left:237"><span class="ft3"> with </span></div>
+<div style="position:absolute;top:559;left:280"><span class="ft4">adjust_sPath()</span></div>
+<div style="position:absolute;top:559;left:420"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:564;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:583;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:599;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:599;left:118"><span class="ft2">adjust_sPath()</span></div>
+<div style="position:absolute;top:599;left:235"><span class="ft1"> method is used to update the </span></div>
+<div style="position:absolute;top:599;left:422"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:599;left:480"><span class="ft1"> entries to reflect new </span></div>
+<div style="position:absolute;top:616;left:90"><span class="ft1">information obtained from the vertex just inserted in the tree. When this routine is called, </span></div>
+<div style="position:absolute;top:632;left:90"><span class="ft2">currentVert</span></div>
+<div style="position:absolute;top:632;left:182"><span class="ft1"> has just been placed in the tree, and </span></div>
+<div style="position:absolute;top:632;left:413"><span class="ft2">startToCurrent</span></div>
+<div style="position:absolute;top:632;left:530"><span class="ft1"> is the current </span></div>
+<div style="position:absolute;top:650;left:90"><span class="ft1">entry in </span></div>
+<div style="position:absolute;top:650;left:140"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:650;left:198"><span class="ft1"> for this vertex. The </span></div>
+<div style="position:absolute;top:650;left:321"><span class="ft2">adjust_sPath()</span></div>
+<div style="position:absolute;top:650;left:437"><span class="ft1"> method now examines each </span></div>
+<div style="position:absolute;top:667;left:90"><span class="ft1">vertex entry in </span></div>
+<div style="position:absolute;top:667;left:181"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:667;left:240"><span class="ft1">, using the loop counter </span></div>
+<div style="position:absolute;top:667;left:388"><span class="ft2">column</span></div>
+<div style="position:absolute;top:667;left:438"><span class="ft1"> to point to each vertex in turn. </span></div>
+<div style="position:absolute;top:664;left:629"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:668;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:687;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:703;left:90"><span class="ft1"> For each </span></div>
+<div style="position:absolute;top:703;left:149"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:703;left:207"><span class="ft1"> entry, provided the vertex is not in the tree, it does three things:</span></div>
+<div style="position:absolute;top:700;left:599"><span class="ft0">   </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:756;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft1"> 1.</span></div>
+<div style="position:absolute;top:738;left:102"><span class="ft0"> </span></div>
+<div style="position:absolute;top:756;left:107"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:113"><span class="ft1">It adds the distance to the current vertex (already calculated and now in </span></div>
+<div style="position:absolute;top:757;left:113"><span class="ft2">startToCurrent</span></div>
+<div style="position:absolute;top:757;left:230"><span class="ft1">) to the edge distance from </span></div>
+<div style="position:absolute;top:757;left:399"><span class="ft2">currentVert</span></div>
+<div style="position:absolute;top:757;left:491"><span class="ft1"> to the </span></div>
+<div style="position:absolute;top:757;left:533"><span class="ft2">column</span></div>
+<div style="position:absolute;top:757;left:583"><span class="ft1"> vertex. </span></div>
+<div style="position:absolute;top:775;left:113"><span class="ft1">We call the result </span></div>
+<div style="position:absolute;top:775;left:224"><span class="ft2">startToFringe</span></div>
+<div style="position:absolute;top:775;left:332"><span class="ft1">.</span></div>
+<div style="position:absolute;top:772;left:336"><span class="ft0"> </span></div>
+<div style="position:absolute;top:756;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:810;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:811;left:90"><span class="ft1"> 2.</span></div>
+<div style="position:absolute;top:808;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:811;left:113"><span class="ft1">It compares </span></div>
+<div style="position:absolute;top:811;left:190"><span class="ft2">startToFringe</span></div>
+<div style="position:absolute;top:811;left:298"><span class="ft1"> with the current entry in </span></div>
+<div style="position:absolute;top:811;left:450"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:811;left:508"><span class="ft1">.</span></div>
+<div style="position:absolute;top:808;left:512"><span class="ft0"> </span></div>
+<div style="position:absolute;top:810;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:814;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:833;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:848;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:849;left:90"><span class="ft1"> 3.</span></div>
+<div style="position:absolute;top:846;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:849;left:113"><span class="ft1">If </span></div>
+<div style="position:absolute;top:849;left:125"><span class="ft2">startToFringe</span></div>
+<div style="position:absolute;top:849;left:233"><span class="ft1"> is less, it replaces the entry in </span></div>
+<div style="position:absolute;top:849;left:423"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:849;left:481"><span class="ft1">.</span></div>
+<div style="position:absolute;top:846;left:485"><span class="ft0"> </span></div>
+<div style="position:absolute;top:848;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:852;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:871;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:902;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:888;left:90"><span class="ft1"> This is the heart of Dijkstra's Algorithm. It keeps </span></div>
+<div style="position:absolute;top:888;left:387"><span class="ft2">sPath[]</span></div>
+<div style="position:absolute;top:888;left:445"><span class="ft1"> updated with the shortest </span></div>
+<div style="position:absolute;top:904;left:90"><span class="ft1">distances to all the vertices that are currently known. Here's the code for </span></div>
+<div style="position:absolute;top:921;left:90"><span class="ft2">adjust_sPath()</span></div>
+<div style="position:absolute;top:921;left:207"><span class="ft1">:</span></div>
+<div style="position:absolute;top:918;left:211"><span class="ft0"> </span></div>
+<div style="position:absolute;top:902;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:922;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:941;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:956;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:956;left:113"><span class="ft2"> public void adjust_sPath()</span></div>
+<div style="position:absolute;top:953;left:330"><span class="ft0"> </span></div>
+<div style="position:absolute;top:956;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:960;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:975;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:975;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:972;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:975;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:995;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:994;left:113"><span class="ft2">    // adjust values in shortest-path array sPath</span></div>
+<div style="position:absolute;top:991;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:995;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1014;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:113"><span class="ft2">    int column = 1;                // skip starting vertex</span></div>
+<div style="position:absolute;top:1010;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1014;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1018;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1033;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1032;left:113"><span class="ft2">    while(column &lt; nVerts)         // go across columns</span></div>
+<div style="position:absolute;top:1029;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1033;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1037;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:1049;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1056;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1071;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1071;left:113"><span class="ft2">       // if this column's vertex already in tree, skip it</span></div>
+<div style="position:absolute;top:1068;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1071;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1075;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

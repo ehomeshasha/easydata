@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0315</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft5{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+.ft6{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0315.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 315 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> These rules probably seem completely mysterious. It's not obvious how they will lead to a </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1">balanced tree, but they do; some very clever people invented them. Copy them onto a </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">sticky note, and keep it on your computer. You'll need to refer to them often in the course </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">of this chapter.</span></div>
+<div style="position:absolute;top:145;left:181"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:148;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:197;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft1"> You can see how the rules work by using the RBTree Workshop applet. We'll do some </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft1">experiments with the applet in a moment, but first you should understand what actions </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft1">you can take to fix things if one of the red-black rules is broken.</span></div>
+<div style="position:absolute;top:212;left:479"><span class="ft0"> </span></div>
+<div style="position:absolute;top:197;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:215;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:234;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:90"><span class="ft2"> Duplicate Keys</span></div>
+<div style="position:absolute;top:249;left:210"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:318;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:288;left:90"><span class="ft1"> What happens if there's more than one data item with the same key. This presents a </span></div>
+<div style="position:absolute;top:304;left:90"><span class="ft1">slight problem in red-black trees. It's important that nodes with the same key are </span></div>
+<div style="position:absolute;top:320;left:90"><span class="ft1">distributed on both sides of other nodes with the same key. That is, if keys arrive in the </span></div>
+<div style="position:absolute;top:336;left:90"><span class="ft1">order 50, 50, 50, you want the second 50 to go to the right of the first one, and the third </span></div>
+<div style="position:absolute;top:352;left:90"><span class="ft1">50 to go to the left of the first one. Otherwise, the tree becomes unbalanced.</span></div>
+<div style="position:absolute;top:349;left:558"><span class="ft0"> </span></div>
+<div style="position:absolute;top:318;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:352;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:401;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:90"><span class="ft1"> This could be handled by some kind of randomizing process in the insertion algorithm. </span></div>
+<div style="position:absolute;top:403;left:90"><span class="ft1">However, the search process then becomes more complicated if all items with the same </span></div>
+<div style="position:absolute;top:419;left:90"><span class="ft1">key must be found.</span></div>
+<div style="position:absolute;top:416;left:208"><span class="ft0"> </span></div>
+<div style="position:absolute;top:401;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:419;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:438;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:460;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:454;left:90"><span class="ft1"> It's simpler to outlaw items with the same key. In this discussion we'll assume duplicates </span></div>
+<div style="position:absolute;top:470;left:90"><span class="ft1">aren't allowed.</span></div>
+<div style="position:absolute;top:467;left:179"><span class="ft0"> </span></div>
+<div style="position:absolute;top:460;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:470;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:506;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:90"><span class="ft3"> The Actions</span></div>
+<div style="position:absolute;top:507;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:506;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:511;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:530;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:560;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:546;left:90"><span class="ft1"> Suppose you see (or are told by the applet) that the color rules are violated. How can you </span></div>
+<div style="position:absolute;top:562;left:90"><span class="ft1">fix things so your tree is in compliance. There are two, and only two, possible actions </span></div>
+<div style="position:absolute;top:578;left:90"><span class="ft1">you can take:</span></div>
+<div style="position:absolute;top:575;left:173"><span class="ft0"> </span></div>
+<div style="position:absolute;top:560;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:578;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:613;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:613;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:610;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:613;left:107"><span class="ft1">You can change the colors of nodes.</span></div>
+<div style="position:absolute;top:610;left:333"><span class="ft0"> </span></div>
+<div style="position:absolute;top:613;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:617;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:636;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:651;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:651;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:648;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:651;left:107"><span class="ft1">You can perform rotations.</span></div>
+<div style="position:absolute;top:648;left:271"><span class="ft0"> </span></div>
+<div style="position:absolute;top:651;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:655;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:704;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:690;left:90"><span class="ft1"> Changing the color of a node means changing its red-black border color (not the center </span></div>
+<div style="position:absolute;top:706;left:90"><span class="ft1">color). A rotation is a rearrangement of the nodes that hopefully leaves the tree more </span></div>
+<div style="position:absolute;top:722;left:90"><span class="ft1">balanced.</span></div>
+<div style="position:absolute;top:719;left:151"><span class="ft0"> </span></div>
+<div style="position:absolute;top:704;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:722;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:757;left:90"><span class="ft1"> At this point such concepts probably seem very abstract, so let's become familiar with the </span></div>
+<div style="position:absolute;top:773;left:90"><span class="ft1">RBTree Workshop applet, which can help to clarify things.</span></div>
+<div style="position:absolute;top:770;left:446"><span class="ft0"> </span></div>
+<div style="position:absolute;top:773;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:790;left:79"><span class="ft4"> </span></div>
+<div style="position:absolute;top:809;left:79"><span class="ft5">Using the RBTree Workshop Applet</span></div>
+<div style="position:absolute;top:811;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:810;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:815;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:834;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:864;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:850;left:90"><span class="ft1"> Figure 9.3</span></div>
+<div style="position:absolute;top:850;left:153"><span class="ft6"> shows what the RBTree Workshop applet looks like after some nodes have </span></div>
+<div style="position:absolute;top:866;left:90"><span class="ft6">been inserted. (It may be hard to tell the difference between red and black node borders </span></div>
+<div style="position:absolute;top:882;left:90"><span class="ft6">in the figure, but they should be clear on a color monitor.)</span></div>
+<div style="position:absolute;top:879;left:442"><span class="ft0"> </span></div>
+<div style="position:absolute;top:864;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:882;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:901;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

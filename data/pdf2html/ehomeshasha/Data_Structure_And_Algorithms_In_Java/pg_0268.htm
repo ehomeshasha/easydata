@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0268</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:normal;font-size:11px;font-family:Times New Roman;color:#000000;}
+.ft7{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft8{font-style:normal;font-weight:bold;font-size:16px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0268.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 268 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> Finding the median of three items is obviously much faster than finding the median of all </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1">the items, and yet it successfully avoids picking the largest or smallest item in cases </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">where the data is already sorted or inversely sorted. There are probably some </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">pathological arrangements of data where the median-of-three scheme works poorly, but </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft1">normally it's a fast and effective technique for finding the pivot.</span></div>
+<div style="position:absolute;top:161;left:473"><span class="ft0"> </span></div>
+<div style="position:absolute;top:130;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:164;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft1"> Besides picking the pivot more effectively, the median of three approach has an </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft1">additional benefit: We can dispense with the </span></div>
+<div style="position:absolute;top:215;left:365"><span class="ft2">rightPtr&gt;left</span></div>
+<div style="position:absolute;top:215;left:473"><span class="ft1"> test in the second inside </span></div>
+<div style="position:absolute;top:232;left:90"><span class="ft2">while</span></div>
+<div style="position:absolute;top:232;left:132"><span class="ft1"> loop, leading to a small increase in the algorithm's speed. How is this possible.</span></div>
+<div style="position:absolute;top:229;left:622"><span class="ft0">   </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:252;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:282;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:90"><span class="ft1"> The test can be eliminated because we can use the median-of-three approach to not only </span></div>
+<div style="position:absolute;top:284;left:90"><span class="ft1">select the pivot, but also to sort the three elements used in the selection process. Figure </span></div>
+<div style="position:absolute;top:300;left:90"><span class="ft1">7.14 shows how this looks.</span></div>
+<div style="position:absolute;top:297;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:282;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:300;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:319;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:452;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:573;left:459"><span class="ft0">  </span></div>
+<div style="position:absolute;top:452;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:573;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:592;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:608;left:136"><span class="ft3"> Figure 7.14:  Sorting the left, center, and right elements</span></div>
+<div style="position:absolute;top:605;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:630;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:628;left:136"><span class="ft4">  </span></div>
+<div style="position:absolute;top:628;left:640"><span class="ft4">  </span></div>
+<div style="position:absolute;top:630;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:649;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:721;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:665;left:90"><span class="ft1"> Once these three elements are sorted, and the median item is selected as the pivot, we </span></div>
+<div style="position:absolute;top:681;left:90"><span class="ft1">are guaranteed that the element at the left end of the subarray is less than (or equal to) </span></div>
+<div style="position:absolute;top:697;left:90"><span class="ft1">the pivot, and the element at the right end is greater than (or equal to) the pivot. This </span></div>
+<div style="position:absolute;top:714;left:90"><span class="ft1">means that the </span></div>
+<div style="position:absolute;top:714;left:186"><span class="ft2">leftPtr</span></div>
+<div style="position:absolute;top:714;left:244"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:714;left:275"><span class="ft2">rightPtr</span></div>
+<div style="position:absolute;top:714;left:342"><span class="ft1"> indices can't step beyond the right or left ends </span></div>
+<div style="position:absolute;top:731;left:90"><span class="ft1">of the array, respectively, even if we remove the </span></div>
+<div style="position:absolute;top:731;left:389"><span class="ft2">leftPtr&gt;right</span></div>
+<div style="position:absolute;top:731;left:497"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:731;left:528"><span class="ft2">rightPtr&lt;left</span></div>
+<div style="position:absolute;top:731;left:637"><span class="ft1"> </span></div>
+<div style="position:absolute;top:748;left:90"><span class="ft1">tests. (The pointer will stop, thinking it needs to swap the item, only to find that it has </span></div>
+<div style="position:absolute;top:764;left:90"><span class="ft1">crossed the other pointer and the partition is complete.) The values at </span></div>
+<div style="position:absolute;top:764;left:521"><span class="ft2">left</span></div>
+<div style="position:absolute;top:764;left:554"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:764;left:585"><span class="ft2">right</span></div>
+<div style="position:absolute;top:764;left:627"><span class="ft1"> </span></div>
+<div style="position:absolute;top:781;left:90"><span class="ft1">act as sentinels to keep </span></div>
+<div style="position:absolute;top:781;left:239"><span class="ft2">leftPtr</span></div>
+<div style="position:absolute;top:781;left:298"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:781;left:328"><span class="ft2">rightPtr</span></div>
+<div style="position:absolute;top:781;left:395"><span class="ft1"> confined to valid array values.</span></div>
+<div style="position:absolute;top:778;left:583"><span class="ft0"> </span></div>
+<div style="position:absolute;top:721;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:782;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:857;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:817;left:90"><span class="ft1"> Another small benefit to median-of-three partitioning is that after the left, center, and right </span></div>
+<div style="position:absolute;top:833;left:90"><span class="ft1">elements are sorted, the partition process doesn't need to examine these elements </span></div>
+<div style="position:absolute;top:849;left:90"><span class="ft1">again. The partition can begin at left+1 and right-1, because </span></div>
+<div style="position:absolute;top:849;left:461"><span class="ft2">left</span></div>
+<div style="position:absolute;top:849;left:495"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:849;left:525"><span class="ft2">right</span></div>
+<div style="position:absolute;top:849;left:567"><span class="ft1"> have in </span></div>
+<div style="position:absolute;top:867;left:90"><span class="ft1">effect already been partitioned. We know that </span></div>
+<div style="position:absolute;top:867;left:373"><span class="ft2">left</span></div>
+<div style="position:absolute;top:867;left:406"><span class="ft1"> is in the correct partition because it's </span></div>
+<div style="position:absolute;top:884;left:90"><span class="ft1">on the left and it's less than the pivot, and </span></div>
+<div style="position:absolute;top:884;left:349"><span class="ft2">right</span></div>
+<div style="position:absolute;top:884;left:391"><span class="ft1"> is in the correct place because it's on </span></div>
+<div style="position:absolute;top:901;left:90"><span class="ft1">the right and it's greater than the pivot.</span></div>
+<div style="position:absolute;top:898;left:327"><span class="ft0"> </span></div>
+<div style="position:absolute;top:857;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:901;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:920;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:938;left:90"><span class="ft1"> Thus, median-of-three partitioning not only avoids O(N</span></div>
+<div style="position:absolute;top:933;left:425"><span class="ft6">2</span></div>
+<div style="position:absolute;top:938;left:430"><span class="ft1">) performance for already sorted </span></div>
+<div style="position:absolute;top:955;left:90"><span class="ft1">data, it also allows us to speed up the inner loops of the partitioning algorithm and reduce </span></div>
+<div style="position:absolute;top:971;left:90"><span class="ft1">slightly the number of items that must be partitioned.</span></div>
+<div style="position:absolute;top:968;left:412"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:971;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:990;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1006;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1006;left:90"><span class="ft7"> The </span></div>
+<div style="position:absolute;top:1006;left:124"><span class="ft8">quickSort2.java </span></div>
+<div style="position:absolute;top:1006;left:284"><span class="ft7">Program</span></div>
+<div style="position:absolute;top:1006;left:353"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1006;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1011;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1030;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1046;left:90"><span class="ft1"> Listing 7.4 shows the </span></div>
+<div style="position:absolute;top:1046;left:224"><span class="ft2">quickSort2.java</span></div>
+<div style="position:absolute;top:1046;left:349"><span class="ft1"> program, which incorporates median-of-three </span></div>
+<div style="position:absolute;top:1063;left:90"><span class="ft1">partitioning. We use a separate method, </span></div>
+<div style="position:absolute;top:1063;left:340"><span class="ft2">medianOf3()</span></div>
+<div style="position:absolute;top:1063;left:432"><span class="ft1">, to sort the left, center, and right </span></div>
+<div style="position:absolute;top:1053;left:640"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

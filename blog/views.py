@@ -17,7 +17,7 @@ from django.contrib.sites.models import get_current_site
 from django.contrib.auth.tokens import default_token_generator
 # Create your views here.
 
-
+'''
 class PostView(FormView):
     template_name = "account/signup.html"
     template_name_ajax = "account/ajax/signup.html"
@@ -39,7 +39,7 @@ class PostView(FormView):
         }
     }
     pass
-
+'''
 '''
 from __future__ import unicode_literals
 
@@ -768,3 +768,8 @@ class DeleteView(LogoutView):
         ctx["ACCOUNT_DELETION_EXPUNGE_HOURS"] = settings.ACCOUNT_DELETION_EXPUNGE_HOURS
         return ctx
 '''
+
+class PostView(FormView):
+    pass
+
+
