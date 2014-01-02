@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0023</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0023.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 23 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:131;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> How do you release memory that you've acquired from the system with </span></div>
+<div style="position:absolute;top:100;left:530"><span class="ft2">new</span></div>
+<div style="position:absolute;top:100;left:555"><span class="ft1"> and no </span></div>
+<div style="position:absolute;top:117;left:90"><span class="ft1">longer need. In C++, you use </span></div>
+<div style="position:absolute;top:117;left:277"><span class="ft2">delete</span></div>
+<div style="position:absolute;top:117;left:327"><span class="ft1">. In Java, you don't need to worry about it. Java </span></div>
+<div style="position:absolute;top:135;left:90"><span class="ft1">periodically looks through each block of memory that was obtained with </span></div>
+<div style="position:absolute;top:135;left:532"><span class="ft2">new</span></div>
+<div style="position:absolute;top:135;left:557"><span class="ft1"> to see if </span></div>
+<div style="position:absolute;top:151;left:90"><span class="ft1">valid references to it still exist. If there are no such references, the block is returned to the </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft1">free memory store. This is called garbage collection.</span></div>
+<div style="position:absolute;top:164;left:411"><span class="ft0"> </span></div>
+<div style="position:absolute;top:131;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:167;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:186;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:224;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:202;left:90"><span class="ft1"> In C++ almost every programmer at one time or another forgets to delete memory blocks, </span></div>
+<div style="position:absolute;top:218;left:90"><span class="ft1">causing &quot;memory leaks&quot; that consume system resources, leading to bad performance </span></div>
+<div style="position:absolute;top:234;left:90"><span class="ft1">and even crashing the system. Memory leaks can't happen in Java (or at least hardly </span></div>
+<div style="position:absolute;top:250;left:90"><span class="ft1">ever).</span></div>
+<div style="position:absolute;top:247;left:126"><span class="ft0"> </span></div>
+<div style="position:absolute;top:224;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:250;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:270;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:285;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:285;left:90"><span class="ft4"> Arguments</span></div>
+<div style="position:absolute;top:285;left:178"><span class="ft0"> </span></div>
+<div style="position:absolute;top:285;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:289;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:308;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:338;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:324;left:90"><span class="ft1"> In C++, pointers are often used to pass objects to functions to avoid the overhead of </span></div>
+<div style="position:absolute;top:340;left:90"><span class="ft1">copying a large object. In Java, objects are always passed as references. This also </span></div>
+<div style="position:absolute;top:356;left:90"><span class="ft1">avoids copying the object.</span></div>
+<div style="position:absolute;top:353;left:250"><span class="ft0"> </span></div>
+<div style="position:absolute;top:338;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:356;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:375;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:390;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:390;left:113"><span class="ft2"> void method1()</span></div>
+<div style="position:absolute;top:387;left:230"><span class="ft0"> </span></div>
+<div style="position:absolute;top:390;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:394;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:409;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:406;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:413;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:429;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:428;left:113"><span class="ft2">    BankAccount ba1 = new BankAccount(350.00);</span></div>
+<div style="position:absolute;top:425;left:488"><span class="ft0"> </span></div>
+<div style="position:absolute;top:429;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:433;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:448;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:447;left:113"><span class="ft2">    method2(ba1);</span></div>
+<div style="position:absolute;top:444;left:247"><span class="ft0"> </span></div>
+<div style="position:absolute;top:448;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:452;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:113"><span class="ft2">    }</span></div>
+<div style="position:absolute;top:464;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:467;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:471;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:486;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:486;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:490;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:113"><span class="ft2"> void method2(BankAccount acct)</span></div>
+<div style="position:absolute;top:502;left:363"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:509;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:525;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:524;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:521;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:525;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:528;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:544;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:543;left:113"><span class="ft2">    }</span></div>
+<div style="position:absolute;top:540;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:544;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:548;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:567;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:582;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:583;left:90"><span class="ft1"> In this code, the references </span></div>
+<div style="position:absolute;top:583;left:262"><span class="ft2">ba1</span></div>
+<div style="position:absolute;top:583;left:287"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:583;left:318"><span class="ft2">acct</span></div>
+<div style="position:absolute;top:583;left:351"><span class="ft1"> both refer to the same object.</span></div>
+<div style="position:absolute;top:580;left:535"><span class="ft0"> </span></div>
+<div style="position:absolute;top:582;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:586;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:605;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:627;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:621;left:90"><span class="ft1"> Primitive data types, on the other hand, are always passed by value. That is, a new </span></div>
+<div style="position:absolute;top:637;left:90"><span class="ft1">variable is created in the function and the value of the argument is copied into it.</span></div>
+<div style="position:absolute;top:634;left:581"><span class="ft0"> </span></div>
+<div style="position:absolute;top:627;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:637;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:656;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:671;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:672;left:90"><span class="ft4"> Equality and Identity</span></div>
+<div style="position:absolute;top:672;left:253"><span class="ft0"> </span></div>
+<div style="position:absolute;top:671;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:675;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:694;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:717;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:90"><span class="ft1"> In Java, if you're talking about primitive types, the equality operator (</span></div>
+<div style="position:absolute;top:711;left:509"><span class="ft2">==</span></div>
+<div style="position:absolute;top:711;left:526"><span class="ft1">) will tell you </span></div>
+<div style="position:absolute;top:727;left:90"><span class="ft1">whether two variables have the same value:</span></div>
+<div style="position:absolute;top:724;left:361"><span class="ft0"> </span></div>
+<div style="position:absolute;top:717;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:728;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:747;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:762;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:762;left:113"><span class="ft2"> int intVar1 = 27;</span></div>
+<div style="position:absolute;top:759;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:762;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:766;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:781;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:781;left:113"><span class="ft2"> int intVar2 = intVar1;</span></div>
+<div style="position:absolute;top:778;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:781;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:785;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:800;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:800;left:113"><span class="ft2"> if(intVar1 == intVar2)</span></div>
+<div style="position:absolute;top:797;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:800;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:804;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:820;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:819;left:113"><span class="ft2">    System.out.println(&quot;They're equal&quot;);</span></div>
+<div style="position:absolute;top:816;left:438"><span class="ft0"> </span></div>
+<div style="position:absolute;top:820;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:823;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:843;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:880;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:858;left:90"><span class="ft1"> This is the same as the syntax in C and C++, but in Java, because they use references, </span></div>
+<div style="position:absolute;top:874;left:90"><span class="ft1">relational operators work differently with objects. The equality operator, when applied to </span></div>
+<div style="position:absolute;top:890;left:90"><span class="ft1">objects, tells you whether two references are identical; that is, whether they refer to the </span></div>
+<div style="position:absolute;top:906;left:90"><span class="ft1">same object:</span></div>
+<div style="position:absolute;top:903;left:169"><span class="ft0"> </span></div>
+<div style="position:absolute;top:880;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:906;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:941;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:940;left:113"><span class="ft2"> carPart cp1 = new carPart(&quot;fender&quot;);</span></div>
+<div style="position:absolute;top:937;left:413"><span class="ft0"> </span></div>
+<div style="position:absolute;top:941;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:945;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:960;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:960;left:113"><span class="ft2"> carPart cp2 = cp1;</span></div>
+<div style="position:absolute;top:957;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:960;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:964;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:113"><span class="ft2"> if(cp1 == cp2)</span></div>
+<div style="position:absolute;top:976;left:230"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:983;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:113"><span class="ft2">    System.out.println(&quot;They're Identical&quot;);</span></div>
+<div style="position:absolute;top:995;left:471"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1002;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1037;left:90"><span class="ft1"> In C++ this operator would tell you if two objects contained the same data. If you want to </span></div>
+<div style="position:absolute;top:1054;left:90"><span class="ft1">see whether two objects contain the same data in Java, you must use the </span></div>
+<div style="position:absolute;top:1054;left:545"><span class="ft2">equals()</span></div>
+<div style="position:absolute;top:1054;left:612"><span class="ft1"> </span></div>
+<div style="position:absolute;top:1071;left:90"><span class="ft1">method of the </span></div>
+<div style="position:absolute;top:1071;left:179"><span class="ft2">Object</span></div>
+<div style="position:absolute;top:1071;left:229"><span class="ft1"> class:</span></div>
+<div style="position:absolute;top:1068;left:268"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1072;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

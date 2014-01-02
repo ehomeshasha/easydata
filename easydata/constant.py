@@ -13,6 +13,8 @@ CONTENT_TYPE = {
 }
 
 PDF_UPLOAD_DIR = '/uploads/pdf/'
+TEXT_UPLOAD_DIR = '/uploads/text/'
+IMAGE_UPLOAD_DIR = '/uploads/image/'
 
 NOW = datetime.datetime.utcnow().replace(tzinfo=utc)
 TIMESTAMP = int(time.mktime(NOW.timetuple()))

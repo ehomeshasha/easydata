@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0418</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft5{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft6{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+.ft7{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft8{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft9{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0418.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 418 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">accomplished in fast O(1) time, insertion requires slow O(N) time, because an average of </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">half the items in the array must be moved to insert the new one in order.</span></div>
+<div style="position:absolute;top:94;left:533"><span class="ft0"> </span></div>
+<div style="position:absolute;top:97;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft2"> In this chapter we'll describe another structure that can be used to implement a priority </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft2">queue: the heap. A heap is a kind of tree. It offers both insertion and deletion in O(logN) </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft2">time. Thus it's not quite as fast for deletion, but much faster for insertion. It's the method </span></div>
+<div style="position:absolute;top:180;left:90"><span class="ft2">of choice for implementing priority queues where speed is important and there will be </span></div>
+<div style="position:absolute;top:196;left:90"><span class="ft2">many insertions.</span></div>
+<div style="position:absolute;top:193;left:191"><span class="ft0"> </span></div>
+<div style="position:absolute;top:161;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:196;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:215;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:245;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:231;left:90"><span class="ft2"> (Incidentally, don't confuse the term heap, used here for a special kind of binary tree, with </span></div>
+<div style="position:absolute;top:247;left:90"><span class="ft2">the same term used to mean the portion of computer memory available to a programmer </span></div>
+<div style="position:absolute;top:263;left:90"><span class="ft2">with </span></div>
+<div style="position:absolute;top:263;left:119"><span class="ft4">new</span></div>
+<div style="position:absolute;top:263;left:144"><span class="ft2"> in languages like Java and C++.)</span></div>
+<div style="position:absolute;top:260;left:350"><span class="ft0"> </span></div>
+<div style="position:absolute;top:264;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:281;left:79"><span class="ft5"> </span></div>
+<div style="position:absolute;top:301;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:300;left:90"><span class="ft6"> The Heap Workshop Applet</span></div>
+<div style="position:absolute;top:302;left:335"><span class="ft0"> </span></div>
+<div style="position:absolute;top:301;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:306;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:325;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:355;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:341;left:90"><span class="ft2"> The Heap Workshop applet demonstrates the operations we discussed in the last </span></div>
+<div style="position:absolute;top:357;left:90"><span class="ft2">section: It allows you to insert new items into a heap and remove the largest item. In </span></div>
+<div style="position:absolute;top:373;left:90"><span class="ft2">addition you can change the priority of a given item.</span></div>
+<div style="position:absolute;top:370;left:407"><span class="ft0"> </span></div>
+<div style="position:absolute;top:355;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:373;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:392;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:407;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:408;left:90"><span class="ft2"> When you start up the Heap Workshop applet, you'll see a display similar to Figure 12.7.</span></div>
+<div style="position:absolute;top:405;left:633"><span class="ft0">   </span></div>
+<div style="position:absolute;top:411;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:534;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:376"><span class="ft0">  </span></div>
+<div style="position:absolute;top:534;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:626;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:645;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:136"><span class="ft7"> Figure 12.7:  The Heap Workshop applet</span></div>
+<div style="position:absolute;top:658;left:391"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:684;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:682;left:136"><span class="ft8">  </span></div>
+<div style="position:absolute;top:682;left:640"><span class="ft8">  </span></div>
+<div style="position:absolute;top:684;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:703;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:719;left:90"><span class="ft2"> There are four buttons: Fill, Chng, Rem, and Ins, for fill, change, remove, and insert. Let's </span></div>
+<div style="position:absolute;top:735;left:90"><span class="ft2">see how they work.</span></div>
+<div style="position:absolute;top:732;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:735;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:771;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:770;left:90"><span class="ft9"> Fill</span></div>
+<div style="position:absolute;top:772;left:117"><span class="ft0"> </span></div>
+<div style="position:absolute;top:771;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:824;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:90"><span class="ft2"> The heap contains 10 nodes when the applet is first started. Using the Fill key you can </span></div>
+<div style="position:absolute;top:827;left:90"><span class="ft2">create a new heap with any number of nodes from 1 to 31. Press Fill repeatedly, and type </span></div>
+<div style="position:absolute;top:843;left:90"><span class="ft2">in the desired number when prompted.</span></div>
+<div style="position:absolute;top:840;left:328"><span class="ft0"> </span></div>
+<div style="position:absolute;top:824;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:843;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:862;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:877;left:90"><span class="ft9"> Change</span></div>
+<div style="position:absolute;top:879;left:159"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:883;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:902;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:948;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:918;left:90"><span class="ft2"> It's possible to change the priority of an existing node. This is a useful procedure in many </span></div>
+<div style="position:absolute;top:934;left:90"><span class="ft2">situations. For example, in our cruiser example, a threat such as an approaching airplane </span></div>
+<div style="position:absolute;top:950;left:90"><span class="ft2">may reverse course away from the carrier; its priority should be lowered to reflect this </span></div>
+<div style="position:absolute;top:966;left:90"><span class="ft2">new development, although the aircraft would remain in the priority queue until it was out </span></div>
+<div style="position:absolute;top:982;left:90"><span class="ft2">of radar range.</span></div>
+<div style="position:absolute;top:979;left:181"><span class="ft0"> </span></div>
+<div style="position:absolute;top:948;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:982;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1001;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1017;left:90"><span class="ft2"> To change the priority of a node, repeatedly press the Chng key. When prompted, click </span></div>
+<div style="position:absolute;top:1033;left:90"><span class="ft2">on the node with the mouse. This will position the red arrow on the node. Then, when </span></div>
+<div style="position:absolute;top:1049;left:90"><span class="ft2">prompted, type in the node's new priority.</span></div>
+<div style="position:absolute;top:1046;left:344"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1049;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1069;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

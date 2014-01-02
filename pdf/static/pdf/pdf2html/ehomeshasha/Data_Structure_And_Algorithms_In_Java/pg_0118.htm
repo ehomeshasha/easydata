@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0118</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#ffffff;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0118.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 118 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">pocket calculators. Also, the coding details are more complex than any we've seen so far. </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">However, it's educational to see this important use of stacks, and the issues raised are </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">interesting in their own right.</span></div>
+<div style="position:absolute;top:109;left:264"><span class="ft0"> </span></div>
+<div style="position:absolute;top:113;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1"> As it turns out, it's fairly difficult, at least for a computer algorithm, to evaluate an </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft1">arithmetic expression directly. It's easier for the algorithm to use a two-step process:</span></div>
+<div style="position:absolute;top:161;left:606"><span class="ft0">   </span></div>
+<div style="position:absolute;top:164;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:198;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft1"> 1.</span></div>
+<div style="position:absolute;top:196;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:199;left:113"><span class="ft1">Transform the arithmetic expression into a different format, called postfix notation.</span></div>
+<div style="position:absolute;top:196;left:615"><span class="ft0">   </span></div>
+<div style="position:absolute;top:202;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:221;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:237;left:90"><span class="ft1"> 2.</span></div>
+<div style="position:absolute;top:234;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:237;left:113"><span class="ft1">Evaluate the postfix expression.</span></div>
+<div style="position:absolute;top:234;left:309"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:240;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:259;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:297;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:90"><span class="ft1"> Step 1 is a bit involved, but step 2 is easy. In any case, this two-step approach results in </span></div>
+<div style="position:absolute;top:291;left:90"><span class="ft1">a simpler algorithm than trying to parse the arithmetic expression directly. Of course, for a </span></div>
+<div style="position:absolute;top:307;left:90"><span class="ft1">human it's easier to parse the ordinary arithmetic expression. We'll return to the </span></div>
+<div style="position:absolute;top:323;left:90"><span class="ft1">difference between the human and computer approaches in a moment.</span></div>
+<div style="position:absolute;top:320;left:527"><span class="ft0"> </span></div>
+<div style="position:absolute;top:297;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:323;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:343;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:358;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:358;left:90"><span class="ft1"> Before we delve into the details of steps 1 and 2, we'll introduce postfix notation.</span></div>
+<div style="position:absolute;top:355;left:582"><span class="ft0"> </span></div>
+<div style="position:absolute;top:358;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:362;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:381;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:396;left:90"><span class="ft2"> Postfix Notation</span></div>
+<div style="position:absolute;top:398;left:234"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:402;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:459;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:437;left:90"><span class="ft1"> Everyday arithmetic expressions are written with an operator (+, 每, *, or /) placed </span></div>
+<div style="position:absolute;top:453;left:90"><span class="ft1">between two operands (numbers, or symbols that stand for numbers). This is called infix </span></div>
+<div style="position:absolute;top:469;left:90"><span class="ft1">notation, because the operator is written inside the operands. Thus we say 2+2 and 4/7, </span></div>
+<div style="position:absolute;top:485;left:90"><span class="ft1">or, using letters to stand for numbers, A+B and A/B.</span></div>
+<div style="position:absolute;top:482;left:408"><span class="ft0"> </span></div>
+<div style="position:absolute;top:459;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:486;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:550;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:90"><span class="ft1"> In postfix notation (which is also called Reverse Polish Notation, or RPN, because it was </span></div>
+<div style="position:absolute;top:537;left:90"><span class="ft1">invented by a Polish mathematician), the operator follows the two operands. Thus A+B </span></div>
+<div style="position:absolute;top:552;left:90"><span class="ft1">becomes AB+, and A/B becomes AB/. More complex infix expressions can likewise be </span></div>
+<div style="position:absolute;top:568;left:90"><span class="ft1">translated into postfix notation, as shown in Table 4.2. We'll explain how the postfix </span></div>
+<div style="position:absolute;top:584;left:90"><span class="ft1">expressions are generated in a moment.</span></div>
+<div style="position:absolute;top:581;left:339"><span class="ft0"> </span></div>
+<div style="position:absolute;top:550;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:585;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:604;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:619;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:620;left:90"><span class="ft4"> Table 4.2: Infix and postfix expressions</span></div>
+<div style="position:absolute;top:617;left:350"><span class="ft0"> </span></div>
+<div style="position:absolute;top:619;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:623;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:642;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:657;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:664;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:657;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:661;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:680;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:95"><span class="ft4"> Infix</span></div>
+<div style="position:absolute;top:693;left:123"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:680;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:696;left:256"><span class="ft4">Postfix</span></div>
+<div style="position:absolute;top:693;left:302"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:700;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:686;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:719;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:734;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:734;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:738;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:757;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:773;left:95"><span class="ft1"> A+B每C</span></div>
+<div style="position:absolute;top:770;left:139"><span class="ft0"> </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:757;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:773;left:256"><span class="ft1">AB+C每</span></div>
+<div style="position:absolute;top:770;left:300"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:776;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:95"><span class="ft1"> A*B/C</span></div>
+<div style="position:absolute;top:808;left:133"><span class="ft0"> </span></div>
+<div style="position:absolute;top:815;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:795;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:811;left:256"><span class="ft1">AB*C/</span></div>
+<div style="position:absolute;top:808;left:294"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:815;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:801;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:834;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:850;left:95"><span class="ft1"> A+B*C</span></div>
+<div style="position:absolute;top:847;left:137"><span class="ft0"> </span></div>
+<div style="position:absolute;top:853;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:834;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:850;left:256"><span class="ft1">ABC*+</span></div>
+<div style="position:absolute;top:847;left:298"><span class="ft0"> </span></div>
+<div style="position:absolute;top:849;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:853;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:839;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:872;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:887;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:888;left:95"><span class="ft1"> A*B+C</span></div>
+<div style="position:absolute;top:885;left:137"><span class="ft0"> </span></div>
+<div style="position:absolute;top:891;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:872;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:888;left:256"><span class="ft1">AB*C+</span></div>
+<div style="position:absolute;top:885;left:298"><span class="ft0"> </span></div>
+<div style="position:absolute;top:887;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:891;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:878;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:910;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:95"><span class="ft1"> A*(B+C)</span></div>
+<div style="position:absolute;top:923;left:146"><span class="ft0"> </span></div>
+<div style="position:absolute;top:930;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:910;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:926;left:256"><span class="ft1">ABC+*</span></div>
+<div style="position:absolute;top:923;left:298"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:930;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:916;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:949;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:965;left:95"><span class="ft1"> A*B+C*D</span></div>
+<div style="position:absolute;top:962;left:152"><span class="ft0"> </span></div>
+<div style="position:absolute;top:968;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:949;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:965;left:256"><span class="ft1">AB*CD*+</span></div>
+<div style="position:absolute;top:962;left:314"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:968;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:954;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:987;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1002;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1003;left:95"><span class="ft1"> (A+B)*(C每D)</span></div>
+<div style="position:absolute;top:1000;left:173"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1006;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1003;left:256"><span class="ft1">AB+CD每*</span></div>
+<div style="position:absolute;top:1000;left:316"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1002;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1006;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1025;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:95"><span class="ft1"> ((A+B)*C)每D</span></div>
+<div style="position:absolute;top:1038;left:173"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1045;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1025;left:257"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1041;left:256"><span class="ft1">AB+C*D每</span></div>
+<div style="position:absolute;top:1038;left:316"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1041;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1045;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1031;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1064;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1064;left:257"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:646"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0409</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:11px;font-family:Times New Roman;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0409.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 409 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">27, which is 1 for the letter at N¨C1, 27 for the letter at N¨C2, and so on.</span></div>
+<div style="position:absolute;top:78;left:516"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:146;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:116;left:118"><span class="ft2">hashFunc1()</span></div>
+<div style="position:absolute;top:116;left:210"><span class="ft1"> method is not as efficient as it might be. Aside from the character </span></div>
+<div style="position:absolute;top:133;left:90"><span class="ft1">conversion, there are two multiplications and an addition inside the loop. We can </span></div>
+<div style="position:absolute;top:149;left:90"><span class="ft1">eliminate a multiplication by taking advantage of a mathematical identity called Horner's </span></div>
+<div style="position:absolute;top:165;left:90"><span class="ft1">method. (Horner was an English mathematician, 1773¨C1827.) This states that an </span></div>
+<div style="position:absolute;top:181;left:90"><span class="ft1">expression like</span></div>
+<div style="position:absolute;top:178;left:182"><span class="ft0"> </span></div>
+<div style="position:absolute;top:146;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:181;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:200;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:215;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:218;left:113"><span class="ft2"> var4*n </span></div>
+<div style="position:absolute;top:213;left:155"><span class="ft3">4</span></div>
+<div style="position:absolute;top:218;left:161"><span class="ft2"> + var3*n </span></div>
+<div style="position:absolute;top:213;left:218"><span class="ft3">3</span></div>
+<div style="position:absolute;top:218;left:223"><span class="ft2"> + var2*n </span></div>
+<div style="position:absolute;top:213;left:280"><span class="ft3">2</span></div>
+<div style="position:absolute;top:218;left:286"><span class="ft2"> + var1*n </span></div>
+<div style="position:absolute;top:213;left:342"><span class="ft3">1</span></div>
+<div style="position:absolute;top:218;left:348"><span class="ft2"> + var0*n </span></div>
+<div style="position:absolute;top:213;left:405"><span class="ft3">0</span></div>
+<div style="position:absolute;top:215;left:410"><span class="ft0"> </span></div>
+<div style="position:absolute;top:215;left:640"><span class="ft0"> </span></div>
+<div style="position:absolute;top:219;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:238;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:254;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:254;left:90"><span class="ft1"> can be written as</span></div>
+<div style="position:absolute;top:251;left:195"><span class="ft0"> </span></div>
+<div style="position:absolute;top:254;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:258;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:277;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:292;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:293;left:113"><span class="ft2"> (((var4*n + var3)*n + var2)*n + var1)*n + var0</span></div>
+<div style="position:absolute;top:290;left:379"><span class="ft0"> </span></div>
+<div style="position:absolute;top:292;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:296;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:315;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:331;left:90"><span class="ft1"> To evaluate this, we can start inside the innermost parentheses and work outward. If we </span></div>
+<div style="position:absolute;top:347;left:90"><span class="ft1">translate this to a Java method we have the following code:</span></div>
+<div style="position:absolute;top:344;left:454"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:347;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:366;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:382;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:381;left:113"><span class="ft2"> public static int hashFunc2(String key)</span></div>
+<div style="position:absolute;top:378;left:438"><span class="ft0"> </span></div>
+<div style="position:absolute;top:382;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:385;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:401;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:400;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:397;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:401;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:405;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:420;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:419;left:113"><span class="ft2">    int hashVal = 0;</span></div>
+<div style="position:absolute;top:416;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:420;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:424;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:113"><span class="ft2">    for(int j=0; j&lt;key.length(); j++)    // left to right</span></div>
+<div style="position:absolute;top:436;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:443;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:455;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:458;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:462;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:477;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:477;left:113"><span class="ft2">       int letter = key.charAt(j) - 96;  // get char code</span></div>
+<div style="position:absolute;top:474;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:477;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:481;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:497;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:496;left:113"><span class="ft2">       hashVal = hashVal * 27 + letter;  // multiply and add</span></div>
+<div style="position:absolute;top:493;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:500;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:516;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:515;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:512;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:516;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:520;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:534;left:113"><span class="ft2">    return hashVal % arraySize;          // mod</span></div>
+<div style="position:absolute;top:531;left:496"><span class="ft0"> </span></div>
+<div style="position:absolute;top:535;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:539;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:113"><span class="ft2">    }  // end hashFunc2()</span></div>
+<div style="position:absolute;top:551;left:313"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:558;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:593;left:90"><span class="ft1"> Here we start with the leftmost letter of the word (which is somewhat more natural than </span></div>
+<div style="position:absolute;top:609;left:90"><span class="ft1">starting on the right), and we have only one multiplication and one addition each time </span></div>
+<div style="position:absolute;top:625;left:90"><span class="ft1">through the loop (aside from extracting the character from the string).</span></div>
+<div style="position:absolute;top:622;left:514"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:625;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:644;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:676;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:660;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:660;left:118"><span class="ft2">hashFunc2()</span></div>
+<div style="position:absolute;top:660;left:210"><span class="ft1"> method unfortunately can't handle strings longer than about 7 letters. </span></div>
+<div style="position:absolute;top:678;left:90"><span class="ft1">Longer strings cause the value of </span></div>
+<div style="position:absolute;top:678;left:299"><span class="ft2">hashVal</span></div>
+<div style="position:absolute;top:678;left:357"><span class="ft1"> to exceed the size of type </span></div>
+<div style="position:absolute;top:678;left:522"><span class="ft2">int</span></div>
+<div style="position:absolute;top:678;left:547"><span class="ft1">. (If we used </span></div>
+<div style="position:absolute;top:695;left:90"><span class="ft1">type </span></div>
+<div style="position:absolute;top:695;left:120"><span class="ft2">long</span></div>
+<div style="position:absolute;top:695;left:154"><span class="ft1">, the same problem would still arise for somewhat longer strings.)</span></div>
+<div style="position:absolute;top:692;left:554"><span class="ft0"> </span></div>
+<div style="position:absolute;top:676;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:745;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:731;left:90"><span class="ft1"> Can we modify this basic approach so we don't overflow any variables. Notice that the </span></div>
+<div style="position:absolute;top:747;left:90"><span class="ft1">key we eventually end up with is always less than the array size, because we apply the </span></div>
+<div style="position:absolute;top:763;left:90"><span class="ft1">modulo operator. It's not the final index that's too big; it's the intermediate key values.</span></div>
+<div style="position:absolute;top:760;left:612"><span class="ft0">   </span></div>
+<div style="position:absolute;top:763;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:782;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:90"><span class="ft1"> It turns out that with Horner's formulation we can apply the modulo (</span></div>
+<div style="position:absolute;top:798;left:506"><span class="ft2">%</span></div>
+<div style="position:absolute;top:798;left:514"><span class="ft1">) operator at each </span></div>
+<div style="position:absolute;top:815;left:90"><span class="ft1">step in the calculation. This gives the same result as applying the modulo operator once </span></div>
+<div style="position:absolute;top:831;left:90"><span class="ft1">at the end, but avoids overflow. (It does add an operation inside the loop.) The </span></div>
+<div style="position:absolute;top:847;left:90"><span class="ft2">hashFunc3()</span></div>
+<div style="position:absolute;top:847;left:182"><span class="ft1"> method shows how this looks:</span></div>
+<div style="position:absolute;top:844;left:370"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:848;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:867;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:883;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:882;left:113"><span class="ft2"> public static int hashFunc3(String key)</span></div>
+<div style="position:absolute;top:879;left:438"><span class="ft0"> </span></div>
+<div style="position:absolute;top:883;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:887;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:902;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:901;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:898;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:902;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:906;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:921;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:921;left:113"><span class="ft2">    int hashVal = 0;</span></div>
+<div style="position:absolute;top:918;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:921;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:925;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:940;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:940;left:113"><span class="ft2">    for(int j=0; j&lt;key.length(); j++)    // left to right</span></div>
+<div style="position:absolute;top:937;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:940;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:944;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:956;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:963;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:978;left:113"><span class="ft2">       int letter = key.charAt(j) - 96;  // get char code</span></div>
+<div style="position:absolute;top:975;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:982;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:997;left:113"><span class="ft2">       hashVal = (hashVal * 27 + letter) % arraySize; // mod</span></div>
+<div style="position:absolute;top:994;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:1002;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1017;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1016;left:113"><span class="ft2">       }</span></div>
+<div style="position:absolute;top:1013;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1017;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1021;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:113"><span class="ft2">    return hashVal;                      // no mod</span></div>
+<div style="position:absolute;top:1033;left:521"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1036;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1040;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1055;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1055;left:113"><span class="ft2">    }  // end hashFunc3()</span></div>
+<div style="position:absolute;top:1052;left:313"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1055;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1059;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0302</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft5{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0302.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 302 -</span></div>
+<div style="position:absolute;top:102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> First the program goes to the original node's right child, which must have a key larger </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">than the node. Then it goes to this right child's left child (if it has one), and to this left </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">child's left child, and so on, following down the path of left children. The last left child in </span></div>
+<div style="position:absolute;top:128;left:90"><span class="ft1">this path is the successor of the original node, as shown in Figure 8.17.</span></div>
+<div style="position:absolute;top:125;left:527"><span class="ft0"> </span></div>
+<div style="position:absolute;top:102;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:129;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:148;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:259;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:359;left:313"><span class="ft0">  </span></div>
+<div style="position:absolute;top:259;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:359;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:378;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:394;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:394;left:136"><span class="ft2"> Figure 8.17:  Finding the successor</span></div>
+<div style="position:absolute;top:391;left:357"><span class="ft0"> </span></div>
+<div style="position:absolute;top:394;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:417;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:415;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:415;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:417;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:498;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:452;left:90"><span class="ft1"> Why does this work. What we're really looking for is the smallest of the set of nodes that </span></div>
+<div style="position:absolute;top:468;left:90"><span class="ft4">are larger than the original node. When you go to the original node's right child, all the </span></div>
+<div style="position:absolute;top:484;left:90"><span class="ft1">nodes in the resulting subtree are greater than the original node, because this is how a </span></div>
+<div style="position:absolute;top:500;left:90"><span class="ft1">binary search tree is defined. Now we want the smallest value in this subtree. As we </span></div>
+<div style="position:absolute;top:516;left:90"><span class="ft1">learned, you can find the minimum value in a subtree by following the path down all the </span></div>
+<div style="position:absolute;top:532;left:90"><span class="ft1">left children. Thus, this algorithm finds the minimum value that is greater than the original </span></div>
+<div style="position:absolute;top:548;left:90"><span class="ft1">node; this is what we mean by its successor.</span></div>
+<div style="position:absolute;top:545;left:364"><span class="ft0"> </span></div>
+<div style="position:absolute;top:498;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:548;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:567;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:589;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:583;left:90"><span class="ft1"> If the right child of the original node has no left children, then this right child is itself the </span></div>
+<div style="position:absolute;top:599;left:90"><span class="ft1">successor, as shown in Figure 8.18.</span></div>
+<div style="position:absolute;top:596;left:312"><span class="ft0"> </span></div>
+<div style="position:absolute;top:589;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:599;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:618;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:774;left:292"><span class="ft0">  </span></div>
+<div style="position:absolute;top:702;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:774;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:809;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:809;left:136"><span class="ft2"> Figure 8.18:  The right child is the successor</span></div>
+<div style="position:absolute;top:806;left:413"><span class="ft0"> </span></div>
+<div style="position:absolute;top:809;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:832;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:830;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:832;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:851;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:866;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:866;left:90"><span class="ft5"> Using the Workshop Applet to Delete a Node with Two Children</span></div>
+<div style="position:absolute;top:866;left:592"><span class="ft0">   </span></div>
+<div style="position:absolute;top:870;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:889;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:935;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:905;left:90"><span class="ft1"> Generate a tree with the Workshop applet, and pick a node with two children. Now </span></div>
+<div style="position:absolute;top:921;left:90"><span class="ft1">mentally figure out which node is its successor by going to its right child and then </span></div>
+<div style="position:absolute;top:937;left:90"><span class="ft1">following down the line of this right child's left children (if it has any). You may want to </span></div>
+<div style="position:absolute;top:953;left:90"><span class="ft1">make sure the successor has no children of its own. If it does, the situation gets more </span></div>
+<div style="position:absolute;top:969;left:90"><span class="ft1">complicated because entire subtrees are moved around, rather than a single node.</span></div>
+<div style="position:absolute;top:966;left:598"><span class="ft0"> </span></div>
+<div style="position:absolute;top:935;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:969;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:988;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1004;left:90"><span class="ft1"> Once you've chosen a node to delete, click the Del button. You'll be asked for the key </span></div>
+<div style="position:absolute;top:1020;left:90"><span class="ft1">value of the node to delete. When you've specified it, repeated presses of the Del button </span></div>
+<div style="position:absolute;top:1036;left:90"><span class="ft1">will show the red arrow searching down the tree to the designated node. When the node </span></div>
+<div style="position:absolute;top:1052;left:90"><span class="ft1">is deleted, it's replaced by its successor.</span></div>
+<div style="position:absolute;top:1049;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1052;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1071;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

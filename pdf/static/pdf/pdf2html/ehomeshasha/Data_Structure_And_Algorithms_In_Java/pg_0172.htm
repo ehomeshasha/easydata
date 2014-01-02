@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0172</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Times New Roman;color:#800000;}
+.ft5{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0172.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 172 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:113"><span class="ft1">       Link previous = null;            // start at first</span></div>
+<div style="position:absolute;top:77;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:113"><span class="ft1">       Link current = first;</span></div>
+<div style="position:absolute;top:96;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:103;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:113"><span class="ft1">                                        // until end of list,</span></div>
+<div style="position:absolute;top:115;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:137;left:113"><span class="ft1">       while(current != null &amp;&amp; key &gt; current.dData)</span></div>
+<div style="position:absolute;top:134;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:141;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:156;left:113"><span class="ft1">          {                             // or key &gt; current,</span></div>
+<div style="position:absolute;top:153;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:175;left:113"><span class="ft1">          previous = current;</span></div>
+<div style="position:absolute;top:172;left:347"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:180;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:113"><span class="ft1">          current = current.next;       // go to next item</span></div>
+<div style="position:absolute;top:192;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:199;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:113"><span class="ft1">          }</span></div>
+<div style="position:absolute;top:211;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:113"><span class="ft1">       if(previous==null)               // at beginning of list</span></div>
+<div style="position:absolute;top:230;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:252;left:113"><span class="ft1">          first = newLink;              //    first --&gt; newLink</span></div>
+<div style="position:absolute;top:249;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:113"><span class="ft1">       else                             // not at beginning</span></div>
+<div style="position:absolute;top:268;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:276;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:297;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:113"><span class="ft1">          previous.next = newLink;      //    old prev --&gt; </span></div>
+<div style="position:absolute;top:306;left:113"><span class="ft1">newLink</span></div>
+<div style="position:absolute;top:303;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:297;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:307;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:326;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:341;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:341;left:113"><span class="ft1"> newLink.next = current;          // newLink --&gt; old currnt</span></div>
+<div style="position:absolute;top:338;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:345;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:380;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:379;left:113"><span class="ft1">       }  // end insert()</span></div>
+<div style="position:absolute;top:376;left:313"><span class="ft0"> </span></div>
+<div style="position:absolute;top:380;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:384;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:403;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:451;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:419;left:90"><span class="ft2"> We need to maintain a </span></div>
+<div style="position:absolute;top:419;left:233"><span class="ft1">previous</span></div>
+<div style="position:absolute;top:419;left:300"><span class="ft2"> reference as we move along, so we can modify the </span></div>
+<div style="position:absolute;top:436;left:90"><span class="ft2">previous link's </span></div>
+<div style="position:absolute;top:436;left:181"><span class="ft1">next</span></div>
+<div style="position:absolute;top:436;left:214"><span class="ft2"> field to point to the new link. After creating the new link, we prepare </span></div>
+<div style="position:absolute;top:454;left:90"><span class="ft2">to search for the insertion point by setting </span></div>
+<div style="position:absolute;top:454;left:348"><span class="ft1">current</span></div>
+<div style="position:absolute;top:454;left:406"><span class="ft2"> to </span></div>
+<div style="position:absolute;top:454;left:426"><span class="ft1">first</span></div>
+<div style="position:absolute;top:454;left:467"><span class="ft2"> in the usual way. We also </span></div>
+<div style="position:absolute;top:471;left:90"><span class="ft2">set </span></div>
+<div style="position:absolute;top:471;left:113"><span class="ft1">previous</span></div>
+<div style="position:absolute;top:471;left:179"><span class="ft2"> to </span></div>
+<div style="position:absolute;top:471;left:199"><span class="ft1">null</span></div>
+<div style="position:absolute;top:471;left:232"><span class="ft2">; this is important because later we'll use this </span></div>
+<div style="position:absolute;top:471;left:510"><span class="ft1">null</span></div>
+<div style="position:absolute;top:471;left:543"><span class="ft2"> value to </span></div>
+<div style="position:absolute;top:487;left:90"><span class="ft2">determine whether we're still at the beginning of the list.</span></div>
+<div style="position:absolute;top:484;left:432"><span class="ft0"> </span></div>
+<div style="position:absolute;top:451;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:488;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:507;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:523;left:118"><span class="ft1">while</span></div>
+<div style="position:absolute;top:523;left:160"><span class="ft2"> loop is similar to those we've used before to search for the insertion point, but </span></div>
+<div style="position:absolute;top:540;left:90"><span class="ft2">there's an added condition. The loop terminates when the key of the link currently being </span></div>
+<div style="position:absolute;top:556;left:90"><span class="ft2">examined (</span></div>
+<div style="position:absolute;top:556;left:159"><span class="ft1">current.dData</span></div>
+<div style="position:absolute;top:556;left:267"><span class="ft2">) is no longer smaller than the key of the link being inserted </span></div>
+<div style="position:absolute;top:573;left:90"><span class="ft2">(</span></div>
+<div style="position:absolute;top:573;left:95"><span class="ft1">key</span></div>
+<div style="position:absolute;top:573;left:120"><span class="ft2">); this is the most usual case, where a key is inserted somewhere in the middle of </span></div>
+<div style="position:absolute;top:590;left:90"><span class="ft2">the list.</span></div>
+<div style="position:absolute;top:587;left:134"><span class="ft0"> </span></div>
+<div style="position:absolute;top:554;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:590;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:609;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:641;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:90"><span class="ft2"> However, the </span></div>
+<div style="position:absolute;top:626;left:176"><span class="ft1">while</span></div>
+<div style="position:absolute;top:626;left:218"><span class="ft2"> loop also terminates if </span></div>
+<div style="position:absolute;top:626;left:360"><span class="ft1">current</span></div>
+<div style="position:absolute;top:626;left:419"><span class="ft2"> is </span></div>
+<div style="position:absolute;top:626;left:436"><span class="ft1">null</span></div>
+<div style="position:absolute;top:626;left:470"><span class="ft2">. This happens at the end </span></div>
+<div style="position:absolute;top:643;left:90"><span class="ft2">of the list (the </span></div>
+<div style="position:absolute;top:643;left:177"><span class="ft1">next</span></div>
+<div style="position:absolute;top:643;left:211"><span class="ft2"> field of the last element is </span></div>
+<div style="position:absolute;top:643;left:375"><span class="ft1">null</span></div>
+<div style="position:absolute;top:643;left:409"><span class="ft2">), or if the list is empty to begin with </span></div>
+<div style="position:absolute;top:660;left:90"><span class="ft2">(</span></div>
+<div style="position:absolute;top:660;left:95"><span class="ft1">first</span></div>
+<div style="position:absolute;top:660;left:137"><span class="ft2"> is </span></div>
+<div style="position:absolute;top:660;left:154"><span class="ft1">null</span></div>
+<div style="position:absolute;top:660;left:188"><span class="ft2">).</span></div>
+<div style="position:absolute;top:657;left:196"><span class="ft0"> </span></div>
+<div style="position:absolute;top:641;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:661;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:680;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:703;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:697;left:90"><span class="ft2"> Once the </span></div>
+<div style="position:absolute;top:697;left:150"><span class="ft1">while</span></div>
+<div style="position:absolute;top:697;left:192"><span class="ft2"> loop terminates, we may be at the beginning, the middle, or the end of </span></div>
+<div style="position:absolute;top:713;left:90"><span class="ft2">the list, or the list may be empty.</span></div>
+<div style="position:absolute;top:710;left:289"><span class="ft0"> </span></div>
+<div style="position:absolute;top:703;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:713;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:732;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:90"><span class="ft2"> If we're at the beginning or the list is empty, </span></div>
+<div style="position:absolute;top:749;left:361"><span class="ft1">previous</span></div>
+<div style="position:absolute;top:749;left:427"><span class="ft2"> will be </span></div>
+<div style="position:absolute;top:749;left:474"><span class="ft1">null</span></div>
+<div style="position:absolute;top:749;left:507"><span class="ft2">; so we set </span></div>
+<div style="position:absolute;top:749;left:577"><span class="ft1">first</span></div>
+<div style="position:absolute;top:749;left:619"><span class="ft2"> to </span></div>
+<div style="position:absolute;top:766;left:90"><span class="ft2">the new link. Otherwise, we're in the middle of the list or at the end, and we set </span></div>
+<div style="position:absolute;top:782;left:90"><span class="ft1">previous.next</span></div>
+<div style="position:absolute;top:782;left:199"><span class="ft2"> to the new link.</span></div>
+<div style="position:absolute;top:779;left:295"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:783;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:802;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:825;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:818;left:90"><span class="ft2"> In any case we set the new link's </span></div>
+<div style="position:absolute;top:818;left:296"><span class="ft1">next</span></div>
+<div style="position:absolute;top:818;left:329"><span class="ft2"> field to </span></div>
+<div style="position:absolute;top:818;left:378"><span class="ft1">current</span></div>
+<div style="position:absolute;top:818;left:436"><span class="ft2">. If we're at the end of the list, </span></div>
+<div style="position:absolute;top:836;left:90"><span class="ft1">current</span></div>
+<div style="position:absolute;top:836;left:149"><span class="ft2"> is </span></div>
+<div style="position:absolute;top:836;left:166"><span class="ft1">null</span></div>
+<div style="position:absolute;top:836;left:200"><span class="ft2">, so the new link's </span></div>
+<div style="position:absolute;top:836;left:313"><span class="ft1">next</span></div>
+<div style="position:absolute;top:836;left:346"><span class="ft2"> field is appropriately set to this value.</span></div>
+<div style="position:absolute;top:833;left:578"><span class="ft0"> </span></div>
+<div style="position:absolute;top:825;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:836;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:856;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:871;left:90"><span class="ft3"> The </span></div>
+<div style="position:absolute;top:871;left:129"><span class="ft4">sortedList.java</span></div>
+<div style="position:absolute;top:871;left:298"><span class="ft3"> Program</span></div>
+<div style="position:absolute;top:873;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:879;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:898;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:929;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:914;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:914;left:118"><span class="ft1">sortedList.java</span></div>
+<div style="position:absolute;top:914;left:243"><span class="ft2"> example shown in Listing 5.6 presents a </span></div>
+<div style="position:absolute;top:914;left:498"><span class="ft1">SortedList</span></div>
+<div style="position:absolute;top:914;left:581"><span class="ft2"> class </span></div>
+<div style="position:absolute;top:932;left:90"><span class="ft2">with </span></div>
+<div style="position:absolute;top:932;left:119"><span class="ft1">insert()</span></div>
+<div style="position:absolute;top:932;left:185"><span class="ft2">, </span></div>
+<div style="position:absolute;top:932;left:193"><span class="ft1">remove()</span></div>
+<div style="position:absolute;top:932;left:260"><span class="ft2">, and </span></div>
+<div style="position:absolute;top:932;left:295"><span class="ft1">displayList()</span></div>
+<div style="position:absolute;top:932;left:403"><span class="ft2"> methods. Only the </span></div>
+<div style="position:absolute;top:932;left:523"><span class="ft1">insert()</span></div>
+<div style="position:absolute;top:932;left:590"><span class="ft2"> routine </span></div>
+<div style="position:absolute;top:948;left:90"><span class="ft2">is different from its counterpart in nonsorted lists.</span></div>
+<div style="position:absolute;top:945;left:390"><span class="ft0"> </span></div>
+<div style="position:absolute;top:929;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:948;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:967;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:983;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:983;left:90"><span class="ft5"> Listing 5.6 The sortedList.java Program</span></div>
+<div style="position:absolute;top:980;left:350"><span class="ft0"> </span></div>
+<div style="position:absolute;top:983;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:987;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1006;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:113"><span class="ft1"> // sortedList.java</span></div>
+<div style="position:absolute;top:1018;left:263"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1021;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1025;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:113"><span class="ft1"> // demonstrates sorted list</span></div>
+<div style="position:absolute;top:1037;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1044;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1059;left:113"><span class="ft1"> // to run this program: C&gt;java SortedListApp</span></div>
+<div style="position:absolute;top:1056;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1063;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

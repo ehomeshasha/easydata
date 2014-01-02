@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0188</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0188.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 188 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:216;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:469"><span class="ft0">  </span></div>
+<div style="position:absolute;top:216;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:337;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:356;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:372;left:136"><span class="ft1"> Figure 5.17:  List iterators</span></div>
+<div style="position:absolute;top:369;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:394;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:393;left:136"><span class="ft3">  </span></div>
+<div style="position:absolute;top:393;left:640"><span class="ft3">  </span></div>
+<div style="position:absolute;top:394;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:414;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:429;left:90"><span class="ft4"> Additional Iterator Features</span></div>
+<div style="position:absolute;top:431;left:335"><span class="ft0"> </span></div>
+<div style="position:absolute;top:430;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:435;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:454;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:485;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:471;left:90"><span class="ft2"> We've seen several programs where the use of a </span></div>
+<div style="position:absolute;top:471;left:395"><span class="ft5">previous</span></div>
+<div style="position:absolute;top:471;left:462"><span class="ft2"> field made it simpler to </span></div>
+<div style="position:absolute;top:487;left:90"><span class="ft2">perform certain operations, such as deleting a link from an arbitrary location. Such a field </span></div>
+<div style="position:absolute;top:503;left:90"><span class="ft2">is also useful in an iterator.</span></div>
+<div style="position:absolute;top:500;left:256"><span class="ft0"> </span></div>
+<div style="position:absolute;top:485;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:504;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:570;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:539;left:90"><span class="ft2"> Also, it may be that the iterator will need to change the value of the list's </span></div>
+<div style="position:absolute;top:539;left:535"><span class="ft5">first</span></div>
+<div style="position:absolute;top:539;left:576"><span class="ft2"> field; for </span></div>
+<div style="position:absolute;top:556;left:90"><span class="ft2">example, if an item is inserted or deleted at the beginning of the list. If the iterator is an </span></div>
+<div style="position:absolute;top:572;left:90"><span class="ft2">object of a separate class, how can it access a private field, such as </span></div>
+<div style="position:absolute;top:572;left:511"><span class="ft5">first</span></div>
+<div style="position:absolute;top:572;left:553"><span class="ft2">, in the list. </span></div>
+<div style="position:absolute;top:589;left:90"><span class="ft2">One solution is for the list to pass a reference to itself to the iterator when it creates it. </span></div>
+<div style="position:absolute;top:605;left:90"><span class="ft2">This reference is stored in a field in the iterator.</span></div>
+<div style="position:absolute;top:602;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:570;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:605;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:624;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:664;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:640;left:90"><span class="ft2"> The list must then provide public methods that allow the iterator to change </span></div>
+<div style="position:absolute;top:640;left:548"><span class="ft5">first</span></div>
+<div style="position:absolute;top:640;left:590"><span class="ft2">. These </span></div>
+<div style="position:absolute;top:658;left:90"><span class="ft2">are </span></div>
+<div style="position:absolute;top:658;left:114"><span class="ft5">LinkList</span></div>
+<div style="position:absolute;top:658;left:181"><span class="ft2"> methods </span></div>
+<div style="position:absolute;top:658;left:242"><span class="ft5">getFirst()</span></div>
+<div style="position:absolute;top:658;left:325"><span class="ft2"> and </span></div>
+<div style="position:absolute;top:658;left:356"><span class="ft5">setFirst()</span></div>
+<div style="position:absolute;top:658;left:439"><span class="ft2">. (The weakness of this </span></div>
+<div style="position:absolute;top:675;left:90"><span class="ft2">approach is that these methods allow anyone to change </span></div>
+<div style="position:absolute;top:675;left:438"><span class="ft5">first</span></div>
+<div style="position:absolute;top:675;left:479"><span class="ft2">, which introduces an </span></div>
+<div style="position:absolute;top:692;left:90"><span class="ft2">element of risk.)</span></div>
+<div style="position:absolute;top:689;left:189"><span class="ft0"> </span></div>
+<div style="position:absolute;top:664;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:692;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:711;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:733;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:727;left:90"><span class="ft2"> Here's a revised (although still incomplete) iterator class that incorporates these </span></div>
+<div style="position:absolute;top:743;left:90"><span class="ft2">additional fields, along with </span></div>
+<div style="position:absolute;top:743;left:260"><span class="ft5">reset()</span></div>
+<div style="position:absolute;top:743;left:318"><span class="ft2"> and </span></div>
+<div style="position:absolute;top:743;left:349"><span class="ft5">nextLink()</span></div>
+<div style="position:absolute;top:743;left:433"><span class="ft2"> methods:</span></div>
+<div style="position:absolute;top:740;left:494"><span class="ft0"> </span></div>
+<div style="position:absolute;top:733;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:744;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:113"><span class="ft5"> class ListIterator()</span></div>
+<div style="position:absolute;top:775;left:280"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:782;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:113"><span class="ft5">    {</span></div>
+<div style="position:absolute;top:794;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:798;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:802;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:817;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:113"><span class="ft5">    private Link current;       // reference to current link</span></div>
+<div style="position:absolute;top:813;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:821;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:113"><span class="ft5">    private Link previous;      // reference to previous link</span></div>
+<div style="position:absolute;top:833;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:840;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:113"><span class="ft5">    private LinkList ourList;   // reference to &quot;parent&quot; list</span></div>
+<div style="position:absolute;top:852;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:859;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:874;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:878;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:893;left:113"><span class="ft5">    public void reset()         // set to start of list</span></div>
+<div style="position:absolute;top:890;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:894;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:897;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:913;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:113"><span class="ft5">       {</span></div>
+<div style="position:absolute;top:909;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:913;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:917;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:113"><span class="ft5">       current = ourList.getFirst();  // current --&gt; first</span></div>
+<div style="position:absolute;top:928;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:932;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:936;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:113"><span class="ft5">       previous = null;               // previous --&gt; null</span></div>
+<div style="position:absolute;top:948;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:955;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:113"><span class="ft5">       }</span></div>
+<div style="position:absolute;top:967;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:970;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:974;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:989;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:989;left:113"><span class="ft5">    public void nextLink()      // go to next link</span></div>
+<div style="position:absolute;top:986;left:521"><span class="ft0"> </span></div>
+<div style="position:absolute;top:989;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:993;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1008;left:113"><span class="ft5">       {</span></div>
+<div style="position:absolute;top:1005;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1009;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1012;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1027;left:113"><span class="ft5">       previous = current;      // set previous to this</span></div>
+<div style="position:absolute;top:1024;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1032;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1046;left:113"><span class="ft5">       current = current.next;  // set this to next</span></div>
+<div style="position:absolute;top:1043;left:530"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1047;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1051;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:113"><span class="ft5">       }</span></div>
+<div style="position:absolute;top:1063;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1070;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -157,7 +157,11 @@ INSTALLED_APPS = [
     #myapps
     "datafinder",
     "blog",
+<<<<<<< HEAD
     "pdf",
+=======
+    "pdf_new",
+>>>>>>> 860f2d4fdb8578a2dd7f2a1ac0b0c1f2dd380a29
 ]
 
 # A sample logging configuration. The only tangible logging

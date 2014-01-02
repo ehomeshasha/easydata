@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0429</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft6{font-style:normal;font-weight:normal;font-size:10px;font-family:Arial;color:#000000;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana;color:#000000;}
+.ft9{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#000080;}
+.ft10{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0429.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 429 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> What happens if, while a program is running, too many items are inserted for the size of </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1">the heap array. A new array can be created, and the data from the old array copied into </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">it. (Unlike the situation with hash tables, changing the size of a heap doesn't require </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">reordering the data.) The copying operation takes linear time, but enlarging the array size </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft1">shouldn't be necessary very often, especially if the array size is increased substantially </span></div>
+<div style="position:absolute;top:180;left:90"><span class="ft1">each time it's expanded (by doubling it, for example).</span></div>
+<div style="position:absolute;top:177;left:415"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:180;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:199;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:221;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft1"> In Java, a </span></div>
+<div style="position:absolute;top:215;left:154"><span class="ft2">Vector</span></div>
+<div style="position:absolute;top:215;left:204"><span class="ft1"> class object could be used instead of an array; vectors can be </span></div>
+<div style="position:absolute;top:232;left:90"><span class="ft1">expanded dynamically.</span></div>
+<div style="position:absolute;top:229;left:232"><span class="ft0"> </span></div>
+<div style="position:absolute;top:221;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:232;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:251;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:267;left:90"><span class="ft3"> Efficiency of Heap Operations</span></div>
+<div style="position:absolute;top:269;left:357"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:273;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:292;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:308;left:90"><span class="ft1"> For a heap with a substantial number of items, it's the trickle-up and trickle-down </span></div>
+<div style="position:absolute;top:324;left:90"><span class="ft1">algorithms that are the most time-consuming parts of the operations we've seen. These </span></div>
+<div style="position:absolute;top:340;left:90"><span class="ft1">algorithms spend time in a loop, repeatedly moving nodes up or down along a path. The </span></div>
+<div style="position:absolute;top:356;left:90"><span class="ft1">number of copies necessary is bounded by the height of the heap; if there are five levels, </span></div>
+<div style="position:absolute;top:372;left:90"><span class="ft1">four copies will carry the &quot;hole&quot; from the top to the bottom. (We'll ignore the two moves </span></div>
+<div style="position:absolute;top:388;left:90"><span class="ft1">used to transfer the end node to and from temporary storage; they're always necessary </span></div>
+<div style="position:absolute;top:404;left:90"><span class="ft1">so they require constant time.)</span></div>
+<div style="position:absolute;top:401;left:277"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:404;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:423;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:470;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:439;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:439;left:118"><span class="ft2">trickleUp()</span></div>
+<div style="position:absolute;top:439;left:210"><span class="ft1"> method has only one major operation in its loop: comparing the key </span></div>
+<div style="position:absolute;top:456;left:90"><span class="ft1">of the new node with the node at the current location. The </span></div>
+<div style="position:absolute;top:456;left:449"><span class="ft2">trickleDown()</span></div>
+<div style="position:absolute;top:456;left:557"><span class="ft1"> method </span></div>
+<div style="position:absolute;top:473;left:90"><span class="ft1">needs two comparisons, one to find the largest child, and a second to compare this child </span></div>
+<div style="position:absolute;top:489;left:90"><span class="ft1">with the &quot;last&quot; node. They must both copy a node from top to bottom or bottom to top to </span></div>
+<div style="position:absolute;top:505;left:90"><span class="ft1">complete the operation.</span></div>
+<div style="position:absolute;top:502;left:236"><span class="ft0"> </span></div>
+<div style="position:absolute;top:470;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:505;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:524;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:571;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:540;left:90"><span class="ft1"> A heap is a special kind of binary tree, and as we saw in </span></div>
+<div style="position:absolute;top:540;left:439"><span class="ft4">Chapter 8</span></div>
+<div style="position:absolute;top:540;left:501"><span class="ft5">, the number of levels L </span></div>
+<div style="position:absolute;top:557;left:90"><span class="ft5">in a binary tree equals log</span></div>
+<div style="position:absolute;top:560;left:249"><span class="ft6">2</span></div>
+<div style="position:absolute;top:557;left:255"><span class="ft5">(N+1), where N is the number of nodes. The </span></div>
+<div style="position:absolute;top:557;left:530"><span class="ft7">trickleUp()</span></div>
+<div style="position:absolute;top:557;left:622"><span class="ft5"> and </span></div>
+<div style="position:absolute;top:574;left:90"><span class="ft7">trickleDown()</span></div>
+<div style="position:absolute;top:574;left:199"><span class="ft5"> routines cycle through their loops L¨C1 times, so the first takes time </span></div>
+<div style="position:absolute;top:591;left:90"><span class="ft5">proportional to log</span></div>
+<div style="position:absolute;top:594;left:202"><span class="ft6">2</span></div>
+<div style="position:absolute;top:591;left:207"><span class="ft5">N, and the second somewhat more because of the extra comparison. </span></div>
+<div style="position:absolute;top:607;left:90"><span class="ft5">Thus the heap operations we've talked about here all operate in O(logN) time.</span></div>
+<div style="position:absolute;top:604;left:568"><span class="ft0"> </span></div>
+<div style="position:absolute;top:607;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:624;left:79"><span class="ft8"> </span></div>
+<div style="position:absolute;top:642;left:79"><span class="ft9">Heapsort</span></div>
+<div style="position:absolute;top:644;left:160"><span class="ft0"> </span></div>
+<div style="position:absolute;top:643;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:648;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:668;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:689;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:683;left:90"><span class="ft1"> The efficiency of the heap data structure lends itself to a surprisingly simple and very </span></div>
+<div style="position:absolute;top:699;left:90"><span class="ft1">efficient sorting algorithm called heapsort.</span></div>
+<div style="position:absolute;top:696;left:347"><span class="ft0"> </span></div>
+<div style="position:absolute;top:689;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:700;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:719;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:750;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:735;left:90"><span class="ft1"> The basic idea is to insert the unordered items into a heap using the normal </span></div>
+<div style="position:absolute;top:735;left:558"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:735;left:625"><span class="ft1"> </span></div>
+<div style="position:absolute;top:752;left:90"><span class="ft1">routine. Repeated application of the </span></div>
+<div style="position:absolute;top:752;left:313"><span class="ft2">remove()</span></div>
+<div style="position:absolute;top:752;left:380"><span class="ft1"> routine will then remove the items in </span></div>
+<div style="position:absolute;top:769;left:90"><span class="ft1">sorted order. Here's how that might look:</span></div>
+<div style="position:absolute;top:766;left:340"><span class="ft0"> </span></div>
+<div style="position:absolute;top:750;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:769;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:788;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:804;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:803;left:113"><span class="ft2"> for(j=0; j&lt;size; j++)</span></div>
+<div style="position:absolute;top:800;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:804;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:807;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:823;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:822;left:113"><span class="ft2">    theHeap.insert( anArray[j] );   // from unsorted array</span></div>
+<div style="position:absolute;top:819;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:823;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:827;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:842;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:841;left:113"><span class="ft2"> for(j=0; j&lt;size; j++)</span></div>
+<div style="position:absolute;top:838;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:842;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:846;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:861;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:861;left:113"><span class="ft2">    anArray[j] = theHeap.remove();  // to sorted array</span></div>
+<div style="position:absolute;top:858;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:861;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:865;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:884;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:900;left:90"><span class="ft1"> Because </span></div>
+<div style="position:absolute;top:900;left:148"><span class="ft2">insert()</span></div>
+<div style="position:absolute;top:900;left:215"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:900;left:246"><span class="ft2">remove()</span></div>
+<div style="position:absolute;top:900;left:312"><span class="ft1"> operate in O(logN) time, and each must be applied </span></div>
+<div style="position:absolute;top:917;left:90"><span class="ft1">N times, the entire sort requires O(N*logN) time, which is the same as quicksort. </span></div>
+<div style="position:absolute;top:933;left:90"><span class="ft1">However, it's not quite as fast as quicksort. Partly this is because there are more </span></div>
+<div style="position:absolute;top:950;left:90"><span class="ft1">operations in the inner </span></div>
+<div style="position:absolute;top:950;left:232"><span class="ft2">while</span></div>
+<div style="position:absolute;top:950;left:273"><span class="ft1"> loop in </span></div>
+<div style="position:absolute;top:950;left:322"><span class="ft2">trickleDown()</span></div>
+<div style="position:absolute;top:950;left:430"><span class="ft1"> than in the inner loop in </span></div>
+<div style="position:absolute;top:966;left:90"><span class="ft1">quicksort.</span></div>
+<div style="position:absolute;top:963;left:150"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:966;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:986;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1007;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1001;left:90"><span class="ft1"> However, several tricks can make heapsort more efficient. The first saves time, and the </span></div>
+<div style="position:absolute;top:1017;left:90"><span class="ft1">second saves memory.</span></div>
+<div style="position:absolute;top:1014;left:233"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1007;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1018;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1037;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:90"><span class="ft3"> Trickling Down in Place</span></div>
+<div style="position:absolute;top:1054;left:301"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1053;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1058;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

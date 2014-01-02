@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0244</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft2{font-style:normal;font-weight:normal;font-size:11px;font-family:Times New Roman;color:#000000;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft6{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft8{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0244.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 244 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">as fast as quicksort and other O(N*logN) sorts, so it's not optimum for very large files. </span></div>
+<div style="position:absolute;top:99;left:90"><span class="ft1">However, it's much faster than the O(N</span></div>
+<div style="position:absolute;top:93;left:329"><span class="ft2">2</span></div>
+<div style="position:absolute;top:99;left:335"><span class="ft1">) sorts like the selection sort and the insertion </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1">sort, and it's very easy to implement: the code is short and simple.</span></div>
+<div style="position:absolute;top:113;left:496"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:135;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:181;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:151;left:90"><span class="ft3"> The worst-case performance is not significantly worse than the average performance. </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft3">(We'll see later in this chapter that the wors t-case performance for quicksort can be much </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft3">worse unless precautions are taken.) Some experts (see Sedgewick in the bibliography) </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft3">recommend starting with a Shellsort for almost any sorting project, and only changing to </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft3">a more advanced sort, like quicksort, if Shellsort proves too slow in practice.</span></div>
+<div style="position:absolute;top:212;left:557"><span class="ft0"> </span></div>
+<div style="position:absolute;top:181;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:215;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:234;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:250;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:90"><span class="ft4"> Insertion Sort: Too Many Copies</span></div>
+<div style="position:absolute;top:251;left:379"><span class="ft0"> </span></div>
+<div style="position:absolute;top:250;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:275;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:90"><span class="ft3"> Because Shellsort is based on the insertion sort, you might want to review the relevant </span></div>
+<div style="position:absolute;top:307;left:90"><span class="ft3">section of </span></div>
+<div style="position:absolute;top:307;left:154"><span class="ft5">Chapter 3</span></div>
+<div style="position:absolute;top:307;left:215"><span class="ft1">. Recall that partway through the insertion sort the items to the left of </span></div>
+<div style="position:absolute;top:322;left:90"><span class="ft1">a marker are internally sorted (sorted among themselves) and items to the right are not. </span></div>
+<div style="position:absolute;top:338;left:90"><span class="ft1">The algorithm removes the item at the marker and stores it in a temporary variable. Then, </span></div>
+<div style="position:absolute;top:354;left:90"><span class="ft1">beginning with the item to the left of the newly vacated cell, it shifts the sorted items right </span></div>
+<div style="position:absolute;top:370;left:90"><span class="ft1">one cell at a time, until the item in the temporary variable can be reinserted in sorted </span></div>
+<div style="position:absolute;top:386;left:90"><span class="ft1">order.</span></div>
+<div style="position:absolute;top:383;left:127"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:461;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft3"> Here's the problem with the insertion sort. Suppose a small item is on the far right, where </span></div>
+<div style="position:absolute;top:437;left:90"><span class="ft3">the large items should be. To move this small item to its proper place on the left, all the </span></div>
+<div style="position:absolute;top:453;left:90"><span class="ft3">intervening items (between where it is and where it should be) must be shifted one space </span></div>
+<div style="position:absolute;top:469;left:90"><span class="ft3">right. This is close to N copies, just for one item. Not all the items must be moved a full N </span></div>
+<div style="position:absolute;top:485;left:90"><span class="ft3">spaces, but the average item must be moved N/2 spaces, which takes N times N/2 shifts </span></div>
+<div style="position:absolute;top:504;left:90"><span class="ft3">for a total of N </span></div>
+<div style="position:absolute;top:498;left:181"><span class="ft2">2</span></div>
+<div style="position:absolute;top:504;left:187"><span class="ft3">/2 copies. Thus the performance of insertion sort is O(N</span></div>
+<div style="position:absolute;top:498;left:528"><span class="ft2">2</span></div>
+<div style="position:absolute;top:504;left:534"><span class="ft3">).</span></div>
+<div style="position:absolute;top:501;left:542"><span class="ft0"> </span></div>
+<div style="position:absolute;top:461;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:505;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:524;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:546;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:540;left:90"><span class="ft3"> This performance could be improved if we could somehow move a smaller item many </span></div>
+<div style="position:absolute;top:556;left:90"><span class="ft3">spaces to the left without shifting all the intermediate items individually.</span></div>
+<div style="position:absolute;top:553;left:525"><span class="ft0"> </span></div>
+<div style="position:absolute;top:546;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:556;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:575;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:591;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:590;left:90"><span class="ft4"> N-Sorting</span></div>
+<div style="position:absolute;top:592;left:176"><span class="ft0"> </span></div>
+<div style="position:absolute;top:591;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:597;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:616;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:632;left:90"><span class="ft3"> The Shellsort achieves these large shifts by insertion-sorting widely spaced elements. </span></div>
+<div style="position:absolute;top:648;left:90"><span class="ft3">Once these are sorted, it sorts somewhat less widely spaced elements, and so on. The </span></div>
+<div style="position:absolute;top:663;left:90"><span class="ft3">spacing between elements for these sorts is called the increment and is traditionally </span></div>
+<div style="position:absolute;top:679;left:90"><span class="ft3">represented by the letter h. Figure 7.1 shows the first step in the process of sorting a 10-</span></div>
+<div style="position:absolute;top:695;left:90"><span class="ft3">element array with an increment of 4. Here the elements 0, 4, and 8 are sorted.</span></div>
+<div style="position:absolute;top:692;left:576"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:715;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:833;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:940;left:376"><span class="ft0">  </span></div>
+<div style="position:absolute;top:833;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:940;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:959;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:974;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:975;left:136"><span class="ft7"> Figure 7.1:  4-sorting 0, 4, and 8</span></div>
+<div style="position:absolute;top:972;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:974;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:997;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:995;left:136"><span class="ft8">  </span></div>
+<div style="position:absolute;top:995;left:640"><span class="ft8">  </span></div>
+<div style="position:absolute;top:997;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1016;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1046;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1032;left:90"><span class="ft3"> Once 0, 4, and 8 are sorted, the algorithm shifts over one cell and sorts 1, 5, and 9. This </span></div>
+<div style="position:absolute;top:1048;left:90"><span class="ft3">process continues until all the elements have been 4-sorted, which means that all items </span></div>
+<div style="position:absolute;top:1064;left:90"><span class="ft3">spaced 4 cells apart are sorted among themselves. The process is shown (using a more </span></div>
+<div style="position:absolute;top:1046;left:640"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0470</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0470.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 470 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:113"><span class="ft1">    int orig_nVerts = nVerts;  // remember how many verts</span></div>
+<div style="position:absolute;top:77;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:99;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:103;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:113"><span class="ft1">    while(nVerts &gt; 0)          // while vertices remain,</span></div>
+<div style="position:absolute;top:115;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:137;left:113"><span class="ft1">       {</span></div>
+<div style="position:absolute;top:134;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:141;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:156;left:113"><span class="ft1">       // get a vertex with no successors, or -1</span></div>
+<div style="position:absolute;top:153;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:175;left:113"><span class="ft1">       int currentVertex = noSuccessors();</span></div>
+<div style="position:absolute;top:172;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:176;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:180;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:113"><span class="ft1">       if(currentVertex == -1)       // must be a cycle</span></div>
+<div style="position:absolute;top:192;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:195;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:199;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:113"><span class="ft1">          {</span></div>
+<div style="position:absolute;top:211;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:214;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:218;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:113"><span class="ft1">          System.out.println(&quot;ERROR: Graph has cycles&quot;);</span></div>
+<div style="position:absolute;top:230;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:233;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:252;left:113"><span class="ft1">          return;</span></div>
+<div style="position:absolute;top:249;left:247"><span class="ft0"> </span></div>
+<div style="position:absolute;top:253;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:113"><span class="ft1">          }</span></div>
+<div style="position:absolute;top:268;left:197"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:276;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:291;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:290;left:113"><span class="ft1">       // insert vertex label in sorted array (start at end)</span></div>
+<div style="position:absolute;top:287;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:295;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:113"><span class="ft1">       sortedArray[nVerts-1] = vertexList[currentVertex].label;</span></div>
+<div style="position:absolute;top:307;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:314;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:329;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:333;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:113"><span class="ft1">       deleteVertex(currentVertex);  // delete vertex</span></div>
+<div style="position:absolute;top:345;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:348;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:352;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:367;left:113"><span class="ft1">       }  // end while</span></div>
+<div style="position:absolute;top:364;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:387;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:391;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:405;left:113"><span class="ft1">    // vertices all gone; display sortedArray</span></div>
+<div style="position:absolute;top:402;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:410;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:113"><span class="ft1">    System.out.print(&quot;Topologically sorted order: &quot;);</span></div>
+<div style="position:absolute;top:422;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:425;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:429;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:113"><span class="ft1">    for(int j=0; j&lt;orig_nVerts; j++)</span></div>
+<div style="position:absolute;top:441;left:405"><span class="ft0"> </span></div>
+<div style="position:absolute;top:444;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:448;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:463;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:463;left:113"><span class="ft1">       System.out.print( sortedArray[j] );</span></div>
+<div style="position:absolute;top:460;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:463;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:467;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:482;left:113"><span class="ft1">    System.out.println(&quot;&quot;);</span></div>
+<div style="position:absolute;top:479;left:330"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:486;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:520;left:113"><span class="ft1">    }  // end topo</span></div>
+<div style="position:absolute;top:517;left:255"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:525;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:544;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:566;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:560;left:90"><span class="ft2"> The work is done in the </span></div>
+<div style="position:absolute;top:560;left:238"><span class="ft1">while</span></div>
+<div style="position:absolute;top:560;left:279"><span class="ft2"> loop, which continues until the number of vertices is </span></div>
+<div style="position:absolute;top:577;left:90"><span class="ft2">reduced to 0. Here are the steps involved:</span></div>
+<div style="position:absolute;top:574;left:348"><span class="ft0"> </span></div>
+<div style="position:absolute;top:566;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:577;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:596;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:612;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:612;left:90"><span class="ft2"> 1.</span></div>
+<div style="position:absolute;top:609;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:613;left:113"><span class="ft2">Call </span></div>
+<div style="position:absolute;top:613;left:141"><span class="ft1">noSuccessors()</span></div>
+<div style="position:absolute;top:613;left:258"><span class="ft2"> to find any vertex with no successors.</span></div>
+<div style="position:absolute;top:610;left:492"><span class="ft0"> </span></div>
+<div style="position:absolute;top:612;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:615;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:634;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:657;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:650;left:90"><span class="ft2"> 2.</span></div>
+<div style="position:absolute;top:647;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:651;left:113"><span class="ft2">If such a vertex is found, put the vertex label at the end of </span></div>
+<div style="position:absolute;top:651;left:470"><span class="ft1">sortedArray[]</span></div>
+<div style="position:absolute;top:651;left:578"><span class="ft2"> and </span></div>
+<div style="position:absolute;top:668;left:113"><span class="ft2">delete the vertex from the graph.</span></div>
+<div style="position:absolute;top:665;left:314"><span class="ft0"> </span></div>
+<div style="position:absolute;top:657;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:668;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:687;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:703;left:90"><span class="ft2"> If an appropriate vertex isn't found, the graph must have a cycle.</span></div>
+<div style="position:absolute;top:700;left:485"><span class="ft0"> </span></div>
+<div style="position:absolute;top:702;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft2"> The last vertex to be removed appears first on the list, so the vertex label is placed in </span></div>
+<div style="position:absolute;top:757;left:90"><span class="ft1">sortedArray</span></div>
+<div style="position:absolute;top:757;left:182"><span class="ft2"> starting at the end and working toward the beginning, as </span></div>
+<div style="position:absolute;top:757;left:535"><span class="ft1">nVerts</span></div>
+<div style="position:absolute;top:757;left:585"><span class="ft2"> (the </span></div>
+<div style="position:absolute;top:774;left:90"><span class="ft2">number of vertices in the graph) gets smaller.</span></div>
+<div style="position:absolute;top:771;left:369"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:774;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:832;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:809;left:90"><span class="ft2"> If vertices remain in the graph but all of them have successors, the graph must have a </span></div>
+<div style="position:absolute;top:826;left:90"><span class="ft2">cycle, and the algorithm displays a message and quits. Normally, however, the </span></div>
+<div style="position:absolute;top:826;left:577"><span class="ft1">while</span></div>
+<div style="position:absolute;top:826;left:618"><span class="ft2"> </span></div>
+<div style="position:absolute;top:843;left:90"><span class="ft2">loop exits, and the list from </span></div>
+<div style="position:absolute;top:843;left:259"><span class="ft1">sortedArray</span></div>
+<div style="position:absolute;top:843;left:351"><span class="ft2"> is displayed, with the vertices in topologically </span></div>
+<div style="position:absolute;top:860;left:90"><span class="ft2">sorted order.</span></div>
+<div style="position:absolute;top:857;left:169"><span class="ft0"> </span></div>
+<div style="position:absolute;top:832;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:860;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:879;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:934;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:895;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:895;left:118"><span class="ft1">noSuccessors()</span></div>
+<div style="position:absolute;top:895;left:235"><span class="ft2"> method uses the adjacency matrix to find a vertex with no </span></div>
+<div style="position:absolute;top:913;left:90"><span class="ft2">successors. In the outer </span></div>
+<div style="position:absolute;top:913;left:242"><span class="ft1">for</span></div>
+<div style="position:absolute;top:913;left:267"><span class="ft2"> loop, it goes down the rows, looking at each vertex. For </span></div>
+<div style="position:absolute;top:930;left:90"><span class="ft2">each vertex, it scans across the columns in the inner </span></div>
+<div style="position:absolute;top:930;left:417"><span class="ft1">for</span></div>
+<div style="position:absolute;top:930;left:442"><span class="ft2"> loop, looking for a 1. If it finds </span></div>
+<div style="position:absolute;top:946;left:90"><span class="ft2">one, it knows that that vertex has a successor, because there's an edge from that vertex </span></div>
+<div style="position:absolute;top:962;left:90"><span class="ft2">to another one. When it finds a 1, it bails out of the inner loop so that the next vertex can </span></div>
+<div style="position:absolute;top:978;left:90"><span class="ft2">be investigated.</span></div>
+<div style="position:absolute;top:975;left:188"><span class="ft0"> </span></div>
+<div style="position:absolute;top:934;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:978;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:90"><span class="ft2"> Only if an entire row is found with no 1s do we know we have a vertex with no </span></div>
+<div style="position:absolute;top:1029;left:90"><span class="ft2">successors; in this case, its row number is returned. If no such vertex is found, ¨C1 is </span></div>
+<div style="position:absolute;top:1046;left:90"><span class="ft2">returned. Here's the </span></div>
+<div style="position:absolute;top:1046;left:217"><span class="ft1">noSuccessors()</span></div>
+<div style="position:absolute;top:1046;left:333"><span class="ft2"> method:</span></div>
+<div style="position:absolute;top:1043;left:387"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1047;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

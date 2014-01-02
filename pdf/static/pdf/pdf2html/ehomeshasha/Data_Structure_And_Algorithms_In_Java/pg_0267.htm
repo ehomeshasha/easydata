@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0267</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft3{font-style:normal;font-weight:normal;font-size:11px;font-family:Times New Roman;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0267.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 267 -</span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1"> The problem is in the selection of the pivot. Ideally, the pivot should be the median of the </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">items being sorted. That is, half the items should be larger than the pivot, and half </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">smaller. This would result in the array being partitioned into two subarrays of equal size. </span></div>
+<div style="position:absolute;top:128;left:90"><span class="ft1">Two equal subarrays is the optimum situation for the quicksort algorithm. If it has to sort </span></div>
+<div style="position:absolute;top:144;left:90"><span class="ft1">one large and one small array, it's less efficient because the larger subarray has to be </span></div>
+<div style="position:absolute;top:160;left:90"><span class="ft1">subdivided more times.</span></div>
+<div style="position:absolute;top:157;left:233"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:161;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:180;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:241;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:196;left:90"><span class="ft1"> The worst situation results when a subarray with N elements is divided into one subarray </span></div>
+<div style="position:absolute;top:212;left:90"><span class="ft1">with 1 element and the other with N每1 elements. (This division into 1 cell and N每1 cells </span></div>
+<div style="position:absolute;top:227;left:90"><span class="ft1">can also be seen in steps 3 and 9 in </span></div>
+<div style="position:absolute;top:227;left:316"><span class="ft2">Figure 7.12</span></div>
+<div style="position:absolute;top:227;left:386"><span class="ft1">.) If this 1 and N每1 division happens with </span></div>
+<div style="position:absolute;top:243;left:90"><span class="ft1">every partition, then every element requires a separate partition step. This is in fact what </span></div>
+<div style="position:absolute;top:259;left:90"><span class="ft1">takes place with inversely sorted data: in all the subarrays, the pivot is the smallest item, </span></div>
+<div style="position:absolute;top:275;left:90"><span class="ft1">so every partition results in an N每1 element in one subarray and only the pivot in the </span></div>
+<div style="position:absolute;top:291;left:90"><span class="ft1">other.</span></div>
+<div style="position:absolute;top:288;left:126"><span class="ft0"> </span></div>
+<div style="position:absolute;top:241;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:291;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:311;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:350;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:326;left:90"><span class="ft1"> To see this unfortunate process in action, step through the quickSort1 Workshop applet </span></div>
+<div style="position:absolute;top:342;left:90"><span class="ft1">with 12 inversely sorted bars. Notice how many more steps are necessary than with </span></div>
+<div style="position:absolute;top:358;left:90"><span class="ft1">random data. In this situation the advantage gained by the partitioning process is lost and </span></div>
+<div style="position:absolute;top:377;left:90"><span class="ft1">the performance of the algorithm degenerates to O(N</span></div>
+<div style="position:absolute;top:371;left:417"><span class="ft3">2</span></div>
+<div style="position:absolute;top:377;left:422"><span class="ft1">).</span></div>
+<div style="position:absolute;top:374;left:431"><span class="ft0"> </span></div>
+<div style="position:absolute;top:350;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:378;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:415;left:90"><span class="ft1"> Besides being slow, there's another potential problem when quicksort operates in O(N</span></div>
+<div style="position:absolute;top:410;left:618"><span class="ft3">2</span></div>
+<div style="position:absolute;top:415;left:623"><span class="ft1">) </span></div>
+<div style="position:absolute;top:432;left:90"><span class="ft1">time. When the number of partitions increases, the number of recursive function calls </span></div>
+<div style="position:absolute;top:448;left:90"><span class="ft1">also increases. Every function call takes up room on the machine stack. If there are too </span></div>
+<div style="position:absolute;top:464;left:90"><span class="ft1">many calls, the machine stack may overflow and paralyze the system.</span></div>
+<div style="position:absolute;top:461;left:520"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:464;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:483;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:529;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:499;left:90"><span class="ft1"> To summarize: In the quickSort1 applet, we select the rightmost element as the pivot. If </span></div>
+<div style="position:absolute;top:515;left:90"><span class="ft1">the data is truly random, this isn't too bad a choice, because usually the pivot won't be </span></div>
+<div style="position:absolute;top:531;left:90"><span class="ft1">too close to either end of the array. However, when the data is sorted or inversely sorted, </span></div>
+<div style="position:absolute;top:547;left:90"><span class="ft1">choosing the pivot from one end or the other is a bad idea. Can we improve on our </span></div>
+<div style="position:absolute;top:563;left:90"><span class="ft1">approach to selecting the pivot.</span></div>
+<div style="position:absolute;top:560;left:286"><span class="ft0"> </span></div>
+<div style="position:absolute;top:529;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:563;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:582;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:599;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:598;left:90"><span class="ft4"> Median of Three Partitioning</span></div>
+<div style="position:absolute;top:600;left:343"><span class="ft0"> </span></div>
+<div style="position:absolute;top:599;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:604;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:623;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:639;left:90"><span class="ft1"> Many schemes have been devised for picking a better pivot. The method should be </span></div>
+<div style="position:absolute;top:655;left:90"><span class="ft1">simple but have a good chance of avoiding the largest or smallest value. Picking an </span></div>
+<div style="position:absolute;top:671;left:90"><span class="ft1">element at random is simple but〞as we've seen〞doesn't always result in a good </span></div>
+<div style="position:absolute;top:687;left:90"><span class="ft1">selection. However, we could examine all the elements and actually calculate which one </span></div>
+<div style="position:absolute;top:703;left:90"><span class="ft1">was the median. This would be the ideal pivot choice, but the process isn't practical, as it </span></div>
+<div style="position:absolute;top:719;left:90"><span class="ft1">would take more time than the sort itself.</span></div>
+<div style="position:absolute;top:716;left:340"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:719;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:738;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:784;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:90"><span class="ft1"> A compromise solution is to find the median of the first, last, and middle elements of the </span></div>
+<div style="position:absolute;top:770;left:90"><span class="ft1">array, and use this for the pivot. (The median or middle item is the data item chosen so </span></div>
+<div style="position:absolute;top:786;left:90"><span class="ft1">that exactly half the other items are smaller and half are larger.) Picking the median of the </span></div>
+<div style="position:absolute;top:802;left:90"><span class="ft1">first, last, and middle elements is called the median-of-three approach and is shown in </span></div>
+<div style="position:absolute;top:818;left:90"><span class="ft1">Figure 7.13.</span></div>
+<div style="position:absolute;top:815;left:164"><span class="ft0"> </span></div>
+<div style="position:absolute;top:784;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:818;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:926;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1005;left:475"><span class="ft0">  </span></div>
+<div style="position:absolute;top:926;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1005;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1024;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1039;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1040;left:136"><span class="ft6"> Figure 7.13:  The median of three</span></div>
+<div style="position:absolute;top:1037;left:346"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1039;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1062;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1060;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:1060;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:1062;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

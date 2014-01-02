@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0366</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0366.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 366 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">contrast, a binary tree with 500,000 items would have about 19 levels, and a 2-3-4 tree </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">would have 10. If we use blocks with hundreds of records, we can reduce the number of </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">levels in the tree and further improve access times.</span></div>
+<div style="position:absolute;top:109;left:404"><span class="ft0"> </span></div>
+<div style="position:absolute;top:113;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1"> Although searching is faster in B-trees than in sequentially ordered disk files, it's for </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft1">insertion and deletion that B-trees show the greatest advantage.</span></div>
+<div style="position:absolute;top:161;left:484"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:164;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft1"> Let's first consider a B-tree insertion in which no nodes need to be split. This is the most </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft1">likely scenario, because of the large number of records per node. In our phone book </span></div>
+<div style="position:absolute;top:231;left:90"><span class="ft1">example, as we've seen, only 6 accesses are required to find the insertion point. Then </span></div>
+<div style="position:absolute;top:247;left:90"><span class="ft1">one more access is required to write the block containing the newly inserted record back </span></div>
+<div style="position:absolute;top:263;left:90"><span class="ft1">to the disk; a total of 7 accesses.</span></div>
+<div style="position:absolute;top:260;left:292"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:263;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:282;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:298;left:90"><span class="ft1"> Next let's see how things look if a node must be split. The node being split must be read, </span></div>
+<div style="position:absolute;top:314;left:90"><span class="ft1">have half its records removed, and be written back to disk. The newly created node must </span></div>
+<div style="position:absolute;top:330;left:90"><span class="ft1">be written to the disk, and the parent must be read and, following the insertion of the </span></div>
+<div style="position:absolute;top:346;left:90"><span class="ft1">promoted record, written back to disk. This is 5 accesses in addition to the six necessary </span></div>
+<div style="position:absolute;top:362;left:90"><span class="ft1">to find the insertion point, for a total of 12. This is a major improvement over the 500,000 </span></div>
+<div style="position:absolute;top:378;left:90"><span class="ft1">accesses required for insertion in a sequential file.</span></div>
+<div style="position:absolute;top:375;left:398"><span class="ft0"> </span></div>
+<div style="position:absolute;top:336;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:378;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:397;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:413;left:90"><span class="ft1"> In some versions of the B-tree, only leaf nodes contain records. Non-leaf nodes contain </span></div>
+<div style="position:absolute;top:429;left:90"><span class="ft1">only keys and block numbers. This may result in faster operation because each block can </span></div>
+<div style="position:absolute;top:445;left:90"><span class="ft1">hold many more block numbers. The resulting higher-order tree will have fewer levels, </span></div>
+<div style="position:absolute;top:461;left:90"><span class="ft1">and access speed will be increased. However, programming may be complicated </span></div>
+<div style="position:absolute;top:477;left:90"><span class="ft1">because there are two kinds of nodes: leaves and non-leaves.</span></div>
+<div style="position:absolute;top:474;left:472"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:477;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:496;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:512;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:511;left:90"><span class="ft2"> Indexing</span></div>
+<div style="position:absolute;top:513;left:167"><span class="ft0"> </span></div>
+<div style="position:absolute;top:512;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:517;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:537;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:582;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:552;left:90"><span class="ft1"> A different approach to speeding up file access is to store records in sequential order but </span></div>
+<div style="position:absolute;top:568;left:90"><span class="ft1">use a file index along with the data itself. A file index is a list of key/block pairs, arranged </span></div>
+<div style="position:absolute;top:584;left:90"><span class="ft1">with the keys in order. Recall that in our original phone book example we had 500,000 </span></div>
+<div style="position:absolute;top:600;left:90"><span class="ft1">records of 512 bytes each, stored 16 records to a block, in 31,250 blocks. Assuming our </span></div>
+<div style="position:absolute;top:616;left:90"><span class="ft1">search key is the last name, every entry in the index contains two items:</span></div>
+<div style="position:absolute;top:613;left:532"><span class="ft0"> </span></div>
+<div style="position:absolute;top:582;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:617;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:636;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:651;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:651;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:648;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:651;left:107"><span class="ft1">The key, such as Jones.</span></div>
+<div style="position:absolute;top:648;left:257"><span class="ft0"> </span></div>
+<div style="position:absolute;top:651;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:655;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:690;left:90"><span class="ft1"> .</span></div>
+<div style="position:absolute;top:687;left:95"><span class="ft0">   </span></div>
+<div style="position:absolute;top:690;left:107"><span class="ft1">The number of the block where the Jones record is located within the file. These </span></div>
+<div style="position:absolute;top:706;left:107"><span class="ft1">numbers run from 0 to 31,249.</span></div>
+<div style="position:absolute;top:703;left:294"><span class="ft0"> </span></div>
+<div style="position:absolute;top:696;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft1"> Let's say we use a string 28 bytes long for the key (big enough for most last names), and </span></div>
+<div style="position:absolute;top:757;left:90"><span class="ft1">4 bytes for the block number (a type </span></div>
+<div style="position:absolute;top:757;left:316"><span class="ft4">int</span></div>
+<div style="position:absolute;top:757;left:341"><span class="ft1"> in Java). Each entry in our index thus requires </span></div>
+<div style="position:absolute;top:774;left:90"><span class="ft1">32 bytes. This is only 1/16 the amount necessary for each record.</span></div>
+<div style="position:absolute;top:771;left:492"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:774;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:809;left:90"><span class="ft1"> The entries in the index are arranged sequentially by last name. The original records on </span></div>
+<div style="position:absolute;top:825;left:90"><span class="ft1">the disk can be arranged in any convenient order. This usually means that new records </span></div>
+<div style="position:absolute;top:841;left:90"><span class="ft1">are simply appended to the end of the file, so the records are ordered by time of </span></div>
+<div style="position:absolute;top:857;left:90"><span class="ft1">insertion. This arrangement is shown in Figure 10.21</span></div>
+<div style="position:absolute;top:857;left:414"><span class="ft5">.</span></div>
+<div style="position:absolute;top:854;left:418"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:857;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:876;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

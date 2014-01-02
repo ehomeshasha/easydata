@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0383</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0383.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 383 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">find()</span></div>
+<div style="position:absolute;top:81;left:140"><span class="ft2"> increments </span></div>
+<div style="position:absolute;top:81;left:216"><span class="ft1">hashVal</span></div>
+<div style="position:absolute;top:81;left:274"><span class="ft2"> and goes back to the top of the </span></div>
+<div style="position:absolute;top:81;left:473"><span class="ft1">while</span></div>
+<div style="position:absolute;top:81;left:514"><span class="ft2"> loop to check if the </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft2">next cell is occupied. Here's the code for </span></div>
+<div style="position:absolute;top:98;left:343"><span class="ft1">find()</span></div>
+<div style="position:absolute;top:98;left:393"><span class="ft2">:</span></div>
+<div style="position:absolute;top:95;left:397"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:134;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:133;left:113"><span class="ft1"> public DataItem find(int key)    // find item with key</span></div>
+<div style="position:absolute;top:130;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:134;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:137;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:152;left:113"><span class="ft1"> // (assumes table not full)</span></div>
+<div style="position:absolute;top:149;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:157;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:172;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:171;left:113"><span class="ft1">    {</span></div>
+<div style="position:absolute;top:168;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:172;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:176;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:191;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:191;left:113"><span class="ft1">    int hashVal = hashFunc(key);  // hash the key</span></div>
+<div style="position:absolute;top:188;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:191;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:195;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:210;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:210;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:214;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:113"><span class="ft1">    while(hashArray[hashVal] != null)  // until empty cell,</span></div>
+<div style="position:absolute;top:226;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:233;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:248;left:113"><span class="ft1">       {                               // found the key.</span></div>
+<div style="position:absolute;top:245;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:252;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:267;left:113"><span class="ft1">       if(hashArray[hashVal].iData == key)</span></div>
+<div style="position:absolute;top:264;left:455"><span class="ft0"> </span></div>
+<div style="position:absolute;top:268;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:272;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:287;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:286;left:113"><span class="ft1">          return hashArray[hashVal];   // yes, return item</span></div>
+<div style="position:absolute;top:283;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:287;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:291;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:306;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:306;left:113"><span class="ft1">       ++hashVal;                 // go to next cell</span></div>
+<div style="position:absolute;top:303;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:306;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:325;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:325;left:113"><span class="ft1">       hashVal %= arraySize;      // wrap around if necessary</span></div>
+<div style="position:absolute;top:322;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:329;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:344;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:344;left:113"><span class="ft1">       }</span></div>
+<div style="position:absolute;top:341;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:344;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:348;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:363;left:113"><span class="ft1">    return null;                  // can't find item</span></div>
+<div style="position:absolute;top:360;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:364;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:367;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:383;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:382;left:113"><span class="ft1">    }</span></div>
+<div style="position:absolute;top:379;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:383;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft2"> As </span></div>
+<div style="position:absolute;top:422;left:110"><span class="ft1">hashVal</span></div>
+<div style="position:absolute;top:422;left:169"><span class="ft2"> steps through the array, it eventually reaches the end. When this happens </span></div>
+<div style="position:absolute;top:439;left:90"><span class="ft2">we want it to wrap around to the beginning. We could check for this with an </span></div>
+<div style="position:absolute;top:439;left:554"><span class="ft1">if</span></div>
+<div style="position:absolute;top:439;left:575"><span class="ft2"> statement, </span></div>
+<div style="position:absolute;top:456;left:90"><span class="ft2">setting </span></div>
+<div style="position:absolute;top:456;left:135"><span class="ft1">hashVal</span></div>
+<div style="position:absolute;top:456;left:193"><span class="ft2"> to 0 whenever it equaled the array size. However, we can accomplish </span></div>
+<div style="position:absolute;top:474;left:90"><span class="ft2">the same thing by applying the </span></div>
+<div style="position:absolute;top:474;left:283"><span class="ft1">%</span></div>
+<div style="position:absolute;top:474;left:291"><span class="ft2"> operator to </span></div>
+<div style="position:absolute;top:474;left:366"><span class="ft1">hashVal</span></div>
+<div style="position:absolute;top:474;left:424"><span class="ft2"> and the array size.</span></div>
+<div style="position:absolute;top:471;left:542"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:475;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:494;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:510;left:90"><span class="ft2"> Cautious programmers might not want to assume the table is not full, as is done here. </span></div>
+<div style="position:absolute;top:526;left:90"><span class="ft2">The table should not be allowed to become full, but if it did, this method would loop </span></div>
+<div style="position:absolute;top:541;left:90"><span class="ft2">forever. For simplicity we don't check for this situation.</span></div>
+<div style="position:absolute;top:538;left:422"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:542;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:561;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:576;left:90"><span class="ft3"> The </span></div>
+<div style="position:absolute;top:576;left:124"><span class="ft4">insert()</span></div>
+<div style="position:absolute;top:576;left:204"><span class="ft3"> Method</span></div>
+<div style="position:absolute;top:576;left:268"><span class="ft0"> </span></div>
+<div style="position:absolute;top:577;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:581;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:601;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:640;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:617;left:118"><span class="ft1">insert()</span></div>
+<div style="position:absolute;top:617;left:185"><span class="ft2"> method uses about the same algorithm as </span></div>
+<div style="position:absolute;top:617;left:451"><span class="ft1">find()</span></div>
+<div style="position:absolute;top:617;left:501"><span class="ft2"> to locate where a </span></div>
+<div style="position:absolute;top:634;left:90"><span class="ft2">data item should go. However, it's looking for an empty cell or a deleted item (key ¨C1), </span></div>
+<div style="position:absolute;top:650;left:90"><span class="ft2">rather than a specific item. Once this empty cell has been located, </span></div>
+<div style="position:absolute;top:650;left:499"><span class="ft1">insert()</span></div>
+<div style="position:absolute;top:650;left:566"><span class="ft2"> places the </span></div>
+<div style="position:absolute;top:667;left:90"><span class="ft2">new item into it.</span></div>
+<div style="position:absolute;top:664;left:187"><span class="ft0"> </span></div>
+<div style="position:absolute;top:640;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:667;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:686;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:113"><span class="ft1"> public void insert(DataItem item) // insert a DataItem</span></div>
+<div style="position:absolute;top:698;left:563"><span class="ft0"> </span></div>
+<div style="position:absolute;top:701;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:705;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:721;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:720;left:113"><span class="ft1"> // (assumes table not full)</span></div>
+<div style="position:absolute;top:717;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:721;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:724;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:740;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:113"><span class="ft1">    {</span></div>
+<div style="position:absolute;top:736;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:740;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:744;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:759;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:758;left:113"><span class="ft1">    int key = item.iData;         // extract key</span></div>
+<div style="position:absolute;top:755;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:759;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:763;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:113"><span class="ft1">    int hashVal = hashFunc(key);  // hash the key</span></div>
+<div style="position:absolute;top:775;left:513"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:782;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:797;left:113"><span class="ft1">                                  // until empty cell or -1,</span></div>
+<div style="position:absolute;top:794;left:605"><span class="ft0">   </span></div>
+<div style="position:absolute;top:801;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:113"><span class="ft1">    while(hashArray[hashVal] != null &amp;&amp;</span></div>
+<div style="position:absolute;top:813;left:430"><span class="ft0"> </span></div>
+<div style="position:absolute;top:816;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:820;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:835;left:113"><span class="ft1">                               hashArray[hashVal].iData != -1)</span></div>
+<div style="position:absolute;top:832;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:839;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:854;left:113"><span class="ft1">       {</span></div>
+<div style="position:absolute;top:851;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:855;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:859;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:113"><span class="ft1">       ++hashVal;                 // go to next cell</span></div>
+<div style="position:absolute;top:870;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:874;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:878;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:893;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:893;left:113"><span class="ft1">       hashVal %= arraySize;      // wrap around if necessary</span></div>
+<div style="position:absolute;top:890;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:897;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:113"><span class="ft1">       }</span></div>
+<div style="position:absolute;top:909;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:916;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:113"><span class="ft1">    hashArray[hashVal] = item;    // insert item</span></div>
+<div style="position:absolute;top:928;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:935;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:950;left:113"><span class="ft1">    }  // end insert()</span></div>
+<div style="position:absolute;top:947;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:951;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:954;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:973;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:990;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:989;left:90"><span class="ft3"> The </span></div>
+<div style="position:absolute;top:989;left:124"><span class="ft4">delete()</span></div>
+<div style="position:absolute;top:989;left:204"><span class="ft3"> Method</span></div>
+<div style="position:absolute;top:989;left:268"><span class="ft0"> </span></div>
+<div style="position:absolute;top:990;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:994;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1013;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1044;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1030;left:90"><span class="ft2"> The </span></div>
+<div style="position:absolute;top:1030;left:118"><span class="ft1">delete()</span></div>
+<div style="position:absolute;top:1030;left:185"><span class="ft2"> method finds an existing item using code similar to </span></div>
+<div style="position:absolute;top:1030;left:503"><span class="ft1">find()</span></div>
+<div style="position:absolute;top:1030;left:553"><span class="ft2">. Once the </span></div>
+<div style="position:absolute;top:1047;left:90"><span class="ft2">item is found, </span></div>
+<div style="position:absolute;top:1047;left:177"><span class="ft1">delete()</span></div>
+<div style="position:absolute;top:1047;left:243"><span class="ft2"> writes over it with the special data item </span></div>
+<div style="position:absolute;top:1047;left:489"><span class="ft1">nonItem</span></div>
+<div style="position:absolute;top:1047;left:547"><span class="ft2">, which is </span></div>
+<div style="position:absolute;top:1064;left:90"><span class="ft2">predefined with a key of ¨C1.</span></div>
+<div style="position:absolute;top:1061;left:260"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1044;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1064;left:79"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

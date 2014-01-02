@@ -768,3 +768,8 @@ class DeleteView(LogoutView):
         ctx["ACCOUNT_DELETION_EXPUNGE_HOURS"] = settings.ACCOUNT_DELETION_EXPUNGE_HOURS
         return ctx
 '''
+
+class PostView(FormView):
+    pass
+
+

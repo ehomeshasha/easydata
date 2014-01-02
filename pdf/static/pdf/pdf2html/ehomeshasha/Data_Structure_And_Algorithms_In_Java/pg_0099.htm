@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0099</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#ffffff;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0099.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 99 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">(although it could be) but it should use delimiters the same way Java does. The delimiters </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft1">are the braces '{'and'}', brackets '['and']', and parentheses '('and')'. Each opening or left </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft1">delimiter should be matched by a closing or right delimiter; that is, every '{' should be </span></div>
+<div style="position:absolute;top:128;left:90"><span class="ft1">followed by a matching '}' and so on. Also, opening delimiters that occur later in the string </span></div>
+<div style="position:absolute;top:144;left:90"><span class="ft1">should be closed before those occurring earlier. Examples:</span></div>
+<div style="position:absolute;top:141;left:452"><span class="ft0"> </span></div>
+<div style="position:absolute;top:145;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:164;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:179;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:179;left:113"><span class="ft2"> c[d]        // correct</span></div>
+<div style="position:absolute;top:176;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:179;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:183;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:198;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:198;left:113"><span class="ft2"> a{b[c]d}e   // correct</span></div>
+<div style="position:absolute;top:195;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:198;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:202;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:217;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:217;left:113"><span class="ft2"> a{b(c]d}e   // not correct; ] doesn't match (</span></div>
+<div style="position:absolute;top:214;left:488"><span class="ft0"> </span></div>
+<div style="position:absolute;top:217;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:221;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:236;left:113"><span class="ft2"> a[b{c}d]e}  // not correct; nothing matches final }</span></div>
+<div style="position:absolute;top:233;left:538"><span class="ft0"> </span></div>
+<div style="position:absolute;top:237;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:240;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:256;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:255;left:113"><span class="ft2"> a{b(c)      // not correct; Nothing matches opening {</span></div>
+<div style="position:absolute;top:252;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:256;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:260;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:279;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:294;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:294;left:90"><span class="ft3"> Opening Delimiters on the Stack</span></div>
+<div style="position:absolute;top:294;left:347"><span class="ft0"> </span></div>
+<div style="position:absolute;top:294;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:298;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:317;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:333;left:90"><span class="ft1"> The program works by reading characters from the string one at a time and placing </span></div>
+<div style="position:absolute;top:349;left:90"><span class="ft1">opening delimiters, when it finds them, on a stack. When it reads a closing delimiter from </span></div>
+<div style="position:absolute;top:365;left:90"><span class="ft1">the input, it pops the opening delimiter from the top of the stack and attempts to match it </span></div>
+<div style="position:absolute;top:381;left:90"><span class="ft1">with the closing delimiter. If they're not the same type (there's an opening brace but a </span></div>
+<div style="position:absolute;top:397;left:90"><span class="ft1">closing parenthesis, for example), then an error has occurred. Also, if there is no opening </span></div>
+<div style="position:absolute;top:413;left:90"><span class="ft1">delimiter on the stack to match a closing one, or if a delimiter has not been matched, an </span></div>
+<div style="position:absolute;top:429;left:90"><span class="ft1">error has occurred. A delimiter that hasn't been matched is discovered because it </span></div>
+<div style="position:absolute;top:445;left:90"><span class="ft1">remains on the stack after all the characters in the string have been read.</span></div>
+<div style="position:absolute;top:442;left:540"><span class="ft0"> </span></div>
+<div style="position:absolute;top:387;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:445;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:464;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:479;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:480;left:90"><span class="ft1"> Let's see what happens on the stack for a typical correct string:</span></div>
+<div style="position:absolute;top:477;left:477"><span class="ft0"> </span></div>
+<div style="position:absolute;top:479;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:483;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:502;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:518;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:517;left:113"><span class="ft2"> a{b(c[d]e)f}</span></div>
+<div style="position:absolute;top:514;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:518;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:521;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:541;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:570;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:556;left:90"><span class="ft1"> Table 4.1 shows how the stack looks as each character is read from this string. The stack </span></div>
+<div style="position:absolute;top:572;left:90"><span class="ft1">contents are shown in the second column. The entries in this column show the stack </span></div>
+<div style="position:absolute;top:588;left:90"><span class="ft1">contents, reading from the bottom of the stack on the left to the top on the right.</span></div>
+<div style="position:absolute;top:585;left:577"><span class="ft0"> </span></div>
+<div style="position:absolute;top:570;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:589;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:608;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:645;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:624;left:90"><span class="ft1"> As it's read, each opening delimiter is placed on the stack. Each closing delimiter read </span></div>
+<div style="position:absolute;top:640;left:90"><span class="ft1">from the input is matched with the opening delimiter popped from the top of the stack. If </span></div>
+<div style="position:absolute;top:655;left:90"><span class="ft1">they form a pair, all is well. Nondelimiter c haracters are not inserted on the stack; they're </span></div>
+<div style="position:absolute;top:671;left:90"><span class="ft1">ignored.</span></div>
+<div style="position:absolute;top:668;left:141"><span class="ft0"> </span></div>
+<div style="position:absolute;top:645;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:672;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:691;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:706;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:707;left:90"><span class="ft4"> Table 4.1: Stack contents in delimiter matching</span></div>
+<div style="position:absolute;top:704;left:401"><span class="ft0"> </span></div>
+<div style="position:absolute;top:706;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:710;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:729;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:744;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:748;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:751;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:744;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:748;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:767;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:783;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:783;left:94"><span class="ft4"> Character Read</span></div>
+<div style="position:absolute;top:780;left:197"><span class="ft0">  </span></div>
+<div style="position:absolute;top:787;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:767;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:783;left:209"><span class="ft4"> </span></div>
+<div style="position:absolute;top:799;left:209"><span class="ft4">Stack Contents</span></div>
+<div style="position:absolute;top:796;left:310"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:799;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:780;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:818;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:834;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:838;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:841;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:834;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:838;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:857;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:872;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:94"><span class="ft1"> A</span></div>
+<div style="position:absolute;top:870;left:104"><span class="ft0"> </span></div>
+<div style="position:absolute;top:872;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:876;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:857;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:872;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:872;left:641"><span class="ft0"> </span></div>
+<div style="position:absolute;top:876;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:863;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:895;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:911;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:911;left:94"><span class="ft1"> {</span></div>
+<div style="position:absolute;top:908;left:99"><span class="ft0"> </span></div>
+<div style="position:absolute;top:911;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:914;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:895;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:911;left:209"><span class="ft1">{</span></div>
+<div style="position:absolute;top:908;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:911;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:914;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:901;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:933;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:949;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:949;left:94"><span class="ft1"> B</span></div>
+<div style="position:absolute;top:946;left:104"><span class="ft0"> </span></div>
+<div style="position:absolute;top:949;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:953;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:933;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:949;left:209"><span class="ft1">{</span></div>
+<div style="position:absolute;top:946;left:213"><span class="ft0"> </span></div>
+<div style="position:absolute;top:949;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:953;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:939;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:972;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:988;left:94"><span class="ft1"> (</span></div>
+<div style="position:absolute;top:985;left:99"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:991;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:972;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:988;left:209"><span class="ft1">{(</span></div>
+<div style="position:absolute;top:985;left:218"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:991;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:978;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1010;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:94"><span class="ft1"> C</span></div>
+<div style="position:absolute;top:1023;left:105"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1029;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1010;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1026;left:209"><span class="ft1">{(</span></div>
+<div style="position:absolute;top:1023;left:218"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1026;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1029;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1016;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1048;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1064;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1064;left:94"><span class="ft1"> [</span></div>
+<div style="position:absolute;top:1061;left:98"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1064;left:201"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1068;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1048;left:210"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1064;left:209"><span class="ft1">{([</span></div>
+<div style="position:absolute;top:1061;left:222"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1064;left:641"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1068;left:209"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1054;left:646"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

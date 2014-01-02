@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0420</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0420.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 420 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">We find the parent of this position and then save the node in a variable called </span></div>
+<div style="position:absolute;top:81;left:568"><span class="ft2">bottom</span></div>
+<div style="position:absolute;top:81;left:618"><span class="ft1">. </span></div>
+<div style="position:absolute;top:98;left:90"><span class="ft1">Inside the </span></div>
+<div style="position:absolute;top:98;left:154"><span class="ft2">while</span></div>
+<div style="position:absolute;top:98;left:196"><span class="ft1"> loop, the variable </span></div>
+<div style="position:absolute;top:98;left:310"><span class="ft2">index</span></div>
+<div style="position:absolute;top:98;left:351"><span class="ft1"> will trickle up the path toward the root, </span></div>
+<div style="position:absolute;top:115;left:90"><span class="ft1">pointing to each node in turn. The </span></div>
+<div style="position:absolute;top:115;left:301"><span class="ft2">while</span></div>
+<div style="position:absolute;top:115;left:343"><span class="ft1"> loop runs as long as we haven't reached the </span></div>
+<div style="position:absolute;top:133;left:90"><span class="ft1">root (</span></div>
+<div style="position:absolute;top:133;left:123"><span class="ft2">index&gt;0</span></div>
+<div style="position:absolute;top:133;left:181"><span class="ft1">) and the key (</span></div>
+<div style="position:absolute;top:133;left:270"><span class="ft2">iData</span></div>
+<div style="position:absolute;top:133;left:311"><span class="ft1">) of </span></div>
+<div style="position:absolute;top:133;left:335"><span class="ft2">index</span></div>
+<div style="position:absolute;top:133;left:377"><span class="ft1">'s parent is less than the new node.</span></div>
+<div style="position:absolute;top:130;left:594"><span class="ft0"> </span></div>
+<div style="position:absolute;top:134;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:169;left:90"><span class="ft1"> The body of the </span></div>
+<div style="position:absolute;top:169;left:191"><span class="ft2">while</span></div>
+<div style="position:absolute;top:169;left:232"><span class="ft1"> loop executes one step of the trickle-up process. It first copies the </span></div>
+<div style="position:absolute;top:186;left:90"><span class="ft1">parent node into </span></div>
+<div style="position:absolute;top:186;left:194"><span class="ft2">index</span></div>
+<div style="position:absolute;top:186;left:236"><span class="ft1">, moving the node down. (This has the effect of moving the &quot;hole&quot; </span></div>
+<div style="position:absolute;top:203;left:90"><span class="ft1">upward.) Then it moves </span></div>
+<div style="position:absolute;top:203;left:239"><span class="ft2">index</span></div>
+<div style="position:absolute;top:203;left:281"><span class="ft1"> upward by giving it its parent's index, and giving its parent </span></div>
+<div style="position:absolute;top:220;left:90"><span class="ft3">its parent's index.</span></div>
+<div style="position:absolute;top:217;left:198"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:220;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:239;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:255;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:254;left:113"><span class="ft2"> public void trickleUp(int index)</span></div>
+<div style="position:absolute;top:251;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:255;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:259;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:274;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:273;left:113"><span class="ft2">    {</span></div>
+<div style="position:absolute;top:270;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:274;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:278;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:293;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:293;left:113"><span class="ft2">    int parent = (index-1) / 2;</span></div>
+<div style="position:absolute;top:290;left:363"><span class="ft0"> </span></div>
+<div style="position:absolute;top:293;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:297;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:312;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:312;left:113"><span class="ft2">    Node bottom = heapArray[index];</span></div>
+<div style="position:absolute;top:309;left:396"><span class="ft0"> </span></div>
+<div style="position:absolute;top:312;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:316;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:331;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:331;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:335;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:351;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:350;left:113"><span class="ft2">    while( index &gt; 0 &amp;&amp;</span></div>
+<div style="position:absolute;top:347;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:351;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:354;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:370;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:369;left:113"><span class="ft2">           heapArray[parent].iData &lt; bottom.iData )</span></div>
+<div style="position:absolute;top:366;left:530"><span class="ft0"> </span></div>
+<div style="position:absolute;top:370;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:374;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:389;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:388;left:113"><span class="ft2">       {</span></div>
+<div style="position:absolute;top:385;left:172"><span class="ft0"> </span></div>
+<div style="position:absolute;top:389;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:393;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:408;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:408;left:113"><span class="ft2">       heapArray[index] = heapArray[parent]; // move node down</span></div>
+<div style="position:absolute;top:405;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:412;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:427;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:427;left:113"><span class="ft2">       index = parent;                       // move index up</span></div>
+<div style="position:absolute;top:424;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:431;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:446;left:113"><span class="ft2">       parent = (parent-1) / 2;        // parent &lt;- its parent</span></div>
+<div style="position:absolute;top:443;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:450;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:466;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:465;left:113"><span class="ft2">       }  // end while</span></div>
+<div style="position:absolute;top:462;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:466;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:469;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:485;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:484;left:113"><span class="ft2">    heapArray[index] = bottom;</span></div>
+<div style="position:absolute;top:481;left:355"><span class="ft0"> </span></div>
+<div style="position:absolute;top:485;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:489;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:508;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:113"><span class="ft2">    }  // end trickleUp()</span></div>
+<div style="position:absolute;top:520;left:313"><span class="ft0"> </span></div>
+<div style="position:absolute;top:523;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:527;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:546;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:576;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:562;left:90"><span class="ft1"> Finally, when the loop has exited, the newly inserted node, which has been temporarily </span></div>
+<div style="position:absolute;top:578;left:90"><span class="ft1">stored in </span></div>
+<div style="position:absolute;top:578;left:147"><span class="ft2">bottom</span></div>
+<div style="position:absolute;top:578;left:197"><span class="ft1">, is inserted into the cell pointed to by </span></div>
+<div style="position:absolute;top:578;left:430"><span class="ft2">index</span></div>
+<div style="position:absolute;top:578;left:471"><span class="ft1">. This is the first location </span></div>
+<div style="position:absolute;top:595;left:90"><span class="ft1">where it's not larger than its parent, so inserting it here satisfies the heap condition.</span></div>
+<div style="position:absolute;top:592;left:599"><span class="ft0"> </span></div>
+<div style="position:absolute;top:576;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:595;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:614;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:630;left:90"><span class="ft4"> Removal</span></div>
+<div style="position:absolute;top:632;left:168"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:636;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:671;left:90"><span class="ft1"> The removal algorithm is also not complicated if we subsume the trickle-down algorithm </span></div>
+<div style="position:absolute;top:687;left:90"><span class="ft1">into its own routine. We save the node from the root, copy the last node (at index </span></div>
+<div style="position:absolute;top:703;left:90"><span class="ft2">currentSize-1</span></div>
+<div style="position:absolute;top:703;left:199"><span class="ft1">) into the root, and call </span></div>
+<div style="position:absolute;top:703;left:340"><span class="ft2">trickleDown()</span></div>
+<div style="position:absolute;top:703;left:448"><span class="ft1"> to place this node in its </span></div>
+<div style="position:absolute;top:720;left:90"><span class="ft1">appropriate location.</span></div>
+<div style="position:absolute;top:717;left:216"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:720;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:739;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:113"><span class="ft2"> public Node remove()           // delete item with max key</span></div>
+<div style="position:absolute;top:751;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:759;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:774;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:773;left:113"><span class="ft2">    {                           // (assumes non-empty list)</span></div>
+<div style="position:absolute;top:770;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:778;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:113"><span class="ft2">    Node root = heapArray[0];   // save the root</span></div>
+<div style="position:absolute;top:790;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:793;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:797;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:812;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:812;left:113"><span class="ft2">    heapArray[0] = heapArray[--currentSize];  // root &lt;- last</span></div>
+<div style="position:absolute;top:809;left:613"><span class="ft0">   </span></div>
+<div style="position:absolute;top:816;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:113"><span class="ft2">    trickleDown(0);             // trickle down the root</span></div>
+<div style="position:absolute;top:828;left:571"><span class="ft0"> </span></div>
+<div style="position:absolute;top:831;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:835;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:851;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:850;left:113"><span class="ft2">    return root;                // return removed node</span></div>
+<div style="position:absolute;top:847;left:555"><span class="ft0"> </span></div>
+<div style="position:absolute;top:851;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:854;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:873;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:889;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:888;left:113"><span class="ft2">    }  // end remove()</span></div>
+<div style="position:absolute;top:885;left:288"><span class="ft0"> </span></div>
+<div style="position:absolute;top:889;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:893;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:933;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:928;left:90"><span class="ft1"> This method returns the node that was removed; the user of the heap usually needs to </span></div>
+<div style="position:absolute;top:944;left:90"><span class="ft1">process it in some way.</span></div>
+<div style="position:absolute;top:941;left:235"><span class="ft0"> </span></div>
+<div style="position:absolute;top:933;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:944;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:963;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1002;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:979;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:979;left:118"><span class="ft2">trickleDown()</span></div>
+<div style="position:absolute;top:979;left:226"><span class="ft1"> routine is more complicated than </span></div>
+<div style="position:absolute;top:979;left:435"><span class="ft2">trickleUp()</span></div>
+<div style="position:absolute;top:979;left:530"><span class="ft1"> because we must </span></div>
+<div style="position:absolute;top:996;left:90"><span class="ft1">determine which of the two children is larger. First we save the node at </span></div>
+<div style="position:absolute;top:996;left:528"><span class="ft2">index</span></div>
+<div style="position:absolute;top:996;left:570"><span class="ft1"> in a </span></div>
+<div style="position:absolute;top:1014;left:90"><span class="ft1">variable called </span></div>
+<div style="position:absolute;top:1014;left:183"><span class="ft2">top</span></div>
+<div style="position:absolute;top:1014;left:208"><span class="ft1">. If </span></div>
+<div style="position:absolute;top:1014;left:227"><span class="ft2">trickleDown()</span></div>
+<div style="position:absolute;top:1014;left:336"><span class="ft1"> has been called from </span></div>
+<div style="position:absolute;top:1014;left:472"><span class="ft2">remove()</span></div>
+<div style="position:absolute;top:1014;left:539"><span class="ft1">, </span></div>
+<div style="position:absolute;top:1014;left:546"><span class="ft2">index</span></div>
+<div style="position:absolute;top:1014;left:588"><span class="ft1"> is the </span></div>
+<div style="position:absolute;top:1030;left:90"><span class="ft1">root; but, as we'll see, it can be called from other routines as well.</span></div>
+<div style="position:absolute;top:1027;left:491"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1002;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1031;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1050;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1065;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1066;left:90"><span class="ft1"> The </span></div>
+<div style="position:absolute;top:1066;left:118"><span class="ft2">while</span></div>
+<div style="position:absolute;top:1066;left:160"><span class="ft1"> loop will run as long as </span></div>
+<div style="position:absolute;top:1066;left:308"><span class="ft2">index</span></div>
+<div style="position:absolute;top:1066;left:350"><span class="ft1"> is not on the bottom row¡ªthat is, as long as it </span></div>
+<div style="position:absolute;top:1065;left:640"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

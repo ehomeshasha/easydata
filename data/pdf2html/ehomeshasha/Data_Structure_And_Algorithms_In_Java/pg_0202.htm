@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0202</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft2{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0202.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 202 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:82;left:136"><span class="ft1">  </span></div>
+<div style="position:absolute;top:82;left:640"><span class="ft1">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:103;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:119;left:90"><span class="ft2"> Finding the Remaining Columns</span></div>
+<div style="position:absolute;top:119;left:346"><span class="ft0"> </span></div>
+<div style="position:absolute;top:118;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:141;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:172;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:157;left:90"><span class="ft3"> If we knew about a method that found the sum of all the remaining columns, then we </span></div>
+<div style="position:absolute;top:174;left:90"><span class="ft3">could write our </span></div>
+<div style="position:absolute;top:174;left:185"><span class="ft4">triangle()</span></div>
+<div style="position:absolute;top:174;left:268"><span class="ft3"> method, which returns the value of the </span></div>
+<div style="position:absolute;top:174;left:511"><span class="ft4">n</span></div>
+<div style="position:absolute;top:174;left:519"><span class="ft3">th triangular </span></div>
+<div style="position:absolute;top:190;left:90"><span class="ft3">number, like this:</span></div>
+<div style="position:absolute;top:187;left:195"><span class="ft0"> </span></div>
+<div style="position:absolute;top:172;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:191;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:210;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:225;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:225;left:113"><span class="ft4"> int triangle(int n)</span></div>
+<div style="position:absolute;top:222;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:225;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:229;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:244;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:244;left:113"><span class="ft4">    {</span></div>
+<div style="position:absolute;top:241;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:244;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:248;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:270;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:263;left:113"><span class="ft4">    return( n + sumRemainingColumns(n) );  // (incomplete </span></div>
+<div style="position:absolute;top:279;left:113"><span class="ft4">version)</span></div>
+<div style="position:absolute;top:276;left:180"><span class="ft0"> </span></div>
+<div style="position:absolute;top:270;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:279;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:299;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:314;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:313;left:113"><span class="ft4">    }</span></div>
+<div style="position:absolute;top:310;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:314;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:318;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:337;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:367;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:353;left:90"><span class="ft3"> But what have we gained here. It looks like it's just as hard to write the </span></div>
+<div style="position:absolute;top:369;left:90"><span class="ft4">sumRemainingColumns()</span></div>
+<div style="position:absolute;top:369;left:265"><span class="ft3"> method as to write the </span></div>
+<div style="position:absolute;top:369;left:410"><span class="ft4">triangle()</span></div>
+<div style="position:absolute;top:369;left:493"><span class="ft3"> method in the first </span></div>
+<div style="position:absolute;top:386;left:90"><span class="ft3">place.</span></div>
+<div style="position:absolute;top:383;left:127"><span class="ft0"> </span></div>
+<div style="position:absolute;top:367;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:386;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:405;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:445;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft3"> Notice in Figure 6.3, however, that the sum of all the remaining columns for term </span></div>
+<div style="position:absolute;top:422;left:587"><span class="ft4">n</span></div>
+<div style="position:absolute;top:422;left:596"><span class="ft3"> is the </span></div>
+<div style="position:absolute;top:439;left:90"><span class="ft3">same as the sum of all the columns for term </span></div>
+<div style="position:absolute;top:439;left:363"><span class="ft4">n-1</span></div>
+<div style="position:absolute;top:439;left:388"><span class="ft3">. Thus, if we knew about a method that </span></div>
+<div style="position:absolute;top:456;left:90"><span class="ft3">summed all the columns for term </span></div>
+<div style="position:absolute;top:456;left:296"><span class="ft4">n</span></div>
+<div style="position:absolute;top:456;left:304"><span class="ft3">, we could call it with an argument of </span></div>
+<div style="position:absolute;top:456;left:532"><span class="ft4">n-1</span></div>
+<div style="position:absolute;top:456;left:557"><span class="ft3"> to find the </span></div>
+<div style="position:absolute;top:473;left:90"><span class="ft3">sum of all the remaining columns for term </span></div>
+<div style="position:absolute;top:473;left:349"><span class="ft4">n</span></div>
+<div style="position:absolute;top:473;left:357"><span class="ft3">:</span></div>
+<div style="position:absolute;top:470;left:361"><span class="ft0"> </span></div>
+<div style="position:absolute;top:445;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:474;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:493;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:509;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:508;left:113"><span class="ft4"> int triangle(int n)</span></div>
+<div style="position:absolute;top:505;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:509;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:512;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:528;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:527;left:113"><span class="ft4">    {</span></div>
+<div style="position:absolute;top:524;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:528;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:532;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:547;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:546;left:113"><span class="ft4">    return( n + sumAllColumns(n-1) );  // (incomplete version)</span></div>
+<div style="position:absolute;top:543;left:621"><span class="ft0">   </span></div>
+<div style="position:absolute;top:551;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:570;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:585;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:585;left:113"><span class="ft4">    }</span></div>
+<div style="position:absolute;top:582;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:585;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:589;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:608;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:648;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:625;left:90"><span class="ft3"> But when you think about it, the </span></div>
+<div style="position:absolute;top:625;left:288"><span class="ft4">sumAllColumns()</span></div>
+<div style="position:absolute;top:625;left:413"><span class="ft3"> method is doing exactly the same </span></div>
+<div style="position:absolute;top:642;left:90"><span class="ft3">thing the </span></div>
+<div style="position:absolute;top:642;left:147"><span class="ft4">triangle()</span></div>
+<div style="position:absolute;top:642;left:231"><span class="ft3"> method is doing: summing all the columns for some number </span></div>
+<div style="position:absolute;top:642;left:606"><span class="ft4">n</span></div>
+<div style="position:absolute;top:642;left:614"><span class="ft3"> </span></div>
+<div style="position:absolute;top:659;left:90"><span class="ft3">passed as an argument. So why not use the </span></div>
+<div style="position:absolute;top:659;left:365"><span class="ft4">triangle()</span></div>
+<div style="position:absolute;top:659;left:452"><span class="ft3"> method itself, instead of some </span></div>
+<div style="position:absolute;top:676;left:90"><span class="ft3">other method. That would look like this:</span></div>
+<div style="position:absolute;top:673;left:335"><span class="ft0"> </span></div>
+<div style="position:absolute;top:648;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:676;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:695;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:710;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:710;left:113"><span class="ft4"> int triangle(int n)</span></div>
+<div style="position:absolute;top:707;left:272"><span class="ft0"> </span></div>
+<div style="position:absolute;top:710;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:714;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:729;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:729;left:113"><span class="ft4">    {</span></div>
+<div style="position:absolute;top:726;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:729;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:733;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:748;left:113"><span class="ft4">    return( n + triangle(n-1) );  // (incomplete version)</span></div>
+<div style="position:absolute;top:745;left:580"><span class="ft0"> </span></div>
+<div style="position:absolute;top:749;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:752;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:772;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:786;left:113"><span class="ft4">    }</span></div>
+<div style="position:absolute;top:783;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:791;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:810;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:840;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:826;left:90"><span class="ft3"> It may seem amazing that a method can call itself, but why shouldn't it be able to. A </span></div>
+<div style="position:absolute;top:842;left:90"><span class="ft3">method call is (among other things) a transfer of control to the start of the method. This </span></div>
+<div style="position:absolute;top:858;left:90"><span class="ft3">transfer of control can take place from within the method as well as from outside.</span></div>
+<div style="position:absolute;top:855;left:585"><span class="ft0"> </span></div>
+<div style="position:absolute;top:840;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:858;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:877;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:892;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:893;left:90"><span class="ft2"> Passing the Buck</span></div>
+<div style="position:absolute;top:893;left:229"><span class="ft0"> </span></div>
+<div style="position:absolute;top:892;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:896;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:915;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:953;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:931;left:90"><span class="ft3"> All this may seem like passing the buck. Someone tells me to find the 9th triangular </span></div>
+<div style="position:absolute;top:947;left:90"><span class="ft3">number. I know this is 9 plus the 8th triangular number, so I call Harry and ask him to find </span></div>
+<div style="position:absolute;top:963;left:90"><span class="ft3">the 8th triangular number. When I hear back from him, I'll add 9 to whatever he tells me, </span></div>
+<div style="position:absolute;top:979;left:90"><span class="ft3">and that will be the answer.</span></div>
+<div style="position:absolute;top:976;left:259"><span class="ft0"> </span></div>
+<div style="position:absolute;top:953;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:979;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1014;left:90"><span class="ft3"> Harry knows the 8th triangular number is 8 plus the 7th triangular number, so he calls </span></div>
+<div style="position:absolute;top:1030;left:90"><span class="ft3">Sally and asks her to find the 7th triangular number. This process continues with each </span></div>
+<div style="position:absolute;top:1046;left:90"><span class="ft3">person passing the buck to another one.</span></div>
+<div style="position:absolute;top:1043;left:338"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1046;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1065;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

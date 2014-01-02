@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0033</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#800000;}
+.ft5{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#ffffff;}
+.ft6{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft7{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0033.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:395"><span class="ft0"> - 33 -</span></div>
+<div style="position:absolute;top:80;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:90"><span class="ft1"> Insertion with Duplicates</span></div>
+<div style="position:absolute;top:80;left:287"><span class="ft0"> </span></div>
+<div style="position:absolute;top:80;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:84;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:103;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:141;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:119;left:90"><span class="ft2"> Insertion is the same with duplicates allowed as when they're not: a single step inserts </span></div>
+<div style="position:absolute;top:135;left:90"><span class="ft2">the new item. But remember, if duplicates are not allowed, and there's a possibility the </span></div>
+<div style="position:absolute;top:151;left:90"><span class="ft2">user will attempt to input the same key twice, you may need to check every existing item </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft2">before doing an insertion.</span></div>
+<div style="position:absolute;top:164;left:247"><span class="ft0"> </span></div>
+<div style="position:absolute;top:141;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:167;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:186;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:201;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:202;left:90"><span class="ft1"> Deletion with Duplicates</span></div>
+<div style="position:absolute;top:202;left:283"><span class="ft0"> </span></div>
+<div style="position:absolute;top:201;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:205;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:224;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:262;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:240;left:90"><span class="ft2"> Deletion may be more complicated when duplicates are allowed, depending on exactly </span></div>
+<div style="position:absolute;top:256;left:90"><span class="ft2">how &quot;deletion&quot; is defined. If it means to delete only the first item with a specified value, </span></div>
+<div style="position:absolute;top:272;left:90"><span class="ft2">then, on the average, only N/2 comparisons and N/2 moves are necessary. This is the </span></div>
+<div style="position:absolute;top:288;left:90"><span class="ft2">same as when no duplicates are allowed.</span></div>
+<div style="position:absolute;top:285;left:344"><span class="ft0"> </span></div>
+<div style="position:absolute;top:262;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:288;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:307;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:345;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:323;left:90"><span class="ft2"> But if deletion means to delete every item with a specified key value, then the same </span></div>
+<div style="position:absolute;top:339;left:90"><span class="ft2">operation may require multiple deletions. This will require checking N cells and (probably) </span></div>
+<div style="position:absolute;top:355;left:90"><span class="ft2">moving more than N/2 cells. The average depends on how the duplicates are distributed </span></div>
+<div style="position:absolute;top:371;left:90"><span class="ft2">throughout the array.</span></div>
+<div style="position:absolute;top:368;left:219"><span class="ft0"> </span></div>
+<div style="position:absolute;top:345;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:390;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:90"><span class="ft2"> The applet assumes this second meaning and deletes multiple items with the same key. </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft2">This is complicated, because each time an item is deleted, subsequent items must be </span></div>
+<div style="position:absolute;top:438;left:90"><span class="ft2">shifted farther. For example, if three items are deleted, then items beyond the last </span></div>
+<div style="position:absolute;top:454;left:90"><span class="ft2">deletion will need to be shifted three spaces. To see how this works, set the applet to </span></div>
+<div style="position:absolute;top:470;left:90"><span class="ft2">Dups OK and insert three or four items with the same key. Then try deleting them.</span></div>
+<div style="position:absolute;top:467;left:593"><span class="ft0"> </span></div>
+<div style="position:absolute;top:436;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:470;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:519;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:505;left:90"><span class="ft2"> Table 2.1 shows the average number of comparisons and moves for the three </span></div>
+<div style="position:absolute;top:521;left:90"><span class="ft2">operations, first where no duplicates are allowed and then where they are allowed. N is </span></div>
+<div style="position:absolute;top:537;left:90"><span class="ft2">the number of items in the array. Inserting a new item counts as one move.</span></div>
+<div style="position:absolute;top:534;left:550"><span class="ft0"> </span></div>
+<div style="position:absolute;top:519;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:537;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:557;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:90"><span class="ft2"> You can explore these possibilities with the Array Workshop applet.</span></div>
+<div style="position:absolute;top:569;left:504"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:576;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:595;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:611;left:90"><span class="ft4"> Table 2.1: Duplicates OK Versus No Duplicates</span></div>
+<div style="position:absolute;top:608;left:400"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:614;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:633;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:649;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:652;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:655;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:649;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:652;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:672;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:687;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:687;left:262"><span class="ft0">  </span></div>
+<div style="position:absolute;top:691;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:672;left:271"><span class="ft0">  </span></div>
+<div style="position:absolute;top:688;left:270"><span class="ft4">No Duplicates</span></div>
+<div style="position:absolute;top:685;left:362"><span class="ft0"> </span></div>
+<div style="position:absolute;top:691;left:270"><span class="ft0"> </span></div>
+<div style="position:absolute;top:672;left:462"><span class="ft0">  </span></div>
+<div style="position:absolute;top:688;left:461"><span class="ft4">Duplicates OK</span></div>
+<div style="position:absolute;top:685;left:556"><span class="ft0"> </span></div>
+<div style="position:absolute;top:687;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:691;left:461"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:710;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:729;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:732;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:725;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:729;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:748;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:94"><span class="ft2"> Search</span></div>
+<div style="position:absolute;top:761;left:138"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:262"><span class="ft0">  </span></div>
+<div style="position:absolute;top:767;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:748;left:271"><span class="ft0">  </span></div>
+<div style="position:absolute;top:764;left:270"><span class="ft2">N/2 comparisons</span></div>
+<div style="position:absolute;top:761;left:374"><span class="ft0"> </span></div>
+<div style="position:absolute;top:767;left:270"><span class="ft0"> </span></div>
+<div style="position:absolute;top:748;left:462"><span class="ft0">  </span></div>
+<div style="position:absolute;top:764;left:461"><span class="ft2">N comparisons</span></div>
+<div style="position:absolute;top:761;left:553"><span class="ft0"> </span></div>
+<div style="position:absolute;top:764;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:767;left:461"><span class="ft0"> </span></div>
+<div style="position:absolute;top:754;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:787;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:802;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:802;left:94"><span class="ft2"> Insertion</span></div>
+<div style="position:absolute;top:799;left:147"><span class="ft0"> </span></div>
+<div style="position:absolute;top:802;left:262"><span class="ft0">  </span></div>
+<div style="position:absolute;top:806;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:271"><span class="ft0">  </span></div>
+<div style="position:absolute;top:802;left:270"><span class="ft2">No comparisons, one move</span></div>
+<div style="position:absolute;top:799;left:439"><span class="ft0"> </span></div>
+<div style="position:absolute;top:806;left:270"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:462"><span class="ft0">  </span></div>
+<div style="position:absolute;top:802;left:461"><span class="ft2">No comparisons, one move</span></div>
+<div style="position:absolute;top:799;left:630"><span class="ft0">   </span></div>
+<div style="position:absolute;top:806;left:461"><span class="ft0"> </span></div>
+<div style="position:absolute;top:792;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:825;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:840;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:841;left:94"><span class="ft2"> Deletion</span></div>
+<div style="position:absolute;top:838;left:145"><span class="ft0"> </span></div>
+<div style="position:absolute;top:840;left:262"><span class="ft0">  </span></div>
+<div style="position:absolute;top:844;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:825;left:271"><span class="ft0">  </span></div>
+<div style="position:absolute;top:841;left:270"><span class="ft2">N/2 comparisons, N/2 </span></div>
+<div style="position:absolute;top:857;left:270"><span class="ft2">moves</span></div>
+<div style="position:absolute;top:854;left:311"><span class="ft0"> </span></div>
+<div style="position:absolute;top:857;left:270"><span class="ft0"> </span></div>
+<div style="position:absolute;top:825;left:462"><span class="ft0">  </span></div>
+<div style="position:absolute;top:841;left:461"><span class="ft2">N comparisons, more than </span></div>
+<div style="position:absolute;top:857;left:461"><span class="ft2">N/2 moves</span></div>
+<div style="position:absolute;top:854;left:527"><span class="ft0"> </span></div>
+<div style="position:absolute;top:847;left:638"><span class="ft0">  </span></div>
+<div style="position:absolute;top:857;left:461"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:646"><span class="ft0">  </span></div>
+<div style="position:absolute;top:876;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:891;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:895;left:91"><span class="ft5">  </span></div>
+<div style="position:absolute;top:898;left:90"><span class="ft6"> </span></div>
+<div style="position:absolute;top:891;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:895;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:914;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:944;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:930;left:90"><span class="ft2"> The difference between N and N/2 is not usually considered very significant, except when </span></div>
+<div style="position:absolute;top:946;left:90"><span class="ft2">fine-tuning a program. Of more importance, as we'll discuss toward the end of this </span></div>
+<div style="position:absolute;top:962;left:90"><span class="ft2">chapter, is whether an operation takes one step, N steps, log(N) steps, or N e2 steps. </span></div>
+<div style="position:absolute;top:959;left:618"><span class="ft0">   </span></div>
+<div style="position:absolute;top:962;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:981;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:997;left:90"><span class="ft7"> Not Too Swift</span></div>
+<div style="position:absolute;top:999;left:211"><span class="ft0"> </span></div>
+<div style="position:absolute;top:998;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1003;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1022;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1052;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1038;left:90"><span class="ft2"> One of the significant things to notice when using the Array applet is the slow and </span></div>
+<div style="position:absolute;top:1054;left:90"><span class="ft2">methodical nature of the algorithms. With the exception of insertion, the algorithms involve </span></div>
+<div style="position:absolute;top:1070;left:90"><span class="ft2">stepping through some or all of the cells in the array. Different data structures offer much </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

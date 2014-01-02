@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0305</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Times New Roman;color:#010100;}
+.ft5{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0305.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 305 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:106;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> Notice that this is¡ªfinally¡ªthe end of the </span></div>
+<div style="position:absolute;top:100;left:348"><span class="ft2">delete()</span></div>
+<div style="position:absolute;top:100;left:415"><span class="ft1"> routine. Let's review the code for </span></div>
+<div style="position:absolute;top:117;left:90"><span class="ft1">these two steps.</span></div>
+<div style="position:absolute;top:114;left:191"><span class="ft0"> </span></div>
+<div style="position:absolute;top:106;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:117;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:136;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:153;left:90"><span class="ft1"> Step 1: If the node to be deleted, </span></div>
+<div style="position:absolute;top:153;left:296"><span class="ft2">current</span></div>
+<div style="position:absolute;top:153;left:354"><span class="ft1">, is the root, it has no parent so we merely set </span></div>
+<div style="position:absolute;top:169;left:90"><span class="ft1">the root to the successor. Otherwise, the node to be deleted can be either a left or right </span></div>
+<div style="position:absolute;top:185;left:90"><span class="ft1">child (the figure shows it as a right child), so we set the appropriate field in its parent to </span></div>
+<div style="position:absolute;top:202;left:90"><span class="ft1">point to </span></div>
+<div style="position:absolute;top:202;left:140"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:202;left:215"><span class="ft1">. Once </span></div>
+<div style="position:absolute;top:202;left:259"><span class="ft2">delete()</span></div>
+<div style="position:absolute;top:202;left:326"><span class="ft1"> returns and </span></div>
+<div style="position:absolute;top:202;left:404"><span class="ft2">current</span></div>
+<div style="position:absolute;top:202;left:466"><span class="ft1"> goes out of scope, the node </span></div>
+<div style="position:absolute;top:219;left:90"><span class="ft1">referred to by </span></div>
+<div style="position:absolute;top:219;left:177"><span class="ft2">current</span></div>
+<div style="position:absolute;top:219;left:235"><span class="ft1"> will have no references to it, so it will be discarded during Java's </span></div>
+<div style="position:absolute;top:236;left:90"><span class="ft1">next garbage collection.</span></div>
+<div style="position:absolute;top:233;left:237"><span class="ft0"> </span></div>
+<div style="position:absolute;top:192;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:236;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:255;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:270;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:90"><span class="ft1"> Step 2: We set the left child of </span></div>
+<div style="position:absolute;top:271;left:279"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:271;left:354"><span class="ft1"> to point to </span></div>
+<div style="position:absolute;top:271;left:422"><span class="ft2">current</span></div>
+<div style="position:absolute;top:271;left:481"><span class="ft1">'s left child.</span></div>
+<div style="position:absolute;top:268;left:549"><span class="ft0"> </span></div>
+<div style="position:absolute;top:270;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:274;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:293;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:323;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:309;left:90"><span class="ft1"> What happens if the successor has children of its own. First of all, a successor node is </span></div>
+<div style="position:absolute;top:325;left:90"><span class="ft3">guaranteed not to have a left child. This is true whether the successor is the right child of </span></div>
+<div style="position:absolute;top:341;left:90"><span class="ft1">the node to be deleted or one of this right child's left children. How do we know this.</span></div>
+<div style="position:absolute;top:338;left:607"><span class="ft0">    </span></div>
+<div style="position:absolute;top:341;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:360;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:398;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:376;left:90"><span class="ft1"> Well, remember that the algorithm we use to determine the successor goes to the right </span></div>
+<div style="position:absolute;top:392;left:90"><span class="ft1">child first, and then to any left children of that right child. It stops when it gets to a node </span></div>
+<div style="position:absolute;top:408;left:90"><span class="ft1">with no left child, so the algorithm itself determines that the successor can't have any left </span></div>
+<div style="position:absolute;top:424;left:90"><span class="ft1">children. If it did, that left child would be the successor instead.</span></div>
+<div style="position:absolute;top:421;left:475"><span class="ft0"> </span></div>
+<div style="position:absolute;top:398;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:424;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:481;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:459;left:90"><span class="ft1"> You can check this out on the Workshop applet. No matter how many trees you make, </span></div>
+<div style="position:absolute;top:475;left:90"><span class="ft1">you'll never find a situation in which a node's successor has a left child (assuming the </span></div>
+<div style="position:absolute;top:491;left:90"><span class="ft1">original node has two children, which is the situation that leads to all this trouble in the </span></div>
+<div style="position:absolute;top:507;left:90"><span class="ft1">first place).</span></div>
+<div style="position:absolute;top:504;left:158"><span class="ft0"> </span></div>
+<div style="position:absolute;top:481;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:507;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:526;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:564;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:542;left:90"><span class="ft1"> On the other hand, the successor may very well have a right child. This isn't much of a </span></div>
+<div style="position:absolute;top:558;left:90"><span class="ft1">problem when the successor is the right child of the node to be deleted. When we move </span></div>
+<div style="position:absolute;top:574;left:90"><span class="ft1">the successor, its right subtree simply follows along with it. There's no conflict with the </span></div>
+<div style="position:absolute;top:590;left:90"><span class="ft1">right child of the node being deleted, because the successor is this right child.</span></div>
+<div style="position:absolute;top:587;left:567"><span class="ft0"> </span></div>
+<div style="position:absolute;top:564;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:590;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:609;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:625;left:90"><span class="ft1"> In the next section we'll see that a successor's right child needs more attention if the </span></div>
+<div style="position:absolute;top:641;left:90"><span class="ft1">successor is not the right child of the node to be deleted.</span></div>
+<div style="position:absolute;top:638;left:438"><span class="ft0"> </span></div>
+<div style="position:absolute;top:631;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:641;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:660;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:676;left:90"><span class="ft4"> successor</span></div>
+<div style="position:absolute;top:676;left:180"><span class="ft5"> Is Left Descendant of Right Child of </span></div>
+<div style="position:absolute;top:676;left:472"><span class="ft4">delNode</span></div>
+<div style="position:absolute;top:676;left:542"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:681;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:700;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:723;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:717;left:90"><span class="ft1"> If </span></div>
+<div style="position:absolute;top:717;left:102"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:717;left:177"><span class="ft1"> is a left descendant of the right child of the node to be deleted, four steps </span></div>
+<div style="position:absolute;top:733;left:90"><span class="ft1">are required to perform the deletion:</span></div>
+<div style="position:absolute;top:730;left:312"><span class="ft0"> </span></div>
+<div style="position:absolute;top:723;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:734;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:753;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:775;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:769;left:90"><span class="ft1"> 1.</span></div>
+<div style="position:absolute;top:766;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:769;left:113"><span class="ft1">Plug the right child of </span></div>
+<div style="position:absolute;top:769;left:247"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:769;left:322"><span class="ft1"> into the </span></div>
+<div style="position:absolute;top:769;left:375"><span class="ft2">leftChild</span></div>
+<div style="position:absolute;top:769;left:450"><span class="ft1"> field of the successor's </span></div>
+<div style="position:absolute;top:786;left:113"><span class="ft1">parent.</span></div>
+<div style="position:absolute;top:783;left:156"><span class="ft0"> </span></div>
+<div style="position:absolute;top:775;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:786;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:805;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:828;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:821;left:90"><span class="ft1"> 2.</span></div>
+<div style="position:absolute;top:818;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:821;left:113"><span class="ft1">Plug the right child of the node to be deleted into the </span></div>
+<div style="position:absolute;top:821;left:438"><span class="ft2">rightChild</span></div>
+<div style="position:absolute;top:821;left:522"><span class="ft1"> field of </span></div>
+<div style="position:absolute;top:839;left:113"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:839;left:188"><span class="ft1">.</span></div>
+<div style="position:absolute;top:836;left:192"><span class="ft0"> </span></div>
+<div style="position:absolute;top:828;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:839;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:858;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:881;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:874;left:90"><span class="ft1"> 3.</span></div>
+<div style="position:absolute;top:871;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:875;left:113"><span class="ft1">Unplug </span></div>
+<div style="position:absolute;top:875;left:161"><span class="ft2">current</span></div>
+<div style="position:absolute;top:875;left:219"><span class="ft1"> from the </span></div>
+<div style="position:absolute;top:875;left:278"><span class="ft2">rightChild</span></div>
+<div style="position:absolute;top:875;left:365"><span class="ft1"> field of its parent, and set this field to point to </span></div>
+<div style="position:absolute;top:892;left:113"><span class="ft2">successor</span></div>
+<div style="position:absolute;top:892;left:188"><span class="ft1">.</span></div>
+<div style="position:absolute;top:889;left:192"><span class="ft0"> </span></div>
+<div style="position:absolute;top:881;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:893;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:912;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:934;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:928;left:90"><span class="ft1"> 4.</span></div>
+<div style="position:absolute;top:925;left:102"><span class="ft0">  </span></div>
+<div style="position:absolute;top:928;left:113"><span class="ft1">Unplug </span></div>
+<div style="position:absolute;top:928;left:161"><span class="ft2">current</span></div>
+<div style="position:absolute;top:928;left:219"><span class="ft1">'s left child from </span></div>
+<div style="position:absolute;top:928;left:319"><span class="ft2">current</span></div>
+<div style="position:absolute;top:928;left:378"><span class="ft1">, and plug it into the </span></div>
+<div style="position:absolute;top:928;left:503"><span class="ft2">leftChild</span></div>
+<div style="position:absolute;top:928;left:578"><span class="ft1"> field of </span></div>
+<div style="position:absolute;top:945;left:113"><span class="ft1">successor.</span></div>
+<div style="position:absolute;top:942;left:180"><span class="ft0"> </span></div>
+<div style="position:absolute;top:934;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:945;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:964;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:981;left:90"><span class="ft1"> Steps 1 and 2 are handled in the </span></div>
+<div style="position:absolute;top:981;left:295"><span class="ft2">getSuccessor()</span></div>
+<div style="position:absolute;top:981;left:411"><span class="ft1"> routine, while 3 and 4 are carried in </span></div>
+<div style="position:absolute;top:998;left:90"><span class="ft2">delete()</span></div>
+<div style="position:absolute;top:998;left:157"><span class="ft1">. Figure 8.20</span></div>
+<div style="position:absolute;top:998;left:235"><span class="ft6"> shows the connections affected by these four steps.</span></div>
+<div style="position:absolute;top:995;left:558"><span class="ft0"> </span></div>
+<div style="position:absolute;top:987;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:999;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1018;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

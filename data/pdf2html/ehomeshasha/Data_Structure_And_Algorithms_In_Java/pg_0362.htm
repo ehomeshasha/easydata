@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0362</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0362.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 362 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:90"><span class="ft1"> Assuming there are 31,250 blocks, we must read and write (on the average) 15,625 of </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft1">them, which at 10 milliseconds per read and write requires more than five minutes to </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">insert a single entry. This won't be satisfactory if you have thousands of new names to </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1">add to the phone book.</span></div>
+<div style="position:absolute;top:145;left:232"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:148;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft1"> Another problem with the sequential ordering is that it only works quickly for one key. Our </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft1">file is arranged by last names. But suppose you wanted to search for a particular phone </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft1">number. You can't use a binary search, because the data is ordered by name. You would </span></div>
+<div style="position:absolute;top:231;left:90"><span class="ft1">need to go through the entire file, block by block, using sequential access. This would </span></div>
+<div style="position:absolute;top:247;left:90"><span class="ft1">require reading an average of half the blocks, which would require about 2.5 minutes, </span></div>
+<div style="position:absolute;top:263;left:90"><span class="ft1">very poor performance for a simple search. It would be nice to have a more efficient way </span></div>
+<div style="position:absolute;top:279;left:90"><span class="ft1">to store disk data.</span></div>
+<div style="position:absolute;top:276;left:200"><span class="ft0"> </span></div>
+<div style="position:absolute;top:229;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:279;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:298;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:314;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:313;left:90"><span class="ft2"> B-Trees</span></div>
+<div style="position:absolute;top:315;left:160"><span class="ft0"> </span></div>
+<div style="position:absolute;top:314;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:319;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:339;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:90"><span class="ft1"> How can the records of a file be arranged to provide fast search, insertion, and deletion </span></div>
+<div style="position:absolute;top:370;left:90"><span class="ft1">times. We've seen that trees are a good approach to organizing in-memory data. Will </span></div>
+<div style="position:absolute;top:386;left:90"><span class="ft1">trees work with files.</span></div>
+<div style="position:absolute;top:383;left:219"><span class="ft0"> </span></div>
+<div style="position:absolute;top:368;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:387;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:406;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:422;left:90"><span class="ft1"> They will, but a different kind of tree must be used for external data than for in-memory </span></div>
+<div style="position:absolute;top:437;left:90"><span class="ft1">data. The appropriate tree is a multiway tree somewhat like a 2-3-4 tree, but with many </span></div>
+<div style="position:absolute;top:453;left:90"><span class="ft1">more data items per node; it's called a B-tree. B-trees were first conceived as appropriate </span></div>
+<div style="position:absolute;top:469;left:90"><span class="ft1">structures for external storage by R. Bayer and E. M. McCreight in 1972.</span></div>
+<div style="position:absolute;top:466;left:535"><span class="ft0"> </span></div>
+<div style="position:absolute;top:443;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:470;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:489;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:504;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:504;left:90"><span class="ft4"> One Block Per Node</span></div>
+<div style="position:absolute;top:504;left:250"><span class="ft0"> </span></div>
+<div style="position:absolute;top:504;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:508;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:527;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:565;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:543;left:90"><span class="ft1"> Why do we need so many items per node. We've seen that disk access is most efficient </span></div>
+<div style="position:absolute;top:559;left:90"><span class="ft1">when data is read or written one block at a time. In a tree, the entity containing data is a </span></div>
+<div style="position:absolute;top:575;left:90"><span class="ft1">node. It makes sense then to store an entire block of data in each node of the tree. This </span></div>
+<div style="position:absolute;top:591;left:90"><span class="ft1">way, reading a node accesses a maximum amount of data in the shortest time.</span></div>
+<div style="position:absolute;top:588;left:574"><span class="ft0"> </span></div>
+<div style="position:absolute;top:565;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:591;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:632;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:90"><span class="ft1"> How much data can be put in a node. When we simply stored the 512-byte data records </span></div>
+<div style="position:absolute;top:642;left:90"><span class="ft1">for our phone book example, we could fit 16 into a 8,192-byte block.</span></div>
+<div style="position:absolute;top:639;left:507"><span class="ft0"> </span></div>
+<div style="position:absolute;top:632;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:642;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:661;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:90"><span class="ft1"> In a tree, however, we also need to store the links to other nodes (which means links to </span></div>
+<div style="position:absolute;top:693;left:90"><span class="ft1">other blocks, because a node corresponds to a block). In an in-memory tree, such as </span></div>
+<div style="position:absolute;top:709;left:90"><span class="ft1">those we've discussed in previous chapters, these links are references (or pointers, in </span></div>
+<div style="position:absolute;top:725;left:90"><span class="ft1">languages like C++) to nodes in other parts of memory. For a tree stored in a disk file, the </span></div>
+<div style="position:absolute;top:741;left:90"><span class="ft1">links are block numbers in a file (from 0 to 31,249, in our phone book example). For block </span></div>
+<div style="position:absolute;top:757;left:90"><span class="ft1">numbers we can use a field of type </span></div>
+<div style="position:absolute;top:757;left:309"><span class="ft5">int</span></div>
+<div style="position:absolute;top:757;left:334"><span class="ft1">, a 4-byte type, which can point to more than 2 </span></div>
+<div style="position:absolute;top:774;left:90"><span class="ft1">billion possible blocks; probably enough for most files.Now we can no longer squeeze 16 </span></div>
+<div style="position:absolute;top:790;left:90"><span class="ft1">512-byte records into a block, because we need room for the links to child nodes. We </span></div>
+<div style="position:absolute;top:806;left:90"><span class="ft1">could reduce the number of records to 15 to make room for the links, but it's most </span></div>
+<div style="position:absolute;top:822;left:90"><span class="ft1">efficient to have an even number of records per node, so (after appropriate negotiation </span></div>
+<div style="position:absolute;top:838;left:90"><span class="ft1">with management) we reduce the record size to 507 bytes. There will be 17 child links </span></div>
+<div style="position:absolute;top:854;left:90"><span class="ft1">(one more than the number of data items) so the links will require 68 bytes (17x4). This </span></div>
+<div style="position:absolute;top:870;left:90"><span class="ft1">leaves room for 16 507-byte records with 12 bytes left over (507x16 + 68 = 8,180). A </span></div>
+<div style="position:absolute;top:886;left:90"><span class="ft1">block in such a tree, and the corresponding node representation, is shown in Figure </span></div>
+<div style="position:absolute;top:902;left:90"><span class="ft1">10.19.</span></div>
+<div style="position:absolute;top:899;left:129"><span class="ft0"> </span></div>
+<div style="position:absolute;top:787;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:902;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:921;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

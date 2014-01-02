@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0440</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft4{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft5{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft6{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft7{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft8{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft9{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0440.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 440 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">graph is not connected, as in </span></div>
+<div style="position:absolute;top:81;left:272"><span class="ft2">Figure 13.2-b</span></div>
+<div style="position:absolute;top:81;left:354"><span class="ft1">.</span></div>
+<div style="position:absolute;top:78;left:358"><span class="ft0"> </span></div>
+<div style="position:absolute;top:81;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:100;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:116;left:90"><span class="ft2"> A non-connected graph consists of several connected components. In Figure 13.2-b</span></div>
+<div style="position:absolute;top:116;left:606"><span class="ft1">, A </span></div>
+<div style="position:absolute;top:132;left:90"><span class="ft1">and B are one connected component, and C and D are another.</span></div>
+<div style="position:absolute;top:129;left:482"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:132;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:151;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:189;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:167;left:90"><span class="ft2"> For simplicity, the algorithms we'll be discussing in this chapter are written to apply to </span></div>
+<div style="position:absolute;top:183;left:90"><span class="ft2">connected graphs, or to one connected component of a non-connected graph. If </span></div>
+<div style="position:absolute;top:199;left:90"><span class="ft2">appropriate, small modifications will usually enable them to work with non-connected </span></div>
+<div style="position:absolute;top:215;left:90"><span class="ft2">graphs as well.</span></div>
+<div style="position:absolute;top:212;left:183"><span class="ft0"> </span></div>
+<div style="position:absolute;top:189;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:215;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:234;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:90"><span class="ft4"> Directed and Weighted Graphs</span></div>
+<div style="position:absolute;top:249;left:334"><span class="ft0"> </span></div>
+<div style="position:absolute;top:249;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:288;left:90"><span class="ft2"> The graphs in </span></div>
+<div style="position:absolute;top:288;left:179"><span class="ft5">Figures 13.1</span></div>
+<div style="position:absolute;top:288;left:256"><span class="ft1"> and </span></div>
+<div style="position:absolute;top:288;left:287"><span class="ft2">13.2</span></div>
+<div style="position:absolute;top:288;left:314"><span class="ft1"> are non-directed graphs. That means that the edges </span></div>
+<div style="position:absolute;top:304;left:90"><span class="ft1">don't have a direction; you can go either way on them. Thus you can go from vertex A to </span></div>
+<div style="position:absolute;top:320;left:90"><span class="ft1">vertex B, or from vertex B to vertex A, with equal ease. (This models freeways </span></div>
+<div style="position:absolute;top:336;left:90"><span class="ft1">appropriately, because you can usually go either way on a freeway.)</span></div>
+<div style="position:absolute;top:333;left:509"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:336;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:355;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:393;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:90"><span class="ft2"> However, graphs are often used to model situations in which you can go in only one </span></div>
+<div style="position:absolute;top:387;left:90"><span class="ft2">direction along an edge; from A to B but not from B to A, as on a one-way street. Such a </span></div>
+<div style="position:absolute;top:403;left:90"><span class="ft2">graph is said to be directed. The allowed direction is typically shown with an arrowhead at </span></div>
+<div style="position:absolute;top:419;left:90"><span class="ft2">the end of the edge.</span></div>
+<div style="position:absolute;top:416;left:214"><span class="ft0"> </span></div>
+<div style="position:absolute;top:393;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:419;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:438;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:476;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:454;left:90"><span class="ft2"> In some graphs, edges are given a weight, a number that can represent the physical </span></div>
+<div style="position:absolute;top:470;left:90"><span class="ft2">distance between two vertices, or the time it takes to get from one vertex to another, or </span></div>
+<div style="position:absolute;top:486;left:90"><span class="ft2">how much it costs to travel from vertex to vertex (on airline routes, for example). Such </span></div>
+<div style="position:absolute;top:502;left:90"><span class="ft2">graphs are called weighted graphs. We'll explore them in the</span></div>
+<div style="position:absolute;top:502;left:462"><span class="ft5"> next chapter.</span></div>
+<div style="position:absolute;top:499;left:546"><span class="ft0"> </span></div>
+<div style="position:absolute;top:476;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:502;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:521;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:543;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:537;left:90"><span class="ft2"> We're going to begin this chapter by discussing simple undirected, unweighted graphs; </span></div>
+<div style="position:absolute;top:553;left:90"><span class="ft2">later we'll explore directed unweighted graphs.</span></div>
+<div style="position:absolute;top:550;left:375"><span class="ft0"> </span></div>
+<div style="position:absolute;top:543;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:553;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:572;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:594;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:588;left:90"><span class="ft2"> We have by no means covered all the definitions that apply to graphs; we'll introduce </span></div>
+<div style="position:absolute;top:604;left:90"><span class="ft2">more as we go along.</span></div>
+<div style="position:absolute;top:601;left:223"><span class="ft0"> </span></div>
+<div style="position:absolute;top:594;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:605;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:624;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:680;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:725;left:319"><span class="ft0">  </span></div>
+<div style="position:absolute;top:680;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:744;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:742;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:742;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:744;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:763;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:778;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:779;left:136"><span class="ft8"> Figure 13.2:  onnected and nonconnected graphs</span></div>
+<div style="position:absolute;top:776;left:444"><span class="ft0">  </span></div>
+<div style="position:absolute;top:778;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:801;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:800;left:136"><span class="ft7">  </span></div>
+<div style="position:absolute;top:800;left:640"><span class="ft7">  </span></div>
+<div style="position:absolute;top:801;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:821;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:836;left:90"><span class="ft9"> Historical Note</span></div>
+<div style="position:absolute;top:838;left:223"><span class="ft0"> </span></div>
+<div style="position:absolute;top:837;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:842;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:861;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:891;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:877;left:90"><span class="ft2"> One of the first mathematicians to work with graphs was Leonhard Euler in the early 18th </span></div>
+<div style="position:absolute;top:893;left:90"><span class="ft2">century. He solved a famous problem dealing with the bridges in the town of K.nigsberg, </span></div>
+<div style="position:absolute;top:909;left:90"><span class="ft2">Poland. This town included an island and seven bridges, as shown in Figure 13.3-a.</span></div>
+<div style="position:absolute;top:906;left:604"><span class="ft0">   </span></div>
+<div style="position:absolute;top:909;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:928;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

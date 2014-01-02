@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0300</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#010100;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0300.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 300 -</span></div>
+<div style="position:absolute;top:84;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:90"><span class="ft1"> Using the Workshop Applet to Delete a Node with One Child</span></div>
+<div style="position:absolute;top:99;left:565"><span class="ft0"> </span></div>
+<div style="position:absolute;top:99;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:103;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:122;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:160;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:138;left:90"><span class="ft2"> Let's assume we're using the Workshop on the tree in Figure 8.14, and deleting node 71, </span></div>
+<div style="position:absolute;top:154;left:90"><span class="ft2">which has a left child but no right child. Press Del and enter 71 when prompted. Keep </span></div>
+<div style="position:absolute;top:170;left:90"><span class="ft2">pressing Del until the arrow rests on 71. Node 71 has only one child, 63. It doesn't matter </span></div>
+<div style="position:absolute;top:186;left:90"><span class="ft2">whether 63 has children of its own; in this case, it has one: 67.</span></div>
+<div style="position:absolute;top:183;left:472"><span class="ft0"> </span></div>
+<div style="position:absolute;top:160;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:186;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:205;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:235;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:221;left:90"><span class="ft2"> Pressing Del once more causes 71 to be deleted. Its place is taken by its left child, 63. In </span></div>
+<div style="position:absolute;top:237;left:90"><span class="ft2">fact, the entire subtree of which 63 is the root is moved up and plugged in as the new </span></div>
+<div style="position:absolute;top:253;left:90"><span class="ft2">right child of 52.</span></div>
+<div style="position:absolute;top:250;left:188"><span class="ft0"> </span></div>
+<div style="position:absolute;top:235;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:253;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:272;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:288;left:90"><span class="ft2"> Use the Workshop applet to generate new trees with one-child nodes, and see what </span></div>
+<div style="position:absolute;top:304;left:90"><span class="ft2">happens when you delete them. Look for the subtree whose root is the deleted node's </span></div>
+<div style="position:absolute;top:320;left:90"><span class="ft2">child. No matter how complicated this subtree is, it's simply moved up and plugged in as </span></div>
+<div style="position:absolute;top:336;left:90"><span class="ft2">the new child of the deleted node's parent.</span></div>
+<div style="position:absolute;top:333;left:351"><span class="ft0"> </span></div>
+<div style="position:absolute;top:310;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:336;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:355;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:90"><span class="ft1"> Java Code to Delete a Node With One Child</span></div>
+<div style="position:absolute;top:371;left:433"><span class="ft0"> </span></div>
+<div style="position:absolute;top:371;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:375;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:394;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:431;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:410;left:90"><span class="ft2"> The following code shows how to deal with the one-child situation. There are four </span></div>
+<div style="position:absolute;top:426;left:90"><span class="ft2">variations: the child of the node to be deleted may be either a left or right child, and for </span></div>
+<div style="position:absolute;top:441;left:90"><span class="ft2">each of these cases the node to be deleted may be either the left or right child of its </span></div>
+<div style="position:absolute;top:457;left:90"><span class="ft2">parent.</span></div>
+<div style="position:absolute;top:454;left:133"><span class="ft0"> </span></div>
+<div style="position:absolute;top:431;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:458;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:477;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:506;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:493;left:90"><span class="ft2"> There is also a specialized situation: The node to be deleted may be the root, in which </span></div>
+<div style="position:absolute;top:509;left:90"><span class="ft2">case it has no parent and is simply replaced by the appropriate subtree. Here's the code </span></div>
+<div style="position:absolute;top:525;left:90"><span class="ft2">(which continues from the end of the no-child code fragment shown earlier):</span></div>
+<div style="position:absolute;top:522;left:554"><span class="ft0"> </span></div>
+<div style="position:absolute;top:506;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:525;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:544;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:113"><span class="ft3"> // delete() continued...</span></div>
+<div style="position:absolute;top:556;left:313"><span class="ft0"> </span></div>
+<div style="position:absolute;top:559;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:563;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:113"><span class="ft3"> // if no right child, replace with left subtree</span></div>
+<div style="position:absolute;top:575;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:578;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:582;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:113"><span class="ft3"> else if(current.rightChild==null)</span></div>
+<div style="position:absolute;top:594;left:388"><span class="ft0"> </span></div>
+<div style="position:absolute;top:597;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:601;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:616;left:113"><span class="ft3">    if(current == root)</span></div>
+<div style="position:absolute;top:613;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:617;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:620;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:636;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:635;left:113"><span class="ft3">       root = current.leftChild;</span></div>
+<div style="position:absolute;top:632;left:371"><span class="ft0"> </span></div>
+<div style="position:absolute;top:636;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:640;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:654;left:113"><span class="ft3">    else if(isLeftChild)           // left child of parent</span></div>
+<div style="position:absolute;top:651;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:655;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:659;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:113"><span class="ft3">       parent.leftChild = current.leftChild;</span></div>
+<div style="position:absolute;top:671;left:471"><span class="ft0"> </span></div>
+<div style="position:absolute;top:674;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:678;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:113"><span class="ft3">    else                           // right child of parent</span></div>
+<div style="position:absolute;top:690;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:697;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:113"><span class="ft3">       parent.rightChild = current.leftChild;</span></div>
+<div style="position:absolute;top:709;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:712;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:716;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:732;left:79"><span class="ft0">  </span></div>
+<div style="position:absolute;top:732;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:735;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:751;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:750;left:113"><span class="ft3"> // if no left child, replace with right subtree</span></div>
+<div style="position:absolute;top:747;left:505"><span class="ft0"> </span></div>
+<div style="position:absolute;top:751;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:755;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:770;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:769;left:113"><span class="ft3"> else if(current.leftChild==null)</span></div>
+<div style="position:absolute;top:766;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:770;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:774;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:113"><span class="ft3">    if(current == root)</span></div>
+<div style="position:absolute;top:786;left:297"><span class="ft0"> </span></div>
+<div style="position:absolute;top:789;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:793;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:808;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:808;left:113"><span class="ft3">       root = current.rightChild;</span></div>
+<div style="position:absolute;top:805;left:380"><span class="ft0"> </span></div>
+<div style="position:absolute;top:808;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:812;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:827;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:827;left:113"><span class="ft3">    else if(isLeftChild)           // left child of parent</span></div>
+<div style="position:absolute;top:824;left:588"><span class="ft0"> </span></div>
+<div style="position:absolute;top:827;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:831;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:847;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:846;left:113"><span class="ft3">       parent.leftChild = current.rightChild;</span></div>
+<div style="position:absolute;top:843;left:480"><span class="ft0"> </span></div>
+<div style="position:absolute;top:847;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:850;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:866;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:865;left:113"><span class="ft3">    else                           // right child of parent</span></div>
+<div style="position:absolute;top:862;left:596"><span class="ft0">   </span></div>
+<div style="position:absolute;top:870;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:885;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:884;left:113"><span class="ft3">       parent.rightChild = current.rightChild;</span></div>
+<div style="position:absolute;top:881;left:488"><span class="ft0"> </span></div>
+<div style="position:absolute;top:885;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:889;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:908;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:923;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:923;left:113"><span class="ft3"> // continued...</span></div>
+<div style="position:absolute;top:920;left:238"><span class="ft0"> </span></div>
+<div style="position:absolute;top:923;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:927;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:946;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1000;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:962;left:90"><span class="ft2"> Notice that working with references makes it easy to move an entire subtree. You do this </span></div>
+<div style="position:absolute;top:978;left:90"><span class="ft2">by simply disconnecting the old reference to the subtree and creating a new reference to </span></div>
+<div style="position:absolute;top:994;left:90"><span class="ft2">it somewhere else. Although there may be lots of nodes in the subtree, youdon't need to </span></div>
+<div style="position:absolute;top:1010;left:90"><span class="ft2">worry about moving them individually. In fact, they only &quot;move&quot; in the sense of being </span></div>
+<div style="position:absolute;top:1026;left:90"><span class="ft2">conceptually in different positions relative to the other nodes. As far as the program is </span></div>
+<div style="position:absolute;top:1042;left:90"><span class="ft2">concerned, only the reference to the root of the subtree has changed.</span></div>
+<div style="position:absolute;top:1039;left:517"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1000;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1042;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1061;left:80"><span class="ft0"> </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>

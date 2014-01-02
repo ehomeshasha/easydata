@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.verypdf.com/ -->
+<html>
+<head>
+<title>pg_0446</title>
+
+<style>
+<!-- 
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+-->
+</style>
+<script TYPE="text/javascript"> 
+<!-- hide 
+function killerrors()
+{ 
+return true; 
+} 
+window.onerror = killerrors; 
+// --> 
+</script>
+<style type="text/css">
+<!--
+.ft0{font-style:normal;font-weight:normal;font-size:16px;font-family:Times New Roman;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft2{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#008000;}
+.ft3{font-style:normal;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft4{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#000000;}
+.ft5{font-style:italic;font-weight:normal;font-size:13px;font-family:Arial;color:#010100;}
+.ft6{font-style:normal;font-weight:bold;font-size:18px;font-family:Arial;color:#800000;}
+.ft7{font-style:normal;font-weight:bold;font-size:16px;font-family:Arial;color:#010100;}
+.ft8{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#010100;}
+.ft9{font-style:normal;font-weight:normal;font-size:13px;font-family:Times New Roman;color:#000000;}
+.ft10{font-style:normal;font-weight:bold;font-size:13px;font-family:Arial;color:#008080;}
+-->
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+
+<script TYPE="text/javascript">
+var currentpos,timer; 
+function initialize() 
+{ 
+timer=setInterval("scrollwindow()",10);
+} 
+function sc(){
+clearInterval(timer); 
+}
+function scrollwindow() 
+{ 
+currentpos=document.body.scrollTop; 
+window.scroll(0,++currentpos); 
+if (currentpos != document.body.scrollTop) 
+sc();
+} 
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<div style="position:absolute;top:0;left:0"><img width="826" height="1169" src="pg_0446.jpg" ALT=""></div>
+<div style="position:absolute;top:1102;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1102;left:391"><span class="ft0"> - 446 -</span></div>
+<div style="position:absolute;top:81;left:90"><span class="ft1">vertex that's connected to the starting vertex. Here, as it did in</span></div>
+<div style="position:absolute;top:81;left:470"><span class="ft2"> Chapter 8, &quot;Binary Trees,&quot;</span></div>
+<div style="position:absolute;top:81;left:636"><span class="ft3"> </span></div>
+<div style="position:absolute;top:97;left:90"><span class="ft3">when we discussed binary trees, visit means to perform some operation on the vertex, </span></div>
+<div style="position:absolute;top:112;left:90"><span class="ft3">such as displaying it.</span></div>
+<div style="position:absolute;top:109;left:218"><span class="ft0"> </span></div>
+<div style="position:absolute;top:113;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:132;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:177;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:148;left:90"><span class="ft1"> There are two common approaches to searching a graph: depth-first search (DFS) and </span></div>
+<div style="position:absolute;top:164;left:90"><span class="ft5">breadth-first search (BFS). Both will eventually reach all connected vertices. The </span></div>
+<div style="position:absolute;top:180;left:90"><span class="ft1">difference is that the depth-first search is implemented with a stack, whereas the breadth-</span></div>
+<div style="position:absolute;top:196;left:90"><span class="ft1">first search is implemented with a queue. These mechanisms result, as we'll see, in the </span></div>
+<div style="position:absolute;top:212;left:90"><span class="ft1">graph being searched in different ways.</span></div>
+<div style="position:absolute;top:209;left:333"><span class="ft0"> </span></div>
+<div style="position:absolute;top:177;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:212;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:231;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:247;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:246;left:90"><span class="ft6"> Depth-First Search</span></div>
+<div style="position:absolute;top:248;left:258"><span class="ft0"> </span></div>
+<div style="position:absolute;top:247;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:252;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:271;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:301;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:287;left:90"><span class="ft1"> The depth-first search uses a stack to remember where it should go when it reaches a </span></div>
+<div style="position:absolute;top:303;left:90"><span class="ft1">dead end. We'll show an example, encourage you to try similar examples with the </span></div>
+<div style="position:absolute;top:319;left:90"><span class="ft1">GraphN Workshop applet, and then finally show some code that carries out the search.</span></div>
+<div style="position:absolute;top:316;left:625"><span class="ft0">   </span></div>
+<div style="position:absolute;top:319;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:339;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:90"><span class="ft7"> An Example</span></div>
+<div style="position:absolute;top:354;left:186"><span class="ft0"> </span></div>
+<div style="position:absolute;top:354;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:358;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:377;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:399;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:393;left:90"><span class="ft1"> We'll discuss the idea behind the depth-first search in relation to Figure 13.5</span></div>
+<div style="position:absolute;top:393;left:557"><span class="ft3">. The </span></div>
+<div style="position:absolute;top:409;left:90"><span class="ft3">numbers in this figure show the order in which the vertices are visited.</span></div>
+<div style="position:absolute;top:406;left:519"><span class="ft0"> </span></div>
+<div style="position:absolute;top:399;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:409;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:428;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:486;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:533;left:240"><span class="ft0">  </span></div>
+<div style="position:absolute;top:486;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:533;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:552;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:136"><span class="ft8"> Figure 13.5:  Depth-first search</span></div>
+<div style="position:absolute;top:565;left:332"><span class="ft0"> </span></div>
+<div style="position:absolute;top:568;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:591;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:589;left:136"><span class="ft9">  </span></div>
+<div style="position:absolute;top:589;left:640"><span class="ft9">  </span></div>
+<div style="position:absolute;top:591;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:610;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:640;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:626;left:90"><span class="ft1"> To carry out the depth-first search, you pick a starting point¡ªin this case, vertex A. You </span></div>
+<div style="position:absolute;top:642;left:90"><span class="ft1">then do three things: visit this vertex, push it onto a stack so you can remember it, and </span></div>
+<div style="position:absolute;top:658;left:90"><span class="ft1">mark it so you won't visit it again.</span></div>
+<div style="position:absolute;top:655;left:293"><span class="ft0"> </span></div>
+<div style="position:absolute;top:640;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:658;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:677;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:707;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:693;left:90"><span class="ft1"> Next you go to any vertex adjacent to A that hasn't yet been visited. We'll assume the </span></div>
+<div style="position:absolute;top:709;left:90"><span class="ft1">vertices are selected in alphabetical order, so that brings up B. You visit B, mark it, and </span></div>
+<div style="position:absolute;top:725;left:90"><span class="ft1">push it on the stack.</span></div>
+<div style="position:absolute;top:722;left:214"><span class="ft0"> </span></div>
+<div style="position:absolute;top:707;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:725;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:744;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:766;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:760;left:90"><span class="ft1"> Now what. You're at B, and you do the same thing as before: go to an adjacent vertex </span></div>
+<div style="position:absolute;top:776;left:90"><span class="ft1">that hasn't been visited. This leads you to F. We can call this process Rule 1.</span></div>
+<div style="position:absolute;top:773;left:562"><span class="ft0"> </span></div>
+<div style="position:absolute;top:766;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:776;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:795;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:90"><span class="ft10"> REMEMBER</span></div>
+<div style="position:absolute;top:808;left:171"><span class="ft0"> </span></div>
+<div style="position:absolute;top:811;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:814;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:830;left:90"><span class="ft1"> Rule 1: If possible, visit an adjacent unvisited vertex, mark it, and push it on the stack.</span></div>
+<div style="position:absolute;top:827;left:616"><span class="ft0">   </span></div>
+<div style="position:absolute;top:834;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:853;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:882;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:869;left:90"><span class="ft1"> Applying Rule 1 again leads you to H. At this point, however, you need to do something </span></div>
+<div style="position:absolute;top:884;left:90"><span class="ft1">else, because there are no unvisited vertices adjacent to H. Here's where Rule 2 comes </span></div>
+<div style="position:absolute;top:900;left:90"><span class="ft1">in.</span></div>
+<div style="position:absolute;top:897;left:105"><span class="ft0"> </span></div>
+<div style="position:absolute;top:882;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:901;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:920;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:935;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:936;left:90"><span class="ft10"> REMEMBER</span></div>
+<div style="position:absolute;top:933;left:171"><span class="ft0"> </span></div>
+<div style="position:absolute;top:935;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:939;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:954;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:955;left:90"><span class="ft1"> Rule 2: If you can't follow Rule 1, then, if possible, pop a vertex off the stack.</span></div>
+<div style="position:absolute;top:952;left:559"><span class="ft0"> </span></div>
+<div style="position:absolute;top:954;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:958;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:977;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:999;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:993;left:90"><span class="ft1"> Following this rule, you pop H off the stack, which brings you back to F. F has no </span></div>
+<div style="position:absolute;top:1009;left:90"><span class="ft1">unvisited adjacent vertices, so you pop it. Ditto B. Now only A is left on the stack.</span></div>
+<div style="position:absolute;top:1006;left:586"><span class="ft0"> </span></div>
+<div style="position:absolute;top:999;left:640"><span class="ft0">  </span></div>
+<div style="position:absolute;top:1009;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1028;left:80"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1058;left:79"><span class="ft0"> </span></div>
+<div style="position:absolute;top:1044;left:90"><span class="ft1"> A, however, does have unvisited adjacent vertic es, so you visit the next one, C. But C is </span></div>
+<div style="position:absolute;top:1060;left:90"><span class="ft1">the end of the line again, so you pop it and you're back to A. You visit D, G, and I, and </span></div>
+<div style="position:absolute;top:1076;left:90"><span class="ft1">then pop them all when you reach the dead end at I. Now you're back to A. You visit E, </span></div>
+<div style="position:absolute;top:1058;left:640"><span class="ft0">  </span></div>
+<script TYPE="text/javascript">
+			var currentZoom = parent.ltop.currentZoom;
+			if(currentZoom != undefined)
+				document.body.style.zoom=currentZoom/100;
+			</script>
+</body>
+</html>
