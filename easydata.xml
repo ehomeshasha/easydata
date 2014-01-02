@@ -1,0 +1,11 @@
+<uwsgi>
+ <socket>127.0.0.1:8005</socket>
+ <listen>8005</listen>
+ <master>true</master>
+ <pythonpath>/var/www/html/easydata</pythonpath>
+ <processes>1</processes>
+ <logdate>true</logdate>
+ <daemonize>/var/log/uwsgi.log</daemonize>
+ <plugins>python</plugins>
+</uwsgi>
+
