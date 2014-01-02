@@ -1,7 +1,8 @@
 from __future__ import unicode_literals
 
 import re
-from easydata.constant import CONTENT_TYPE
+from easydata.constant import CONTENT_TYPE, PDF_UPLOAD_DIR
+import os
 
 try:
     from collections import OrderedDict
@@ -55,6 +56,7 @@ class UploadForm(forms.Form):
         ext = store_file._name[end_pos+1:]
         if ext != 'pdf':
             raise forms.ValidationError(_("invalid file suffix, must be .pdf"))
+        
         
         
     

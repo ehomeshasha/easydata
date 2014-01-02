@@ -12,11 +12,7 @@ urlpatterns = patterns("",
     url(r"^account/", include("account.urls")),
     url(r'^blog/', include("blog.urls")),
     url(r'^datafinder/', include("datafinder.urls")),
-<<<<<<< HEAD
     url(r'^pdf/', include("pdf.urls")),
-=======
-    url(r'^pdf/', include("pdf_new.urls")),
->>>>>>> 860f2d4fdb8578a2dd7f2a1ac0b0c1f2dd380a29
     #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 

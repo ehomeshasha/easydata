@@ -1,6 +1,6 @@
 import os
 
-
+ALLOWED_HOSTS = []
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -157,11 +157,7 @@ INSTALLED_APPS = [
     #myapps
     "datafinder",
     "blog",
-<<<<<<< HEAD
     "pdf",
-=======
-    "pdf_new",
->>>>>>> 860f2d4fdb8578a2dd7f2a1ac0b0c1f2dd380a29
 ]
 
 # A sample logging configuration. The only tangible logging

@@ -1,8 +1,3 @@
-'''
-Created on Dec 28, 2013
-
-@author: hadoop-user
-'''
 import datetime
 import time
 from django.utils.timezone import utc
@@ -12,7 +7,7 @@ CONTENT_TYPE = {
     'image': [],
 }
 
-PDF_UPLOAD_DIR = '/pdf/static/pdf/pdf2html/'
+PDF_UPLOAD_DIR = 'pdf/static/pdf/pdf2html/'
 
 
 NOW = datetime.datetime.utcnow().replace(tzinfo=utc)
