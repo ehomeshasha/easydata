@@ -63,7 +63,7 @@ class UploadView(FormView):
         else:
             self.User = self.request.user
         #upload pdf to server
-        filepath = handle_uploaded_file(self.request.FILES['store_file'])
+        filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
         #save information about uploading to database
         self.pdf_save(form, commit=True, filepath=filepath)
         return HttpResponse('');
@@ -75,8 +75,8 @@ class UploadView(FormView):
         pdf.description = form.cleaned_data.get("description")
         pdf.uid = self.User.id
         pdf.username = self.User.username
-        pdf.store_filepath = kwargs['filepath']
-        pdf.store_file = self.request.FILES['store_file']._name.replace(" ", "_")
+        pdf.filepath = kwargs['filepath']
+        pdf.filename = self.request.FILES['store_file']._name.replace(" ", "_")
         pdf.dateline = TIMESTAMP
         
         if commit:

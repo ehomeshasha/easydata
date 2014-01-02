@@ -12,9 +12,8 @@ CONTENT_TYPE = {
     'image': [],
 }
 
-PDF_UPLOAD_DIR = '/uploads/pdf/'
-TEXT_UPLOAD_DIR = '/uploads/text/'
-IMAGE_UPLOAD_DIR = '/uploads/image/'
+PDF_UPLOAD_DIR = '/pdf/static/pdf/pdf2html/'
+
 
 NOW = datetime.datetime.utcnow().replace(tzinfo=utc)
 TIMESTAMP = int(time.mktime(NOW.timetuple()))
