@@ -21,7 +21,7 @@ def handle_uploaded_file(store_file, username):
     if not os.path.exists(directory_abs):
         print "os.makedirs("+directory_abs+")"
         os.makedirs(directory_abs)
-    directory = get_upload_dir(directory)
+    #directory = get_upload_dir(directory)
     mk_upload_dir(directory, namelist=['pdf', 'origin', 'new'])
     #print TIMESTAMP
     filepath = directory+'/pdf/'+uuid.uuid4().hex+'.pdf'
