@@ -13,7 +13,10 @@ def mk_upload_dir(directory, **kwarg):
 
 def get_upload_dir(directory):
     directory_abs = os.path.join(settings.PROJECT_ROOT, directory)
-    if not os.path.exists(directory_abs) or not elistdir(directory_abs+'/pdf', 'file'):
+    if not os.path.exists(directory_abs):
+        os.makedirs(directory_abs) 
+        return directory
+    if not elistdir(directory_abs+'/pdf', 'file'):
         return directory
     user_dir = os.path.dirname(directory_abs)
     dirname = os.path.basename(directory_abs)
