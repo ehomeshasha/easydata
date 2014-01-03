@@ -69,9 +69,9 @@ class UploadView(FormView):
         if not os.path.exists(dirname):
             os.mkdir(dirname)
         #upload pdf to server
-        filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
+        #filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
         #save information about uploading to database
-        self.pdf_save(form, commit=True, filepath=filepath)
+        #self.pdf_save(form, commit=True, filepath=filepath)
         return HttpResponse('');
         
     def pdf_save(self, form, commit=True, **kwargs):
