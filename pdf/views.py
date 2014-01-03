@@ -77,7 +77,7 @@ class UploadView(FormView):
         pdf.uid = self.User.id
         pdf.username = self.User.username
         pdf.filepath = kwargs['filepath']
-        pdf.filename = self.request.FILES['store_file']._name.replace(" ", "_")
+        pdf.filename = self.request.FILES['store_file']._name
         pdf.dateline = TIMESTAMP
         
         if commit:
