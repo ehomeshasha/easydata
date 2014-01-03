@@ -7,7 +7,7 @@ CONTENT_TYPE = {
     'image': [],
 }
 
-PDF_UPLOAD_DIR = 'pdf/static/pdf/pdf2html/'
+PDF_UPLOAD_DIR = 'media_files/pdf2html/'
 
 
 NOW = datetime.datetime.utcnow().replace(tzinfo=utc)
