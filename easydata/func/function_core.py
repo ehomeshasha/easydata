@@ -1,7 +1,6 @@
 from os import listdir
 from os.path import isfile, join
 from django.contrib import messages
-import re
 
 def check_login(request):
     if request.user.is_authenticated():

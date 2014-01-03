@@ -22,7 +22,7 @@ from django.http.response import HttpResponseRedirect, HttpResponse
 import json
 
 from pdf.models import pdf as pdfModel
-from easydata.func.function_core import check_login, estatic
+from easydata.func.function_core import check_login
 from pdf.uploads import handle_uploaded_file
 from easydata.constant import TIMESTAMP
 
