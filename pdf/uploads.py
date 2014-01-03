@@ -7,7 +7,7 @@ from django.conf import settings
 from easydata.constant import PDF_UPLOAD_DIR
 import uuid
 import os
-from pdf.func import mk_upload_dir, get_upload_dir
+from pdf.func import mk_upload_dir
 
 
 
