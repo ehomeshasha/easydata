@@ -24,7 +24,7 @@ import json
 from pdf.models import pdf as pdfModel
 from easydata.func.function_core import check_login, estatic
 from pdf.uploads import handle_uploaded_file
-from easydata.constant import TIMESTAMP, PDF_UPLOAD_DIR
+from easydata.constant import TIMESTAMP
 
 
 #from django.views.generic import DetailView
@@ -63,15 +63,10 @@ class UploadView(FormView):
             return redirect("/account/login/")
         else:
             self.User = self.request.user
-        end_pos = self.request.FILES['store_file']._name.rfind(".")
-        filename = self.request.FILES['store_file']._name[:end_pos].replace(" ", "_")
-        dirname = os.path.join(settings.PROJECT_ROOT, PDF_UPLOAD_DIR+self.User.username+'/'+filename)
-        if not os.path.exists(dirname):
-            os.mkdir(dirname)
         #upload pdf to server
-        #filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
+        filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
         #save information about uploading to database
-        #self.pdf_save(form, commit=True, filepath=filepath)
+        self.pdf_save(form, commit=True, filepath=filepath)
         return HttpResponse('');
         
     def pdf_save(self, form, commit=True, **kwargs):
