@@ -65,9 +65,9 @@ class UploadView(FormView):
             self.User = self.request.user
         end_pos = self.request.FILES['store_file']._name.rfind(".")
         filename = self.request.FILES['store_file']._name[:end_pos].replace(" ", "_")
-        dirname = PDF_UPLOAD_DIR+self.User.username+'/'+filename
+        dirname = os.path.join(settings.PROJECT_ROOT, PDF_UPLOAD_DIR+self.User.username+'/'+filename)
         if not os.path.exists(dirname):
-            os.makedirs(dirname)
+            os.mkdir(dirname)
         #upload pdf to server
         filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
         #save information about uploading to database
