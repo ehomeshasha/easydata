@@ -24,6 +24,6 @@ def elistdir(directory, find_type='all'):
         return [ f for f in listdir(directory) if not isfile(join(directory,f)) ]
     return []
 
-def estatic(directory):
-    print re.sub(r'^/{0,1}[^/]+/', '/', directory, count=1)
-    return re.sub(r'^/{0,1}[^/]+/', 'pdf/', directory, count=1)
+#def estatic(directory):
+#    return directory
+    #return re.sub(r'^/{0,1}[^/]+/', 'pdf/', directory, count=1)

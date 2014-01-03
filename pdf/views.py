@@ -111,7 +111,7 @@ class PDF2HTMLView(DetailView):
         book_dir = os.path.dirname(os.path.dirname(context['object'].filepath[1:]))
         #pdf/static/pdf/pdf2html/zzy2/Hadoop_in_Action
         origin_dir = os.path.join(book_dir, 'origin/')
-        image_dir = estatic(origin_dir)
+        image_dir = "/"+origin_dir
         new_dir = os.path.join(book_dir, 'new/')
         #directory = "pdf/static/pdf/pdf2html/ehomeshasha/Data_Structure_And_Algorithms_In_Java/"
         filename = "pg_"+self.kwargs['page_num'].zfill(4)+".htm"
