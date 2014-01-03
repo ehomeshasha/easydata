@@ -17,10 +17,10 @@ def handle_uploaded_file(store_file, username):
     filename = store_file._name[:end_pos].replace(" ", "_")
     
     directory = PDF_UPLOAD_DIR+username+'/'+filename
-    directory = get_upload_dir(directory)
-    mk_upload_dir(directory, namelist=['pdf', 'origin', 'new'])
+    directory2 = get_upload_dir(directory)
+    mk_upload_dir(directory2, namelist=['pdf', 'origin', 'new'])
     #print TIMESTAMP
-    filepath = directory+'/pdf/'+uuid.uuid4().hex+'.pdf'
+    filepath = directory2+'/pdf/'+uuid.uuid4().hex+'.pdf'
     filepath_abs = os.path.join(settings.PROJECT_ROOT, filepath)
     with open(filepath_abs, 'wb+') as destination:
         for chunk in store_file.chunks():
