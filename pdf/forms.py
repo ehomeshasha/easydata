@@ -22,7 +22,7 @@ from pdf.uploads import handle_uploaded_file
 alnum_re = re.compile(r"^\w+$")
 
 
-class UploadForm(forms.Form):
+class PDFUploadForm(forms.Form):
     
     is_multipart = True
     

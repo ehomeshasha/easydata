@@ -14,5 +14,6 @@ class pdf(models.Model):
     tag = models.CharField(max_length=255)
     cate_id = C_SmallIntegerField(max_length=5, default=0)
     dateline = C_IntegerField(max_length=10, default=0)
+    displayorder = C_TinyIntegerField(max_length=1, default=0)
     
 

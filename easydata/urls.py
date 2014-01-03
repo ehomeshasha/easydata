@@ -13,6 +13,7 @@ urlpatterns = patterns("",
     url(r'^blog/', include("blog.urls")),
     url(r'^datafinder/', include("datafinder.urls")),
     url(r'^pdf/', include("pdf.urls")),
+    url(r'bookshelf/', include("bookshelf.urls")),
     #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 

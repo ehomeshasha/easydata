@@ -16,7 +16,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.models import User
 from django.contrib.sites.models import get_current_site
 from django.contrib.auth.tokens import default_token_generator
-from pdf.forms import UploadForm
+from pdf.forms import PDFUploadForm
 from django.http.response import HttpResponseRedirect, HttpResponse
 # Create your views here.
 import json
@@ -39,23 +39,24 @@ from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
 import codecs
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
-class UploadView(FormView):
+class PDFUploadView(FormView):
     template_name = "pdf/upload.html"
-    form_class = UploadForm
+    form_class = PDFUploadForm
     model = pdfModel
     
     def __init__(self, *args, **kwargs):
         #self.created_user = None
         #kwargs["signup_code"] = None
-        super(UploadView, self).__init__(*args, **kwargs)
+        super(PDFUploadView, self).__init__(*args, **kwargs)
         
     
 
     def get(self, *args, **kwargs):
         if not check_login(self.request):
             return redirect("/account/login/")
-        return super(UploadView, self).get(*args, **kwargs)
+        return super(PDFUploadView, self).get(*args, **kwargs)
     
     
     def form_valid(self, form):
@@ -179,4 +180,12 @@ class PDF2HTMLView(DetailView):
     
     
     def getDictFromCSSString(self, css_string):
-        return dict((name.strip(), val.strip()) for name, val in (pair.split(':') for pair in css_string.split(';')))    
+        return dict((name.strip(), val.strip()) for name, val in (pair.split(':') for pair in css_string.split(';')))
+    
+    
+    
+class PDFListView(ListView):
+    model = pdfModel
+    template_name = "pdf/list.html"
+    
+    pass
