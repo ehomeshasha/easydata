@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 from django.contrib import messages
 import re
+import os
 
 def check_login(request):
     if request.user.is_authenticated():
@@ -16,6 +17,8 @@ def check_login(request):
     return User
 
 def elistdir(directory, find_type='all'):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     if find_type == 'all':
         return [ f for f in listdir(directory)]
     elif find_type =='file':
