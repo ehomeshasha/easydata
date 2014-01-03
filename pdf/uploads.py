@@ -17,10 +17,10 @@ def handle_uploaded_file(store_file, username):
     filename = store_file._name[:end_pos].replace(" ", "_")
     
     directory = PDF_UPLOAD_DIR+username+'/'+filename
-    directory_abs = os.path.join(settings.PROJECT_ROOT, directory)
-    if not os.path.exists(directory_abs):
-        print "os.makedirs("+directory_abs+")"
-        os.makedirs(directory_abs)
+    #directory_abs = os.path.join(settings.PROJECT_ROOT, directory)
+    #if not os.path.exists(directory_abs):
+    #    print "os.makedirs("+directory_abs+")"
+    #    os.makedirs(directory_abs)
     #directory = get_upload_dir(directory)
     mk_upload_dir(directory, namelist=['pdf', 'origin', 'new'])
     #print TIMESTAMP
