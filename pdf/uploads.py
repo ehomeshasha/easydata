@@ -17,7 +17,7 @@ def handle_uploaded_file(store_file, username):
     filename = store_file._name[:end_pos].replace(" ", "_")
     
     directory = PDF_UPLOAD_DIR+username+'/'+filename
-    if os.path.exists(directory):
+    if not os.path.exists(directory):
         os.makedirs(directory)
     directory = get_upload_dir(directory)
     mk_upload_dir(directory, namelist=['pdf', 'origin', 'new'])
