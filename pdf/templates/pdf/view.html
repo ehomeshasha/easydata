@@ -1,5 +1,15 @@
 {% extends "site_base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block head_title %}{% trans "View PDF" %}{% endblock %}
+
 {% block body %}
-{% load staticfiles %}
-{{ pdf_content|safe }}
+{% if pdf_content %}
+	{{ pdf_content|safe }}
+{% else %}
+not exists
+{% endif %}
 {% endblock %}

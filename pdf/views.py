@@ -22,9 +22,9 @@ from django.http.response import HttpResponseRedirect, HttpResponse
 import json
 
 from pdf.models import pdf as pdfModel
-from easydata.func.function_core import check_login
+from easydata.func.function_core import check_login, get_timestamp, elistdir
 from pdf.uploads import handle_uploaded_file
-from easydata.constant import TIMESTAMP
+
 
 
 #from django.views.generic import DetailView
@@ -40,24 +40,39 @@ from django.views.generic.base import TemplateView
 import codecs
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+import datetime
+import time
+from django.utils.timezone import now
+from django.db import connection
+
+
+def update_convert_status(pdf, **kwargs):
+    if 'list' in kwargs.keys() and kwargs['list']:
+        for p in pdf:
+            if p.isconvert == '1':
+                continue
+            update_convert_status(p, check_exists=kwargs['check_exists'])
+    else:
+        if pdf.isconvert == '1':
+            return;
+        cursor = settings.cursor;
+        if 'check_exists' in kwargs.keys() and kwargs['check_exists']:
+            book_dir = os.path.dirname(os.path.dirname(pdf.filepath[1:]))
+            origin_dir = os.path.join(book_dir, 'origin/')
+            if elistdir(origin_dir, 'file'):
+                cursor.execute("UPDATE `pdf_pdf` SET `isconvert`=%s WHERE `id`='%s'", [1,pdf.id])
+        else:
+            cursor.execute("UPDATE pdf_pdf SET isconvert=%s WHERE id='%s'", [1,pdf.id])
+    
 
 class PDFUploadView(FormView):
     template_name = "pdf/upload.html"
     form_class = PDFUploadForm
-    model = pdfModel
     
-    def __init__(self, *args, **kwargs):
-        #self.created_user = None
-        #kwargs["signup_code"] = None
-        super(PDFUploadView, self).__init__(*args, **kwargs)
-        
-    
-
     def get(self, *args, **kwargs):
         if not check_login(self.request):
             return redirect("/account/login/")
         return super(PDFUploadView, self).get(*args, **kwargs)
-    
     
     def form_valid(self, form):
         if not check_login(self.request):
@@ -71,7 +86,6 @@ class PDFUploadView(FormView):
         return HttpResponse('');
         
     def pdf_save(self, form, commit=True, **kwargs):
-        
         pdf = pdfModel()
         pdf.title = form.cleaned_data.get("title")
         pdf.description = form.cleaned_data.get("description")
@@ -79,113 +93,110 @@ class PDFUploadView(FormView):
         pdf.username = self.User.username
         pdf.filepath = kwargs['filepath']
         pdf.filename = self.request.FILES['store_file']._name
-        pdf.dateline = TIMESTAMP
+        pdf.filesize = self.request.FILES['store_file']._size
+        pdf.date_upload = now() 
         
         if commit:
             pdf.save()
-        
-        
+
 
 
 
 class PDF2HTMLView(DetailView):
-    #pass
-    #def get_queryset(self):
-    #    """Return the last five published polls."""
-    #    return User.objects.get(pk=1)
     model = pdfModel
     template_name = "pdf/view.html"
-    
-    #def get(self, *args, **kwargs):
-        
-        
-        
-        #print os.listdir(html_path)
-    #    return super(PDF2HTMLView, self).get(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(PDF2HTMLView, self).get_context_data(**kwargs)
-        #print context['object'].filepath
-        #print context['object'].filename
-        #print self.kwargs['page_num']
+        
         book_dir = os.path.dirname(os.path.dirname(context['object'].filepath[1:]))
-        #pdf/static/pdf/pdf2html/zzy2/Hadoop_in_Action
         origin_dir = os.path.join(book_dir, 'origin/')
-        image_dir = "/"+origin_dir
-        new_dir = os.path.join(book_dir, 'new/')
-        #directory = "pdf/static/pdf/pdf2html/ehomeshasha/Data_Structure_And_Algorithms_In_Java/"
-        filename = "pg_"+self.kwargs['page_num'].zfill(4)+".htm"
-        #filename2 = "pg_"+kwargs['page_num'].zfill(4)+"_new.htm"
-        oripath = origin_dir+filename
-        oripath_abs=os.path.join(settings.PROJECT_ROOT, oripath)
-        newpath = new_dir+filename
-        newpath_abs = os.path.join(settings.PROJECT_ROOT, newpath)
-        
-        if not settings.DEBUG and os.path.exists(newpath_abs):
-            out = codecs.open(newpath_abs, 'r', "utf-8")
-            content = out.read()
-            out.close()
-            pass
+        if elistdir(origin_dir, 'file'):
+            update_convert_status(context['object']);
+            
+            image_dir = "/"+origin_dir
+            new_dir = os.path.join(book_dir, 'new/')
+            if not self.kwargs['page_num']:
+                self.kwargs['page_num'] = '1'
+            filename = "pg_"+self.kwargs['page_num'].zfill(4)+".htm"
+            oripath = origin_dir+filename
+            oripath_abs=os.path.join(settings.PROJECT_ROOT, oripath)
+            newpath = new_dir+filename
+            newpath_abs = os.path.join(settings.PROJECT_ROOT, newpath)
+            
+            if not settings.DEBUG and os.path.exists(newpath_abs):
+                out = codecs.open(newpath_abs, 'r', "utf-8")
+                content = out.read()
+                out.close()
+                pass
+            else:
+                ori_html = pq(filename=oripath_abs)
+                background_img = ori_html('div').items().next().children('img')
+                
+                src = background_img.attr("src")
+                background_img.attr("src", image_dir+src) 
+                height = background_img.attr("height")
+                width = background_img.attr("width")
+                new_html = pq('<div class="pdf_wrapper" style="width:'+width+'px;height:'+height+'px;margin:0 auto;position:relative;"></div>')
+                csss = ori_html('style')
+                divs = ori_html('div')
+                
+                for css in csss.items():
+                    css_text = css.html().replace("<!--", "").replace("-->", "")
+                    if ".ft0" in css_text:
+                        new_html.append('<style type="text/css">'+css_text+'</style>')
+                        break
+                    
+                for div in divs.items():
+                    css_string = div.attr('style')
+                    style=self.getDictFromCSSString(css_string)
+                    top = style['top']
+                    left = style['left']
+                    child_span = div.children('span')
+                    
+                    if child_span:
+                        class_text = child_span.attr("class")
+                        new_html.append(u'<div class="left-side side_bar" style="position:absolute;top:'+top+'px;left:-20px;width:20px;">\
+                                            <a class="'+class_text+' side_link">&nbsp;</a>\
+                                        </div>\
+                                        <div class="middle-content" style="position:absolute;top:'+top+'px;left:'+left+'px;">'
+                                        +div.html()+
+                                        u'</div>\
+                                        <div class="right-side side_bar" style="position:absolute;top:'+top+'px;left:826px;width:20px;">\
+                                            <a class="'+class_text+' side_link">&nbsp;</a>\
+                                        </div>')
+                    else:
+                        new_html.append(div.outerHtml())
+                    
+                    
+                content = new_html.outerHtml()
+                out = codecs.open(newpath_abs, 'wb', "utf-8")
+                out.write(content)
+                out.close()
+            
+            
+                
+            context['pdf_content'] = content 
         else:
-            ori_html = pq(filename=oripath_abs)
-            background_img = ori_html('div').items().next().children('img')
-            
-            src = background_img.attr("src")
-            background_img.attr("src", image_dir+src) 
-            height = background_img.attr("height")
-            width = background_img.attr("width")
-            new_html = pq('<div class="pdf_wrapper" style="width:'+width+'px;height:'+height+'px;margin:0 auto;position:relative;"></div>')
-            csss = ori_html('style')
-            divs = ori_html('div')
-            
-            for css in csss.items():
-                css_text = css.html().replace("<!--", "").replace("-->", "")
-                if ".ft0" in css_text:
-                    new_html.append('<style type="text/css">'+css_text+'</style>')
-                    break
-                
-            for div in divs.items():
-                css_string = div.attr('style')
-                style=self.getDictFromCSSString(css_string)
-                top = style['top']
-                left = style['left']
-                child_span = div.children('span')
-                
-                if child_span:
-                    class_text = child_span.attr("class")
-                    new_html.append(u'<div class="left-side side_bar" style="position:absolute;top:'+top+'px;left:-20px;width:20px;">\
-                                        <a class="'+class_text+' side_link">&nbsp;</a>\
-                                    </div>\
-                                    <div class="middle-content" style="position:absolute;top:'+top+'px;left:'+left+'px;">'
-                                    +div.html()+
-                                    u'</div>\
-                                    <div class="right-side side_bar" style="position:absolute;top:'+top+'px;left:826px;width:20px;">\
-                                        <a class="'+class_text+' side_link">&nbsp;</a>\
-                                    </div>')
-                else:
-                    new_html.append(div.outerHtml())
-                
-                
-            content = new_html.outerHtml()
-            out = codecs.open(newpath_abs, 'wb', "utf-8")
-            out.write(content)
-            out.close()
+            pass
         
-        
-            
-        context['pdf_content'] = content 
         #print content
-        
         return context
-    
     
     def getDictFromCSSString(self, css_string):
         return dict((name.strip(), val.strip()) for name, val in (pair.split(':') for pair in css_string.split(';')))
     
     
+
     
 class PDFListView(ListView):
     model = pdfModel
     template_name = "pdf/list.html"
     
-    pass
+    def get_context_data(self, **kwargs):
+        context = super(PDFListView, self).get_context_data(**kwargs)
+        context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+        update_convert_status(context['pdf_list'], list=True, check_exists=True)
+            
+        
+        return context 

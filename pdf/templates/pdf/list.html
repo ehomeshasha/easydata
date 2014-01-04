@@ -1,0 +1,44 @@
+{% extends "site_base.html" %}
+
+{% load custom_tags %}
+{% load url from future %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block head_title %}{% trans "PDF List" %}{% endblock %}
+
+{% block body %}
+<div class="pdf_list_area">
+	<table class="pdf_list_table table table-bordered">
+		<tr>
+			<td width="10%">{% trans "Category" %}</td>
+			<td>{% trans "Title" %}</td>
+			<td width="7%">{% trans "Views" %}</td>
+			<td width="7%">{% trans "Marks" %}</td>
+			<td width="7%">{% trans "Comment" %}</td>
+			<td width="10%">{% trans "Contributor" %}</td>
+			<td width="14%">{% trans "Upload Date" %}</td>
+			<td width="7%">{% trans "Size" %}</td>
+			<td width="10%">{% trans "Operate" %}</td>
+		</tr>
+		{% for pdf in pdf_list %}
+		<tr>
+			<td>{{ pdf.cate_id }}</td>
+			<td>
+				<a href="/pdf/view/{{ pdf.id }}" title="{{ pdf.description }}">{{ pdf.title }}</a>
+			</td>
+			<td>{{ pdf.views }}</td>
+			<td>{{ pdf.mark }}</td>
+			<td>{{ pdf.comment }}</td>
+			<td>{{ pdf.username }}</td>
+			<td>{{ pdf.date_upload|hdate }}</td>
+			<td>{{ pdf.filesize|hsize }}</td>
+			<td>
+				<a href="{{ pdf.filepath }}">View PDF</a>
+				<a href="{{ pdf.filepath }}">Download</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

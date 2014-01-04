@@ -57,6 +57,15 @@ class C_IntegerField(models.IntegerField):
     def db_type(self, connection):
         return 'int'+get_length_str(self.max_length)+' '+self.unsigned
 
+class C_MediumIntegerField(models.IntegerField):
+    def __init__(self, *args, **kwargs):
+        get_sign(self, kwargs)
+        super(C_MediumIntegerField, self).__init__(*args, **kwargs)
+        self.validators.append(validators.MaxLengthValidator(self.max_length))
+            
+    def db_type(self, connection):
+        return 'mediumint'+get_length_str(self.max_length)+' '+self.unsigned
+
 class C_SmallIntegerField(models.SmallIntegerField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
@@ -87,3 +96,7 @@ class C_CharField(models.CharField):
 class NormalTextField(models.TextField):        
     def db_type(self, connection):
         return 'text'
+
+
+
+

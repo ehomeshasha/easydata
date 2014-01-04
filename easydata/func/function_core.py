@@ -1,6 +1,8 @@
 from os import listdir
 from os.path import isfile, join
 from django.contrib import messages
+import time
+from django.utils.timezone import now
 
 def check_login(request):
     if request.user.is_authenticated():
@@ -23,6 +25,14 @@ def elistdir(directory, find_type='all'):
         return [ f for f in listdir(directory) if not isfile(join(directory,f)) ]
     return []
 
-#def estatic(directory):
-#    return directory
-    #return re.sub(r'^/{0,1}[^/]+/', 'pdf/', directory, count=1)
+#h means human-readable
+def get_hsize(size):
+    num = int(size)
+    for x in ['bytes','KB','MB','GB']:
+        if num < 1024.0:
+            return "%3.1f%s" % (num, x)
+        num /= 1024.0
+    return "%3.1f%s" % (num, 'TB')
+
+def get_timestamp():
+    return int(time.mktime(now().timetuple()))
