@@ -14,6 +14,7 @@ urlpatterns = patterns("",
     url(r'^datafinder/', include("datafinder.urls")),
     url(r'^pdf/', include("pdf.urls")),
     url(r'bookshelf/', include("bookshelf.urls")),
+    url(r'category/', include("easydata.category.urls")),
     #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 
