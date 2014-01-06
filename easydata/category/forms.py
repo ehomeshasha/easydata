@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 import re
 from easydata.constant import CONTENT_TYPE, PDF_UPLOAD_DIR
 import os
+from easydata.func.function_core import get_category_fid_choices_html
 
 try:
     from collections import OrderedDict
@@ -22,32 +23,62 @@ from pdf.uploads import handle_uploaded_file
 alnum_re = re.compile(r"^\w+$")
 
 
+
+
+
 class CategoryPostForm(forms.Form):
     
-    catename = forms.CharField(
+    name = forms.CharField(
         label=_("Name"),
         min_length=2,
         max_length=30,
         widget=forms.TextInput(),
-        required=True
+        required=True,
+        #localize=True,
     )
+    
     description = forms.CharField(
         label=_("Description"),
         max_length=255,
         widget=forms.Textarea(),
-        required=False
+        required=False,
+        #localize=True,
     )
+    
+    #fid_choice_html = get_category_fid_choices_html()
+    
+    ctype = forms.ChoiceField(
+        label=_("Module"),
+        choices=(('learning','Learning'),('pdf','PDF'),),
+        widget=forms.Select(),
+        required=True,
+        initial='learning',
+        #localize=True,
+    )
+    
     displayorder = forms.CharField(
         label=_("Display Order"),
         min_length=1,
         max_length=3,
         widget=forms.TextInput(),
         required=True,
-        initial=0
+        initial=0,
+        #localize=True,
     )
     
+    status = forms.ChoiceField(
+        label=_("Whether display"),
+        choices=((0,'no'),(1,'yes'),),
+        widget=forms.Select(),
+        required=True,
+        initial=1,
+        #localize=True,
+    )
     
-        
+    def clean_displayorder(self):
+        if not self.cleaned_data['displayorder'].isdigit():
+            raise forms.ValidationError(_("Digit only for displayorder"))
+        return self.cleaned_data['displayorder']
         
         
     

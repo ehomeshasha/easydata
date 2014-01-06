@@ -7,12 +7,16 @@
 {% block head_title %}{% trans "Upload PDF" %}{% endblock %}
 
 {% block body %}
+	<style type="text/css">
+	#id_description {height:100px;}
+	</style>
     <div class="row">
         <div class="col-lg-4">
-            <form id="post_category_form" method="post" action="{% url "category_new" %}" autocapitalize="off">
+        	{{ cate.name }}
+            <form id="post_category_form" method="post" action="{{ form_action }}" autocapitalize="off">
                 <legend>{% trans "New Category" %}</legend>
-                {% csrf_token %}
-                {{ form|bootstrap }}
+                {% csrf_token %}              
+  				{{ form|bootstrap:"name" }}
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}

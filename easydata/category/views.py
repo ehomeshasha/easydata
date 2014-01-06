@@ -22,7 +22,8 @@ from django.http.response import HttpResponseRedirect, HttpResponse
 import json
 
 from pdf.models import pdf as pdfModel
-from easydata.func.function_core import check_login, get_timestamp, elistdir
+from easydata.func.function_core import check_login, get_timestamp, elistdir,\
+    get_category_fid_choices_html
 from pdf.uploads import handle_uploaded_file
 
 
@@ -49,39 +50,54 @@ from easydata.category.forms import CategoryPostForm
 
 
 class CategoryPostView(FormView):
-    model = category
     template_name = 'category/post.html'
     form_class = CategoryPostForm
+    
+    
+    def get_context_data(self, **kwargs):
+        context = super(CategoryPostView, self).get_context_data(**kwargs)
+        context['form_action'] = self.request.path
+        return context
+    
+    def get_initial(self):
+        initial = super(CategoryPostView, self).get_initial()
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            cate = category.objects.get(pk=self.kwargs['pk'])
+            initial["name"] = cate.name
+            CategoryPostForm.fid_choice_html = get_category_fid_choices_html(cate.fid)
+            initial["description"] = cate.description
+            initial["ctype"] = cate.ctype
+            initial["displayorder"] = cate.displayorder
+            initial["status"] = cate.status
+        else:
+            CategoryPostForm.fid_choice_html = get_category_fid_choices_html()
+        return initial
+    
     
     def get(self, *args, **kwargs):
         if not check_login(self.request) or self.request.user.is_superuser != True:
             return redirect("/account/login/")
+        
         return super(CategoryPostView, self).get(*args, **kwargs)
     
     def form_valid(self, form):
-        if not check_login(self.request):
+        if not check_login(self.request) or self.request.user.is_superuser != True:
             return redirect("/account/login/")
         else:
-            self.User = self.request.user
-        #upload pdf to server
-        filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
-        #save information about uploading to database
-        self.pdf_save(form, commit=True, filepath=filepath)
-        return HttpResponse('');
+            cate = category()
+            cate.fid = self.request.POST['fid']
+            cate.name = form.cleaned_data.get("name")
+            cate.description = form.cleaned_data.get("description")
+            cate.status = form.cleaned_data.get("status")
+            cate.displayorder = form.cleaned_data.get("displayorder")
+            cate.ctype = form.cleaned_data.get("ctype")
+            cate.save()
+            
+            
+            
+            return HttpResponse('');
         
-    def pdf_save(self, form, commit=True, **kwargs):
-        pdf = pdfModel()
-        pdf.title = form.cleaned_data.get("title")
-        pdf.description = form.cleaned_data.get("description")
-        pdf.uid = self.User.id
-        pdf.username = self.User.username
-        pdf.filepath = kwargs['filepath']
-        pdf.filename = self.request.FILES['store_file']._name
-        pdf.filesize = self.request.FILES['store_file']._size
-        pdf.date_upload = now() 
-        
-        if commit:
-            pdf.save()
+    
     
     
 class CategoryListView(ListView):
