@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load bootstrap %}
 
-{% block head_title %}{% trans "View PDF" %}{% endblock %}
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
 {% if pdf_content %}

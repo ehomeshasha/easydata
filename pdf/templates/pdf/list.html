@@ -1,11 +1,10 @@
 {% extends "site_base.html" %}
 
 {% load custom_tags %}
-{% load url from future %}
 {% load i18n %}
-{% load bootstrap %}
 
-{% block head_title %}{% trans "PDF List" %}{% endblock %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
 <div class="pdf_list_area">

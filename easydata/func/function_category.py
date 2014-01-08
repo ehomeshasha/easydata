@@ -1,6 +1,7 @@
 from easydata.settings import cursor
 from easydata.func.function_db import dictfetchall
-
+from easydata.constant import CTYPE_DICT
+from django.utils.translation import ugettext_lazy as _
 
 
 
@@ -66,4 +67,35 @@ def get_category_choices_html(categorys, cid = 0, level = 0, offset = 1, invalid
         html += get_category_choices_html(value['subcate'],cid,level,offset,invalid_count)
     return html
 
+def recursive_categorylist_html(categorys):
+    html = ""
+    for category in categorys:
+        html += "<li>\
+                    <p>\
+                        <span>%s</span>\
+                        <a href='%s'>%s</a>\
+                        <a href='javascript:;' class='deletelink' data-id='%d' data-type='category'>%s</a>\
+                    </p>\
+                    <ul>" % (category['name'], '/category/edit/%d/' % category['cid'], _('[edit]'), category['cid'], _('[delete]'))
+        html += recursive_categorylist_html(category['subcate'])
+        html += "</ul></li>"
+    return html;
 
+
+def get_category_list_html():
+    categorytree = get_categorytree()
+    html = ""
+    for k,v in categorytree.items():
+        if k not in CTYPE_DICT.keys():
+            CTYPE_DICT[k] = 'Undefined Module'
+        #print k
+        html += "<legend>%s</legend><ul>" % CTYPE_DICT[k]
+        for cate1 in v:
+            #print cate1['name'] 
+            html += recursive_categorylist_html(cate1['subcate'])
+            html += "</ul>"
+    return html
+    #print categorytree
+    #categorytree_merge = get_categorytree_merge(categorytree)
+    #print categorytree_merge
+    

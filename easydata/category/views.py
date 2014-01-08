@@ -8,7 +8,7 @@ from django.utils.http import base36_to_int, int_to_base36
 from django.template.loader import render_to_string
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic.base import TemplateResponseMixin, View
+from django.views.generic.base import TemplateResponseMixin, View, RedirectView
 from django.views.generic.edit import FormView, CreateView
 
 from account.conf import settings
@@ -49,7 +49,8 @@ from easydata.category.forms import CategoryPostForm
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session_for_custom_field, set_form_session_for_custom_field
 from account.views import DeleteView
-from easydata.func.function_category import get_category_fid_choices_html
+from easydata.func.function_category import get_category_fid_choices_html,\
+    get_category_list_html, get_categorytree
 
 
 class CategoryPostView(FormView):
@@ -89,9 +90,9 @@ class CategoryPostView(FormView):
     def get_context_data(self, **kwargs):
         context = super(CategoryPostView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            context['head_title_text'] = 'Category Edit'
+            context['head_title_text'] = _('Category Edit')
         else:
-            context['head_title_text'] = 'New Category'
+            context['head_title_text'] = _('New Category')
         return context
     
     def post(self, *args, **kwargs):
@@ -137,7 +138,7 @@ class CategoryPostView(FormView):
     
     
     
-class CategoryListView(ListView):
+class CategoryListView(TemplateView):
     model = category
     template_name = 'category/list.html'
     
@@ -152,10 +153,21 @@ class CategoryListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
-        
-        print context
+        context['category_list'] = get_categorytree()
+        #print context
+        context['category_list_html'] = get_category_list_html() 
+        context['head_title_text'] = _('Category List')
+        #print context['category_list_html']
         return context
+
+class CategoryDeleteView(RedirectView):
+    url = '/category/'
+    def get(self, *args, **kwargs):
+        print 'fdsfdasf'
+        return super(CategoryDeleteView, self).get(*args, **kwargs)
     
-class CategoryDeleteView(DeleteView):
-    model = category
-    
+def CategoryDelete(request, pk):
+    category.objects.get(pk=pk).delete()
+    return HttpResponse('')
+
+

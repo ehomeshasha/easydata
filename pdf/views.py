@@ -104,10 +104,10 @@ class PDFUploadView(FormView):
     def get_context_data(self, **kwargs):
         context = super(PDFUploadView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            context['head_title_text'] = 'PDF Edit'
+            context['head_title_text'] = _('PDF Edit')
             #del(context['form'].fields['store_file'])
         else:
-            context['head_title_text'] = 'PDF Upload'
+            context['head_title_text'] = _('PDF Upload')
         return context
     
     def post(self, *args, **kwargs):
@@ -183,6 +183,7 @@ class PDF2HTMLView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PDF2HTMLView, self).get_context_data(**kwargs)
+        context['head_title_text'] = _('PDF View')
         
         book_dir = os.path.dirname(os.path.dirname(context['object'].filepath[1:]))
         origin_dir = os.path.join(book_dir, 'origin/')
@@ -270,11 +271,10 @@ class PDFListView(ListView):
     
     def get_queryset(self):
         return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
-    
-    #def get_context_data(self, **kwargs):
-    #    context = super(PDFListView, self).get_context_data(**kwargs)
-    #    context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
-    #    update_convert_status(context['pdf_list'], list=True, check_exists=True)
-            
+    def get_context_data(self, **kwargs):
+        context = super(PDFListView, self).get_context_data(**kwargs)
+        #context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+        #update_convert_status(context['pdf_list'], list=True, check_exists=True)
+        context['head_title_text'] = _('PDF List')
         
         return context 
