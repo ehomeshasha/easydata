@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load bootstrap %}
 
-{% block head_title %}{% trans "Upload PDF" %}{% endblock %}
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
 	<style type="text/css">
@@ -13,8 +13,8 @@
     <div class="row">
         <div class="col-lg-4">
         	{{ cate.name }}
-            <form id="post_category_form" method="post" action="{{ form_action }}" autocapitalize="off">
-                <legend>{% trans "New Category" %}</legend>
+            <form id="post_category_form" method="post" action="" autocapitalize="off">
+                <legend>{{ head_title_text }}</legend>
                 {% csrf_token %}              
   				{{ form|bootstrap:"name" }}
                 {% if redirect_field_value %}

@@ -44,6 +44,10 @@ import datetime
 import time
 from django.utils.timezone import now
 from django.db import connection
+from easydata.func.function_session import initial_form_session_for_custom_field,\
+    clear_form_session_for_custom_field, set_form_session_for_custom_field
+from easydata.func.function_category import get_choices_html
+from django.forms.forms import BoundField
 
 
 def update_convert_status(pdf, **kwargs):
@@ -68,22 +72,95 @@ def update_convert_status(pdf, **kwargs):
 class PDFUploadView(FormView):
     template_name = "pdf/upload.html"
     form_class = PDFUploadForm
+    action = 'new'
+    pdf_instance = None 
+    custom_field_css = None
+    custom_field_errors = []
     
+    def __init__(self, *args, **kwargs):
+        super(PDFUploadView, self).__init__(*args, **kwargs)
+        
     def get(self, *args, **kwargs):
         if not check_login(self.request):
             return redirect("/account/login/")
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
+        
+        initial_form_session_for_custom_field(PDFUploadForm, self.request.session)
+        
         return super(PDFUploadView, self).get(*args, **kwargs)
     
+    def get_initial(self):
+        initial = super(PDFUploadView, self).get_initial()
+        if self.action == 'edit':
+            initial["title"] = self.pdf_instance.title
+            PDFUploadForm.choice_html = get_choices_html(cid=self.pdf_instance.cate_id,ctype='pdf')
+            initial["description"] = self.pdf_instance.description
+        else:
+            PDFUploadForm.choice_html = get_choices_html(cid=0,ctype='pdf')
+        return initial
+    
+    def get_context_data(self, **kwargs):
+        context = super(PDFUploadView, self).get_context_data(**kwargs)
+        if self.action == 'edit':
+            context['head_title_text'] = 'PDF Edit'
+            del(context['form'].fields['store_file'])
+        else:
+            context['head_title_text'] = 'PDF Upload'
+        return context
+    
+    
+    
+    def post(self, *args, **kwargs):
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
+            
+            
+        return super(PDFUploadView, self).post(*args, **kwargs)
+    
+    def __getitem__(self, name):
+        "Returns a BoundField with the given name."
+        print name
+        try:
+            field = self.fields[name]
+        except KeyError:
+            raise KeyError('Key %r not found in Form' % name)
+        return BoundField(self, field, name)
+    
+    def get_form_class(self):
+        return self.form_class
+    
+    def get_form(self, form_class):
+        return form_class(**self.get_form_kwargs())
+    
+    def form_invalid(self, form):
+        print form.cleaned_data
+    
     def form_valid(self, form):
+        print 'fdsafdsaf'
         if not check_login(self.request):
             return redirect("/account/login/")
         else:
             self.User = self.request.user
-            #upload pdf to server
-            filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
-            #save information about uploading to database
-            self.pdf_save(form, commit=True, filepath=filepath)
-            return HttpResponse('');
+            if self.request.POST['cate_id'] and self.request.POST['cate_id'].isdigit():
+                cleaned_cate_id = self.request.POST['cate_id']
+                clear_form_session_for_custom_field(self.request.session)
+            else:
+                set_form_session_for_custom_field(css={'cate_id': "has-error"}, text={'cate_id': ["Invalid category input"]}, session=self.request.session)
+                return redirect(self.request.path)
+            
+            if self.action == 'new':
+                #upload pdf to server
+                filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
+                #save information about uploading to database
+                self.pdf_save(form, commit=True, filepath=filepath, cate_id=cleaned_cate_id)
+            else:
+                #update pdf information
+                self.pdf_update(form, commit=True, cate_id=cleaned_cate_id)
+            
+            return redirect(self.request.path);
         
     def pdf_save(self, form, commit=True, **kwargs):
         pdf = pdfModel()
@@ -91,6 +168,7 @@ class PDFUploadView(FormView):
         pdf.description = form.cleaned_data.get("description")
         pdf.uid = self.User.id
         pdf.username = self.User.username
+        pdf.cate_id = kwargs['cate_id']
         pdf.filepath = kwargs['filepath']
         pdf.filename = self.request.FILES['store_file']._name
         pdf.filesize = self.request.FILES['store_file']._size
@@ -99,8 +177,14 @@ class PDFUploadView(FormView):
         if commit:
             pdf.save()
 
-
-
+    def pdf_update(self, form, commit=True, **kwargs):
+        pdf = self.pdf_instance
+        pdf.title = form.cleaned_data.get("title")
+        pdf.cate_id = kwargs['cate_id']
+        pdf.description = form.cleaned_data.get("description")
+        if commit:
+            pdf.save()
+    
 
 class PDF2HTMLView(DetailView):
     model = pdfModel
@@ -193,10 +277,13 @@ class PDFListView(ListView):
     model = pdfModel
     template_name = "pdf/list.html"
     
-    def get_context_data(self, **kwargs):
-        context = super(PDFListView, self).get_context_data(**kwargs)
-        context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
-        update_convert_status(context['pdf_list'], list=True, check_exists=True)
+    def get_queryset(self):
+        return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+    
+    #def get_context_data(self, **kwargs):
+    #    context = super(PDFListView, self).get_context_data(**kwargs)
+    #    context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+    #    update_convert_status(context['pdf_list'], list=True, check_exists=True)
             
         
         return context 

@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 import re
 from easydata.constant import CONTENT_TYPE, PDF_UPLOAD_DIR
 import os
-from easydata.func.function_core import get_category_fid_choices_html
 
 try:
     from collections import OrderedDict

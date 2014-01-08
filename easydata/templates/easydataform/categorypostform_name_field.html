@@ -1,7 +1,16 @@
-<div class="form-group">
+<div class="form-group {{ form.custom_field_error_css.fid }}">
     <label for="id_fid">Father category:</label>
     <select id="id_fid" name="fid" class="form-control">
 		{{ form.fid_choice_html|safe }}    	
     </select>
+    {% for error in form.custom_field_error_text.fid %}
+        <span class="help-block">{{ error }}</span>
+    {% endfor %}
+
+    {% if field.help_text %}
+    <p class="help-block">
+        {{ field.help_text|safe }}
+    </p>
+    {% endif %}
 </div>
 

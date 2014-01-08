@@ -4,13 +4,13 @@
 {% load i18n %}
 {% load bootstrap %}
 
-{% block head_title %}{% trans "Upload PDF" %}{% endblock %}
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
     <div class="row">
         <div class="col-lg-4">
-            <form id="upload_pdf_form" method="post" action="{% url "pdf_upload" %}" autocapitalize="off" enctype="multipart/form-data">
-                <legend>{% trans "Upload PDF" %}</legend>
+            <form id="upload_pdf_form" method="post" action="" autocapitalize="off" enctype="multipart/form-data">
+                <legend>{{ head_title_text }}</legend>
                 {% csrf_token %}
                 {{ form|bootstrap:"title" }}
                 {% if redirect_field_value %}
