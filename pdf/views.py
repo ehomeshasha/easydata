@@ -110,13 +110,10 @@ class PDFUploadView(FormView):
             context['head_title_text'] = 'PDF Upload'
         return context
     
-    
-    
     def post(self, *args, **kwargs):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
-            
             
         return super(PDFUploadView, self).post(*args, **kwargs)
     
@@ -126,14 +123,14 @@ class PDFUploadView(FormView):
     
     def get_form(self, form_class):
         instance = form_class(**self.get_form_kwargs())
-        instance.action = self.action
+        if self.action == 'edit':
+            instance.fields.pop('store_file')
         return instance
     
     def form_invalid(self, form):
         print form.cleaned_data
     
     def form_valid(self, form):
-        print 'fdsafdsaf'
         if not check_login(self.request):
             return redirect("/account/login/")
         else:

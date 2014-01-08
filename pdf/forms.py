@@ -26,8 +26,6 @@ alnum_re = re.compile(r"^\w+$")
 
 class PDFUploadForm(forms.Form):
     
-    action = 'new'
-    
     title = forms.CharField(
         label=_("Title"),
         min_length=2,
@@ -52,10 +50,7 @@ class PDFUploadForm(forms.Form):
     
     def __init__(self, *args, **kwargs):
         super (PDFUploadForm, self).__init__(*args,**kwargs)
-        print self.action
-        if self.action == 'edit':
-            print 'dddddddddd'
-            self.fields.pop('store_file')
+            
     
     
     def clean_store_file(self):
