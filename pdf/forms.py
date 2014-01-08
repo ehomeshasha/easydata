@@ -26,6 +26,7 @@ alnum_re = re.compile(r"^\w+$")
 
 class PDFUploadForm(forms.Form):
     
+    action = 'new'
     
     title = forms.CharField(
         label=_("Title"),
@@ -49,14 +50,13 @@ class PDFUploadForm(forms.Form):
         required=True
     )
     
-    def __getitem__(self, name):
-        "Returns a BoundField with the given name."
-        print name
-        try:
-            field = self.fields[name]
-        except KeyError:
-            raise KeyError('Key %r not found in Form' % name)
-        return BoundField(self, field, name)
+    def __init__(self, *args, **kwargs):
+        super (PDFUploadForm, self).__init__(*args,**kwargs)
+        print self.action
+        if self.action == 'edit':
+            print 'dddddddddd'
+            self.fields.pop('store_file')
+    
     
     def clean_store_file(self):
         store_file = self.cleaned_data.get('store_file')

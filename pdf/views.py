@@ -105,7 +105,7 @@ class PDFUploadView(FormView):
         context = super(PDFUploadView, self).get_context_data(**kwargs)
         if self.action == 'edit':
             context['head_title_text'] = 'PDF Edit'
-            del(context['form'].fields['store_file'])
+            #del(context['form'].fields['store_file'])
         else:
             context['head_title_text'] = 'PDF Upload'
         return context
@@ -120,20 +120,14 @@ class PDFUploadView(FormView):
             
         return super(PDFUploadView, self).post(*args, **kwargs)
     
-    def __getitem__(self, name):
-        "Returns a BoundField with the given name."
-        print name
-        try:
-            field = self.fields[name]
-        except KeyError:
-            raise KeyError('Key %r not found in Form' % name)
-        return BoundField(self, field, name)
     
     def get_form_class(self):
         return self.form_class
     
     def get_form(self, form_class):
-        return form_class(**self.get_form_kwargs())
+        instance = form_class(**self.get_form_kwargs())
+        instance.action = self.action
+        return instance
     
     def form_invalid(self, form):
         print form.cleaned_data
