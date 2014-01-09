@@ -1,13 +1,17 @@
-from easydata.settings import cursor
-from easydata.func.function_db import dictfetchall
+from easydata.func.function_db import dictfetchall, dictfetchall_pk
 from easydata.constant import CTYPE_DICT
 from django.utils.translation import ugettext_lazy as _
+from django.db import connection
 
 
+def get_category_dict_pk():
+    cursor = connection.cursor()
+    cursor.execute("SELECT cid,fid,name FROM `category_category` WHERE status>0 ORDER by cid ASC") 
+    return dictfetchall_pk(cursor, 0)
 
 def get_category_list():
-    #cursor = connection.cursor()
-    cursor.execute("SELECT id,fid,catename FROM `category_category` WHERE status>0 ORDER by id ASC")  # @UndefinedVariable
+    cursor = connection.cursor()
+    cursor.execute("SELECT cid,fid,name FROM `category_category` WHERE status>0 ORDER by cid ASC")
     categorys = dictfetchall(cursor)
     return categorys
 def get_category_fid_choices_html(cid=0):
@@ -29,12 +33,14 @@ def get_categorytree(fid=0,level=0,ctype=''):
     tree = {}
     level+=1
     if ctype == '':
+        cursor = connection.cursor()
         cursor.execute("SELECT ctype FROM `category_category` WHERE status>=0 GROUP BY ctype")  # @UndefinedVariable
         result = dictfetchall(cursor)
         for value in result:
             tree[value['ctype']] = get_categorytree(0,0,value['ctype'])
         return tree
     
+    cursor = connection.cursor()
     cursor.execute("SELECT cid,fid,name,description FROM `category_category` WHERE status>0 AND ctype=%s AND fid=%s ORDER by displayorder DESC, cid ASC", (ctype, fid))  # @UndefinedVariable
     result = dictfetchall(cursor)
     nodes = [] 

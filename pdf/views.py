@@ -21,7 +21,7 @@ from django.views.generic.list import ListView
 from django.utils.timezone import now
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session_for_custom_field, set_form_session_for_custom_field
-from easydata.func.function_category import get_choices_html
+from easydata.func.function_category import get_choices_html, get_category_dict_pk
 from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
@@ -267,7 +267,7 @@ class PDFListView(ListView):
         self.text_content['head_title_text'] = _('PDF List')
         context['text_content'] = self.text_content
         context['breadcrumb'] = self.breadcrumb
-        
+        context['category_dict_pk'] = get_category_dict_pk()
         return context 
 
 def download_pdf(request, pk):

@@ -36,9 +36,31 @@ def hsize(size):
         num /= 1024.0
     return "%3.1f%s" % (num, 'TB')
 
+@register.filter()
+def cate_id_format(cate_id, category_dict_pk):
+    ids = [cate_id]
+    recursive_cate_id_format(cate_id, ids, category_dict_pk)
+    ids.reverse()
+    html = "<ul>"
+    for v in ids:
+        html += "<li>%s</li><ul>" % category_dict_pk[v]['name']
+        
+    html += "</ul>"*(len(ids)+1)
+    return html
+    
+def recursive_cate_id_format(cate_id, ids, category_dict_pk):
+    if cate_id == 0:
+        return
+    fid = category_dict_pk[cate_id]['fid']
+    if fid == 0:
+        return
+    ids.append(fid)
+    recursive_cate_id_format(fid, ids, category_dict_pk)
+    
 
 @register.assignment_tag
 def get_auth_author_admin(authorid, uid, is_superuser):
     if uid and (is_superuser or authorid == id):
         return True
     return False
+

@@ -21,7 +21,7 @@
 		{% for pdf in pdf_list %}
 		{% get_auth_author_admin pdf.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
-			<td>{{ pdf.cate_id }}</td>
+			<td>{{ pdf.cate_id|cate_id_format:category_dict_pk|safe }}</td>
 			<td>
 				<a href="/pdf/view/{{ pdf.id }}/" title="{{ pdf.description }}">{{ pdf.title }}</a>
 				{% if auth_author_admin %}
