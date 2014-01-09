@@ -1,0 +1,11 @@
+<div class="breadcrumb_area">
+	<ol class="breadcrumb">
+		{% for bc in breadcrumb %}
+		{% if forloop.last and not bc.href %}
+		<li class="active">{{ bc.text }}</li>
+		{% else %}
+		<li><a href="{{ bc.href }}" title="{{ bc.title }}">{{ bc.text }}</a></li>
+		{% endif %}
+		{% endfor %}
+	</ol>
+</div>

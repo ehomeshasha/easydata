@@ -22,7 +22,10 @@ from django.utils.timezone import now
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session_for_custom_field, set_form_session_for_custom_field
 from easydata.func.function_category import get_choices_html
-
+from django.contrib import messages
+from easydata.settings import PROJECT_ROOT
+from django.http.response import HttpResponse
+from easydata.constant import CONTENT_TYPE, HOME_BREAD
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
@@ -46,12 +49,13 @@ def update_convert_status(pdf, **kwargs):
 class PDFUploadView(FormView):
     template_name = "pdf/upload.html"
     form_class = PDFUploadForm
+    
     action = 'new'
     pdf_instance = None 
-    custom_field_css = None
-    custom_field_errors = []
     
     def __init__(self, *args, **kwargs):
+        self.text_content = {}
+        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
         super(PDFUploadView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
@@ -78,9 +82,16 @@ class PDFUploadView(FormView):
     def get_context_data(self, **kwargs):
         context = super(PDFUploadView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            context['head_title_text'] = _('PDF Edit')
+            self.text_content['head_title_text'] = _('PDF Edit')
+            self.text_content['submit_btn_text'] = _('Submit')
+            self.breadcrumb.append({'text': 'Edit'})
         else:
-            context['head_title_text'] = _('PDF Upload')
+            self.text_content['head_title_text'] = _('PDF Upload')
+            self.text_content['submit_btn_text'] = _('Upload')
+            self.breadcrumb.append({'text': 'Upload'})
+        context['text_content'] = self.text_content
+        context['breadcrumb'] = self.breadcrumb
+        
         return context
     
     def post(self, *args, **kwargs):
@@ -113,11 +124,14 @@ class PDFUploadView(FormView):
             filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
             #save information about uploading to database
             self.pdf_save(form, commit=True, filepath=filepath, cate_id=cleaned_cate_id)
+            message_body = _('PDF has been successfully uploaded')
         else:
             #update pdf information
             self.pdf_update(form, commit=True, cate_id=cleaned_cate_id)
+            message_body = _('Information about this PDF has been successfully modified')
         
-        return redirect(self.request.path);
+        messages.success(self.request, message_body)
+        return redirect('/pdf/list/');
         
     def pdf_save(self, form, commit=True, **kwargs):
         pdf = pdfModel()
@@ -147,9 +161,15 @@ class PDF2HTMLView(DetailView):
     model = pdfModel
     template_name = "pdf/view.html"
 
+    def __init__(self, *args, **kwargs):
+        self.text_content = {}
+        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
+        super(PDF2HTMLView, self).__init__(*args, **kwargs)
+    
     def get_context_data(self, **kwargs):
         context = super(PDF2HTMLView, self).get_context_data(**kwargs)
-        context['head_title_text'] = _('PDF View')
+        self.text_content['head_title_text'] = _('PDF Detail')
+        self.breadcrumb.append({'text': 'Detail'})
         
         book_dir = os.path.dirname(os.path.dirname(context['object'].filepath[1:]))
         origin_dir = os.path.join(book_dir, 'origin/')
@@ -216,7 +236,9 @@ class PDF2HTMLView(DetailView):
             
             
                 
-            context['pdf_content'] = content 
+            context['pdf_content'] = content
+            context['text_content'] = self.text_content
+            context['breadcrumb'] = self.breadcrumb
         else:
             pass
         
@@ -232,10 +254,33 @@ class PDFListView(ListView):
     model = pdfModel
     template_name = "pdf/list.html"
     
+    def __init__(self, *args, **kwargs):
+        self.text_content = {}
+        self.breadcrumb = [HOME_BREAD,{'text': 'PDF'},] 
+        super(PDFListView, self).__init__(*args, **kwargs)
+    
     def get_queryset(self):
         return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+    
     def get_context_data(self, **kwargs):
         context = super(PDFListView, self).get_context_data(**kwargs)
-        context['head_title_text'] = _('PDF List')
+        self.text_content['head_title_text'] = _('PDF List')
+        context['text_content'] = self.text_content
+        context['breadcrumb'] = self.breadcrumb
         
         return context 
+
+def download_pdf(request, pk):
+    pdf = pdfModel.objects.get(pk=pk)
+    pdf_path = os.path.join(PROJECT_ROOT, pdf.filepath[1:])
+    fsock = open(pdf_path, 'r')
+    response = HttpResponse(fsock, mimetype=CONTENT_TYPE['pdf'])
+    response['Content-Disposition'] = "attachment; filename=%s" % pdf.filename 
+    return response
+
+def delete_pdf(request, pk):
+    pdf = pdfModel.objects.get(pk=pk)
+    pdf.delete()
+    message_body = "Title:%s has been deleted" % pdf.title
+    messages.success(request, message_body)
+    return HttpResponse('')

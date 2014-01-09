@@ -15,3 +15,4 @@ CTYPE_DICT = {
     'learning': _('Learning System'),
     'tiku': _('Tiku'),
 }
+HOME_BREAD = {'text': 'Home', 'href': '/'}

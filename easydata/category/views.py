@@ -14,6 +14,8 @@ from easydata.func.function_session import initial_form_session_for_custom_field
 from easydata.func.function_category import get_category_fid_choices_html,\
     get_category_list_html, get_categorytree
 from easydata.func.function_core import check_login
+from django.contrib import messages
+from easydata.constant import HOME_BREAD
 
 
 class CategoryPostView(FormView):
@@ -25,6 +27,8 @@ class CategoryPostView(FormView):
     custom_field_errors = []
     
     def __init__(self, *args, **kwargs):
+        self.text_content = {}
+        self.breadcrumb = [HOME_BREAD,{'text': 'Category', 'href': '/category/'},] 
         super(CategoryPostView, self).__init__(*args, **kwargs)
     
     def get(self, *args, **kwargs):
@@ -53,9 +57,14 @@ class CategoryPostView(FormView):
     def get_context_data(self, **kwargs):
         context = super(CategoryPostView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            context['head_title_text'] = _('Category Edit')
+            self.text_content['head_title_text'] = _('Category Edit')
+            self.breadcrumb.append({'text': 'Edit'})
         else:
-            context['head_title_text'] = _('New Category')
+            self.text_content['head_title_text'] = _('New Category')
+            self.breadcrumb.append({'text': 'Create'})
+        
+        context['text_content'] = self.text_content
+        context['breadcrumb'] = self.breadcrumb
         return context
     
     def post(self, *args, **kwargs):
@@ -85,6 +94,7 @@ class CategoryPostView(FormView):
                 cate.displayorder = form.cleaned_data.get("displayorder")
                 cate.ctype = form.cleaned_data.get("ctype")
                 cate.save()
+                message_body = _('category is successfully created')
             else:
                 self.category_instance.fid = cleaned_fid
                 self.category_instance.name = form.cleaned_data.get("name")
@@ -93,6 +103,9 @@ class CategoryPostView(FormView):
                 self.category_instance.displayorder = form.cleaned_data.get("displayorder")
                 self.category_instance.ctype = form.cleaned_data.get("ctype")
                 self.category_instance.save()
+                message_body = _('category has been successfully modified')
+                
+            messages.success(self.request, message_body)
             
             return redirect(self.request.path)
             
@@ -101,15 +114,25 @@ class CategoryListView(TemplateView):
     model = category
     template_name = 'category/list.html'
     
+    def __init__(self, *args, **kwargs):
+        self.text_content = {}
+        self.breadcrumb = [HOME_BREAD,{'text': 'Category'},] 
+        super(CategoryListView, self).__init__(*args, **kwargs)
+    
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
         context['category_list'] = get_categorytree()
-        context['category_list_html'] = get_category_list_html() 
-        context['head_title_text'] = _('Category List')
+        context['category_list_html'] = get_category_list_html()
+        self.text_content['head_title_text'] = _('Category List') 
+        context['text_content'] = self.text_content
+        context['breadcrumb'] = self.breadcrumb
         return context
     
-def CategoryDelete(request, pk):
-    category.objects.get(pk=pk).delete()
+def delete_category(request, pk):
+    cate = category.objects.get(pk=pk)
+    cate.delete()
+    message_body = "The category %s has been deleted" % cate.name  
+    messages.success(request, message_body)
     return HttpResponse('')
 
 

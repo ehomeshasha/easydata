@@ -3,9 +3,7 @@
 {% load custom_tags %}
 {% load i18n %}
 
-
-{% block head_title %}{{ head_title_text }}{% endblock %}
-
+{% block head_title %}{{ text_content.head_title_text }}{% endblock %}
 {% block body %}
 <div class="pdf_list_area">
 	<table class="pdf_list_table table table-bordered">
@@ -21,10 +19,14 @@
 			<td width="10%">{% trans "Operate" %}</td>
 		</tr>
 		{% for pdf in pdf_list %}
+		{% get_auth_author_admin pdf.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
 			<td>{{ pdf.cate_id }}</td>
 			<td>
-				<a href="/pdf/view/{{ pdf.id }}" title="{{ pdf.description }}">{{ pdf.title }}</a>
+				<a href="/pdf/view/{{ pdf.id }}/" title="{{ pdf.description }}">{{ pdf.title }}</a>
+				{% if auth_author_admin %}
+				<a href="/pdf/edit/{{ pdf.id }}/">[{% trans "edit" %}]</a>
+				{% endif %}
 			</td>
 			<td>{{ pdf.views }}</td>
 			<td>{{ pdf.mark }}</td>
@@ -33,8 +35,11 @@
 			<td>{{ pdf.date_upload|hdate }}</td>
 			<td>{{ pdf.filesize|hsize }}</td>
 			<td>
-				<a href="{{ pdf.filepath }}">View PDF</a>
-				<a href="{{ pdf.filepath }}">Download</a>
+				<a href="{{ pdf.filepath }}">{% trans "View PDF" %}</a>
+				<a href="/pdf/download/{{ pdf.id }}/">{% trans "Download" %}</a>
+				{% if view.request.user.is_superuser %}
+				<a href='javascript:;' class='deletelink' data-id='{{ pdf.id }}' data-type='pdf' data-redirect="/category/list/">{% trans "delete" %}</a>
+				{% endif %}
 			</td>
 		</tr>
 		{% endfor %}

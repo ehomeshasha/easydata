@@ -1,10 +1,9 @@
 {% extends "site_base.html" %}
 
 {% load url from future %}
-{% load i18n %}
 {% load bootstrap %}
 
-{% block head_title %}{{ head_title_text }}{% endblock %}
+{% block head_title %}{{ text_content.head_title_text }}{% endblock %}
 
 {% block body %}
 {% if pdf_content %}

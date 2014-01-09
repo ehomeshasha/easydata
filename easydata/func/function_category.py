@@ -73,10 +73,10 @@ def recursive_categorylist_html(categorys):
         html += "<li>\
                     <p>\
                         <span>%s</span>\
-                        <a href='%s'>%s</a>\
-                        <a href='javascript:;' class='deletelink' data-id='%d' data-type='category'>%s</a>\
+                        <a href='%s'>[%s]</a>\
+                        <a href='javascript:;' class='deletelink' data-id='%d' data-type='category'>[%s]</a>\
                     </p>\
-                    <ul>" % (category['name'], '/category/edit/%d/' % category['cid'], _('[edit]'), category['cid'], _('[delete]'))
+                    <ul>" % (category['name'], '/category/edit/%d/' % category['cid'], _('edit'), category['cid'], _('delete'))
         html += recursive_categorylist_html(category['subcate'])
         html += "</ul></li>"
     return html;

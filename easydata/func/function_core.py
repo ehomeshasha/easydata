@@ -38,3 +38,7 @@ def get_timestamp():
     return int(time.mktime(now().timetuple()))
 
 
+def get_auth_author_admin(user, authorid):
+    if user and (user.id == authorid or user.is_superuser == 1):
+        return True
+    return False

@@ -1,5 +1,4 @@
 from django import template
-import time
 from django.utils.timezone import now
 register = template.Library()
 from django.utils.translation import ugettext as _
@@ -36,3 +35,10 @@ def hsize(size):
             return "%3.1f%s" % (num, x)
         num /= 1024.0
     return "%3.1f%s" % (num, 'TB')
+
+
+@register.assignment_tag
+def get_auth_author_admin(authorid, uid, is_superuser):
+    if uid and (is_superuser or authorid == id):
+        return True
+    return False
