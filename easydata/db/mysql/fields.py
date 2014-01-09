@@ -1,11 +1,6 @@
-'''
-Created on Dec 26, 2013
-
-@author: hadoop-user
-'''
 from django.db import models
 from django.db.models.fields import AutoField
-from django.db.backends.mysql.creation import DatabaseCreation
+#from django.db.backends.mysql.creation import DatabaseCreation
 from django.core import validators
 
 

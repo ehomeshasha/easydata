@@ -1,5 +1,5 @@
 from django.db import models
-from easydata.db.mysql.fields import C_AutoField, C_IntegerField, C_SmallIntegerField,C_MediumIntegerField, C_CharField, C_AutoSmallIntegerField, C_TinyIntegerField
+from easydata.db.mysql.fields import C_AutoField, C_IntegerField, C_SmallIntegerField, C_MediumIntegerField, C_TinyIntegerField
 
 # Create your models here.
 class pdf(models.Model):

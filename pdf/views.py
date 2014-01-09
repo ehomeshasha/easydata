@@ -1,53 +1,27 @@
 from __future__ import unicode_literals
 
-from django.shortcuts import render
-from django.http import Http404, HttpResponseForbidden
-from django.core.mail import send_mail
-from django.shortcuts import redirect, get_object_or_404
-from django.utils.http import base36_to_int, int_to_base36
-from django.template.loader import render_to_string
-from django.core.urlresolvers import reverse
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.edit import FormView
 
-from account.conf import settings
-from django.contrib import auth, messages
-from django.contrib.auth.models import User
-from django.contrib.sites.models import get_current_site
-from django.contrib.auth.tokens import default_token_generator
 from pdf.forms import PDFUploadForm
-from django.http.response import HttpResponseRedirect, HttpResponse
-# Create your views here.
-import json
 
 from pdf.models import pdf as pdfModel
-from easydata.func.function_core import check_login, get_timestamp, elistdir
+from easydata.func.function_core import check_login, elistdir
 from pdf.uploads import handle_uploaded_file
 
-
-
-#from django.views.generic import DetailView
-from account.utils import default_redirect
 import os
 from easydata import settings
-from pyquery import PyQuery as pq
-from lxml import etree
-import urllib
-#from django.views import generic
-from django.contrib.auth.models import User
-from django.views.generic.base import TemplateView
+from pyquery import PyQuery as pq  # @UnresolvedImport
+
 import codecs
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-import datetime
-import time
+
 from django.utils.timezone import now
-from django.db import connection
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session_for_custom_field, set_form_session_for_custom_field
 from easydata.func.function_category import get_choices_html
-from django.forms.forms import BoundField
 
 
 def update_convert_status(pdf, **kwargs):
@@ -82,7 +56,7 @@ class PDFUploadView(FormView):
         
     def get(self, *args, **kwargs):
         if not check_login(self.request):
-            return redirect("/account/login/")
+            return redirect("/account/login/?next=%s" % self.request.path)
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
@@ -105,21 +79,18 @@ class PDFUploadView(FormView):
         context = super(PDFUploadView, self).get_context_data(**kwargs)
         if self.action == 'edit':
             context['head_title_text'] = _('PDF Edit')
-            #del(context['form'].fields['store_file'])
         else:
             context['head_title_text'] = _('PDF Upload')
         return context
     
     def post(self, *args, **kwargs):
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.path)
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
             
         return super(PDFUploadView, self).post(*args, **kwargs)
-    
-    
-    def get_form_class(self):
-        return self.form_class
     
     def get_form(self, form_class):
         instance = form_class(**self.get_form_kwargs())
@@ -127,31 +98,26 @@ class PDFUploadView(FormView):
             instance.fields.pop('store_file')
         return instance
     
-    def form_invalid(self, form):
-        print form.cleaned_data
-    
     def form_valid(self, form):
-        if not check_login(self.request):
-            return redirect("/account/login/")
+        
+        self.User = self.request.user
+        if self.request.POST['cate_id'] and self.request.POST['cate_id'].isdigit():
+            cleaned_cate_id = self.request.POST['cate_id']
+            clear_form_session_for_custom_field(self.request.session)
         else:
-            self.User = self.request.user
-            if self.request.POST['cate_id'] and self.request.POST['cate_id'].isdigit():
-                cleaned_cate_id = self.request.POST['cate_id']
-                clear_form_session_for_custom_field(self.request.session)
-            else:
-                set_form_session_for_custom_field(css={'cate_id': "has-error"}, text={'cate_id': ["Invalid category input"]}, session=self.request.session)
-                return redirect(self.request.path)
-            
-            if self.action == 'new':
-                #upload pdf to server
-                filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
-                #save information about uploading to database
-                self.pdf_save(form, commit=True, filepath=filepath, cate_id=cleaned_cate_id)
-            else:
-                #update pdf information
-                self.pdf_update(form, commit=True, cate_id=cleaned_cate_id)
-            
-            return redirect(self.request.path);
+            set_form_session_for_custom_field(css={'cate_id': "has-error"}, text={'cate_id': ["Invalid category input"]}, session=self.request.session)
+            return redirect(self.request.path)
+        
+        if self.action == 'new':
+            #upload pdf to server
+            filepath = handle_uploaded_file(self.request.FILES['store_file'], self.User.username)
+            #save information about uploading to database
+            self.pdf_save(form, commit=True, filepath=filepath, cate_id=cleaned_cate_id)
+        else:
+            #update pdf information
+            self.pdf_update(form, commit=True, cate_id=cleaned_cate_id)
+        
+        return redirect(self.request.path);
         
     def pdf_save(self, form, commit=True, **kwargs):
         pdf = pdfModel()
@@ -194,7 +160,7 @@ class PDF2HTMLView(DetailView):
             new_dir = os.path.join(book_dir, 'new/')
             if not self.kwargs['page_num']:
                 self.kwargs['page_num'] = '1'
-            filename = "pg_"+self.kwargs['page_num'].zfill(4)+".htm"
+            filename = "pg_%s.htm" % self.kwargs['page_num'].zfill(4)
             oripath = origin_dir+filename
             oripath_abs=os.path.join(settings.PROJECT_ROOT, oripath)
             newpath = new_dir+filename
@@ -213,14 +179,14 @@ class PDF2HTMLView(DetailView):
                 background_img.attr("src", image_dir+src) 
                 height = background_img.attr("height")
                 width = background_img.attr("width")
-                new_html = pq('<div class="pdf_wrapper" style="width:'+width+'px;height:'+height+'px;margin:0 auto;position:relative;"></div>')
+                new_html = pq('<div class="pdf_wrapper" style="width:%spx;height:%spx;margin:0 auto;position:relative;"></div>' % (width,height))
                 csss = ori_html('style')
                 divs = ori_html('div')
                 
                 for css in csss.items():
                     css_text = css.html().replace("<!--", "").replace("-->", "")
                     if ".ft0" in css_text:
-                        new_html.append('<style type="text/css">'+css_text+'</style>')
+                        new_html.append('<style type="text/css">%s</style>' % css_text)
                         break
                     
                 for div in divs.items():
@@ -232,15 +198,13 @@ class PDF2HTMLView(DetailView):
                     
                     if child_span:
                         class_text = child_span.attr("class")
-                        new_html.append(u'<div class="left-side side_bar" style="position:absolute;top:'+top+'px;left:-20px;width:20px;">\
-                                            <a class="'+class_text+' side_link">&nbsp;</a>\
+                        new_html.append(u'<div class="left-side side_bar" style="position:absolute;top:%spx;left:-20px;width:20px;">\
+                                            <a class="%s side_link">&nbsp;</a>\
                                         </div>\
-                                        <div class="middle-content" style="position:absolute;top:'+top+'px;left:'+left+'px;">'
-                                        +div.html()+
-                                        u'</div>\
-                                        <div class="right-side side_bar" style="position:absolute;top:'+top+'px;left:826px;width:20px;">\
-                                            <a class="'+class_text+' side_link">&nbsp;</a>\
-                                        </div>')
+                                        <div class="middle-content" style="position:absolute;top:%spx;left:%spx;">%s</div>\
+                                        <div class="right-side side_bar" style="position:absolute;top:%spx;left:826px;width:20px;">\
+                                            <a class="%s side_link">&nbsp;</a>\
+                                        </div>' % (top, class_text, top, left, div.html(), top, class_text))
                     else:
                         new_html.append(div.outerHtml())
                     
@@ -256,7 +220,6 @@ class PDF2HTMLView(DetailView):
         else:
             pass
         
-        #print content
         return context
     
     def getDictFromCSSString(self, css_string):
@@ -273,8 +236,6 @@ class PDFListView(ListView):
         return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
     def get_context_data(self, **kwargs):
         context = super(PDFListView, self).get_context_data(**kwargs)
-        #context['pdf_list'] = pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
-        #update_convert_status(context['pdf_list'], list=True, check_exists=True)
         context['head_title_text'] = _('PDF List')
         
         return context 
