@@ -9,7 +9,7 @@
     <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
     <link href="{% static "css/site.css" %}" rel="stylesheet">
     <link href="{% static "css/common.css" %}" rel="stylesheet">
-    {% block extra_style %}{% endblock %}
+    {% block extra_style_base %}{% endblock %}
 {% endblock %}
 
 
@@ -37,6 +37,7 @@
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "pinax/js/theme.js" %}"></script>
     <script src="{% static "js/common.js" %}"></script>
+    {% block extra_script_base %}{% endblock %}
 {% endblock %}
 
 

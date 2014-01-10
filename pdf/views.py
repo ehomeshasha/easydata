@@ -37,7 +37,7 @@ def update_convert_status(pdf, **kwargs):
     else:
         if pdf.isconvert == '1':
             return;
-        cursor = settings.cursor;
+        cursor = connection.cursor();
         if 'check_exists' in kwargs.keys() and kwargs['check_exists']:
             book_dir = os.path.dirname(os.path.dirname(pdf.filepath[1:]))
             origin_dir = os.path.join(book_dir, 'origin/')
@@ -304,7 +304,6 @@ def mark_pdf(request,action, pk, page_num, line_num):
         'form_action': '',
         'title': 'Mark line',
         'hid_input': None,
-        'icon_class': None,
         'btn_primary': _("Submit"),
         'btn_default': _("Close"),
     }

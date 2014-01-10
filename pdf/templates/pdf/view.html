@@ -46,6 +46,7 @@
 		<div class="col-md-9">
 			<h3 class="pdf_title">{{ pdf.title }}</h3>
 			<div class="pdf_desc">{{ pdf.description }}</div>
+			<textarea rows="" cols=""></textarea>
 		</div>
 		<div class="col-md-3" style="">
 					
@@ -75,4 +76,8 @@ not exists
 
 {% block extra_script %}
 <script type="text/javascript" src="{% static "js/pdf_view.js" %}"></script>
+{% endblock %}
+
+{% block extra_script_base %}
+<script type="text/javascript" src="{% static "tinymce/tinymce.min.js" %}"></script>
 {% endblock %}

@@ -1,1 +1,41 @@
-mark_post
+<div>
+<textarea id="my_editor"></textarea>
+<iframe id="form_target" name="form_target" style="display:none"></iframe>
+<form id="my_form" action="/upload/" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">
+    <input name="image_upload" id="image_upload" type="file" />
+    <button>fdsffs</button>
+</form>
+</div>
+<script type="text/javascript">
+tinymce.init({
+	menubar:false,
+    statusbar: false,
+    selector: '#my_editor',
+    plugins: ["image"],
+    file_browser_callback: function(field_name, url, type, win) { 
+    	if(type == 'image') {
+    		$('#image_upload').click();
+    	}
+         
+    }
+});
+$("#image_upload").change(function(){
+	var image_upload = $(this).val();
+	var fd = new FormData();
+    fd.append("image_upload", image_upload);
+	$(this).val("");
+	$.ajax({
+		url: "upload.php",
+		type: "POST",
+		data: fd,
+		processData: false,
+		contentType: false,
+		success: function(response) {
+			// .. do something
+		},
+		error: function(jqXHR, textStatus, errorMessage) {
+			console.log(errorMessage); // Optional
+		}
+	});
+});
+</script>

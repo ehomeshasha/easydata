@@ -7,16 +7,10 @@ $(function(){
 		var mark_html = '<a href="javascript:;" data-num='+data_num+' class="text-danger mark_link">mark this line</a><a href="#" class="text-muted">what is mark?</a>'
 		$(this).addClass("opacity-grey");
 		$(this).find(".row_layer_content").html(mark_html)
-		//$(this).css("background","rgba(255, 255, 255, 0.3) !important");
-		//$(this).css("filter", "alpha(opacity=30)");
-		//background: rgba(255, 255, 255, 0.3) !important; /* IE无效，FF有效 */  
-        //background: #fff;  
-        //filter: alpha(opacity=30);  
 	});
 	$(".row_layer").mouseleave(function(){
 		$(this).removeClass("opacity-grey");
 		$(this).find(".row_layer_content").html("&nbsp;")
-		//$(this).css("background","none");
 	});
 	$(document).on('click', '.mark_link', function(e){
 		e.preventDefault();

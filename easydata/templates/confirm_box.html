@@ -14,12 +14,7 @@
 			{% endblock %}
 		</div>
 		<div class="modal-body">
-			<p>
-			{% if modal_form.icon_class %}
-			<i class="modal_form.icon_class mrn"></i>
-			{% endif %}
 			{% block modal_body %}{% endblock %}
-			</p>
 		</div>
 		<div class="modal-footer">
 			{% if modal_form.btn_primary %}
