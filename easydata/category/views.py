@@ -27,7 +27,6 @@ class CategoryPostView(FormView):
     custom_field_errors = []
     
     def __init__(self, *args, **kwargs):
-        self.text_content = {}
         self.breadcrumb = [HOME_BREAD,{'text': 'Category', 'href': '/category/'},] 
         super(CategoryPostView, self).__init__(*args, **kwargs)
     
@@ -57,13 +56,14 @@ class CategoryPostView(FormView):
     def get_context_data(self, **kwargs):
         context = super(CategoryPostView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            self.text_content['head_title_text'] = _('Category Edit')
+            context['head_title_text'] = _('Category Edit')
+            context['legend_text'] = _('Category Edit')
             self.breadcrumb.append({'text': 'Edit'})
         else:
-            self.text_content['head_title_text'] = _('New Category')
+            context['head_title_text'] = _('New Category')
+            context['legend_text'] = _('New Category')
             self.breadcrumb.append({'text': 'Create'})
         
-        context['text_content'] = self.text_content
         context['breadcrumb'] = self.breadcrumb
         return context
     
@@ -107,7 +107,7 @@ class CategoryPostView(FormView):
                 
             messages.success(self.request, message_body)
             
-            return redirect(self.request.path)
+            return redirect('/category/')
             
 
 class CategoryListView(TemplateView):
@@ -115,16 +115,13 @@ class CategoryListView(TemplateView):
     template_name = 'category/list.html'
     
     def __init__(self, *args, **kwargs):
-        self.text_content = {}
         self.breadcrumb = [HOME_BREAD,{'text': 'Category'},] 
         super(CategoryListView, self).__init__(*args, **kwargs)
     
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
-        context['category_list'] = get_categorytree()
         context['category_list_html'] = get_category_list_html()
-        self.text_content['head_title_text'] = _('Category List') 
-        context['text_content'] = self.text_content
+        context['head_title_text'] = _('Category List') 
         context['breadcrumb'] = self.breadcrumb
         return context
     

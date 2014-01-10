@@ -25,7 +25,10 @@
 
 {% block extra_body_base %}
     {% analytics %}
-    {% block extra_body %}{% endblock %}
+    {% block extra_body %}
+    <div id="response_modal" class="modal fade"></div>
+    {% endblock %}
+    
 {% endblock %}
 
 

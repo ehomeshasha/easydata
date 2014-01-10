@@ -2,19 +2,21 @@
 
 {% load bootstrap %}
 
-{% block head_title %}{{ text_content.head_title_text }}{% endblock %}
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
     <div class="row">
         <div class="col-lg-4">
             <form id="upload_pdf_form" method="post" action="" autocapitalize="off" enctype="multipart/form-data">
-                <legend>{{ text_content.head_title_text }}</legend>
+            <fieldset>
+                <legend>{{ legend_text }}</legend>
                 {% csrf_token %}
                 {{ form|bootstrap:"title" }}
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-primary">{{ text_content.submit_btn_text }}</button>
+                <button type="submit" class="btn btn-primary">{{ submit_btn_text }}</button>
+			</fieldset>
             </form>
         </div>
     </div>

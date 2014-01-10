@@ -34,7 +34,7 @@ def get_categorytree(fid=0,level=0,ctype=''):
     level+=1
     if ctype == '':
         cursor = connection.cursor()
-        cursor.execute("SELECT ctype FROM `category_category` WHERE status>=0 GROUP BY ctype")  # @UndefinedVariable
+        cursor.execute("SELECT ctype FROM `category_category` WHERE status>0 GROUP BY ctype")  # @UndefinedVariable
         result = dictfetchall(cursor)
         for value in result:
             tree[value['ctype']] = get_categorytree(0,0,value['ctype'])
@@ -96,10 +96,9 @@ def get_category_list_html():
             CTYPE_DICT[k] = 'Undefined Module'
         #print k
         html += "<legend>%s</legend><ul>" % CTYPE_DICT[k]
-        for cate1 in v:
-            #print cate1['name'] 
-            html += recursive_categorylist_html(cate1['subcate'])
-            html += "</ul>"
+        html += recursive_categorylist_html(v)
+        html += "</ul>"
+        
     return html
     #print categorytree
     #categorytree_merge = get_categorytree_merge(categorytree)

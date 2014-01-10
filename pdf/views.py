@@ -1,13 +1,13 @@
 from __future__ import unicode_literals
 
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormView
 
 from pdf.forms import PDFUploadForm
 
 from pdf.models import pdf as pdfModel
-from easydata.func.function_core import check_login, elistdir
+from easydata.func.function_core import check_login, elistdir, multi, page_jump
 from pdf.uploads import handle_uploaded_file
 
 import os
@@ -26,6 +26,7 @@ from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
 from easydata.constant import CONTENT_TYPE, HOME_BREAD
+from django.db import connection
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
@@ -54,7 +55,6 @@ class PDFUploadView(FormView):
     pdf_instance = None 
     
     def __init__(self, *args, **kwargs):
-        self.text_content = {}
         self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
         super(PDFUploadView, self).__init__(*args, **kwargs)
         
@@ -82,14 +82,15 @@ class PDFUploadView(FormView):
     def get_context_data(self, **kwargs):
         context = super(PDFUploadView, self).get_context_data(**kwargs)
         if self.action == 'edit':
-            self.text_content['head_title_text'] = _('PDF Edit')
-            self.text_content['submit_btn_text'] = _('Submit')
+            context['head_title_text'] = _('PDF Edit')
+            context['legend_text'] = _('PDF Edit')
+            context['submit_btn_text'] = _('Submit')
             self.breadcrumb.append({'text': 'Edit'})
         else:
-            self.text_content['head_title_text'] = _('PDF Upload')
-            self.text_content['submit_btn_text'] = _('Upload')
+            context['head_title_text'] = _('PDF Upload')
+            context['legend_text'] = _('PDF Upload')
+            context['submit_btn_text'] = _('Upload')
             self.breadcrumb.append({'text': 'Upload'})
-        context['text_content'] = self.text_content
         context['breadcrumb'] = self.breadcrumb
         
         return context
@@ -160,33 +161,36 @@ class PDFUploadView(FormView):
 class PDF2HTMLView(DetailView):
     model = pdfModel
     template_name = "pdf/view.html"
-
+    sidebar_width = 35 
+    
     def __init__(self, *args, **kwargs):
-        self.text_content = {}
         self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
         super(PDF2HTMLView, self).__init__(*args, **kwargs)
     
     def get_context_data(self, **kwargs):
         context = super(PDF2HTMLView, self).get_context_data(**kwargs)
-        self.text_content['head_title_text'] = _('PDF Detail')
+        context['head_title_text'] = _('PDF Detail')
         self.breadcrumb.append({'text': 'Detail'})
         
-        book_dir = os.path.dirname(os.path.dirname(context['object'].filepath[1:]))
+        book_dir = os.path.dirname(os.path.dirname(context['pdf'].filepath[1:]))
         origin_dir = os.path.join(book_dir, 'origin/')
-        if elistdir(origin_dir, 'file'):
-            update_convert_status(context['object']);
+        filepn = len(elistdir(origin_dir, 'file', '.jpg'))
+        if filepn:
+            update_convert_status(context['pdf']);
             
             image_dir = "/"+origin_dir
             new_dir = os.path.join(book_dir, 'new/')
             if not self.kwargs['page_num']:
                 self.kwargs['page_num'] = '1'
+            curpage = int(self.kwargs['page_num'])
             filename = "pg_%s.htm" % self.kwargs['page_num'].zfill(4)
             oripath = origin_dir+filename
             oripath_abs=os.path.join(settings.PROJECT_ROOT, oripath)
             newpath = new_dir+filename
             newpath_abs = os.path.join(settings.PROJECT_ROOT, newpath)
             
-            if not settings.DEBUG and os.path.exists(newpath_abs):
+            #if not settings.DEBUG and os.path.exists(newpath_abs):
+            if None:
                 out = codecs.open(newpath_abs, 'r', "utf-8")
                 content = out.read()
                 out.close()
@@ -197,11 +201,12 @@ class PDF2HTMLView(DetailView):
                 
                 src = background_img.attr("src")
                 background_img.attr("src", image_dir+src) 
-                height = background_img.attr("height")
-                width = background_img.attr("width")
-                new_html = pq('<div class="pdf_wrapper" style="width:%spx;height:%spx;margin:0 auto;position:relative;"></div>' % (width,height))
+                height = int(background_img.attr("height"))
+                width = int(background_img.attr("width"))
+                new_html = pq('<div class="pdf_wrapper" style="width:%dpx;height:%dpx;margin:0 auto;position:relative;"></div>' % (width,height))
                 csss = ori_html('style')
                 divs = ori_html('div')
+                row_width = width+self.sidebar_width*2
                 
                 for css in csss.items():
                     css_text = css.html().replace("<!--", "").replace("-->", "")
@@ -209,7 +214,7 @@ class PDF2HTMLView(DetailView):
                         new_html.append('<style type="text/css">%s</style>' % css_text)
                         break
                     
-                for div in divs.items():
+                for k,div in enumerate(divs.items()):
                     css_string = div.attr('style')
                     style=self.getDictFromCSSString(css_string)
                     top = style['top']
@@ -218,13 +223,16 @@ class PDF2HTMLView(DetailView):
                     
                     if child_span:
                         class_text = child_span.attr("class")
-                        new_html.append(u'<div class="left-side side_bar" style="position:absolute;top:%spx;left:-20px;width:20px;">\
+                        new_html.append(u'<div data-num="%d" class="left-side side_bar" style="position:absolute;top:%spx;left:%dpx;width:%dpx;z-index:8">\
                                             <a class="%s side_link">&nbsp;</a>\
                                         </div>\
-                                        <div class="middle-content" style="position:absolute;top:%spx;left:%spx;">%s</div>\
-                                        <div class="right-side side_bar" style="position:absolute;top:%spx;left:826px;width:20px;">\
-                                            <a class="%s side_link">&nbsp;</a>\
-                                        </div>' % (top, class_text, top, left, div.html(), top, class_text))
+                                        <div  data-num="%d"  class="row_layer" style="position:absolute;top:%spx;left:%dpx;width:%dpx;z-index:9">\
+                                            <div class="row_layer_content">&nbsp;</div>\
+                                        </div>\
+                                        <div  data-num="%d" class="middle-content" style="position:absolute;top:%spx;left:%spx;z-index:1">%s</div>' 
+                                        % (k, top, -self.sidebar_width, self.sidebar_width, class_text,
+                                           k, top, -self.sidebar_width, row_width, 
+                                           k, top, left, div.html()))
                     else:
                         new_html.append(div.outerHtml())
                     
@@ -237,8 +245,15 @@ class PDF2HTMLView(DetailView):
             
                 
             context['pdf_content'] = content
-            context['text_content'] = self.text_content
             context['breadcrumb'] = self.breadcrumb
+            
+            if not context['pdf'].filepn:
+                cursor = connection.cursor()
+                cursor.execute("UPDATE pdf_pdf SET filepn = %s WHERE id = %s", [filepn, context['pdf'].id])
+            context['page_jump'] = page_jump(pn=filepn, curpage=curpage, mpurl='/pdf/view/%d/' % context['pdf'].id)
+            #context['filepn'] = filepn
+            print filepn
+            #print pdf_pagination
         else:
             pass
         
@@ -255,7 +270,6 @@ class PDFListView(ListView):
     template_name = "pdf/list.html"
     
     def __init__(self, *args, **kwargs):
-        self.text_content = {}
         self.breadcrumb = [HOME_BREAD,{'text': 'PDF'},] 
         super(PDFListView, self).__init__(*args, **kwargs)
     
@@ -264,8 +278,7 @@ class PDFListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super(PDFListView, self).get_context_data(**kwargs)
-        self.text_content['head_title_text'] = _('PDF List')
-        context['text_content'] = self.text_content
+        context['head_title_text'] = _('PDF List')
         context['breadcrumb'] = self.breadcrumb
         context['category_dict_pk'] = get_category_dict_pk()
         return context 
@@ -284,3 +297,26 @@ def delete_pdf(request, pk):
     message_body = "Title:%s has been deleted" % pdf.title
     messages.success(request, message_body)
     return HttpResponse('')
+
+def mark_pdf(request,action, pk, page_num, line_num):
+    modal_form = {
+        'javascript': '',
+        'form_action': '',
+        'title': 'Mark line',
+        'hid_input': None,
+        'icon_class': None,
+        'btn_primary': _("Submit"),
+        'btn_default': _("Close"),
+    }
+    context = {
+        'action': action,
+        'pk': pk,
+        'page_num': page_num,
+        'line_num': line_num,
+        'modal_form': modal_form
+    }
+    return render(request, 'pdf/mark.html', context)
+    
+    
+    
+    

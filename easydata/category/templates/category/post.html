@@ -13,13 +13,15 @@
         <div class="col-lg-4">
         	{{ cate.name }}
             <form id="post_category_form" method="post" action="" autocapitalize="off">
-                <legend>{{ head_title_text }}</legend>
+            <fieldset>
+                <legend>{{ legend_text }}</legend>
                 {% csrf_token %}              
   				{{ form|bootstrap:"name" }}
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
                 <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+            </fieldset>
             </form>
         </div>
     </div>

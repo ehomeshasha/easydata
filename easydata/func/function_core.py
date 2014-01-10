@@ -1,8 +1,10 @@
+from __future__ import division
 from os import listdir
 from os.path import isfile, join
 from django.contrib import messages
 import time
 from django.utils.timezone import now
+import math
 
 def check_login(request):
     if request.user.is_authenticated():
@@ -16,11 +18,11 @@ def check_login(request):
         return False
     return User
 
-def elistdir(directory, find_type='all'):
+def elistdir(directory, find_type='all', suffix = ''):
     if find_type == 'all':
         return [ f for f in listdir(directory)]
     elif find_type =='file':
-        return [ f for f in listdir(directory) if isfile(join(directory,f)) ]
+        return [ f for f in listdir(directory) if isfile(join(directory,f)) and (suffix == '' or (suffix != '' and f.endswith(suffix))) ]
     elif find_type == 'directory':
         return [ f for f in listdir(directory) if not isfile(join(directory,f)) ]
     return []
@@ -42,3 +44,89 @@ def get_auth_author_admin(user, authorid):
     if user and (user.id == authorid or user.is_superuser == 1):
         return True
     return False
+
+
+
+
+
+def multi(num, perpage, curpage, mpurl, maxpages = 0, page = 10, autogoto = False, simple = False):
+    prev_txt = "&lsaquo;";
+    next_txt = "&rsaquo;";                                                                                                           
+    dot = '...';
+    multipage = '';
+
+    realpages = 1;
+    page -= len(str(curpage)) - 1
+    if page <= 0:
+        page = 1
+    
+    if num > perpage:
+
+        offset = int(math.floor(page * 0.5))  # @UndefinedVariable
+
+        realpages = int(math.ceil(num/perpage))  # @UndefinedVariable
+        if maxpages and maxpages < realpages:
+            pages = maxpages
+        else:
+            pages = realpages
+        if page > pages:
+            fromm = 1
+            to = pages
+        else:
+            fromm = curpage - offset
+            to = fromm + page - 1
+            if fromm < 1:
+                to = curpage + 1 - fromm
+                fromm = 1;
+                if to - fromm < page:
+                    to = page
+            elif to > pages:
+                fromm = pages - page + 1
+                to = pages
+        if curpage - offset > 1 and pages > page:
+            multipage = '<li><a onclick=\'jumpto("%s1/");\' href="javascript:;">1 %s</a></li>' % (mpurl, dot) 
+        else:
+            multipage = ''
+        if curpage > 1 and not simple :
+            multipage += '<li><a onclick=\'jumpto("%s%d/");\' href="javascript:;">%s</a></li>' % (mpurl, curpage-1, prev_txt)
+        else:
+            multipage += '<li class="disabled"><a href="javascript:;">%s</a></li>' % prev_txt
+        for i in range(fromm, to+1):
+            if i == curpage:
+                multipage += '<li class="active"><a href="javascript:;">%d</a></li>' % i
+            else:
+                multipage += '<li><a onclick=\'jumpto("%s%d/");\' href="javascript:;">%d</a></li>' % (mpurl, i, i);
+        if to < pages:
+            multipage += '<li><a onclick=\'jumpto("%s%d/");\' href="javascript:;">%s %d</a></li>' % (mpurl, pages, dot, realpages)
+        else:
+            multipage += ''
+        if curpage < pages and not simple:
+            multipage += '<li><a onclick=\'jumpto("%s%d/");\' href="javascript:;">%s</a></li>' % (mpurl, curpage+1, next_txt)
+        else:
+            multipage += '<li class="disabled"><a href="javascript:;">%s</a></li>' % next_txt
+        if multipage:
+            multipage = '<ul class="pagination">%s</ul>' % multipage
+        else:
+            multipage = ''
+    return multipage
+
+def page_jump(pn,curpage,mpurl):
+    prev_class = next_class = ''
+    prev_num = curpage - 1
+    next_num = curpage + 1
+    if curpage == 1:
+        prev_class = 'disabled'
+    if curpage == pn:
+        next_class = 'disabled'
+    
+        
+    
+    html = '<form class="pn_form" method="post" data-mpurl="%s">\
+                <a href="javascript:;" class="prev_btn btn btn-default btn-xs %s" data-num="%d">&lsaquo;</a>\
+                <span class="btn btn-default pn_input_area btn-xs">\
+                    <input type="text" class="pn_input col-md-6" value="%d" />\
+                    <span class="maxpn">/%d</span>\
+                </span>\
+                <a href="javascript:;" class="next_btn btn btn-default btn-xs %s" data-num="%d">&rsaquo;</a>\
+            </form>' % (mpurl, prev_class, prev_num, curpage, pn, next_class, next_num)
+    return html

@@ -22,7 +22,7 @@ class CategoryPostForm(forms.Form):
     
     ctype = forms.ChoiceField(
         label=_("Module"),
-        choices=(('learning','Learning'),('pdf','PDF'),),
+        choices=(('learning','Learning'),('pdf','PDF'),('tiku', 'Tiku')),
         widget=forms.Select(),
         required=True,
         initial='learning',

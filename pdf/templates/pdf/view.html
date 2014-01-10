@@ -1,14 +1,78 @@
 {% extends "site_base.html" %}
 
+{% load staticfiles %}
+{% load i18n %}
 {% load url from future %}
 {% load bootstrap %}
 
-{% block head_title %}{{ text_content.head_title_text }}{% endblock %}
+{% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
 {% if pdf_content %}
+<input type="hidden" name="pdf_id" value="{{ pdf.id }}" id="pdf_id" />
+<div class="pdf_brief">
+	<div class="pdf_top row mbm">
+		<div class="col-md-8">
+			<span class="pdf_user mrw">
+			<span>{{ pdf.username }}</span>
+			</span>
+			<span class="postdate mrw">{{ pdf.date_upload }}</span>
+			<span class="statistic mrw">
+				<span class="mrm">{% trans "Views:" %}{{ pdf.views }}</span>
+				<span class="mrm">{% trans "Mark:" %}{{ pdf.mark }}</span>
+				<span>{% trans "Comment:" %}{{ pdf.comment }}</span>
+			</span>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group btn-group-xs pdf_btn">
+			  	<a href="/pdf/download/{{ pdf.id }}/" class="btn btn-default">{% trans "download" %}</a>
+			  	<a href="#" class="btn btn-default">{% trans "mark" %}</a>
+			  	<a href="/pdf/download/{{ pdf.id }}/" class="btn btn-default">{% trans "comment" %}</a>
+			  	<a href="/pdf/edit/{{ pdf.id }}/" class="btn btn-default">{% trans "edit" %}</a>
+				<div class="btn-group btn-group-xs">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						help<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-xs">
+						<li><a href="#">How to mark</a></li>
+						<li><a href="#">test</a></li>
+					</ul>
+				</div>
+			</div>
+					
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">
+			<h3 class="pdf_title">{{ pdf.title }}</h3>
+			<div class="pdf_desc">{{ pdf.description }}</div>
+		</div>
+		<div class="col-md-3" style="">
+					
+		</div>
+	</div>
+</div>
+<div class="pdf_body" style="position:relative;">
+	<div class="page_jump pdf_page_jump">
+		{{ page_jump|safe }}
+	</div>
 	{{ pdf_content|safe }}
+</div>
+<style type="text/css">
+.pdf_body {width:100%;background:#f5f5f5;}
+.pdf_brief {background:#f5f5f5;padding:10px 45px 20px 45px;}
+.side_bar a{display:block;}
+.row_layer a {margin-left:10px;}
+.mark_link {text-decoration:underline;}
+.pdf_page_jump {position:absolute;top:-40px;;right:35px;}
+</style>
 {% else %}
 not exists
 {% endif %}
+{% endblock %}
+
+
+
+{% block extra_script %}
+<script type="text/javascript" src="{% static "js/pdf_view.js" %}"></script>
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "confirm_box.html" %}
+
+{% load i18n %}
+
+{% block modal_title %}
+<style type="text/css">
+.modal-header {border:0;}
+</style>
+<ul class="nav nav-pills">
+	<li class="active"><a href="#">{% trans "post mark" %}</a></li>
+	<li><a href="#">{% trans "mark on this line" %}</a></li>
+	<li><a href="#">{% trans "mark on this page" %}</a></li>
+	<li><a href="#">{% trans "about mark" %}</a></li>
+</ul>
+{% endblock %}
+
+{% block modal_body %}
+{% if action == "post" %}
+{% include "pdf/mark_post.html" %}
+{% elif action == "view"%}
+{% include "pdf/mark_view.html" %}
+{% elif action == "about"%}
+{% include "pdf/mark_about.html" %}
+{% endif %}
+{% endblock %}

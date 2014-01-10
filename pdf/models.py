@@ -11,6 +11,7 @@ class pdf(models.Model):
     description = models.CharField(max_length=255)
     filename = models.FileField(max_length=200, upload_to='.')
     filesize = models.CharField(max_length=20)
+    filepn = C_MediumIntegerField(max_length=8, default=0)
     filepath = models.FilePathField(max_length=300, verbose_name='file path')
     tag = models.CharField(max_length=255)
     cate_id = C_SmallIntegerField(max_length=5, default=0)
