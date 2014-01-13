@@ -1,1 +1,25 @@
-mark_view
+{% load i18n %}
+
+<div class="mark_block">
+<div class="mark_view_header mbw" style="border-bottom:1px solid #666;">
+	<span class="pdf_name mrm">pdf: {{ pdf.title }}</span>
+	<span class="mrm">page: {{ kwargs.page_num }}</span>
+	{% if view_type == 'line' %}
+	<span class="mrm">line: {{ kwargs.line_num }}</span>
+	{% endif %}
+</div>
+{% for mark in marklist %}
+<div class="mark_record_top">
+	<span class="pdf_user mrm">
+	<span>{{ mark.username }}</span>
+	</span>
+	<span class="mark_createdate mrm">{{ mark.date_create |date:"Y-m-d H:i:s" }}</span>
+</div>
+<p>
+{{ mark.content | safe }}
+</p>
+{% endfor %}
+</div>
+<style type="text/css">
+.mark_record_top {font-size:12px;}
+</style>

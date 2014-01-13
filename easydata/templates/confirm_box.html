@@ -1,10 +1,13 @@
-{% block modal_form.javascript %}{% endblock %}
+{% block modal_form_javascript %}
+{{ modal_form.javascript | safe }}
+{% endblock %}
 <div class="modal-dialog">
 	<div class="modal-content">
-	<form action="{{ form_action }}" id="modal_form" method="post" style="margin-bottom:0;" onsubmit="">
-	{% if form.hid_input %}
-	{% for hid_input in form.hid_input %}
-	<input type="hidden" value="{{ hid_input.value }}" name="{{ hid_input.name }}" />
+	<form action="{{ modal_form.action }}" id="modal_form" method="post" style="margin-bottom:0;" onsubmit="">
+	{% csrf_token %}
+	{% if modal_form.hid_input %}
+	{% for hid_input in modal_form.hid_input %}
+	<input type="hidden" value="{{ hid_input.0 }}" name="{{ hid_input.1 }}" />
 	{% endfor %}
 	{% endif %}
 		<div class="modal-header">
@@ -14,16 +17,30 @@
 			{% endblock %}
 		</div>
 		<div class="modal-body">
-			{% block modal_body %}{% endblock %}
+			{% block modal_body %}{{ modal_form.body|safe }}{% endblock %}
 		</div>
 		<div class="modal-footer">
 			{% if modal_form.btn_primary %}
-			<button type="button" class="btn btn-primary">{{ modal_form.btn_primary }}</button>
+			<button type="submit" class="btn btn-primary confirm_box_btn_primary">{{ modal_form.btn_primary }}</button>
 			{% endif %}
 			{% if modal_form.btn_default %}
-			<button type="button" class="btn btn-default" data-dismiss="modal">{{ modal_form.btn_default }}</button>
+			<button type="button" class="btn btn-default confirm_box_btn_default" data-dismiss="modal">{{ modal_form.btn_default }}</button>
 			{% endif %}
 			</div>
 		</div>
 	</form>
 </div>
+
+
+<!-- 
+modal_form = {
+        'javascript': '<script type="test/javascript">alert("it works!")</script>',
+        'action': 'test_form_action',
+        'hid_input': [('name1','value1'),('name2','value2'),],
+        'title': 'Mark line',
+        'body': '<h1>test body html</h1>',
+        'hid_input': [('name1','value1'),('name2','value2'),],
+        'btn_primary': _("Submit"),
+        'btn_default': _("Close"),
+    }
+-->

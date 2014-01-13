@@ -6,7 +6,7 @@ from django.views.generic.edit import FormView
 
 from pdf.forms import PDFUploadForm
 
-from pdf.models import pdf as pdfModel
+from pdf.models import pdf as pdfModel, Mark
 from easydata.func.function_core import check_login, elistdir, multi, page_jump
 from pdf.uploads import handle_uploaded_file
 
@@ -298,24 +298,87 @@ def delete_pdf(request, pk):
     messages.success(request, message_body)
     return HttpResponse('')
 
-def mark_pdf(request,action, pk, page_num, line_num):
-    modal_form = {
-        'javascript': '',
-        'form_action': '',
-        'title': 'Mark line',
-        'hid_input': None,
-        'btn_primary': _("Submit"),
-        'btn_default': _("Close"),
+mark_about_url = 'test_mark_about_url'
+
+def mark_post(request, pk, page_num, line_num):
+    
+    if request.method == 'GET':
+        modal_form = {
+            'action': request.path,
+            'btn_primary': _("Submit"),
+            'btn_default': _("Close"),
+        }
+        context = {
+            'mark_nav_href': {
+                'post': '',
+                'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (pk, page_num, line_num),
+                'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (pk, page_num, line_num),
+                'about': mark_about_url
+            },
+            'action': 'post',
+            'modal_form': modal_form,
+        }
+        return render(request, 'pdf/mark.html', context)
+    
+    elif request.method == 'POST':
+        mark = Mark()
+        mark.uid = request.user.id
+        mark.username = request.user.username
+        mark.pdf_id = pk
+        mark.page_num = page_num
+        mark.line_num = line_num
+        mark.content = request.POST['content']
+        mark.date_create = now()
+        mark.save()
+        
+        pdf_instance = pdfModel.objects.get(pk=pk)
+        pdf_instance.mark += 1
+        pdf_instance.save()
+        return HttpResponse('')
+        #pass
+        #return redirect("/pdf/mark_view/%s/%s/%s/" % (pk, page_num, line_num))
+
+def mark_view_line(request, **kwargs):
+    
+    mark_nav_href = {
+        'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+        'view_line': '',
+        'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+        'about': mark_about_url
     }
+    pdf = pdfModel.objects.get(pk=kwargs['pk'])
+    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],line_num=kwargs['line_num'],displayorder__gte=0).order_by("-date_create")
+       
     context = {
-        'action': action,
-        'pk': pk,
-        'page_num': page_num,
-        'line_num': line_num,
-        'modal_form': modal_form
+        'action': 'view',
+        'view_type': 'line',
+        'marklist': marklist,
+        'mark_nav_href': mark_nav_href,
+        'pdf': pdf,
+        'kwargs': kwargs,
     }
+    
     return render(request, 'pdf/mark.html', context)
     
+
+def mark_view_page(request, **kwargs):
+    mark_nav_href= {
+            'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+            'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+            'view_page': '',
+            'about': mark_about_url
+    }
+    pdf = pdfModel.objects.get(pk=kwargs['pk'])
+    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],displayorder__gte=0).order_by("-date_create")
     
+    context = {
+        'action': 'view',
+        'view_type': 'page',
+        'marklist': marklist,
+        'mark_nav_href': mark_nav_href,
+        'pdf': pdf,
+        'kwargs': kwargs,
+    }
     
+    return render(request, 'pdf/mark.html', context)
     

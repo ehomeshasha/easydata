@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
 from django.contrib import admin
+from easydata import uploads
 
 
 urlpatterns = patterns("",
@@ -15,6 +16,7 @@ urlpatterns = patterns("",
     url(r'^pdf/', include("pdf.urls")),
     url(r'bookshelf/', include("bookshelf.urls")),
     url(r'category/', include("easydata.category.urls")),
+    url(r'ajax_upload/$', uploads.ajax_upload),
     #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 

@@ -17,7 +17,7 @@ $(function(){
 		var linenum = $(this).attr("data-num");
 		var page = $(".pn_input").val();
 		var pdf_id = $("#pdf_id").val();
-		var url = "/pdf/mark/post/"+pdf_id+'/'+page+'/'+linenum+'/'
+		var url = "/pdf/mark_post/"+pdf_id+'/'+page+'/'+linenum+'/'
 		if (url.indexOf('#') == 0) {
 			$('#response_modal').modal('open');
 		} else {
@@ -28,5 +28,19 @@ $(function(){
 				$('#response_modal input:text:visible:first').focus();
 			});
 		}
+	});
+	$(document).on('click', '.mark_nav_anchor', function(){
+		url = $(this).attr("data-href");
+		if(url == "") {
+			return false;
+		}
+		$.ajax({
+			url: url,
+			type: "GET",
+			error: function(){alert('try it again');return false;},
+			success: function(data) {
+				$("#response_modal").html(data);
+			}
+		});
 	});
 });

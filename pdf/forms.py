@@ -42,3 +42,5 @@ class PDFUploadForm(forms.Form):
         ext = store_file._name[end_pos+1:]
         if ext != 'pdf':
             raise forms.ValidationError(_("invalid file suffix, must be .pdf"))
+
+

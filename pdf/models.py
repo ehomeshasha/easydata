@@ -22,4 +22,19 @@ class pdf(models.Model):
     displayorder = C_TinyIntegerField(max_length=1, default=0)
     isconvert = C_TinyIntegerField(max_length=1, default=0)
     
-
+    def __unicode__(self):
+        return self.title
+    
+class Mark(models.Model):
+    mid = C_AutoField(max_length=10, primary_key=True)
+    pdf_id = C_IntegerField(max_length=8, default=0)
+    page_num = C_SmallIntegerField(max_length=5, default=0)
+    line_num = C_SmallIntegerField(max_length=5, default=0)
+    uid = C_IntegerField(max_length=11, default=0)
+    username = models.CharField(max_length=30)
+    content = models.TextField()
+    date_create = models.DateTimeField('create date')
+    displayorder = C_TinyIntegerField(max_length=1, default=0)
+    
+    def __unicode__(self):
+        return str(self.mid)
