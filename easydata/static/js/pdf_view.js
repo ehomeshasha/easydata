@@ -14,6 +14,11 @@ $(function(){
 	});
 	$(document).on('click', '.mark_link', function(e){
 		e.preventDefault();
+		if($(".hide_data_uid").html() == "None") {
+			alert('Please login first');
+			location.href="/account/login/?next="+location.href;
+		}
+		
 		var linenum = $(this).attr("data-num");
 		var page = $(".pn_input").val();
 		var pdf_id = $("#pdf_id").val();

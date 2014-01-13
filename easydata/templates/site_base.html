@@ -26,6 +26,10 @@
 {% block extra_body_base %}
     {% analytics %}
     {% block extra_body %}
+    <div style="display:none;" class="hide_data">
+	    <span class="hide_data_username">{{ request.user.username }}</span>
+	    <span class="hide_data_uid">{{ request.user.id }}</span>
+    </div>
     <div id="response_modal" class="modal fade"></div>
     {% endblock %}
     
