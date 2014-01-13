@@ -4,7 +4,7 @@ $(function(){
 	});
 	$(".row_layer").mouseenter(function(){
 		data_num = $(this).attr("data-num")
-		var mark_html = '<a href="javascript:;" data-num='+data_num+' class="text-danger mark_link">mark this line</a><a href="#" class="text-muted">what is mark?</a>'
+		var mark_html = '<a href="javascript:;" data-num='+data_num+' class="text-danger mark_link" style="">MARK</a>'
 		$(this).addClass("opacity-grey");
 		$(this).find(".row_layer_content").html(mark_html)
 	});

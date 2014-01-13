@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-  
 from __future__ import unicode_literals
 
 from django.shortcuts import redirect, render
@@ -213,13 +214,69 @@ class PDF2HTMLView(DetailView):
                     if ".ft0" in css_text:
                         new_html.append('<style type="text/css">%s</style>' % css_text)
                         break
-                    
+                '''
+                divs_len = len(divs)
+                
+                
+                styles = []
+                spans_text = []
+                for div in divs.items():
+                    css_string = div.attr('style')
+                    style=self.getDictFromCSSString(css_string)
+                    styles.append(style)
+                    spans_text.append(div.children().html())
+                
+                
+                '''
                 for k,div in enumerate(divs.items()):
                     css_string = div.attr('style')
                     style=self.getDictFromCSSString(css_string)
                     top = style['top']
                     left = style['left']
                     child_span = div.children('span')
+                    '''
+                    span_text = div.children().html()
+                    
+                    if k != divs_len - 1 and k > 0:
+                        style_next = styles[k+1]
+                        style_before = styles[k-1]
+                        span_text_next = spans_text[k+1]
+                        m1 = int(style_next['top']) - int(style['top'])
+                        m2 = int(style['top']) - int(style_before['top'])
+                        #print span_text
+                        print style['left'] ,style_next['left']
+                        #print m1, m2
+                    """
+                    1.本次div span不为空,下次div span不为空
+                    2.本次left等于下次left
+                    3.下次top减去本次top等于这次top减去下次top且都是减法的结果都是正数
+                    4.合并这次和下次的div,top为第一次记录的top,left为
+                    """
+                    if k != divs_len - 1 and k > 0  and \
+                       span_text and span_text_next and \
+                       style['left'] == style_next['left']  and \
+                       True:#m1 > 0 and m2 > 0 and m1 == m2 :
+                        print k, 'success'
+                        pass
+                    '''
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     if child_span:
                         class_text = child_span.attr("class")
@@ -227,11 +284,11 @@ class PDF2HTMLView(DetailView):
                                             <a class="%s side_link">&nbsp;</a>\
                                         </div>\
                                         <div  data-num="%d"  class="row_layer" style="position:absolute;top:%spx;left:%dpx;width:%dpx;z-index:9">\
-                                            <div class="row_layer_content">&nbsp;</div>\
+                                            <div class="%s row_layer_content">&nbsp;</div>\
                                         </div>\
                                         <div  data-num="%d" class="middle-content" style="position:absolute;top:%spx;left:%spx;z-index:1">%s</div>' 
                                         % (k, top, -self.sidebar_width, self.sidebar_width, class_text,
-                                           k, top, -self.sidebar_width, row_width, 
+                                           k, top, -self.sidebar_width, row_width, class_text, 
                                            k, top, left, div.html()))
                     else:
                         new_html.append(div.outerHtml())
