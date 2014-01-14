@@ -12,6 +12,33 @@ function closeAlertMessageBox(delay) {
 }
 
 $(function(){
+	$(document).on('change', '#upload_file', function(){
+		//var formData = new FormData($('#mark_form')[0]);
+		var formData = new FormData();
+		module = $(this).siblings(".module").val();
+		formData.append("module", module)
+		formData.append("upload_file", document.getElementById('upload_file').files[0])
+		$(this).val("");
+	    $.ajax({
+			url: "/ajax_upload/",
+			type: "post",
+			dataType: 'json',
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function(response) {
+				if(response.code == -1) {
+					alert(response.msg)
+				} else if(response.code == 1) {
+					$("#"+$("#upload_file").attr("data-inputid")).val(response.target_savepath)
+				}
+			},
+			error: function(jqXHR, textStatus, errorMessage) {
+				alert('upload image failed');return false;
+			}
+		});
+	});
+	
 	
 	$(".deletelink").click(function(){
 		var id = jQuery(this).attr("data-id");

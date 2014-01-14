@@ -2,12 +2,12 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import redirect, render
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ugettext
 from django.views.generic.edit import FormView
 
-from pdf.forms import PDFUploadForm
+from pdf.forms import PDFUploadForm, PDFCommentForm
 
-from pdf.models import pdf as pdfModel, Mark
+from pdf.models import pdf as pdfModel, Mark, Comment
 from easydata.func.function_core import check_login, elistdir, multi, page_jump
 from pdf.uploads import handle_uploaded_file
 
@@ -28,6 +28,7 @@ from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
 from easydata.constant import CONTENT_TYPE, HOME_BREAD
 from django.db import connection
+from easydata.validate import CharValidator, IntegerValidator
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
@@ -114,11 +115,17 @@ class PDFUploadView(FormView):
     def form_valid(self, form):
         
         self.User = self.request.user
-        if self.request.POST['cate_id'] and self.request.POST['cate_id'].isdigit():
-            cleaned_cate_id = self.request.POST['cate_id']
-            clear_form_session_for_custom_field(self.request.session)
+        
+        #validate cate_id
+        cate_id_validator = IntegerValidator(validate_key='cate_id',
+                                    validate_label='Category ID', 
+                                    session=self.request.session, 
+                                    post=self.request.POST)
+        cate_id_validate_result = cate_id_validator.check()
+        if cate_id_validate_result:
+            cleaned_cate_id = cate_id_validator.get_value()
         else:
-            set_form_session_for_custom_field(css={'cate_id': "has-error"}, text={'cate_id': ["Invalid category input"]}, session=self.request.session)
+            self.request.session.modified = True
             return redirect(self.request.path)
         
         if self.action == 'new':
@@ -190,6 +197,8 @@ class PDF2HTMLView(DetailView):
             newpath = new_dir+filename
             newpath_abs = os.path.join(settings.PROJECT_ROOT, newpath)
             
+            mark_count_for_this_page = Mark.objects.filter(page_num=self.kwargs['page_num']).count()
+            
             #if not settings.DEBUG and os.path.exists(newpath_abs):
             if None:
                 out = codecs.open(newpath_abs, 'r', "utf-8")
@@ -229,6 +238,19 @@ class PDF2HTMLView(DetailView):
                 
                 '''
                 for k,div in enumerate(divs.items()):
+                    anchor = '<a>&nbsp;</a>'
+                    if mark_count_for_this_page:
+                        mark_count_for_this_line = Mark.objects.filter(page_num=self.kwargs['page_num'], line_num=k).count()
+                        if mark_count_for_this_line:
+                            anchor = '<a href="javascript:;" class="mark_count" data-toggle="tooltip" data-trigger="manual" title="" data-placement="left" data-title="%d">&nbsp;</a>' % mark_count_for_this_line
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     css_string = div.attr('style')
                     style=self.getDictFromCSSString(css_string)
                     top = style['top']
@@ -262,32 +284,16 @@ class PDF2HTMLView(DetailView):
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     if child_span:
                         class_text = child_span.attr("class")
                         new_html.append(u'<div data-num="%d" class="left-side side_bar" style="position:absolute;top:%spx;left:%dpx;width:%dpx;z-index:8">\
-                                            <a class="%s side_link">&nbsp;</a>\
+                                            %s\
                                         </div>\
                                         <div  data-num="%d"  class="row_layer" style="position:absolute;top:%spx;left:%dpx;width:%dpx;z-index:9">\
                                             <div class="%s row_layer_content">&nbsp;</div>\
                                         </div>\
                                         <div  data-num="%d" class="middle-content" style="position:absolute;top:%spx;left:%spx;z-index:1">%s</div>' 
-                                        % (k, top, -self.sidebar_width, self.sidebar_width, class_text,
+                                        % (k, top, -self.sidebar_width, self.sidebar_width, anchor,
                                            k, top, -self.sidebar_width, row_width, class_text, 
                                            k, top, left, div.html()))
                     else:
@@ -303,14 +309,16 @@ class PDF2HTMLView(DetailView):
                 
             context['pdf_content'] = content
             context['breadcrumb'] = self.breadcrumb
+            context['page_jump'] = page_jump(pn=filepn, curpage=curpage, mpurl='/pdf/view/%d/' % context['pdf'].id)
             
             if not context['pdf'].filepn:
-                cursor = connection.cursor()
-                cursor.execute("UPDATE pdf_pdf SET filepn = %s WHERE id = %s", [filepn, context['pdf'].id])
-            context['page_jump'] = page_jump(pn=filepn, curpage=curpage, mpurl='/pdf/view/%d/' % context['pdf'].id)
-            #context['filepn'] = filepn
-            print filepn
-            #print pdf_pagination
+                context['pdf'].filepn = filepn
+                #cursor = connection.cursor()
+                #cursor.execute("UPDATE pdf_pdf SET filepn = %s WHERE id = %s", [filepn, context['pdf'].id])
+            context['pdf'].views += 1     
+            context['pdf'].save()
+            
+            
         else:
             pass
         
@@ -355,7 +363,7 @@ def delete_pdf(request, pk):
     messages.success(request, message_body)
     return HttpResponse('')
 
-mark_about_url = 'test_mark_about_url'
+mark_about_url = '/pdf/mark_about/%s/%s/%s/'
 
 def mark_post(request, pk, page_num, line_num):
     
@@ -370,7 +378,7 @@ def mark_post(request, pk, page_num, line_num):
                 'post': '',
                 'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (pk, page_num, line_num),
                 'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (pk, page_num, line_num),
-                'about': mark_about_url
+                'about': mark_about_url % (pk, page_num, line_num),
             },
             'action': 'post',
             'modal_form': modal_form,
@@ -401,7 +409,7 @@ def mark_view_line(request, **kwargs):
         'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
         'view_line': '',
         'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-        'about': mark_about_url
+        'about': mark_about_url % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']), 
     }
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
     marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],line_num=kwargs['line_num'],displayorder__gte=0).order_by("-date_create")
@@ -423,7 +431,7 @@ def mark_view_page(request, **kwargs):
             'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
             'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
             'view_page': '',
-            'about': mark_about_url
+            'about': mark_about_url % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
     }
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
     marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],displayorder__gte=0).order_by("-date_create")
@@ -439,3 +447,147 @@ def mark_view_page(request, **kwargs):
     
     return render(request, 'pdf/mark.html', context)
     
+def mark_about(request,  **kwargs):
+    mark_nav_href= {
+            'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+            'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+            'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
+            'about': '',
+    }
+    context = {'action': 'about', 'mark_nav_href': mark_nav_href}
+    return render(request, 'pdf/mark.html', context)
+
+
+
+class PDFCommentView(FormView):
+    template_name = "pdf/comment.html"
+    form_class = PDFCommentForm
+    
+    action = 'new'
+    comment_instance = None
+    pdf_instance = None 
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD] 
+        super(PDFCommentView, self).__init__(*args, **kwargs)
+        
+    def get(self, *args, **kwargs):
+        try:
+            print self.request.session['custom_field_error_css']
+            print self.request.session['custom_field_error_text']
+        except:
+            pass
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.path)
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
+            self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
+        
+        initial_form_session_for_custom_field(PDFCommentForm, self.request.session)
+        self.request.session.modified = True
+        
+        return super(PDFCommentView, self).get(*args, **kwargs)
+    
+    def get_initial(self):
+        initial = super(PDFCommentView, self).get_initial()
+        if self.action == 'edit':
+            initial["title"] = self.comment_instance.title
+            #PDFUploadForm.choice_html = get_choices_html(cid=self.pdf_instance.cate_id,ctype='pdf')
+            initial["content"] = self.comment_instance.content
+        else:
+            pass
+            #PDFUploadForm.choice_html = get_choices_html(cid=0,ctype='pdf')
+        return initial
+    
+    def get_context_data(self, **kwargs):
+        context = super(PDFCommentView, self).get_context_data(**kwargs)
+        if self.action == 'edit':
+            context['head_title_text'] = _('Edit Comment')
+            context['legend_text'] = _('Edit Comment')
+            context['submit_btn_text'] = _('Submit')
+            self.breadcrumb.append({'text': 'Edit Comment'})
+        else:
+            context['head_title_text'] = _('Create Comment')
+            context['legend_text'] = _('Create Comment')
+            context['submit_btn_text'] = _('Submit')
+            self.breadcrumb.append({'text': 'Create Comment'})
+        context['breadcrumb'] = self.breadcrumb
+        
+        return context
+    
+    def post(self, *args, **kwargs):
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.path)
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
+            
+        return super(PDFCommentView, self).post(*args, **kwargs)
+    
+    def get_form(self, form_class):
+        instance = form_class(**self.get_form_kwargs())
+        if self.action == 'edit':
+            pass
+            #instance.fields.pop('store_file')
+        return instance
+    
+    
+    
+    def form_valid(self, form):
+        self.User = self.request.user
+        #validate content
+        content_validator= CharValidator(validate_key='content',
+                                    validate_label='comment content',
+                                    session=self.request.session, 
+                                    post=self.request.POST,
+                                    minlength=100)
+        content_validate_result = content_validator.check()
+        #validate rate_score
+        rate_score_validator = IntegerValidator(validate_key='rate_score',
+                                    validate_label='comment rate', 
+                                    session=self.request.session, 
+                                    post=self.request.POST)
+        rate_score_validate_result = rate_score_validator.check()
+        if content_validate_result and rate_score_validate_result:
+            cleaned_content = content_validator.get_value()
+            cleaned_rate_score = rate_score_validator.get_value()
+        else:
+            self.request.session.modified = True
+            return redirect(self.request.path)
+        
+        if self.action == 'new':
+            #save comment
+            self.comment_save(form, commit=True, cleaned_content=cleaned_content, cleaned_rate_score=cleaned_rate_score, pdf=self.pdf_instance)
+            #update comment count
+            self.pdf_instance.comment += 1
+            self.pdf_instance.save()
+            message_body = _('Comment has been posted successfully')
+        else:
+            #update comment
+            self.comment_update(form, commit=True, cleaned_content=cleaned_content, cleaned_rate_score=cleaned_rate_score)
+            message_body = _('Comment has been successfully modified')
+        
+        messages.success(self.request, message_body)
+        return redirect('/pdf/view/%s/' % self.pdf_instance.id);
+        
+    def comment_save(self, form, commit=True, **kwargs):
+        comment = Comment()
+        comment.pdf_id = kwargs['pdf'].id
+        comment.uid = self.User.id
+        comment.username = self.User.username
+        comment.title = form.cleaned_data.get('title')
+        comment.content = kwargs['content']
+        comment.rate_score = kwargs['rate_score']
+        comment.date_create = now()
+        
+        if commit:
+            comment.save()
+
+    def comment_update(self, form, commit=True, **kwargs):
+        comment = self.comment_instance
+        comment.title = form.cleaned_data.get('title')
+        comment.content = kwargs['content']
+        comment.rate_score = kwargs['rate_score']
+        if commit:
+            comment.save()

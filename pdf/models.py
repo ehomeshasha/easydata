@@ -19,7 +19,7 @@ class pdf(models.Model):
     mark = C_MediumIntegerField(max_length=8, default=0)
     comment = C_MediumIntegerField(max_length=8, default=0)
     date_upload = models.DateTimeField('date uploaded')
-    displayorder = C_TinyIntegerField(max_length=1, default=0)
+    displayorder = C_TinyIntegerField(max_length=1, default=0, unsigned=False)
     isconvert = C_TinyIntegerField(max_length=1, default=0)
     
     def __unicode__(self):
@@ -34,7 +34,18 @@ class Mark(models.Model):
     username = models.CharField(max_length=30)
     content = models.TextField()
     date_create = models.DateTimeField('create date')
-    displayorder = C_TinyIntegerField(max_length=1, default=0)
+    displayorder = C_TinyIntegerField(max_length=1, default=0, unsigned=False)
     
     def __unicode__(self):
         return str(self.mid)
+    
+class Comment(models.Model):
+    id = C_AutoField(max_length=10, primary_key=True)
+    pdf_id = C_IntegerField(max_length=8, default=0)
+    uid = C_IntegerField(max_length=11, default=0)
+    username = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    rate_score = C_TinyIntegerField(max_length=2)
+    date_create = C_IntegerField(max_length=10, default=0)
+    displayorder = C_TinyIntegerField(max_length=1, default=0, unsigned=False)

@@ -7,7 +7,7 @@
 <button>submit</button>
 </form>
 -->
-
+<input name="module" type="hidden" value="mark_image" class="module" />
 <input name="upload_file" id="upload_file" type="file" style="display:none;" />
 </div>
 <style type="text/css">
@@ -27,31 +27,6 @@ tinymce.init({
     	}
          
     }
-});
-$("#upload_file").change(function(){
-	//var formData = new FormData($('#mark_form')[0]);
-	var formData = new FormData();
-	formData.append("module", "mark_image")
-	formData.append("upload_file", document.getElementById('upload_file').files[0])
-	$(this).val("");
-    $.ajax({
-		url: "/ajax_upload/",
-		type: "post",
-		dataType: 'json',
-		data: formData,
-		processData: false,
-		contentType: false,
-		success: function(response) {
-			if(response.code == -1) {
-				alert(response.msg)
-			} else if(response.code == 1) {
-				$("#"+$("#upload_file").attr("data-inputid")).val(response.target_savepath)
-			}
-		},
-		error: function(jqXHR, textStatus, errorMessage) {
-			alert('upload image failed');return false;
-		}
-	});
 });
 </script>
 {% block modal_form_javascript %}

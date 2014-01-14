@@ -6,10 +6,4 @@
     {% for error in form.custom_field_error_text.cate_id %}
         <span class="help-block">{{ error }}</span>
     {% endfor %}
-
-    {% if field.help_text %}
-    <p class="help-block">
-        {{ field.help_text|safe }}
-    </p>
-    {% endif %}
 </div>

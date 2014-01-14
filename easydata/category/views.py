@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import redirect
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ugettext
 from django.views.generic.edit import FormView
 
 from django.http.response import HttpResponse
@@ -16,6 +16,7 @@ from easydata.func.function_category import get_category_fid_choices_html,\
 from easydata.func.function_core import check_login
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
+from easydata.validate import IntegerValidator
 
 
 class CategoryPostView(FormView):
@@ -77,13 +78,18 @@ class CategoryPostView(FormView):
         if not check_login(self.request) or self.request.user.is_superuser != True:
             return redirect("/account/login/")
         else:
-            if self.request.POST['fid'] and self.request.POST['fid'].isdigit():
-                cleaned_fid = self.request.POST['fid']
-                clear_form_session_for_custom_field(self.request.session)
-            else:
-                set_form_session_for_custom_field(css={'fid': "has-error"}, text={'fid': ["Invalid father category input"]}, session=self.request.session)
-                return redirect(self.request.path)
             
+            #validate fid
+            fid_validator = IntegerValidator(validate_key='fid',
+                                        validate_label='father category id', 
+                                        session=self.request.session, 
+                                        post=self.request.POST)
+            fid_validate_result = fid_validator.check()
+            if fid_validate_result:
+                cleaned_fid = fid_validator.get_value()
+            else:
+                self.request.session.modified = True
+                return redirect(self.request.path)
             
             if self.action == 'new':
                 cate = category()

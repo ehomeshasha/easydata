@@ -27,11 +27,6 @@ class PDFUploadForm(forms.Form):
         required=True
     )
     
-    def __init__(self, *args, **kwargs):
-        super (PDFUploadForm, self).__init__(*args,**kwargs)
-            
-    
-    
     def clean_store_file(self):
         store_file = self.cleaned_data.get('store_file')
         if store_file._size > 150*1024*1024:
@@ -44,3 +39,16 @@ class PDFUploadForm(forms.Form):
             raise forms.ValidationError(_("invalid file suffix, must be .pdf"))
 
 
+class PDFCommentForm(forms.Form):
+    
+    title = forms.CharField(
+        label=_("Title"),
+        min_length=2,
+        max_length=100,
+        widget=forms.TextInput(),
+        required=True
+    )
+    
+    
+    
+    

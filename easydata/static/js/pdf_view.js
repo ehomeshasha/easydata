@@ -1,6 +1,26 @@
 $(function(){
-	$(".left-side").click(function(){
-		
+	$(".mark_count").tooltip('show');
+	$(".tooltip").mouseenter(function(){
+		$(this).animate({opacity: "1.0"}, 100);
+	});
+	$(".tooltip").mouseleave(function(){
+		$(this).animate({opacity: "0.4"}, 100);
+	});
+	$(".tooltip").click(function(){
+		var linenum = $(this).parent().attr("data-num");
+		var page = $(".pn_input").val();
+		var pdf_id = $("#pdf_id").val();
+		var url = "/pdf/mark_view_line/"+pdf_id+'/'+page+'/'+linenum+'/'
+		if (url.indexOf('#') == 0) {
+			$('#response_modal').modal('open');
+		} else {
+			$.get(url, function(data) {
+	                        $('#response_modal').html(data);
+	                        $('#response_modal').modal();
+			}).success(function() {
+				$('#response_modal input:text:visible:first').focus();
+			});
+		}
 	});
 	$(".row_layer").mouseenter(function(){
 		data_num = $(this).attr("data-num")

@@ -23,21 +23,11 @@
 				<span>{% trans "Comment:" %}{{ pdf.comment }}</span>
 			</span>
 		</div>
-		<div class="col-md-4">
-			<div class="btn-group btn-group-xs pdf_btn">
+		<div class="col-md-4" style="padding-right:4px;">
+			<div class="btn-group btn-group-xs pdf_btn pull-right">
 			  	<a href="/pdf/download/{{ pdf.id }}/" class="btn btn-default">{% trans "download" %}</a>
-			  	<a href="#" class="btn btn-default">{% trans "mark" %}</a>
-			  	<a href="/pdf/download/{{ pdf.id }}/" class="btn btn-default">{% trans "comment" %}</a>
-			  	<a href="/pdf/edit/{{ pdf.id }}/" class="btn btn-default">{% trans "edit" %}</a>
-				<div class="btn-group btn-group-xs">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						help<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu dropdown-menu-xs">
-						<li><a href="#">How to mark</a></li>
-						<li><a href="#">test</a></li>
-					</ul>
-				</div>
+			  	<a href="{{ pdf.filepath }}" class="btn btn-default">{% trans "view pdf" %}</a>
+			  	<a href="/pdf/comment/{{ pdf.id }}/" class="btn btn-default">{% trans "comment" %}</a>
 			</div>
 					
 		</div>
@@ -66,6 +56,10 @@
 .row_layer a {margin-right:10px;}
 .mark_link {text-decoration:underline;}
 .pdf_page_jump {position:absolute;top:-40px;;right:35px;}
+.pdf_wrapper .tooltip {
+	opacity: 0.4;cursor:pointer;
+}
+.left-side a {color:#f5f5f5;}
 </style>
 {% else %}
 not exists

@@ -1,3 +1,5 @@
+.xw0 {font-weight:normal;}
+.xw1 {font-weight:bold;}
 .mtn {margin-top:5px;}
 .mtm {margin-top:10px;}
 .mtw {margin-top:20px;}
@@ -27,7 +29,7 @@
 .opacity-grey {
 	background: rgba(0, 0, 0, 0.1) !important;  
     background: #000;  
-    filter: alpha(opacity=10);  
+    filter: alpha(opacity=10);
 }
 .pn_input_area {width: 75px;border: 0;background: #f5f5f5;padding: 0 5px;cursor:default;}
 .pn_input_area:hover, .pn_input_area:active, .pn_input_area:focus {background:none;}
@@ -38,3 +40,7 @@
 }
 .pn_input {height:22px;padding:0 4px;text-align:right;}
 .maxpn {display: block;padding: 2px 0;}
+
+.mark_block {border-bottom:1px dashed #999;}
+.mark_content {min-height:60px;}
+.mark_content p {margin:0;}
