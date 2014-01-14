@@ -31,6 +31,11 @@
     background: #000;  
     filter: alpha(opacity=10);
 }
+
+
+.header {height:0px;margin-bottom:10px;margin-top:71px;}
+
+
 .pn_input_area {width: 75px;border: 0;background: #f5f5f5;padding: 0 5px;cursor:default;}
 .pn_input_area:hover, .pn_input_area:active, .pn_input_area:focus {background:none;}
 /*remove background color*/

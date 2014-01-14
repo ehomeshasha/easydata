@@ -7,33 +7,57 @@
 {% block body_class %}home{% endblock %}
 
 {% block banner %}
-    <h1>{% trans "Welcome to Pinax" %}</h1>
+    <h1>{% trans "Welcome to EASYDATA" %}</h1>
     <p>
         {% blocktrans %}
-        <b>Pinax</b> is a <a href="http://djangoproject.com/">Django</a>
-        project intended to provide a starting point for websites. By
-        integrating numerous reusable Django apps to take care of the
-        things that many sites have in common, it lets you focus on what
-        makes your site different.
+        <b>Easydata</b> is a study website for Machine-learning and Data-mining which is writtern in Python ,based on <a href="http://djangoproject.com/">Django</a> Project. 
+        That means, it is very easy to get testing dataset by python API or even by using spider iframe like Scrapy. 
+        After that, We could analyze them with some third-party python packages, NLTK for instance. And 
+        I'll do my best to display and explain many classical algorithm about this BigData field.
+        Additionally, there are many useful tools integrate on this site to help you learning. 
         {% endblocktrans %}
     </p>
     
-    <h2>About Account Project</h2>
+    <h2>About PDF online</h2>
     <p>
         {% blocktrans %}
-        In addition to what is provided by the "zero" project, this project
-        provides thorough integration with django-user-accounts, adding
-        comprehensive account management functionality. It is a foundation
-        suitable for most sites that have user accounts.
+        By using PDF2HTML tools, You could read the PDF file on-line with hight performance and excellent user experience.
+        And one of it's killing feature is that everyman could make his/her bookmarker on any line that he/she want to place.
+        Additionally, a comment function is also built in this part.You could visit <a href="/pdf/view/3/">here</a> for detail.    
         {% endblocktrans %}
     </p>
     
-    {% if user.is_authenticated %}
-        {% url "what_next" as what_next_url %}
-        <p class="what_next">{% blocktrans %}Wondering <a href="{{ what_next_url }}" class="btn btn-primary large">What Next</a>?{% endblocktrans %}</p>
-    {% else %}
-        {% url "account_login" as login_url %}
-        {% url "account_signup" as signup_url %}
-        <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
-    {% endif %}
+    
 {% endblock %}
+
+
+{% block content %}
+<!-- 
+<div class="row">
+    <div class="col-lg-4">
+    {% block column-1 %}
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra dui. Aenean blandit faucibus tincidunt. Phasellus fermentum elit ut erat varius cursus. Nunc posuere mauris sit amet enim congue quis elementum lectus tincidunt. Cras vel tempus metus.</p>
+        <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    {% endblock %}
+    </div>
+    <div class="col-lg-4">
+    {% block column-2 %}
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra dui. Aenean blandit faucibus tincidunt. Phasellus fermentum elit ut erat varius cursus. Nunc posuere mauris sit amet enim congue quis elementum lectus tincidunt. Cras vel tempus metus.</p>
+        <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    {% endblock %}
+    </div>
+    <div class="col-lg-4">
+    {% block column-3 %}
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra dui. Aenean blandit faucibus tincidunt. Phasellus fermentum elit ut erat varius cursus. Nunc posuere mauris sit amet enim congue quis elementum lectus tincidunt. Cras vel tempus metus.</p>
+        <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    {% endblock %}
+    </div>
+</div>
+-->
+{% endblock %}
+
+{% block messages %}{% endblock%}
+{% block breadcrumb %}{% endblock%}

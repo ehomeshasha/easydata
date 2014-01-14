@@ -57,6 +57,12 @@ def recursive_cate_id_format(cate_id, ids, category_dict_pk):
     ids.append(fid)
     recursive_cate_id_format(fid, ids, category_dict_pk)
     
+@register.filter()   
+def get_active_class(path, path_start):
+    if path.startswith(path_start):
+        return 'active'
+    return ''
+
 
 @register.assignment_tag
 def get_auth_author_admin(authorid, uid, is_superuser):

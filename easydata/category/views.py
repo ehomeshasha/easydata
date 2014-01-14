@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import redirect
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormView
 
 from django.http.response import HttpResponse
@@ -9,14 +9,13 @@ from django.http.response import HttpResponse
 from django.views.generic.base import TemplateView
 from easydata.category.models import category
 from easydata.category.forms import CategoryPostForm
-from easydata.func.function_session import initial_form_session_for_custom_field,\
-    clear_form_session_for_custom_field, set_form_session_for_custom_field
+from easydata.func.function_session import initial_form_session_for_custom_field
 from easydata.func.function_category import get_category_fid_choices_html,\
-    get_category_list_html, get_categorytree
+    get_category_list_html
 from easydata.func.function_core import check_login
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
-from easydata.validate import IntegerValidator
+from easydata.validator import IntegerValidator
 
 
 class CategoryPostView(FormView):

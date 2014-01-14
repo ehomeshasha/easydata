@@ -2,13 +2,13 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import redirect, render
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormView
 
 from pdf.forms import PDFUploadForm, PDFCommentForm
 
 from pdf.models import pdf as pdfModel, Mark, Comment
-from easydata.func.function_core import check_login, elistdir, multi, page_jump
+from easydata.func.function_core import check_login, elistdir, page_jump
 from pdf.uploads import handle_uploaded_file
 
 import os
@@ -20,15 +20,14 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
 from django.utils.timezone import now
-from easydata.func.function_session import initial_form_session_for_custom_field,\
-    clear_form_session_for_custom_field, set_form_session_for_custom_field
+from easydata.func.function_session import initial_form_session_for_custom_field
 from easydata.func.function_category import get_choices_html, get_category_dict_pk
 from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
 from easydata.constant import CONTENT_TYPE, HOME_BREAD
 from django.db import connection
-from easydata.validate import CharValidator, IntegerValidator
+from easydata.validator import CharValidator, IntegerValidator
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:

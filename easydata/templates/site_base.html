@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% load metron_tags %}
 {% load i18n %}
-
+{% load custom_tags %}
 
 {% block style_base %}
 	<!-- 
@@ -20,6 +20,27 @@
 
 {% block extra_head_base %}
     {% block extra_head %}{% endblock %}
+{% endblock %}
+
+
+
+{% block topbar %}
+    <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="fa fa-bar"></span>
+            <span class="fa fa-bar"></span>
+            <span class="fa fa-bar"></span>
+        </button>
+        {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+    </div>
+    <div class="collapse navbar-collapse">
+    	{% block nav %}
+        <ul class="nav navbar-nav">
+        	<li class="{{ request.path | get_active_class:"/pdf" }}"><a href="/pdf/list/">PDF</a></li>
+        </ul>
+        {% endblock %}
+        {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+    </div>
 {% endblock %}
 
 
