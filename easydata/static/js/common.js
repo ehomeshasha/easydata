@@ -62,7 +62,7 @@ $(function(){
 			});
 		}
 	});
-	$(".pn_form").submit(function(){
+	$(document).on('click', '.pn_form', function(){
 		var pn_input = $(this).find(".pn_input").val();
 		var pn = parseInt($(this).find(".maxpn").html().substr(1));
 		if(!digit_regex.test(pn_input) || parseInt(pn_input) < 1 || parseInt(pn_input) > pn) {
