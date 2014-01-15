@@ -20,14 +20,16 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
 from django.utils.timezone import now
-from easydata.func.function_session import initial_form_session_for_custom_field
+from easydata.func.function_session import initial_form_session_for_custom_field,\
+    clear_form_session
 from easydata.func.function_category import get_choices_html, get_category_dict_pk
 from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
 from easydata.constant import CONTENT_TYPE, HOME_BREAD
 from django.db import connection
-from easydata.validator import CharValidator, IntegerValidator
+from easydata.validator import CharValidator, IntegerValidator, Validator,\
+    save_cleaned_data
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
@@ -61,7 +63,7 @@ class PDFUploadView(FormView):
         
     def get(self, *args, **kwargs):
         if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.path)
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
@@ -98,7 +100,7 @@ class PDFUploadView(FormView):
     
     def post(self, *args, **kwargs):
         if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.path)
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
@@ -125,7 +127,7 @@ class PDFUploadView(FormView):
             cleaned_cate_id = cate_id_validator.get_value()
         else:
             self.request.session.modified = True
-            return redirect(self.request.path)
+            return redirect(self.request.get_full_path())
         
         if self.action == 'new':
             #upload pdf to server
@@ -171,8 +173,14 @@ class PDF2HTMLView(DetailView):
     sidebar_width = 35 
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},]
+        
         super(PDF2HTMLView, self).__init__(*args, **kwargs)
+    
+    def get(self, *args, **kwargs):
+        if 'ajax' in self.request.GET and self.request.GET['ajax'] == '1':
+            self.template_name = "pdf/pdf_content.html" 
+        return super(PDF2HTMLView, self).get(*args, **kwargs)    
     
     def get_context_data(self, **kwargs):
         context = super(PDF2HTMLView, self).get_context_data(**kwargs)
@@ -198,8 +206,8 @@ class PDF2HTMLView(DetailView):
             
             mark_count_for_this_page = Mark.objects.filter(page_num=self.kwargs['page_num']).count()
             
-            #if not settings.DEBUG and os.path.exists(newpath_abs):
-            if None:
+            if not settings.DEBUG and os.path.exists(newpath_abs):
+            #if None:
                 out = codecs.open(newpath_abs, 'r', "utf-8")
                 content = out.read()
                 out.close()
@@ -212,7 +220,7 @@ class PDF2HTMLView(DetailView):
                 background_img.attr("src", image_dir+src) 
                 height = int(background_img.attr("height"))
                 width = int(background_img.attr("width"))
-                new_html = pq('<div class="pdf_wrapper" style="width:%dpx;height:%dpx;margin:0 auto;position:relative;"></div>' % (width,height))
+                new_html = pq('<div id="pdf_wrapper" class="pdf_wrapper" style="width:%dpx;height:%dpx;margin:0 auto;position:relative;"></div>' % (width,height))
                 csss = ori_html('style')
                 divs = ori_html('div')
                 row_width = width+self.sidebar_width*2
@@ -222,20 +230,7 @@ class PDF2HTMLView(DetailView):
                     if ".ft0" in css_text:
                         new_html.append('<style type="text/css">%s</style>' % css_text)
                         break
-                '''
-                divs_len = len(divs)
-                
-                
-                styles = []
-                spans_text = []
-                for div in divs.items():
-                    css_string = div.attr('style')
-                    style=self.getDictFromCSSString(css_string)
-                    styles.append(style)
-                    spans_text.append(div.children().html())
-                
-                
-                '''
+               
                 for k,div in enumerate(divs.items()):
                     anchor = '<a>&nbsp;</a>'
                     if mark_count_for_this_page:
@@ -243,45 +238,11 @@ class PDF2HTMLView(DetailView):
                         if mark_count_for_this_line:
                             anchor = '<a href="javascript:;" class="mark_count" data-toggle="tooltip" data-trigger="manual" title="" data-placement="left" data-title="%d">&nbsp;</a>' % mark_count_for_this_line
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     css_string = div.attr('style')
                     style=self.getDictFromCSSString(css_string)
                     top = style['top']
                     left = style['left']
                     child_span = div.children('span')
-                    '''
-                    span_text = div.children().html()
-                    
-                    if k != divs_len - 1 and k > 0:
-                        style_next = styles[k+1]
-                        style_before = styles[k-1]
-                        span_text_next = spans_text[k+1]
-                        m1 = int(style_next['top']) - int(style['top'])
-                        m2 = int(style['top']) - int(style_before['top'])
-                        #print span_text
-                        print style['left'] ,style_next['left']
-                        #print m1, m2
-                    """
-                    1.本次div span不为空,下次div span不为空
-                    2.本次left等于下次left
-                    3.下次top减去本次top等于这次top减去下次top且都是减法的结果都是正数
-                    4.合并这次和下次的div,top为第一次记录的top,left为
-                    """
-                    if k != divs_len - 1 and k > 0  and \
-                       span_text and span_text_next and \
-                       style['left'] == style_next['left']  and \
-                       True:#m1 > 0 and m2 > 0 and m1 == m2 :
-                        print k, 'success'
-                        pass
-                    '''
-                    
-                    
                     
                     if child_span:
                         class_text = child_span.attr("class")
@@ -304,11 +265,11 @@ class PDF2HTMLView(DetailView):
                 out.write(content)
                 out.close()
             
-            
+            print context
                 
             context['pdf_content'] = content
             context['breadcrumb'] = self.breadcrumb
-            context['page_jump'] = page_jump(pn=filepn, curpage=curpage, mpurl='/pdf/view/%d/' % context['pdf'].id)
+            context['page_jump'] = page_jump(pn=filepn, curpage=curpage)
             
             if not context['pdf'].filepn:
                 context['pdf'].filepn = filepn
@@ -316,6 +277,11 @@ class PDF2HTMLView(DetailView):
                 #cursor.execute("UPDATE pdf_pdf SET filepn = %s WHERE id = %s", [filepn, context['pdf'].id])
             context['pdf'].views += 1     
             context['pdf'].save()
+            
+            #comment_box
+            comment_list = Comment.objects.filter(pdf_id=context['pdf'].id, displayorder__gte=0).order_by("date_create")
+            context['comment_list'] = comment_list
+            
             
             
         else:
@@ -362,23 +328,26 @@ def delete_pdf(request, pk):
     messages.success(request, message_body)
     return HttpResponse('')
 
-mark_about_url = '/pdf/mark_about/%s/%s/%s/'
+
+
+def get_mark_nav_href(pk, page_num, line_num):
+    return {
+        'post': '/pdf/mark_post/%s/%s/%s/' % (pk, page_num, line_num),
+        'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (pk, page_num, line_num),
+        'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (pk, page_num, line_num),
+        'about': '/pdf/mark_about/%s/%s/%s/' % (pk, page_num, line_num),
+    }
 
 def mark_post(request, pk, page_num, line_num):
     
     if request.method == 'GET':
         modal_form = {
-            'action': request.path,
+            'action': request.get_full_path(),
             'btn_primary': _("Submit"),
             'btn_default': _("Close"),
         }
         context = {
-            'mark_nav_href': {
-                'post': '',
-                'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (pk, page_num, line_num),
-                'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (pk, page_num, line_num),
-                'about': mark_about_url % (pk, page_num, line_num),
-            },
+            'mark_nav_href': get_mark_nav_href(pk, page_num, line_num),
             'action': 'post',
             'modal_form': modal_form,
         }
@@ -404,12 +373,6 @@ def mark_post(request, pk, page_num, line_num):
 
 def mark_view_line(request, **kwargs):
     
-    mark_nav_href = {
-        'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-        'view_line': '',
-        'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-        'about': mark_about_url % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']), 
-    }
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
     marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],line_num=kwargs['line_num'],displayorder__gte=0).order_by("-date_create")
        
@@ -417,7 +380,7 @@ def mark_view_line(request, **kwargs):
         'action': 'view',
         'view_type': 'line',
         'marklist': marklist,
-        'mark_nav_href': mark_nav_href,
+        'mark_nav_href': get_mark_nav_href(kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
         'pdf': pdf,
         'kwargs': kwargs,
     }
@@ -426,12 +389,7 @@ def mark_view_line(request, **kwargs):
     
 
 def mark_view_page(request, **kwargs):
-    mark_nav_href= {
-            'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-            'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-            'view_page': '',
-            'about': mark_about_url % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-    }
+    
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
     marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],displayorder__gte=0).order_by("-date_create")
     
@@ -439,7 +397,7 @@ def mark_view_page(request, **kwargs):
         'action': 'view',
         'view_type': 'page',
         'marklist': marklist,
-        'mark_nav_href': mark_nav_href,
+        'mark_nav_href': get_mark_nav_href(kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
         'pdf': pdf,
         'kwargs': kwargs,
     }
@@ -447,15 +405,16 @@ def mark_view_page(request, **kwargs):
     return render(request, 'pdf/mark.html', context)
     
 def mark_about(request,  **kwargs):
-    mark_nav_href= {
-            'post': '/pdf/mark_post/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-            'view_line': '/pdf/mark_view_line/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-            'view_page': '/pdf/mark_view_page/%s/%s/%s/' % (kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
-            'about': '',
+    
+    context = {
+        'action': 'about', 
+        'mark_nav_href': get_mark_nav_href(kwargs['pk'], kwargs['page_num'], kwargs['line_num']),
     }
-    context = {'action': 'about', 'mark_nav_href': mark_nav_href}
     return render(request, 'pdf/mark.html', context)
 
+def mark_delete(request, pk):
+    Mark.objects.get(pk=pk).delete()
+    return HttpResponse('')
 
 
 class PDFCommentView(FormView):
@@ -471,17 +430,12 @@ class PDFCommentView(FormView):
         super(PDFCommentView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
-        try:
-            print self.request.session['custom_field_error_css']
-            print self.request.session['custom_field_error_text']
-        except:
-            pass
         if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.path)
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
-            self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
+        #self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
         
         initial_form_session_for_custom_field(PDFCommentForm, self.request.session)
         self.request.session.modified = True
@@ -492,11 +446,13 @@ class PDFCommentView(FormView):
         initial = super(PDFCommentView, self).get_initial()
         if self.action == 'edit':
             initial["title"] = self.comment_instance.title
-            #PDFUploadForm.choice_html = get_choices_html(cid=self.pdf_instance.cate_id,ctype='pdf')
-            initial["content"] = self.comment_instance.content
+            
         else:
-            pass
-            #PDFUploadForm.choice_html = get_choices_html(cid=0,ctype='pdf')
+            try:
+                initial["title"] = self.request.session['custom_field_value']['title']
+            except:
+                pass
+            
         return initial
     
     def get_context_data(self, **kwargs):
@@ -517,11 +473,13 @@ class PDFCommentView(FormView):
     
     def post(self, *args, **kwargs):
         if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.path)
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
-            
+        
+        self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
+        
         return super(PDFCommentView, self).post(*args, **kwargs)
     
     def get_form(self, form_class):
@@ -535,6 +493,7 @@ class PDFCommentView(FormView):
     
     def form_valid(self, form):
         self.User = self.request.user
+        save_cleaned_data(form.cleaned_data, self.request.session)
         #validate content
         content_validator= CharValidator(validate_key='content',
                                     validate_label='comment content',
@@ -548,12 +507,18 @@ class PDFCommentView(FormView):
                                     session=self.request.session, 
                                     post=self.request.POST)
         rate_score_validate_result = rate_score_validator.check()
+        #validate success
         if content_validate_result and rate_score_validate_result:
             cleaned_content = content_validator.get_value()
             cleaned_rate_score = rate_score_validator.get_value()
+            clear_form_session(self.request.session)
+        #validate failed
         else:
             self.request.session.modified = True
-            return redirect(self.request.path)
+            return redirect(self.request.get_full_path())
+        
+        
+        
         
         if self.action == 'new':
             #save comment
@@ -568,7 +533,10 @@ class PDFCommentView(FormView):
             message_body = _('Comment has been successfully modified')
         
         messages.success(self.request, message_body)
-        return redirect('/pdf/view/%s/' % self.pdf_instance.id);
+        if 'next' in self.request.GET and self.request.GET['next']:
+            return redirect(self.request.GET['next']);
+        else:    
+            return redirect('/pdf/view/%s/' % self.pdf_instance.id);
         
     def comment_save(self, form, commit=True, **kwargs):
         comment = Comment()
@@ -576,8 +544,8 @@ class PDFCommentView(FormView):
         comment.uid = self.User.id
         comment.username = self.User.username
         comment.title = form.cleaned_data.get('title')
-        comment.content = kwargs['content']
-        comment.rate_score = kwargs['rate_score']
+        comment.content = kwargs['cleaned_content']
+        comment.rate_score = kwargs['cleaned_rate_score']
         comment.date_create = now()
         
         if commit:

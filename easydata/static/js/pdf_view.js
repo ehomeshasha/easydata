@@ -1,12 +1,11 @@
 $(function(){
-	$(".mark_count").tooltip('show');
-	$(".tooltip").mouseenter(function(){
+	$(document).on('mouseenter', '.tooltip', function(){
 		$(this).animate({opacity: "1.0"}, 100);
 	});
-	$(".tooltip").mouseleave(function(){
+	$(document).on('mouseleave', '.tooltip', function(){
 		$(this).animate({opacity: "0.4"}, 100);
 	});
-	$(".tooltip").click(function(){
+	$(document).on('click', '.tooltip', function(){
 		var linenum = $(this).parent().attr("data-num");
 		var page = $(".pn_input").val();
 		var pdf_id = $("#pdf_id").val();
@@ -22,13 +21,13 @@ $(function(){
 			});
 		}
 	});
-	$(".row_layer").mouseenter(function(){
+	$(document).on('mouseenter', '.row_layer', function(){
 		data_num = $(this).attr("data-num")
 		var mark_html = '<a href="javascript:;" data-num='+data_num+' class="text-danger mark_link" style="">MARK</a>'
 		$(this).addClass("opacity-grey");
 		$(this).find(".row_layer_content").html(mark_html)
 	});
-	$(".row_layer").mouseleave(function(){
+	$(document).on('mouseleave', '.row_layer', function(){
 		$(this).removeClass("opacity-grey");
 		$(this).find(".row_layer_content").html("&nbsp;")
 	});
@@ -67,5 +66,20 @@ $(function(){
 				$("#response_modal").html(data);
 			}
 		});
+	});
+	$(document).on('click', '.delete_mark', function(){
+		var url = jQuery(this).attr("data-href");
+		var confirm_msg = 'Are you sure to delete this mark?'
+		if(confirm(confirm_msg)) {
+			jQuery.ajax({
+				url: url,
+	            type:'GET',
+	            complete :function(){},
+	            error: function() { alert('Please try again');},
+	            success: function() {
+	            	$(".mark_nav li[class*='active'] a").trigger('click');
+	            }
+			});
+		}
 	});
 });

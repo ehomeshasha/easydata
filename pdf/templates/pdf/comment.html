@@ -8,38 +8,38 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-7">
             <form id="comment_post_form" method="post" action="" autocapitalize="off">
             <fieldset>
                 <legend>{{ legend_text }}</legend>
                 {% csrf_token %}
                 {{ form|bootstrap }}
                 <div class="form-group {{ form.custom_field_error_css.rate_score }}">
-					<label class="control-label  " for="id_content">{% trans "Rating" %}</label>
+					<label class="control-label  " for="id_content">{% trans "How about this book" %}</label>
 	                <div class=" ">
-	                	<input type="radio" value="1" name="rate_score" class="rate_score_input" id="rating_label_1" />
+	                	<input type="radio" value="1" name="rate_score" class="rate_score_input" id="rating_label_1" {% if form.custom_field_value.rate_score == '1' %}checked="checked"{% endif %} />
 	                	<label for="rating_label_1" class="mrw">
 	                		<span class="glyphicon glyphicon-star"></span>
 	                	</label>
-	                	<input type="radio" value="2" name="rate_score" class="rate_score_input" id="rating_label_2" />
+	                	<input type="radio" value="2" name="rate_score" class="rate_score_input" id="rating_label_2" {% if form.custom_field_value.rate_score == '2' %}checked="checked"{% endif %} />
 	                	<label for="rating_label_2" class="mrw">
 	                		<span class="glyphicon glyphicon-star"></span>
 	                		<span class="glyphicon glyphicon-star"></span>
 	                	</label>
-	                	<input type="radio" value="3" name="rate_score" class="rate_score_input" id="rating_label_3" />
+	                	<input type="radio" value="3" name="rate_score" class="rate_score_input" id="rating_label_3" {% if form.custom_field_value.rate_score == '3' %}checked="checked"{% endif %} />
 	                	<label for="rating_label_3" class="mrw">
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
 	                	</label>
-	                	<input type="radio" value="4" name="rate_score" class="rate_score_input" id="rating_label_4" />
+	                	<input type="radio" value="4" name="rate_score" class="rate_score_input" id="rating_label_4" {% if form.custom_field_value.rate_score == '4' %}checked="checked"{% endif %} />
 	                	<label for="rating_label_4" class="mrw">
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
 	                	</label>
-	                	<input type="radio" value="5" name="rate_score" class="rate_score_input" id="rating_label_5" />
+	                	<input type="radio" value="5" name="rate_score" class="rate_score_input" id="rating_label_5" {% if form.custom_field_value.rate_score == '5' %}checked="checked"{% endif %} />
 	                	<label for="rating_label_5" class="mrw">
 		                	<span class="glyphicon glyphicon-star"></span>
 		                	<span class="glyphicon glyphicon-star"></span>
@@ -55,7 +55,7 @@
                 <div class="form-group {{ form.custom_field_error_css.content }}">
 					<label class="control-label  " for="id_content">{% trans "Content" %}</label>
 	                <div class=" ">
-	            		<textarea id="comment_editor" name="content"></textarea>
+	            		<textarea id="comment_editor" name="content">{{ form.custom_field_value.content }}</textarea>
 						<input name="module" type="hidden" value="comment_image" class="module" />
 						<input name="upload_file" id="upload_file" type="file" style="display:none;" />
 			        </div>
@@ -82,10 +82,11 @@ $(document).ready(function() {
 tinymce.init({
 	height : 300,
 	menubar:false,
-    statusbar: false,
+    statusbar: true,
     selector: '#comment_editor',
-    plugins: ["image", "emoticons"],
-    toolbar: " emoticons bold italic image | undo redo ",
+    tools: "inserttable",
+    plugins: ["image", "emoticons", "textcolor", "link", "table"],
+    toolbar: " emoticons | bold italic underline forecolor backcolor | link image table | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
     		$("#upload_file").attr("data-inputid", field_name)

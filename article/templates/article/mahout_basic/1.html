@@ -1,0 +1,96 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+
+{% load i18n %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+{% blocktrans %}
+<div>
+	<h1>Mahout 二次开发</h1>
+	<h3>Mahout资料</h3>
+	<ul>
+		<li>官方网站: <a href="http://mahout.apache.org/"></a></li>
+		<li>Mahout Core API: <a href="https://builds.apache.org/job/Mahout-Quality/javadoc/index.html?overview-summary.html">https://builds.apache.org/job/Mahout-Quality/javadoc/index.html?overview-summary.html</a></li>
+		<li>Mahout Math API: <a href="https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html?overview-summary.html">https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html?overview-summary.html</a>
+		<li>PDF: <a href="http://127.0.0.1:8000/pdf/view/2/">http://127.0.0.1:8000/pdf/view/2/</a></li>
+	</ul>
+	
+	<h3>技术背景</h3>
+	<p>
+		在接触Mahout之前一直是做网站的Web开发，因此主要是对HTML/CSS/Javascript/JQuery/PHP/MySQL这些方面比较精通, 
+		没有用Java进行过项目的开发所以走过一些弯路, 因此在下面我总结了一些Mahout入门需要的知识点。
+	</p>
+	
+	<h3>开发环境</h3>
+	<div>
+		<h5>操作系统</h5>
+		<p>
+		CentOS 6.4桌面版, 之所以用这个是因为之前我在学习Hadoop的时候要进行安装部署，用windows实在是太不方便了，所以果断弃用windows改用CentOS桌面系统。
+		在使用过程中发现linux很多软件比如Zend Studio, Eclipse, Chrome, FileZilla等都有linux的版本, 即使有些软件没有linux版本也会有网页版，比如
+		QQ, Evernote, 因此就在工作中一直沿用至今(包括家里的个人电脑也被我替换成了CentOS系统)。
+		在这里我建议大家如果想以后从事服务器方面的开发，从现在就开始使用CentOS的桌面版吧。
+		</p>
+		<h5>Java 1.6.0</h5>
+		<h5>hadoop 1.2.1</h5>
+		<h5>maven 3.1.0</h5>
+	</div>
+	
+	<h3>有助于Mahout入门的一些知识点</h3>
+
+	<ul>
+		<li>
+			<h4>Mahout是一个maven的项目, 因此你需要对于maven有一些基本的了解。下面我只列出Mahout二次开发需要掌握的一些内容</h4>
+			<div>
+				<ol>
+					<li>下载<a href="http://mirrors.cnnic.cn/apache/mahout/0.8/">Mahout的源码包</a>, 
+					由于我们要进行二次开发，所以请下载mahout-distribution-0.8-src.tar.gz</li>
+					<li>解压后cd到解压目录，然后执行命令 <code>mvn install -Dmaven.test.skip=true</code>, 
+					如果你是第一次接触maven(我接触mahout的情况就是如此), 请一定记得加上后面的<code>-Dmaven.skip.test=true</code>
+					要知道如果不加上将会运行mahout里所有的UnitTest，那安装时间就海了去了
+					</li>
+					<li>安装过程中将会自动下载依赖的jar包，因此需要等待几分钟来完成</li>
+					<li>以后我们进行Mahout的二次开发修改代码后都要执行<code>mvn install -Dmaven.test.skip=true</code>来确保代码被重新编译和打包</li>
+				</ol>
+			</div>
+			
+			<h4>安装完成后的操作</h4>
+			<div>
+				<ul>
+					<li>
+						<p>Mahout安装完后需要一些设置，下面是我自己电脑里面的/etc/profile添加的内容</p>
+						<span class="text-danger">/etc/profile</span><br />
+						<pre>
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0
+export HADOOP_HOME=/home/hadoop-user/hadoop-1.2.1
+export HADOOP_CONF_DIR=$HADOOP_HOME/conf
+export MAHOUT_HOME=/home/hadoop-user/workspace/mahout-distribution-0.8
+export M2_HOME=/home/hadoop-user/apache-maven-3.1.0
+export M2=$M2_HOME/bin
+export MONGODB_HOME=/home/hadoop-user/mongodb
+export COBERTURA_HOME=/home/hadoop-user/cobertura-2.0.3
+export PYTHON_HOME=/usr/local/python2.7
+export GAE_HOME=/usr/local/google_appengine
+export TOPKNOWBLOG=/home/hadoop-user/workspace/topknowblog
+export PATH=$JAVA_HOME/bin:$MAHOUT_HOME/bin:$M2:$HADOOP_HOME/bin:$COBERTURA_HOME:$MONGODB_HOME/bin:$GAE_HOME:$PYTHON_HOME/bin:$PATH
+export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$MAHOUT_HOME/lib:HADOOP_HOME/lib
+export PYTHONPATH=$TOPKNOWBLOG:$TOPKNOWBLOG/autoload:$TOPKNOWBLOG/dbindexer:$TOPKNOWBLOG/django:$TOPKNOWBLOG/djangoappengine:$TOPKNOWBLOG/djangotoolbox
+						</pre>
+					</li>
+					<li>
+						<p>导入项目到Eclipse</p>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+{% endblocktrans %}
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript">
+</script>
+{% endblock %}

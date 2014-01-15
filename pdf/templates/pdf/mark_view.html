@@ -15,6 +15,9 @@
 					<span class="text-muted xw1">{{ mark.username }}</span>
 				</span>
 				<span class="mark_createdate text-muted mrm">{{ mark.date_create |date:"Y-m-d H:i:s" }}</span>
+				{% if request.user.is_superuser %}
+				<a href="javascript:;" class="delete_mark" data-href="/pdf/mark_delete/{{ mark.mid }}/">[{% trans "delete" %}]</a>
+				{% endif %}
 			</div>
 			<div class="mark_content mbm">
 			{{ mark.content | safe }}

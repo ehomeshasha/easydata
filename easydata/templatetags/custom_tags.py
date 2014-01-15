@@ -38,15 +38,18 @@ def hsize(size):
 
 @register.filter()
 def cate_id_format(cate_id, category_dict_pk):
-    ids = [cate_id]
-    recursive_cate_id_format(cate_id, ids, category_dict_pk)
-    ids.reverse()
-    html = "<ul>"
-    for v in ids:
-        html += "<li>%s</li><ul>" % category_dict_pk[v]['name']
-        
-    html += "</ul>"*(len(ids)+1)
-    return html
+    try:
+        ids = [cate_id]
+        recursive_cate_id_format(cate_id, ids, category_dict_pk)
+        ids.reverse()
+        html = "<ul>"
+        for v in ids:
+            html += "<li>%s</li><ul>" % category_dict_pk[v]['name']
+            
+        html += "</ul>"*(len(ids)+1)
+        return html
+    except:
+        return ''
     
 def recursive_cate_id_format(cate_id, ids, category_dict_pk):
     if cate_id == 0:
@@ -57,16 +60,16 @@ def recursive_cate_id_format(cate_id, ids, category_dict_pk):
     ids.append(fid)
     recursive_cate_id_format(fid, ids, category_dict_pk)
     
-@register.filter()   
-def get_active_class(path, path_start):
-    if path.startswith(path_start):
-        return 'active'
-    return ''
-
 
 @register.assignment_tag
 def get_auth_author_admin(authorid, uid, is_superuser):
     if uid and (is_superuser or authorid == id):
         return True
     return False
+
+@register.filter()   
+def get_active_class(path, path_start):
+    if path.startswith(path_start):
+        return 'active'
+    return ''
 

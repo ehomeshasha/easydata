@@ -17,9 +17,8 @@ class PDFUploadForm(forms.Form):
     
     description = forms.CharField(
         label=_("Description"),
-        max_length=100,
         widget=forms.Textarea(),
-        required=False
+        required=True
     )
     store_file = forms.FileField(
         label=_("PDF file"),

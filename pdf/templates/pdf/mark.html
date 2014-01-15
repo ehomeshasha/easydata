@@ -8,10 +8,10 @@
 .modal-body {padding:0px 15px 0px 15px;}
 </style>
 <ul class="nav nav-pills mark_nav">
-	<li class="{% if mark_nav_href.post == '' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_post" href="javascript:;" data-href="{{ mark_nav_href.post }}">{% trans "post mark" %}</a></li>
-	<li class="{% if mark_nav_href.view_line == '' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_view_line" href="javascript:;" data-href="{{ mark_nav_href.view_line }}" href="#">{% trans "mark on this line" %}</a></li>
-	<li class="{% if mark_nav_href.view_page == '' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_view_page" href="javascript:;" data-href="{{ mark_nav_href.view_page }}">{% trans "mark on this page" %}</a></li>
-	<li class="{% if mark_nav_href.about == '' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_about" href="javascript:;" data-href="{{ mark_nav_href.about }}">{% trans "about mark" %}</a></li>
+	<li class="{% if action == 'post' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_post" href="javascript:;" data-href="{{ mark_nav_href.post }}" data-type="post">{% trans "post mark" %}</a></li>
+	<li class="{% if action == 'view' and view_type == 'line' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_view_line" href="javascript:;" data-href="{{ mark_nav_href.view_line }}" data-type="line">{% trans "mark on this line" %}</a></li>
+	<li class="{% if action == 'view' and view_type == 'page' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_view_page" href="javascript:;" data-href="{{ mark_nav_href.view_page }}" data-type="page">{% trans "mark on this page" %}</a></li>
+	<li class="{% if action == 'about' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_about" href="javascript:;" data-href="{{ mark_nav_href.about }}" data-type="about">{% trans "about mark" %}</a></li>
 </ul>
 {% endblock %}
 

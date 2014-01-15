@@ -110,7 +110,7 @@ def multi(num, perpage, curpage, mpurl, maxpages = 0, page = 10, autogoto = Fals
             multipage = ''
     return multipage
 
-def page_jump(pn,curpage,mpurl):
+def page_jump(pn,curpage):
     prev_class = next_class = ''
     prev_num = curpage - 1
     next_num = curpage + 1
@@ -121,12 +121,11 @@ def page_jump(pn,curpage,mpurl):
     
         
     
-    html = '<form class="pn_form" method="post" data-mpurl="%s">\
-                <a href="javascript:;" class="prev_btn btn btn-default btn-xs %s" data-num="%d">&lsaquo;</a>\
-                <span class="btn btn-default pn_input_area btn-xs">\
-                    <input type="text" class="pn_input col-md-6" value="%d" />\
-                    <span class="maxpn">/%d</span>\
-                </span>\
-                <a href="javascript:;" class="next_btn btn btn-default btn-xs %s" data-num="%d">&rsaquo;</a>\
-            </form>' % (mpurl, prev_class, prev_num, curpage, pn, next_class, next_num)
+    html = '<a href="javascript:;" class="prev_btn btn btn-default btn-xs %s" data-num="%d">&lsaquo;</a>\
+            <span class="btn btn-default pn_input_area btn-xs">\
+                <input type="text" class="pn_input col-md-6" value="%d" />\
+                <span class="maxpn">/%d</span>\
+            </span>\
+            <a href="javascript:;" class="next_btn btn btn-default btn-xs %s" data-num="%d">&rsaquo;</a>\
+            ' % (prev_class, prev_num, curpage, pn, next_class, next_num)
     return html

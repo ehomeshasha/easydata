@@ -1,0 +1,10 @@
+<div class="page_jump pdf_page_jump">
+	<form class="pn_form" method="post" data-mpurl="/pdf/view/{{ pdf.id }}/">
+	{% csrf_token %}
+	{{ page_jump|safe }}
+	</form>
+</div>
+{{ pdf_content|safe }}
+<script type="text/javascript">
+$(".mark_count").tooltip('show');
+</script>

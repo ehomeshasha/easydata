@@ -1,8 +1,15 @@
 from easydata.func.function_session import set_form_session_for_custom_field,\
-    clear_form_session_for_custom_field
+    clear_form_session_for_custom_field, save_value_session_for_custom_field
 from django.utils.translation import ugettext as _
 
+def save_cleaned_data(cleaned_data, session):
+    for key,value in cleaned_data.items():
+        save_value_session_for_custom_field(key=key, value=value, session=session)
+
+
 class Validator():
+    
+    value = None
     
     def __init__(self, validate_key, session, post, validate_label=None):
         self.validate_key = validate_key
@@ -12,12 +19,14 @@ class Validator():
             self.validate_label = validate_label
         else:
             self.validate_label = validate_key
+        self.save_value()
         
     def check(self):
         if self.validate_key not in self.post or not self.post[self.validate_key]:
             self.error_text = [_("%s cannot be empty" % self.validate_label)]
             self.do_invalid()
             return False
+        
         self.validate_value = self.post[self.validate_key]
         self.do_valid()
         return True
@@ -34,6 +43,13 @@ class Validator():
     def do_invalid(self, css='has-error'):
         set_form_session_for_custom_field(key=self.validate_key, text=self.error_text, session=self.session)
     
+    def save_value(self):
+        try:
+            self.value = self.post[self.validate_key]
+            save_value_session_for_custom_field(key=self.validate_key, value=self.value, session=self.session)
+        except KeyError:
+            self.value = None
+            save_value_session_for_custom_field(key=self.validate_key, value=self.value, session=self.session)
     
 class CharValidator(Validator):
     
@@ -47,6 +63,7 @@ class CharValidator(Validator):
             self.validate_label = validate_label
         else:
             self.validate_label = validate_key
+        self.save_value()
     
     def check(self):
         if self.validate_key not in self.post or not self.post[self.validate_key]:

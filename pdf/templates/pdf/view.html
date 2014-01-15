@@ -27,7 +27,7 @@
 			<div class="btn-group btn-group-xs pdf_btn pull-right">
 			  	<a href="/pdf/download/{{ pdf.id }}/" class="btn btn-default">{% trans "download" %}</a>
 			  	<a href="{{ pdf.filepath }}" class="btn btn-default">{% trans "view pdf" %}</a>
-			  	<a href="/pdf/comment/{{ pdf.id }}/" class="btn btn-default">{% trans "comment" %}</a>
+			  	<a href="/pdf/comment/{{ pdf.id }}/?next={{ request.path }}" class="btn btn-default">{% trans "comment" %}</a>
 			</div>
 					
 		</div>
@@ -35,21 +35,54 @@
 	<div class="row">
 		<div class="col-md-9">
 			<h3 class="pdf_title">{{ pdf.title }}</h3>
-			<div class="pdf_desc">{{ pdf.description }}</div>
+			<pre class="pdf_desc no-border">{{ pdf.description }}</pre>
 		</div>
 		<div class="col-md-3" style="">
 					
 		</div>
 	</div>
 </div>
-<div class="pdf_body" style="position:relative;">
-	<div class="page_jump pdf_page_jump">
-		{{ page_jump|safe }}
+<div class="pdf_body">
+	<div class="pdf_content" style="position:relative;">
+		{% include 'pdf/pdf_content.html' %}
 	</div>
-	{{ pdf_content|safe }}
 </div>
+<div>
+	{% for comment in comment_list %}
+	<div class="row comment_box">
+		<div class="col-lg-2">
+			<div class="account_area">
+				<div class="account_name">
+					{{ comment.username }}
+				</div>
+				<div class="avatar">
+					<img src="{{ comment.user.avatar }}" width="" height="" class="img-responsive img-thumbnail" /> 
+				</div>
+				<div class="count_area">
+					<div>Mark: {{ comment.user.mark|default:"0" }}</div>
+					<div>Comment: {{ comment.user.comment|default:"0" }}</div>
+				</div>			
+			</div>
+		</div>
+		<div class="col-lg-10">
+			<div class="comment_area">
+				<div class="comment_header">
+					<span class="comment_postdate">{{ comment.date_create }}</span>
+					<div class="comment_content">{{ comment.content|safe }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+
+
+
+
+
 <style type="text/css">
-.pdf_body {width:100%;background:#f5f5f5;}
+.pdf_body {width:100%;background:#f5f5f5;padding-bottom:30px;margin-bottom:30px;}
 .pdf_brief {background:#f5f5f5;padding:10px 45px 20px 45px;}
 .side_bar a{display:block;}
 .row_layer_content {padding-left:45px;}
@@ -60,7 +93,21 @@
 	opacity: 0.4;cursor:pointer;
 }
 .left-side a {color:#f5f5f5;}
+.comment_box {min-height:100px;padding:20px 30px;border-bottom:1px solid #ccc;}
+.comment_box p {margin-bottom:0;}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
 {% else %}
 not exists
 {% endif %}

@@ -39,7 +39,6 @@ $(function(){
 		});
 	});
 	
-	
 	$(".deletelink").click(function(){
 		var id = jQuery(this).attr("data-id");
 		var type = jQuery(this).attr("data-type");
@@ -52,9 +51,7 @@ $(function(){
 				url: url,
 	            type:'GET',
 	            complete :function(){},
-	            dataType: 'json', 
 	            error: function() { alert('Please try again');},
-	            
 	            success: function() {
 	            	if(is_empty) {
 	            		location.href = location.href;
@@ -77,11 +74,12 @@ $(function(){
 		location.href = url
 		return false;
 	});
-	$(".prev_btn, .next_btn").click(function(){
+	
+	$(document).on('click', '.prev_btn, .next_btn', function(){
 		var data_mpurl = $(this).parent().attr("data-mpurl");
-		var num = $(this).attr("data-num")
-		var url = data_mpurl + num + '/'
-		location.href = url
+		var num = $(this).attr("data-num");
+		var url = data_mpurl + num + '/?ajax=1';
+		$(".pdf_content").load(url);
 	});
 	$('[data-toggle="modal"]').bind('click',function(e) {
 		
