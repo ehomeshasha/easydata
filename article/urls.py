@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     #url(r"^hadoop_deployment/(?P<pk>\d+)/$", hadoop_deployment, name="hadoop_deployment"),
     #url(r"^mahout_basic/(?P<pk>\d+)/$", mahout_basic, name="mahout_basic"),
     url(r"^view/(?P<article_name>\w+)/(?P<chapter_name>\w+)/$", article_view, name="article_view"),
+    url(r"^view/(?P<article_name>\w+)/$", article_view, name="article_view"),
     url(r"^list/(?P<article_name>\w+)/$", chapter_list, name="chapter_list"),
     url(r"^$", article_list, name="article_list"),
     

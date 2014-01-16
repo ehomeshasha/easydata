@@ -19,19 +19,31 @@ def get_title_name(dirname, name=''):
     
 def article_view(request, **kwargs):
     article_name = kwargs['article_name']
-    chapter_name = kwargs['chapter_name']
     article_verbose_name = _(article_name.replace("_", " "))
-    chapter_verbose_name = _(chapter_name.replace("_", " "))
-    context.update({
-        'head_title_text': chapter_verbose_name,
-        'breadcrumb': [
-            HOME_BREAD,
-            {'text': 'Article', 'href': '/article/'}, 
-            {'text': article_verbose_name, 'href': '/article/list/%s/' % article_name},
-            {'text': chapter_verbose_name},
-        ],
-    })
-    return render(request, 'article/%s/%s.html' % (article_name, chapter_name), context)
+    if not 'chapter_name' in kwargs:
+        context.update({
+            'head_title_text': article_verbose_name,
+            'breadcrumb': [
+                HOME_BREAD,
+                {'text': 'Article', 'href': '/article/'}, 
+                {'text': article_verbose_name},
+            ],
+        })
+        return render(request, 'article/%s.html' % article_name, context)
+    else: 
+        
+        chapter_name = kwargs['chapter_name']
+        chapter_verbose_name = _(chapter_name.replace("_", " "))
+        context.update({
+            'head_title_text': chapter_verbose_name,
+            'breadcrumb': [
+                HOME_BREAD,
+                {'text': 'Article', 'href': '/article/'}, 
+                {'text': article_verbose_name, 'href': '/article/list/%s/' % article_name},
+                {'text': chapter_verbose_name},
+            ],
+        })
+        return render(request, 'article/%s/%s.html' % (article_name, chapter_name), context)
 
 
 
