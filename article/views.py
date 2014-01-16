@@ -27,7 +27,7 @@ def article_view(request, **kwargs):
         'breadcrumb': [
             HOME_BREAD,
             {'text': 'Article', 'href': '/article/'}, 
-            {'text': article_verbose_name, 'href': '/article/%s/' % article_name},
+            {'text': article_verbose_name, 'href': '/article/list/%s/' % article_name},
             {'text': chapter_verbose_name},
         ],
     })
