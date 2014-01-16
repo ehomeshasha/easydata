@@ -1,0 +1,59 @@
+{% extends "site_base.html" %}
+
+
+{% load i18n %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+
+<div>
+	<h1>{% trans "Article List" %}</h1>
+	<ul>
+		{% for article in article_list %}
+		<li><a href="/article/list/{{ article.dirname }}/">{{ article.article_name }}</a></li>
+		{% endfor %}
+	</ul>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript">
+</script>
+{% endblock %}
+
+
