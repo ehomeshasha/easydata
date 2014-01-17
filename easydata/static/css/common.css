@@ -1,3 +1,9 @@
+.syntaxhighlighter .no-background {background:none !important;}
+.syntaxhighlighter {padding:5px 0;}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+	padding-left:0.5em !important;
+}
+
 .xw0 {font-weight:normal;}
 .xw1 {font-weight:bold;}
 .mtn {margin-top:5px;}

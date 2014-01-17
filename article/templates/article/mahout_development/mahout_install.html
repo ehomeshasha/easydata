@@ -1,7 +1,7 @@
 {% extends "site_base.html" %}
-{% load i18n %}
 
 {% load i18n %}
+{% load custom_tags %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
@@ -39,18 +39,10 @@
 		<li>安装maven</li>
 		<li>
 			<p>安装Hadoop并配置好环境变量, 下面是我自己在/etc/profile添加的一些环境变量设置</p>
-		<span class="text-danger">/etc/profile</span><br />
-<pre>
-export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0
-export HADOOP_HOME=/home/hadoop-user/hadoop-1.2.1
-export HADOOP_CONF_DIR=$HADOOP_HOME/conf
-export MAHOUT_HOME=/home/hadoop-user/workspace/mahout-distribution-0.8
-export M2_HOME=/home/hadoop-user/apache-maven-3.1.0
-export M2=$M2_HOME/bin
-export PYTHON_HOME=/usr/local/python2.7
-export PATH=$JAVA_HOME/bin:$MAHOUT_HOME/bin:$M2:$HADOOP_HOME/bin:$PYTHON_HOME/bin:$PATH
-export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$MAHOUT_HOME/lib:HADOOP_HOME/lib
-</pre>
+{% endblocktrans %}
+{% get_code 1 %}
+{% blocktrans %}
+
 		</li>
 		
 		
@@ -64,7 +56,8 @@ export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$MAHOUT_HOME/lib
 		<li>以后我们进行Mahout的二次开发修改代码后都要执行<code>mvn install -Dmaven.test.skip=true</code>来确保代码被重新编译和打包</li>
 		<li>
 			<p>将Mahout导入Eclipse(须先安装插件<a href="http://eclipse.org/m2e/download/">m2eclipse</a>), 这里我附上一张我导入项目后的截图</p>
-			<img src="" />
+			<span class="text-danger">mahout_project.jpg</span><br />
+			<img src="/media_files/article_image/mahout_development/mahout_install/mahout_project.jpg" width="329" height="198" />
 		</li>
 	</ol>
 </div>
@@ -74,11 +67,13 @@ export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$MAHOUT_HOME/lib
 	</div>
 </div>
 
-
+<style type="text/css">
+.syntaxhighlighter{margin-top:0 !important;}</style>
 {% endblocktrans %}
 {% endblock %}
 
 {% block extra_script %}
 <script type="text/javascript">
+SyntaxHighlighter.all();
 </script>
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "confirm_box.html" %}
+
+{% load i18n %}
+
+{% block modal_title %}
+<style type="text/css">
+.modal-header {border:0;padding-bottom:5px;}
+.modal-body {padding:0px 15px 0px 15px;}
+</style>
+<ul class="nav nav-pills mark_nav">
+	<li class="{% if action == 'post' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_post" href="javascript:;" data-href="{{ mark_nav_href.post }}" data-type="post">{% trans "post mark" %}</a></li>
+	<li class="{% if action == 'view' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_view_line" href="javascript:;" data-href="{{ mark_nav_href.view_line }}" data-type="line">{% trans "mark on this line" %}</a></li>
+	<li class="{% if action == 'about' %}active{% endif %}"><a class="mark_nav_anchor mark_nav_anchor_about" href="javascript:;" data-href="{{ mark_nav_href.about }}" data-type="about">{% trans "about mark" %}</a></li>
+</ul>
+{% endblock %}
+
+{% block modal_body %}
+{% if action == "post" %}
+{% include "code/mark_post.html" %}
+{% elif action == "view"%}
+{% include "code/mark_view.html" %}
+{% elif action == "about"%}
+{% include "code/mark_about.html" %}
+{% endif %}
+{% endblock %}

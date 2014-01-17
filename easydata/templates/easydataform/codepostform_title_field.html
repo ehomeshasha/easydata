@@ -1,0 +1,9 @@
+<div class="form-group {{ form.custom_field_error_css.cate_id }}">
+    <label for="id_category">Category:</label>
+    <select id="id_category" name="cate_id" class="form-control">
+		{{ form.choice_html|safe }}    	
+    </select>
+    {% for error in form.custom_field_error_text.cate_id %}
+        <span class="help-block">{{ error }}</span>
+    {% endfor %}
+</div>

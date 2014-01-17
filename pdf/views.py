@@ -62,13 +62,14 @@ class PDFUploadView(FormView):
         super(PDFUploadView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
+        
         if not check_login(self.request):
             return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
         
-        initial_form_session_for_custom_field(PDFUploadForm, self.request.session)
+        
         
         return super(PDFUploadView, self).get(*args, **kwargs)
     
@@ -76,10 +77,8 @@ class PDFUploadView(FormView):
         initial = super(PDFUploadView, self).get_initial()
         if self.action == 'edit':
             initial["title"] = self.pdf_instance.title
-            PDFUploadForm.choice_html = get_choices_html(cid=self.pdf_instance.cate_id,ctype='pdf')
             initial["description"] = self.pdf_instance.description
-        else:
-            PDFUploadForm.choice_html = get_choices_html(cid=0,ctype='pdf')
+        
         return initial
     
     def get_context_data(self, **kwargs):
@@ -89,12 +88,16 @@ class PDFUploadView(FormView):
             context['legend_text'] = _('PDF Edit')
             context['submit_btn_text'] = _('Submit')
             self.breadcrumb.append({'text': 'Edit'})
+            context['form'].choice_html = get_choices_html(cid=self.pdf_instance.cate_id,ctype='pdf')
         else:
             context['head_title_text'] = _('PDF Upload')
             context['legend_text'] = _('PDF Upload')
             context['submit_btn_text'] = _('Upload')
             self.breadcrumb.append({'text': 'Upload'})
+            context['form'].choice_html = get_choices_html(cid=0,ctype='pdf')
+        
         context['breadcrumb'] = self.breadcrumb
+        initial_form_session_for_custom_field(context['form'], self.request.session)
         
         return context
     
@@ -125,6 +128,7 @@ class PDFUploadView(FormView):
         cate_id_validate_result = cate_id_validator.check()
         if cate_id_validate_result:
             cleaned_cate_id = cate_id_validator.get_value()
+            clear_form_session(self.request.session)
         else:
             self.request.session.modified = True
             return redirect(self.request.get_full_path())
@@ -374,7 +378,7 @@ def mark_post(request, pk, page_num, line_num):
 def mark_view_line(request, **kwargs):
     
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
-    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],line_num=kwargs['line_num'],displayorder__gte=0).order_by("-date_create")
+    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],line_num=kwargs['line_num'],displayorder__gte=0).order_by("date_create")
        
     context = {
         'action': 'view',
@@ -391,7 +395,7 @@ def mark_view_line(request, **kwargs):
 def mark_view_page(request, **kwargs):
     
     pdf = pdfModel.objects.get(pk=kwargs['pk'])
-    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],displayorder__gte=0).order_by("-date_create")
+    marklist = Mark.objects.filter(pdf_id=kwargs['pk'],page_num=kwargs['page_num'],displayorder__gte=0).order_by("date_create")
     
     context = {
         'action': 'view',
@@ -437,7 +441,6 @@ class PDFCommentView(FormView):
             self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
         #self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
         
-        initial_form_session_for_custom_field(PDFCommentForm, self.request.session)
         self.request.session.modified = True
         
         return super(PDFCommentView, self).get(*args, **kwargs)
@@ -467,7 +470,9 @@ class PDFCommentView(FormView):
             context['legend_text'] = _('Create Comment')
             context['submit_btn_text'] = _('Submit')
             self.breadcrumb.append({'text': 'Create Comment'})
+            
         context['breadcrumb'] = self.breadcrumb
+        initial_form_session_for_custom_field(context['form'], self.request.session)
         
         return context
     

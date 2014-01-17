@@ -18,6 +18,7 @@ urlpatterns = patterns("",
     url(r'category/', include("easydata.category.urls")),
     url(r'ajax_upload/$', uploads.ajax_upload),
     url(r'^article/', include("article.urls")),
+    url(r'^code/', include("code.urls")),
     #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
 )
 

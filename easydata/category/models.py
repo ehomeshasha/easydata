@@ -7,6 +7,6 @@ class category(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=255)
     status = C_TinyIntegerField(max_length=1, default=0)
-    displayorder = C_SmallIntegerField(max_length=5, default=0)
+    displayorder = C_SmallIntegerField(max_length=5, default=0, unsigned=False)
     ctype = models.CharField(max_length=20)
     

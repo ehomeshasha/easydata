@@ -1,0 +1,48 @@
+<div>
+<textarea id="mark_editor" name="content"></textarea>
+<!-- <form id="mark_form" action="/ajax_upload/" target="form_target" method="post" enctype="multipart/form-data" style="">
+{% csrf_token %}
+<input name="module" type="hidden" value="mark_image" />
+<input name="upload_file" id="upload_file" type="file" />
+<button>submit</button>
+</form>
+-->
+<input name="module" type="hidden" value="code_mark_image" class="module" />
+<input name="upload_file" id="upload_file" type="file" style="display:none;" />
+</div>
+<style type="text/css">
+.modal-body .mce-btn button {padding:2px 4px;}
+</style>
+<script type="text/javascript">
+tinymce.init({
+	menubar:false,
+    statusbar: false,
+    selector: '#mark_editor',
+    plugins: ["image", "emoticons", "link"],
+    toolbar: " emoticons bold italic | link image | undo redo ",
+    file_browser_callback: function(field_name, url, type, win) { 
+    	if(type == 'image') {
+    		$("#upload_file").attr("data-inputid", field_name)
+    		$('#upload_file').click();
+    	}
+         
+    }
+});
+</script>
+{% block modal_form_javascript %}
+<script type="text/javascript">
+$("#modal_form").submit(function(){
+	var fd = $(this).serialize();
+	$.ajax({
+		url: "{{ request.get_full_path }}",
+		type: "POST",
+		data: fd,
+		error: function(){alert('try it again');return false;},
+		success: function(data) {
+			$(".mark_nav_anchor_view_line").trigger('click');
+		}
+	});
+	return false;
+});
+</script>
+{% endblock %}

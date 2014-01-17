@@ -7,7 +7,7 @@
 <button>submit</button>
 </form>
 -->
-<input name="module" type="hidden" value="mark_image" class="module" />
+<input name="module" type="hidden" value="pdf_mark_image" class="module" />
 <input name="upload_file" id="upload_file" type="file" style="display:none;" />
 </div>
 <style type="text/css">
@@ -34,7 +34,7 @@ tinymce.init({
 $("#modal_form").submit(function(){
 	var fd = $(this).serialize();
 	$.ajax({
-		url: "{{ request.path }}",
+		url: "{{ request.get_full_path }}",
 		type: "POST",
 		data: fd,
 		error: function(){alert('try it again');return false;},

@@ -28,10 +28,9 @@ class CategoryPostForm(forms.Form):
         initial='learning',
     )
     
-    displayorder = forms.CharField(
+    displayorder = forms.IntegerField(
         label=_("Display Order"),
-        min_length=1,
-        max_length=3,
+        max_value = 99999,
         widget=forms.TextInput(),
         required=True,
         initial=0,
@@ -45,9 +44,9 @@ class CategoryPostForm(forms.Form):
         initial=1,
     )
     
-    def clean_displayorder(self):
-        if not self.cleaned_data['displayorder'].isdigit():
-            raise forms.ValidationError(_("Digit only for displayorder"))
-        return self.cleaned_data['displayorder']
+    #def clean_displayorder(self):
+    #    if not self.cleaned_data['displayorder'].isdigit():
+    #        raise forms.ValidationError(_("Digit only for displayorder"))
+    #    return self.cleaned_data['displayorder']
         
         

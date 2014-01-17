@@ -1,5 +1,7 @@
 from django import template
 from django.utils.timezone import now
+from code.models import Code
+from code.syntaxhighlighter import Syntaxhighlighter
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
@@ -73,3 +75,19 @@ def get_active_class(path, path_start):
         return 'active'
     return ''
 
+@register.assignment_tag
+def check_appname(path, app_name):
+    if path.startswith(app_name):
+        return True
+    return False
+
+@register.simple_tag
+def get_code(pk):
+    code = Code.objects.get(pk=pk)
+    hl = Syntaxhighlighter(code)
+    return template.defaultfilters.safe(hl.get_code())
+    #config_class = hl.get_config_class()
+    #code_html = "<pre id='syntax%d' class='%s'>" % config_class
+    #code_html = code.code
+    #code_html += "</pre>"
+    

@@ -9,7 +9,8 @@ from django.http.response import HttpResponse
 from django.views.generic.base import TemplateView
 from easydata.category.models import category
 from easydata.category.forms import CategoryPostForm
-from easydata.func.function_session import initial_form_session_for_custom_field
+from easydata.func.function_session import initial_form_session_for_custom_field,\
+    clear_form_session
 from easydata.func.function_category import get_category_fid_choices_html,\
     get_category_list_html
 from easydata.func.function_core import check_login
@@ -32,11 +33,11 @@ class CategoryPostView(FormView):
     
     def get(self, *args, **kwargs):
         if not check_login(self.request) or self.request.user.is_superuser != True:
-            return redirect("/account/login/")
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.category_instance = category.objects.get(pk=self.kwargs['pk'])
-        initial_form_session_for_custom_field(CategoryPostForm, self.request.session)
+        
         
         return super(CategoryPostView, self).get(*args, **kwargs)
     
@@ -65,9 +66,13 @@ class CategoryPostView(FormView):
             self.breadcrumb.append({'text': 'Create'})
         
         context['breadcrumb'] = self.breadcrumb
+        initial_form_session_for_custom_field(context['form'], self.request.session)
+        
         return context
     
     def post(self, *args, **kwargs):
+        if not check_login(self.request) or self.request.user.is_superuser != True:
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.category_instance = category.objects.get(pk=self.kwargs['pk'])
@@ -86,6 +91,7 @@ class CategoryPostView(FormView):
             fid_validate_result = fid_validator.check()
             if fid_validate_result:
                 cleaned_fid = fid_validator.get_value()
+                clear_form_session(self.request.session)
             else:
                 self.request.session.modified = True
                 return redirect(self.request.path)
