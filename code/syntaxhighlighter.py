@@ -6,7 +6,7 @@ class Syntaxhighlighter():
         self.code = code
         
     def get_class_configuration(self):
-        class_text = 'brush: %s;toolbar: true;' % self.code.brush
+        class_text = 'brush: %s;toolbar: true;class-name: \'%s\'' % (self.code.brush, self.code.max_height)
         if self.code.gutter == 0:
             class_text += 'gutter: false;'
         elif self.code.gutter == 1:
@@ -75,7 +75,7 @@ class Syntaxhighlighter():
                 mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper">\
                                 <div class="tooltip fade right in" style="top: 0px; left: -2px; display: block;">\
                                     <div class="tooltip-arrow"></div>\
-                                    <div class="tooltip-inner"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view" title="">%s</a></div>\
+                                    <div class="tooltip-inner"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view" title=""><span class="xw1 text-danger">%d</span> marks</a></div>\
                                 </div>\
                             </div>'\
                 % (self.code.id, k, self.code.id, k, len(v))

@@ -56,7 +56,7 @@ class CodePostForm(forms.Form):
         ),
         widget=forms.Select(),
         required=True,
-        initial='',
+        initial='plain',
     )
     
     gutter = forms.ChoiceField(
@@ -97,6 +97,21 @@ class CodePostForm(forms.Form):
         widget=forms.Select(),
         required=True,
         initial=0,
+    )
+    
+    max_height = forms.ChoiceField(
+        label=_("Set max height value(unit: px) here, left 0 to ignore this setting"),
+        choices=(
+            ('no_max_height','No max height'),
+            ('max_height100',100),
+            ('max_height150',150),
+            ('max_height200',200),
+            ('max_height250',250),
+            ('max_height300',300),
+            ('max_height500',500),
+        ),
+        widget=forms.Select(),
+        initial='',
     )
     
     def clean_highlight(self):

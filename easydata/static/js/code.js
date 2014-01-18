@@ -18,6 +18,7 @@ SyntaxHighlighter.complete = function(callback){
 
 
 $(function(){
+	var regex_line_num = /number(\d+)/
 	$(document).on("mouseover", ".line", function(){
 		var class_string = $(this).attr("class");
 		if(class_string.indexOf("highlighted") != -1) {
@@ -25,7 +26,8 @@ $(function(){
 		} else {
 			$(this).addClass("highlighted");
 		}
-		var linenum = class_string.substr(class_string.indexOf("number") + 6, 1);
+		
+		var linenum = class_string.match(regex_line_num)[1]
 		var code_info = $(this).parent().parent().parent().parent().parent().parent().parent().parent().next()
 		var mark_links = code_info.find(".code_info_wrapper .mark_link")
 		var mark_link = code_info.find(".code_info_wrapper[line_num='"+linenum+"'] .mark_link")
@@ -69,9 +71,14 @@ $(function(){
 			var code_body = $(this).parent().parent();
 			var code_id = code_body.attr("code_id");
 			
+			var max_height = code_body.attr("max_height");
+			if(max_height != "0") {
+				$(this).css("max-height", max_height+"px");
+			}
+			
+			
 			code_info.css("height", $(this).css("height"));
 			var lines = $(this).find(".line");
-			//lines.append("<div class='mark_link_wrapper'><a href='javascript:;' class='mark_link'><img src='' style='width:10px;height:10px;' /></a></div>")
 			for(i=1;i<=lines.length;i++) {
 				code_info.append("<div class='code_info_wrapper' code_id='"+code_id+"' line_num='"+i+"'><a href='javascript:;' class='mark_link hidden'>mark</a></div>");
 				var line_height = $(this).find(".number"+i).css("height");
@@ -83,21 +90,8 @@ $(function(){
 			
 			
 		});
-		//var code_id = $(".toolbar").parent().parent().prev().attr("data-id");
-		//$(".code_info").css("height", $(".code_body").css("height"));
-		
-		//$(".line").append('<a href="javascript:;" code_id='+code_id+' class="mark_link_text mark_link hidden" style="">MARK</a>');
-		/*
-		$(".mark_wrapper").each(function(){
-			var line_num = $(this).attr("line_num");
-			$(".number"+line_num).append($(this).html());
-		});*/
 	});
 	
-	
-	//$(document).on('dblclick', '.syntaxhighlighter', function(){
-	//	$(".mark_link, .mark_view").css("display", "none");
-	//});
 	
 	$(document).on('click', '.mark_nav_anchor', function(){
 		url = $(this).attr("data-href");

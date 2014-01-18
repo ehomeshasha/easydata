@@ -59,6 +59,7 @@ class CodePostView(FormView):
             initial["collapse"] = self.code_instance.collapse
             initial["highlight"] = self.code_instance.highlight
             initial["url_clickable"] = self.code_instance.url_clickable
+            initial["max_height"] = self.code_instance.max_height
             
         return initial
     
@@ -139,6 +140,7 @@ class CodePostView(FormView):
         code.collapse = form.cleaned_data.get("collapse")
         code.highlight = form.cleaned_data.get("highlight")
         code.url_clickable = form.cleaned_data.get("url_clickable")
+        code.max_height = form.cleaned_data.get("max_height")
         
         code.date_create = now()
         code.date_update = now()
@@ -159,6 +161,7 @@ class CodePostView(FormView):
         code.collapse = form.cleaned_data.get("collapse")
         code.highlight = form.cleaned_data.get("highlight")
         code.url_clickable = form.cleaned_data.get("url_clickable")
+        code.max_height = form.cleaned_data.get("max_height")
         
         code.date_update = now()
         if commit:

@@ -98,4 +98,8 @@ $(function(){
 		}
 	});
 	
+	$('#response_modal').on('hidden.bs.modal', function (e) {
+		location.href = location.href;
+	})
+	
 });

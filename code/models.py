@@ -16,6 +16,7 @@ class Code(models.Model):
     collapse = C_TinyIntegerField(max_length=1, default=0)
     highlight = models.CharField(max_length=255)
     url_clickable = C_TinyIntegerField(max_length=1, default=0)
+    max_height = models.CharField(max_length=20)
     displayorder = C_SmallIntegerField(max_length=5, default=0)
     mark = C_MediumIntegerField(max_length=8, default=0)
     date_create = models.DateTimeField('date created')
