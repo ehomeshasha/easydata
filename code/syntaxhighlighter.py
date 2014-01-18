@@ -1,3 +1,5 @@
+from code.models import Mark
+from django.utils.html import strip_tags
 class Syntaxhighlighter():
     
     def __init__(self, code):
@@ -27,8 +29,9 @@ class Syntaxhighlighter():
         return class_text    
         
     def get_code(self):
-        html = '<a href="javascript:;" title="%s" class="code_title text-danger" data-id="%d">%s</a>\
-                <pre class="%s">%s</pre>' % (
+        html = '<div style="margin-right:30px;">\
+                    <a href="javascript:;" title="%s" class="code_title text-danger" data-id="%d">%s</a>\
+                    <pre class="%s">%s</pre></div>' % (
                     self.code.description, 
                     self.code.id,
                     self.code.title, 
@@ -37,3 +40,24 @@ class Syntaxhighlighter():
                 ) 
         return html
         
+        
+    def get_mark(self):
+        marks = Mark.objects.filter(code_id=self.code.id, displayorder__gte=0).order_by("line_num")
+        mark_dict = {}
+        for mark in marks:
+            if not mark.line_num in mark_dict.keys():
+                mark_dict[mark.line_num] = [mark]
+            else:
+                mark_dict[mark.line_num].append(mark)
+        
+        mark_html = ''
+        for k,v in mark_dict.items():
+            if len(v) == 1 and len(strip_tags(v[0].content)) < 20:
+                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="single_mark mark_view">%s</a></div>' \
+                % (self.code.id, k, self.code.id, k, strip_tags(v[0].content))
+            else:
+                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view">%d</a></div>' \
+                % (self.code.id, k, self.code.id, k, len(v))
+        
+        
+        return mark_html

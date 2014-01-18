@@ -83,11 +83,11 @@ def check_appname(path, app_name):
 
 @register.simple_tag
 def get_code(pk):
-    code = Code.objects.get(pk=pk)
+    try:
+        code = Code.objects.get(pk=pk)
+    except Code.DoesNotExist:
+        return '<code>Code (ID:%d) does not exist, please check</code>' % pk
     hl = Syntaxhighlighter(code)
     return template.defaultfilters.safe(hl.get_code())
-    #config_class = hl.get_config_class()
-    #code_html = "<pre id='syntax%d' class='%s'>" % config_class
-    #code_html = code.code
-    #code_html += "</pre>"
+    
     
