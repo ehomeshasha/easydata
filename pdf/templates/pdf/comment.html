@@ -86,7 +86,7 @@ tinymce.init({
     selector: '#comment_editor',
     tools: "inserttable",
     plugins: ["image", "emoticons", "textcolor", "link", "table"],
-    toolbar: " emoticons | bold italic underline forecolor backcolor | link image table | alignleft aligncenter alignright | undo redo ",
+    toolbar: " emoticons | fontsizeselect bold italic underline forecolor backcolor | link image table | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
     		$("#upload_file").attr("data-inputid", field_name)

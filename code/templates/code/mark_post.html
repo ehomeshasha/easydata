@@ -18,8 +18,9 @@ tinymce.init({
 	menubar:false,
     statusbar: false,
     selector: '#mark_editor',
-    plugins: ["image", "emoticons", "link"],
-    toolbar: " emoticons bold italic | link image | undo redo ",
+    tools: "inserttable",
+    plugins: ["image", "emoticons", "textcolor", "link", "table"],
+    toolbar: " emoticons | fontsizeselect bold italic underline forecolor backcolor | link image table | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
     		$("#upload_file").attr("data-inputid", field_name)

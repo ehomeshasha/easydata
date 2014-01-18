@@ -19,7 +19,7 @@ SyntaxHighlighter.complete = function(callback){
 
 $(function(){
 	var regex_line_num = /number(\d+)/
-	$(document).on("mouseover", ".line", function(){
+	$(document).on("mouseover", ".code_body .container .line", function(){
 		var class_string = $(this).attr("class");
 		if(class_string.indexOf("highlighted") != -1) {
 			$(this).addClass("default-highlighted");
@@ -30,12 +30,14 @@ $(function(){
 		var linenum = class_string.match(regex_line_num)[1]
 		var code_info = $(this).parent().parent().parent().parent().parent().parent().parent().parent().next()
 		var mark_links = code_info.find(".code_info_wrapper .mark_link")
+		//alert(linenum)
 		var mark_link = code_info.find(".code_info_wrapper[line_num='"+linenum+"'] .mark_link")
+		//alert(mark_link.length)
 		mark_links.addClass("hidden");
 		mark_link.removeClass("hidden");
 	});
 	
-	$(document).on("mouseout", ".line", function(){
+	$(document).on("mouseout", ".code_body .container .line", function(){
 		var class_string = $(this).attr("class");
 		if(class_string.indexOf("default-highlighted") == -1) {
 			$(this).removeClass("highlighted");
@@ -66,26 +68,21 @@ $(function(){
 	SyntaxHighlighter.complete(function(){
 		$(".command_help").remove();
 		$(".toolbar").addClass("no-background");
-		$(".syntaxhighlighter").each(function(){
-			var code_info = $(this).parent().parent().next();
-			var code_body = $(this).parent().parent();
+		$(".code_body").each(function(){
+			var code_body = $(this);
+			var code_info = code_body.next();
 			var code_id = code_body.attr("code_id");
 			
-			var max_height = code_body.attr("max_height");
-			if(max_height != "0") {
-				$(this).css("max-height", max_height+"px");
-			}
-			
-			
 			code_info.css("height", $(this).css("height"));
-			var lines = $(this).find(".line");
-			for(i=1;i<=lines.length;i++) {
+			var lines = $(this).find(".container .line");
+			lines.each(function(){
+				i = $(this).attr("class").match(regex_line_num)[1];
 				code_info.append("<div class='code_info_wrapper' code_id='"+code_id+"' line_num='"+i+"'><a href='javascript:;' class='mark_link hidden'>mark</a></div>");
-				var line_height = $(this).find(".number"+i).css("height");
+				var line_height = code_body.find(".number"+i).css("height");
 				var code_info_wrapper = code_info.find(".code_info_wrapper[line_num='"+i+"']");
 				code_info_wrapper.css("height", line_height).css("line-height", line_height);
 				code_info_wrapper.append(code_body.find(".hidden_mark_view .mark_wrapper[line_num='"+i+"']").html());
-			}
+			});
 			
 			
 			

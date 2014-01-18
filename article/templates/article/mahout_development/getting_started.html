@@ -9,13 +9,42 @@
 {% blocktrans %}
 <div>
 	<h1>开始使用Mahout</h1>
-	<h3>Mahout命令的本质是什么?</h3>
+	<h3>Mahout命令执行过程的分析</h3>
 	<p>在安装完Mahout后我们执行<code>mahout</code>会出现所有可以使用的命令, 就像下面贴出来的这样</p>
 {% endblocktrans %}
 {% get_code 2 %}
 {% blocktrans %}
+	<p>其实这段代码就已经暗示了Mahout的运行本质就是在Hadoop运行环境下执行这个<code>mahout-examples-0.8-job.jar</code>, 
+	那么具体是不是这样,我们现在就分析一下mahout/bin目录下的mahout文件,代码比较长,因此我只贴出了执行部分,之前的那些赋值和逻辑判断代码请自行研读</p>
+{% endblocktrans %}
+{% get_code 3 %}
+{% blocktrans %}	
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblocktrans %}
 {% endblock %}
+
+
+
 
 {% block extra_script %}
 <script type="text/javascript">
