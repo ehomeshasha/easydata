@@ -1,5 +1,154 @@
-.syntaxhighlighter .single_mark, .syntaxhighlighter .multi_mark {
+.code_info .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+}
+
+.code_info .tooltip.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.code_info .tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+
+.code_info .tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+
+.code_info .tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+
+.code_info .tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+
+.code_info .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.code_info .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.code_info .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #ddd;
+  border-width: 5px 5px 0;
+}
+
+.code_info .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-top-color: #ddd;
+  border-width: 5px 5px 0;
+}
+
+.code_info .tooltip.top-right .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-top-color: #ddd;
+  border-width: 5px 5px 0;
+}
+
+.code_info .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #ddd;
+  border-width: 5px 5px 5px 0;
+}
+
+.code_info .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: #ddd;
+  border-width: 5px 0 5px 5px;
+}
+
+.code_info .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #ddd;
+  border-width: 0 5px 5px;
+}
+
+.code_info .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-bottom-color: #ddd;
+  border-width: 0 5px 5px;
+}
+
+.code_info .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-bottom-color: #ddd;
+  border-width: 0 5px 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.syntaxhighlighter a, .syntaxhighlighter div, .syntaxhighlighter code, .syntaxhighlighter table, .syntaxhighlighter table td, .syntaxhighlighter table tr, .syntaxhighlighter table tbody, .syntaxhighlighter table thead, .syntaxhighlighter table caption, .syntaxhighlighter textarea
+{
+	line-height:18px !important;	
+}
+.code_body {padding-right:0;}
+.code_info .tooltip-inner {height:18px;line-height:13px;}
+.code_info {padding:5px 0;}
+.syntaxhighlighter .mark_link_wrapper {
+	position:absolute !important;
+	right:0  !important;
+	top:0 !important;
 	
+}
+.code_info .mark_view {
+	color:#333;
+}
+.code_info .code_info_wrapper {
+	position: relative;
+}
+.code_info .mark_link {
+	display:block;
+	position:absolute;
+	left:-55px;
+	top:0;
 }
 .syntaxhighlighter .single_mark, .syntaxhighlighter .multi_mark  {
 	background:#d1edff !important;
@@ -76,3 +225,9 @@
 .mark_block {border-bottom:1px dashed #999;}
 .mark_content {min-height:60px;}
 .mark_content p {margin:0;}
+
+
+
+
+
+

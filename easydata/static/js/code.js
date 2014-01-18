@@ -19,29 +19,35 @@ SyntaxHighlighter.complete = function(callback){
 
 $(function(){
 	$(document).on("mouseover", ".line", function(){
-		var class_text = $(this).attr("class");
-		if(class_text.indexOf("highlighted") != -1) {
+		var class_string = $(this).attr("class");
+		if(class_string.indexOf("highlighted") != -1) {
 			$(this).addClass("default-highlighted");
 		} else {
 			$(this).addClass("highlighted");
 		}
-		$(this).find(".mark_link").removeClass("hidden");
+		var linenum = class_string.substr(class_string.indexOf("number") + 6, 1);
+		var code_info = $(this).parent().parent().parent().parent().parent().parent().parent().parent().next()
+		var mark_links = code_info.find(".code_info_wrapper .mark_link")
+		var mark_link = code_info.find(".code_info_wrapper[line_num='"+linenum+"'] .mark_link")
+		mark_links.addClass("hidden");
+		mark_link.removeClass("hidden");
 	});
+	
 	$(document).on("mouseout", ".line", function(){
-		var class_text = $(this).attr("class");
-		if(class_text.indexOf("default-highlighted") == -1) {
+		var class_string = $(this).attr("class");
+		if(class_string.indexOf("default-highlighted") == -1) {
 			$(this).removeClass("highlighted");
 		}
-		$(this).find(".mark_link").addClass("hidden");
+		
 	});
 	$(document).on("click", ".mark_link", function(){
 		if($(".hide_data_uid").html() == "None") {
 			alert('Please login first');
 			location.href="/account/login/?next="+location.href;
 		}
-		var class_string = $(this).parent().attr("class");
-		var linenum = class_string.substr(class_string.indexOf("number") + 6, 1);
-		var code_id = $(this).attr("code_id");
+		//var class_string = $(this).parent().attr("class");
+		var linenum = $(this).parent().attr("line_num");
+		var code_id = $(this).parent().attr("code_id");
 		var url = "/code/mark_post/"+code_id+'/'+linenum+'/'
 		if (url.indexOf('#') == 0) {
 			$('#response_modal').modal('open');
@@ -54,21 +60,44 @@ $(function(){
 			});
 		}
 	});
+	
 	SyntaxHighlighter.complete(function(){
 		$(".command_help").remove();
 		$(".toolbar").addClass("no-background");
-		var code_id = $(".toolbar").parent().parent().prev().attr("data-id");
-		$(".line").append('<a href="javascript:;" code_id='+code_id+' class="mark_link_text mark_link hidden" style="">MARK</a>');
+		$(".syntaxhighlighter").each(function(){
+			var code_info = $(this).parent().parent().next();
+			var code_body = $(this).parent().parent();
+			var code_id = code_body.attr("code_id");
+			
+			code_info.css("height", $(this).css("height"));
+			var lines = $(this).find(".line");
+			//lines.append("<div class='mark_link_wrapper'><a href='javascript:;' class='mark_link'><img src='' style='width:10px;height:10px;' /></a></div>")
+			for(i=1;i<=lines.length;i++) {
+				code_info.append("<div class='code_info_wrapper' code_id='"+code_id+"' line_num='"+i+"'><a href='javascript:;' class='mark_link hidden'>mark</a></div>");
+				var line_height = $(this).find(".number"+i).css("height");
+				var code_info_wrapper = code_info.find(".code_info_wrapper[line_num='"+i+"']");
+				code_info_wrapper.css("height", line_height).css("line-height", line_height);
+				code_info_wrapper.append(code_body.find(".hidden_mark_view .mark_wrapper[line_num='"+i+"']").html());
+			}
+			
+			
+			
+		});
+		//var code_id = $(".toolbar").parent().parent().prev().attr("data-id");
+		//$(".code_info").css("height", $(".code_body").css("height"));
+		
+		//$(".line").append('<a href="javascript:;" code_id='+code_id+' class="mark_link_text mark_link hidden" style="">MARK</a>');
+		/*
 		$(".mark_wrapper").each(function(){
 			var line_num = $(this).attr("line_num");
 			$(".number"+line_num).append($(this).html());
-		});
+		});*/
 	});
 	
 	
-	$(document).on('dblclick', '.syntaxhighlighter', function(){
-		$(".mark_link, .mark_view").css("display", "none");
-	});
+	//$(document).on('dblclick', '.syntaxhighlighter', function(){
+	//	$(".mark_link, .mark_view").css("display", "none");
+	//});
 	
 	$(document).on('click', '.mark_nav_anchor', function(){
 		url = $(this).attr("data-href");

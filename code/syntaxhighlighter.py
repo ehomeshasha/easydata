@@ -29,12 +29,21 @@ class Syntaxhighlighter():
         return class_text    
         
     def get_code(self):
-        html = '<div style="margin-right:30px;">\
-                    <a href="javascript:;" title="%s" class="code_title text-danger" data-id="%d">%s</a>\
-                    <pre class="%s">%s</pre></div>' % (
+        html = '<a href="javascript:;" title="%s" class="code_title text-danger" data-id="%d">%s</a>\
+                <div class="row">\
+                    <div class="col-lg-10 code_body" code_id="%d">\
+                        <div class="hidden hidden_mark_view">%s</div>\
+                        <pre class="%s">%s</pre>\
+                    </div>\
+                    <div class="col-lg-2 code_info">\
+                    \
+                    </div>\
+                </div>' % (
                     self.code.description, 
                     self.code.id,
-                    self.code.title, 
+                    self.code.title,
+                    self.code.id,
+                    self.get_mark(),
                     self.get_class_configuration(), 
                     self.code.code,
                 ) 
@@ -53,10 +62,22 @@ class Syntaxhighlighter():
         mark_html = ''
         for k,v in mark_dict.items():
             if len(v) == 1 and len(strip_tags(v[0].content)) < 20:
-                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="single_mark mark_view">%s</a></div>' \
+                #mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="single_mark mark_view" data-toggle="tooltip" data-placement="right" data-trigger="manual" data-title="%s">&nbsp;</a></div>' \
+                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper">\
+                                <div class="tooltip fade right in" style="top: 0px; left: -2px; display: block;">\
+                                    <div class="tooltip-arrow"></div>\
+                                    <div class="tooltip-inner"><a code_id="%d" line_num="%d" href="javascript:;" class="single_mark mark_view" title="">%s</a></div>\
+                                </div>\
+                            </div>'\
                 % (self.code.id, k, self.code.id, k, strip_tags(v[0].content))
             else:
-                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view">%d</a></div>' \
+                #mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view" data-toggle="tooltip" data-placement="right" data-trigger="manual" data-title="%d">&nbsp;</a></div>' \
+                mark_html += '<div code_id="%d" line_num="%d" class="mark_wrapper">\
+                                <div class="tooltip fade right in" style="top: 0px; left: -2px; display: block;">\
+                                    <div class="tooltip-arrow"></div>\
+                                    <div class="tooltip-inner"><a code_id="%d" line_num="%d" href="javascript:;" class="multi_mark mark_view" title="">%s</a></div>\
+                                </div>\
+                            </div>'\
                 % (self.code.id, k, self.code.id, k, len(v))
         
         
