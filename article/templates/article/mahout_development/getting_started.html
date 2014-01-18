@@ -1,0 +1,24 @@
+{% extends "site_base.html" %}
+
+{% load custom_tags %}
+{% load i18n %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+{% blocktrans %}
+<div>
+	<h1>开始使用Mahout</h1>
+	<h3>Mahout命令的本质是什么?</h3>
+	<p>在安装完Mahout后我们执行<code>mahout</code>会出现所有可以使用的命令, 就像下面贴出来的这样</p>
+{% endblocktrans %}
+{% get_code 2 %}
+{% blocktrans %}
+{% endblocktrans %}
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript">
+SyntaxHighlighter.all();
+</script>
+{% endblock %}
