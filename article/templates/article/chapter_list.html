@@ -11,7 +11,7 @@
 	<h1>{% trans "Chapter List" %}</h1>
 	<ul>
 		{% for chapter in chapter_list %}
-		<li><a href="/article/view/{{ article_name }}/{{ chapter.filename }}/">{{ chapter.chapter_name }}</a></li>
+		<li><a href="/article/view/{{ article_name }}/{{ chapter.filename }}/">{{ chapter.chapter_name|slice:"2:" }}</a></li>
 		{% endfor %}
 	</ul>	
 

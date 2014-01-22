@@ -29,7 +29,7 @@ class Syntaxhighlighter():
         return class_text    
         
     def get_code(self):
-        html = '<a href="javascript:;" title="%s" class="code_title text-danger" data-id="%d">%s</a>\
+        html = '<a href="javascript:;" title="%s" class="code_title text-danger xw1" data-id="%d">%s</a>\
                 <div class="row">\
                     <div class="col-lg-10 code_body" code_id="%d">\
                         <div class="hidden hidden_mark_view">%s</div>\

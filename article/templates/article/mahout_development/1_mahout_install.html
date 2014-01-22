@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "article_site_base.html" %}
 
 {% load i18n %}
 {% load custom_tags %}
@@ -57,15 +57,12 @@
 		<li>
 			<p>将Mahout导入Eclipse(须先安装插件<a href="http://eclipse.org/m2e/download/">m2eclipse</a>), 这里我附上一张我导入项目后的截图</p>
 			<span class="text-danger">mahout_project.jpg</span><br />
-			<img src="/media_files/article_image/mahout_development/mahout_install/mahout_project.jpg" width="329" height="198" />
+			<img src="{{ MEDIA_URL }}/article_image/{{ article_name }}/mahout_project.jpg" width="329" height="198" />
 		</li>
 	</ol>
 </div>
-<div class="clearfix">
-	<div class="pull-right">
-		<a href="/article/view/mahout_development/getting_started/">下一章</a>
-	</div>
-</div>
+
+
 
 <style type="text/css">
 .syntaxhighlighter{margin-top:0 !important;}</style>

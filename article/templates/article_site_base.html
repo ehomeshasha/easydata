@@ -1,0 +1,18 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block body_bottom %}
+<div class="clearfix mtw mbw xw1">
+	{% if last_chapter %}
+	<div class="pull-left">
+		<a href="/article/view/{{ article_name }}/{{ last_chapter }}/">{% trans "Last" %}</a>
+	</div>
+	{% endif %}
+	{% if next_chapter %}
+	<div class="pull-right">
+		<a href="/article/view/{{ article_name }}/{{ next_chapter }}/">{% trans "Next" %}</a>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}
