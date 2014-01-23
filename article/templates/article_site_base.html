@@ -1,18 +1,91 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
+{% load staticfiles %}
+{% load custom_tags %}
 
 {% block body_bottom %}
 <div class="clearfix mtw mbw xw1">
 	{% if last_chapter %}
 	<div class="pull-left">
-		<a href="/article/view/{{ article_name }}/{{ last_chapter }}/">{% trans "Last" %}</a>
+		<a href="/article/view/{{ article_name }}/{{ last_chapter }}/">{% trans "上一章" %}: {{ last_chapter|get_dict_value:article_title_dict }}</a>
 	</div>
 	{% endif %}
 	{% if next_chapter %}
 	<div class="pull-right">
-		<a href="/article/view/{{ article_name }}/{{ next_chapter }}/">{% trans "Next" %}</a>
+		<a href="/article/view/{{ article_name }}/{{ next_chapter }}/">{% trans "下一章" %}: {{ next_chapter|get_dict_value:article_title_dict }}</a>
 	</div>
 	{% endif %}
 </div>
 {% endblock %}
+
+
+
+
+
+
+{% block style_base %}
+	<script type="text/javascript" src="{% block jquery_src %}{% static "pinax/js/jquery.js" %}{% endblock %}"></script>
+    <link href="{% static "bootstrap/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+    <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "pinax/js/theme.js" %}"></script>
+    <script type="text/javascript" src="{% static "tinymce/tinymce.min.js" %}"></script>
+    <link href="{% static "syntaxhighlighter/styles/shCore.css" %}" rel="stylesheet">
+    <link href="{% static "syntaxhighlighter/styles/shThemeMidnight.css" %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static "syntaxhighlighter/scripts/shCore.js" %}"></script>
+	<script src="{% static "syntaxhighlighter/scripts/shAutoloader.js" %}" type="text/javascript"></script>
+    
+    <script type="text/javascript" src="{% static "js/code.js" %}"></script>
+    <link href="{% static "css/common.css" %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static "js/common.js" %}"></script>
+    {% block extra_style_base %}{% endblock %}
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript">
+function path()
+{
+  var args = arguments,
+      result = []
+      ;
+       
+  for(var i = 0; i < args.length; i++)
+      result.push(args[i].replace('@', 'http://127.0.0.1:8000/static/syntaxhighlighter/scripts/'));
+       
+  return result
+};
+$(function(){
+	$(document).ready(function(){
+		SyntaxHighlighter.autoloader.apply(null, path(
+		  'applescript            @shBrushAppleScript.js',
+		  'actionscript3 as3      @shBrushAS3.js',
+		  'bash shell             @shBrushBash.js',
+		  'coldfusion cf          @shBrushColdFusion.js',
+		  'cpp c                  @shBrushCpp.js',
+		  'c# c-sharp csharp      @shBrushCSharp.js',
+		  'css                    @shBrushCss.js',
+		  'delphi pascal          @shBrushDelphi.js',
+		  'diff patch pas         @shBrushDiff.js',
+		  'erl erlang             @shBrushErlang.js',
+		  'groovy                 @shBrushGroovy.js',
+		  'java                   @shBrushJava.js',
+		  'jfx javafx             @shBrushJavaFX.js',
+		  'js jscript javascript  @shBrushJScript.js',
+		  'perl pl                @shBrushPerl.js',
+		  'php                    @shBrushPhp.js',
+		  'text plain             @shBrushPlain.js',
+		  'py python              @shBrushPython.js',
+		  'ruby rails ror rb      @shBrushRuby.js',
+		  'sass scss              @shBrushSass.js',
+		  'scala                  @shBrushScala.js',
+		  'sql                    @shBrushSql.js',
+		  'vb vbnet               @shBrushVb.js',
+		  'xml xhtml xslt html    @shBrushXml.js'
+		));
+		SyntaxHighlighter.all();
+	});
+})
+</script>
+{% endblock %}
+

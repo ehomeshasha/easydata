@@ -63,6 +63,9 @@ $(function(){
 				$('#response_modal input:text:visible:first').focus();
 			});
 		}
+		
+		
+		
 	});
 	
 	SyntaxHighlighter.complete(function(){
@@ -137,4 +140,10 @@ $(function(){
 			});
 		}
 	});
+	
+	/*
+	$(document).on("mouseleave", ".code_body", function(){
+		var mark_links = $(this).next().find(".mark_link");
+		mark_links.addClass("hidden");
+	});*/
 });

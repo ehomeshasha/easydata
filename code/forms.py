@@ -15,7 +15,7 @@ class CodePostForm(forms.Form):
     title = forms.CharField(
         label=_("Title"),
         min_length=2,
-        max_length=30,
+        max_length=100,
         widget=forms.TextInput(),
         required=True,
     )
@@ -52,7 +52,7 @@ class CodePostForm(forms.Form):
             ('scala','Scala'),
             ('sql','SQL'),
             ('vb','Visual Basic'),
-            ('xml','XML'),
+            ('xml','HTML/XML'),
         ),
         widget=forms.Select(),
         required=True,

@@ -1,9 +1,15 @@
 from code.models import Mark
 from django.utils.html import strip_tags
+from django import template
 class Syntaxhighlighter():
     
     def __init__(self, code):
         self.code = code
+        #noescape_brushs = ['js','jscript','javascript','php','xml','xhtml','xslt','html','xhtml']
+        #if not self.code.brush in noescape_brushs:
+        if True:
+            self.code.code = template.defaultfilters.force_escape(self.code.code)
+    
         
     def get_class_configuration(self):
         class_text = 'brush: %s;toolbar: true;class-name: \'%s\'' % (self.code.brush, self.code.max_height)
@@ -25,7 +31,7 @@ class Syntaxhighlighter():
             class_text += 'html-script: true;'
         else:
             class_text += 'html-script: false;'
-        
+        print class_text
         return class_text    
         
     def get_code(self):
@@ -46,7 +52,8 @@ class Syntaxhighlighter():
                     self.get_mark(),
                     self.get_class_configuration(), 
                     self.code.code,
-                ) 
+                )
+        
         return html
         
         

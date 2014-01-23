@@ -8,5 +8,8 @@ class category(models.Model):
     description = models.CharField(max_length=255)
     status = C_TinyIntegerField(max_length=1, default=0)
     displayorder = C_SmallIntegerField(max_length=5, default=0, unsigned=False)
-    ctype = models.CharField(max_length=20)
+    ctype = models.CharField(max_length=20, verbose_name="belong to module")
     
+    
+    def __unicode__(self):
+        return self.name

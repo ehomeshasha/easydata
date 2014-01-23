@@ -6,6 +6,15 @@ from easydata.constant import HOME_BREAD
 from django.conf import settings
 from easydata.func.function_core import elistdir
 
+article_title_dict = {
+    "hadoop_deployment": _("Hadoop 安装与部署"),
+    "mahout_development": _("Mahout 二次开发"),
+    "1_mahout_install": _("Mahout 安装"),
+    "2_mahout_commands": _("Mahout命令执行过程的分析"),
+    "3_mahout_arguments": _("Mahout参数获取"),
+    "programming_collective_intelligence": _("集体智慧编程"),
+}
+
 
 context = {
     'SITE_URL': settings.SITE_URL,
@@ -44,7 +53,7 @@ def get_next_chapter(chapter_name, index_list, filelist_dict):
     pos = index_list.index(now_index)
     if pos == len(index_list)-1:
         return ''
-    later_index = index_list[pos-1]
+    later_index = index_list[pos+1]
     return filelist_dict[later_index]
     
     
@@ -57,7 +66,8 @@ def get_title_name(dirname, name=''):
     
 def article_view(request, **kwargs):
     article_name = kwargs['article_name']
-    article_verbose_name = _(article_name.replace("_", " "))
+    article_verbose_name = article_title_dict[article_name]
+    
     if not 'chapter_name' in kwargs:
         context.update({
             'head_title_text': article_verbose_name,
@@ -75,7 +85,7 @@ def article_view(request, **kwargs):
         
         chapter_name = kwargs['chapter_name']
         
-        chapter_verbose_name = _(chapter_name[len(chapter_name.split("_")[0])+1:].replace("_", " "))
+        chapter_verbose_name = article_title_dict[chapter_name]
         
         last_chapter = get_last_chapter(chapter_name, index_list, filelist_dict)[:-5]
         next_chapter = get_next_chapter(chapter_name, index_list, filelist_dict)[:-5]
@@ -91,6 +101,7 @@ def article_view(request, **kwargs):
             'article_name' : article_name,
             'last_chapter': last_chapter,
             'next_chapter': next_chapter,
+            'article_title_dict': article_title_dict
             #'chapter_name' : chapter_name,
         })
         
@@ -100,7 +111,7 @@ def article_view(request, **kwargs):
 
 def chapter_list(request, **kwargs):
     article_name = kwargs['article_name']
-    article_verbose_name = _(article_name.replace("_", " "))
+    article_verbose_name = article_title_dict[article_name]
     
     index_list, filelist_dict = get_indexlist_chapterdict(article_name)
     filelist = []
@@ -124,6 +135,7 @@ def chapter_list(request, **kwargs):
         ],
         'article_name': article_name,
         'chapter_list': chapter_list,
+        'article_title_dict': article_title_dict,
     })
     return render(request, 'article/chapter_list.html', context)
     

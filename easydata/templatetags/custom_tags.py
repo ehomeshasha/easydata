@@ -84,10 +84,16 @@ def check_appname(path, app_name):
 @register.simple_tag
 def get_code(pk):
     try:
-        code = Code.objects.get(pk=pk)
+        code_instance = Code.objects.get(pk=pk)
     except Code.DoesNotExist:
         return '<code>Code (ID:%d) does not exist, please check</code>' % pk
-    hl = Syntaxhighlighter(code)
-    return template.defaultfilters.safe(hl.get_code())
+    hl = Syntaxhighlighter(code_instance)
+    code = hl.get_code()
+    return template.defaultfilters.safe(code)
     
-    
+@register.filter()
+def get_dict_value(key, dictionary):
+    try:
+        return dictionary[key]
+    except KeyError:
+        return ''

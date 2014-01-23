@@ -2,6 +2,7 @@
 
 
 {% load i18n %}
+{% load custom_tags %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
@@ -11,7 +12,7 @@
 	<h1>{% trans "Chapter List" %}</h1>
 	<ul>
 		{% for chapter in chapter_list %}
-		<li><a href="/article/view/{{ article_name }}/{{ chapter.filename }}/">{{ chapter.chapter_name|slice:"2:" }}</a></li>
+		<li><a href="/article/view/{{ article_name }}/{{ chapter.filename }}/">{{ chapter.filename|get_dict_value:article_title_dict }}</a></li>
 		{% endfor %}
 	</ul>	
 
