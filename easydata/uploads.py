@@ -17,7 +17,6 @@ def ajax_upload(request):
     pdf_ajax_upload = ImageAjaxUpload(module=module, upload_file=upload_file, username=user.username)
     
     clean_result = pdf_ajax_upload.clean()
-    print clean_result
     if clean_result:
         return HttpResponse('{"code":-1,"msg":"%s"}' % _(clean_result))
     else:
@@ -33,8 +32,6 @@ class AjaxUpload():
         self.upload_file = kwargs['upload_file']
         self.upload_dir = MEDIA_URL+'%s/%s/' % (self.module, self.username)
         self.name = kwargs['upload_file'].name
-        #end_pos = store_file._name.rfind(".")
-        #ext = store_file._name[end_pos+1:]
         self.ext = kwargs['upload_file'].name[kwargs['upload_file'].name.rfind(".")+1:]
         self.size = kwargs['upload_file'].size
         self.content_type = kwargs['upload_file'].content_type

@@ -94,13 +94,9 @@ def get_category_list_html():
     for k,v in categorytree.items():
         if k not in CTYPE_DICT.keys():
             CTYPE_DICT[k] = 'Undefined Module'
-        #print k
         html += "<legend>%s</legend><ul>" % CTYPE_DICT[k]
         html += recursive_categorylist_html(v)
         html += "</ul>"
         
     return html
-    #print categorytree
-    #categorytree_merge = get_categorytree_merge(categorytree)
-    #print categorytree_merge
     

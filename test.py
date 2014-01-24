@@ -8,12 +8,9 @@ def get_upload_dir(directory):
     user_dir = os.path.dirname(directory_abs)
     dirname = os.path.basename(directory_abs)
     dirlist = elistdir(user_dir, 'directory')
-    print dirlist
-    print dirname
     if not dirname in dirlist:
         return directory
     else:
-        print directory
         pattern = re.compile(dirname+'_(\d+)')
         max_num = 0
         for subdir in dirlist:
@@ -41,4 +38,3 @@ def elistdir(directory, find_type='all'):
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "easydata.settings")
 directory = "pdf/static/pdf/pdf2html/zzy2/Hadoop_in_Action"
 
-print get_upload_dir(directory)

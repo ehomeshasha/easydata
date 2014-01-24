@@ -25,7 +25,14 @@ class C_AutoField(AutoField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_AutoField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
     
     def db_type(self, connection):
         return 'int'+get_length_str(self.max_length)+' '+self.unsigned+' AUTO_INCREMENT'
@@ -38,7 +45,14 @@ class C_AutoSmallIntegerField(AutoField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_AutoSmallIntegerField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
     
     def db_type(self, connection):
         return 'smallint'+get_length_str(self.max_length)+' '+self.unsigned+' AUTO_INCREMENT'
@@ -47,7 +61,14 @@ class C_IntegerField(models.IntegerField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_IntegerField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
             
     def db_type(self, connection):
         return 'int'+get_length_str(self.max_length)+' '+self.unsigned
@@ -56,7 +77,14 @@ class C_MediumIntegerField(models.IntegerField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_MediumIntegerField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
             
     def db_type(self, connection):
         return 'mediumint'+get_length_str(self.max_length)+' '+self.unsigned
@@ -65,7 +93,14 @@ class C_SmallIntegerField(models.SmallIntegerField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_SmallIntegerField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
             
     def db_type(self, connection):
         return 'smallint'+get_length_str(self.max_length)+' '+self.unsigned
@@ -74,7 +109,14 @@ class C_TinyIntegerField(models.IntegerField):
     def __init__(self, *args, **kwargs):
         get_sign(self, kwargs)
         super(C_TinyIntegerField, self).__init__(*args, **kwargs)
-        self.validators.append(validators.MaxLengthValidator(self.max_length))
+        max_value = 10**int(self.max_length)-1
+        if self.unsigned == '':
+            min_value = -10**int(self.max_length)+1
+        else:
+            min_value = 0
+        self.validators.append(validators.MaxValueValidator(max_value))
+        self.validators.append(validators.MinValueValidator(min_value))
+        #self.validators.append(validators.MaxLengthValidator(self.max_length))
             
     def db_type(self, connection):
         return 'tinyint'+get_length_str(self.max_length)+' '+self.unsigned

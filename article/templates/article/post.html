@@ -1,0 +1,67 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-10">
+            <form id="post_code_form" method="post" action="">
+            <fieldset>
+                <legend>{{ legend_text }}</legend>
+                {% csrf_token %}
+                {{ form|bootstrap:"title" }}
+                <div class="form-group {{ form.custom_field_error_css.content }}">
+					<label class="control-label  " for="id_content">{% trans "Content" %}</label>
+	                <div class=" ">
+	            		<textarea id="comment_editor" name="content">{{ form.custom_field_value.content }}</textarea>
+						<input name="module" type="hidden" value="comment_image" class="module" />
+						<input name="upload_file" id="upload_file" type="file" style="display:none;" />
+			        </div>
+			        {% for error in form.custom_field_error_text.content %}
+				        <span class="help-block">{{ error }}</span>
+				    {% endfor %}
+				</div>
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit" class="btn btn-primary">{{ submit_btn_text }}</button>
+			</fieldset>
+            </form>
+        </div>
+    </div>
+<style type="text/css">
+#id_description {height:100px;}
+</style>
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#id_title').focus();
+});
+tinymce.init({
+	height : 300,
+	menubar:false,
+    statusbar: true,
+    selector: '#comment_editor',
+    tools: "inserttable",
+    plugins: ["image", "emoticons", "textcolor", "link", "table","code"],
+    toolbar: " emoticons | styleselect bold italic underline forecolor backcolor | link image table code | alignleft aligncenter alignright | undo redo ",
+    file_browser_callback: function(field_name, url, type, win) { 
+    	if(type == 'image') {
+    		$("#upload_file").attr("data-inputid", field_name)
+    		$('#upload_file').click();
+    	}
+         
+    },
+});
+</script>
+{% endblock %}
+
+{% block extra_script_base %}
+<script type="text/javascript" src="{% static "tinymce/tinymce.min.js" %}"></script>
+{% endblock %}

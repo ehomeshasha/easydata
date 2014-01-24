@@ -31,7 +31,6 @@ class Syntaxhighlighter():
             class_text += 'html-script: true;'
         else:
             class_text += 'html-script: false;'
-        print class_text
         return class_text    
         
     def get_code(self):

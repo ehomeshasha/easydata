@@ -266,9 +266,7 @@ class PDF2HTMLView(DetailView):
                         span_text_next = spans_text[k+1]
                         m1 = int(style_next['top']) - int(style['top'])
                         m2 = int(style['top']) - int(style_before['top'])
-                        #print span_text
-                        print style['left'] ,style_next['left']
-                        #print m1, m2
+                        
                     """
                     1.本次div span不为空,下次div span不为空
                     2.本次left等于下次left
@@ -279,7 +277,6 @@ class PDF2HTMLView(DetailView):
                        span_text and span_text_next and \
                        style['left'] == style_next['left']  and \
                        True:#m1 > 0 and m2 > 0 and m1 == m2 :
-                        print k, 'success'
                         pass
                     '''
                     

@@ -269,7 +269,6 @@ class PDF2HTMLView(DetailView):
                 out.write(content)
                 out.close()
             
-            #print context
                 
             context['pdf_content'] = content
             context['breadcrumb'] = self.breadcrumb

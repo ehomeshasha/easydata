@@ -1,0 +1,15 @@
+{% extends "article/article_site_base.html" %}
+
+{% load i18n %}
+{% load custom_tags %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+<div class="main_body">
+	<h1 class="article_title">{{ head_title_text }}</h1>
+	<div class="article_body">
+		{{ content|safe }}	
+	</div>
+</div>
+{% endblock %}

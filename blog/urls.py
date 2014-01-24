@@ -11,7 +11,7 @@ from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns('',
-    #url(r"^$", IndexView.as_view(), name="blog_index"),
+    #url(r"^$", IndexView.as_view(), name="bookshelp_index"),
     #url(r"^post/(?P<bid>\d*)/$", PostView.as_view(), name="blog_post"),
     #url(r"^(?P<bid>\d+)/$", DetailView.as_view(), name="blog_detail"),
     #url(r"^delete/(?P<bid>\d+)/$", DeleteView.as_view(), name="blog_delete"),
