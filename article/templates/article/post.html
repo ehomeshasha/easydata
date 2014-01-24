@@ -18,7 +18,7 @@
 					<label class="control-label  " for="id_content">{% trans "Content" %}</label>
 	                <div class=" ">
 	            		<textarea id="comment_editor" name="content">{{ form.custom_field_value.content }}</textarea>
-						<input name="module" type="hidden" value="comment_image" class="module" />
+						<input name="module" type="hidden" value="article_image" class="module" />
 						<input name="upload_file" id="upload_file" type="file" style="display:none;" />
 			        </div>
 			        {% for error in form.custom_field_error_text.content %}
