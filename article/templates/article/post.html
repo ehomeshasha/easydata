@@ -50,13 +50,52 @@ tinymce.init({
     selector: '#comment_editor',
     tools: "inserttable",
     plugins: ["image", "emoticons", "textcolor", "link", "table","code"],
-    toolbar: " emoticons | styleselect bold italic underline forecolor backcolor | link image table code | alignleft aligncenter alignright | undo redo ",
+    toolbar: " emoticons | styleselect bold italic underline forecolor backcolor | link image insertcode table code | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
     		$("#upload_file").attr("data-inputid", field_name)
     		$('#upload_file').click();
     	}
          
+    },
+    setup: function(editor) {
+        editor.addButton('insertcode', {
+            text: '插入代码',
+            icon: false,
+            onclick: function() {
+            	
+            	var url = "/code/insert/";
+            	/*
+        		if (url.indexOf('#') == 0) {
+        			$('#response_modal').modal('open');
+        		} else {
+        			$.get(url, function(data) {
+        	                        $('#response_modal').html(data);
+        	                        $('#response_modal').modal();
+        			}).success(function() {
+        				$('#response_modal input:text:visible:first').focus();
+        			});
+        		}*/
+        		
+            	editor.windowManager.open({
+            	    title: "插入代码",
+            	    url: url,
+            	    width: 700,
+            	    height: 210,
+            	});
+            	/*
+            	$.get(url, function(data) {
+            		
+            		tinyMCE.activeEditor.windowManager.confirm(data, function(s) {
+               		   if (s)
+               		      tinyMCE.activeEditor.windowManager.alert("Ok");
+               		   else
+               		      tinyMCE.activeEditor.windowManager.alert("Cancel");
+               		});	
+            	});*/
+            	
+            }
+        });
     },
 });
 </script>

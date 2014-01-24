@@ -1,0 +1,45 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block topbar_base %}{% endblock %}
+{% block header_base %}{% endblock %}
+{% block footer_base %}{% endblock %}
+{% block extra_body_base %}{% endblock %}
+
+
+{% block body %}
+{% block tinymce_modal_body %}{% endblock %}
+
+
+{% block tinymce_modal_button %}
+<div class="modal-footer">
+	{% if modal_form.btn_primary %}
+	<button type="button" class="tinymce_submit_btn btn btn-primary confirm_box_btn_primary">{{ modal_form.btn_primary }}</button>
+	{% endif %}
+	{% if modal_form.btn_default %}
+	<button type="button" class="tinymce_cancel_btn btn btn-default confirm_box_btn_default">{{ modal_form.btn_default }}</button>
+	{% endif %}
+</div>
+{% endblock %}
+
+<script type="text/javascript">
+top.tinymce.activeEditor.complete = function(callback){
+  (function recountHighlightedElements() {
+    setTimeout(function () {
+      if($(".tinymce_cancel_btn").length == 0) {
+    	  recountHighlightedElements();
+      } else {
+          callback();
+      }
+    }, 200);
+  })();
+
+};
+$(".tinymce_cancel_btn").click(function(){
+	top.tinymce.activeEditor.windowManager.close();
+});
+</script>
+{% block tinymce_modal_javascript %}{% endblock %}
+
+{% endblock %}

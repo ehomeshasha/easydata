@@ -337,7 +337,7 @@ class PDFListView(ListView):
         super(PDFListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):
-        return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+        return pdfModel.objects.filter(displayorder__gte=0).order_by("-date_upload")
     
     def get_context_data(self, **kwargs):
         context = super(PDFListView, self).get_context_data(**kwargs)

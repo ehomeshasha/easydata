@@ -5,27 +5,30 @@
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 {% block body %}
-<div class="pdf_list_area">
-	<table class="pdf_list_table table table-bordered">
+<div class="list_area">
+	<table class="list_table table table-bordered table-condensed">
 		<tr>
-			<td width="10%">{% trans "Category" %}</td>
-			<td>{% trans "Title" %}</td>
-			<td width="7%">{% trans "Views" %}</td>
-			<td width="7%">{% trans "Marks" %}</td>
-			<td width="7%">{% trans "Comment" %}</td>
-			<td width="10%">{% trans "Contributor" %}</td>
-			<td width="14%">{% trans "Upload Date" %}</td>
-			<td width="7%">{% trans "Size" %}</td>
-			<td width="10%">{% trans "Operate" %}</td>
+			{% blocktrans %}
+			<td width="10%">Category</td>
+			<td>Title</td>
+			<td width="5%">Views</td>
+			<td width="5%">Marks</td>
+			<td width="7%">Comment</td>
+			<td width="10%">Contributor</td>
+			<td width="8%">Upload Date</td>
+			<td width="6%">Size</td>
+			<td width="7%">Operate</td>
+			{% endblocktrans %}
 		</tr>
 		{% for pdf in pdf_list %}
 		{% get_auth_author_admin pdf.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
-			<td>{{ pdf.cate_id|cate_id_format:category_dict_pk|safe }}</td>
+			<td class="category_td">{{ pdf.cate_id|cate_id_format:category_dict_pk|safe }}</td>
 			<td>
 				<a href="/pdf/view/{{ pdf.id }}/" title="{{ pdf.description }}">{{ pdf.title }}</a>
 				{% if auth_author_admin %}
-				<a href="/pdf/edit/{{ pdf.id }}/">[{% trans "edit" %}]</a>
+				<a class="text-danger" href="/pdf/edit/{{ pdf.id }}/">[{% trans "edit" %}]</a>
+				<a class="text-danger deletelink" href='javascript:;' data-id='{{ pdf.id }}' data-type='pdf' data-redirect="/category/list/">[{% trans "delete" %}]</a>
 				{% endif %}
 			</td>
 			<td>{{ pdf.views }}</td>
@@ -35,11 +38,8 @@
 			<td>{{ pdf.date_upload|hdate }}</td>
 			<td>{{ pdf.filesize|hsize }}</td>
 			<td>
-				<a href="{{ pdf.filepath }}">{% trans "View PDF" %}</a>
-				<a href="/pdf/download/{{ pdf.id }}/">{% trans "Download" %}</a>
-				{% if view.request.user.is_superuser %}
-				<a href='javascript:;' class='deletelink' data-id='{{ pdf.id }}' data-type='pdf' data-redirect="/category/list/">{% trans "delete" %}</a>
-				{% endif %}
+				<a class="text-danger" href="{{ pdf.filepath }}">{% trans "View PDF" %}</a><br/>
+				<a class="text-danger" href="/pdf/download/{{ pdf.id }}/">{% trans "Download" %}</a>
 			</td>
 		</tr>
 		{% endfor %}

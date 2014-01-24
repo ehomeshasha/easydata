@@ -2,6 +2,7 @@ from django import template
 from django.utils.timezone import now
 from code.models import Code
 from code.syntaxhighlighter import Syntaxhighlighter
+import re
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
@@ -96,4 +97,21 @@ def get_dict_value(key, dictionary):
     try:
         return dictionary[key]
     except KeyError:
+        return ''
+    
+@register.filter()
+def yes_or_no(value):
+    if value==True or value==1 or value=='1':
+        return 'Yes'
+    elif value==False or value==0 or value == '0':
+        return 'No'
+    else:
+        return ''
+max_height_pattern = re.compile(r'max_height(\d+)')
+@register.filter()
+def max_height_convert(value):
+    max_height_match = re.match(max_height_pattern, value)
+    if max_height_match:
+        return "%spx" % max_height_match.group(1)
+    else:
         return ''

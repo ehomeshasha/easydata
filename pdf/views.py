@@ -27,27 +27,27 @@ from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
 from easydata.constant import CONTENT_TYPE, HOME_BREAD
-from django.db import connection
-from easydata.validator import CharValidator, IntegerValidator, Validator,\
+from easydata.validator import CharValidator, IntegerValidator, \
     save_cleaned_data
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
         for p in pdf:
-            if p.isconvert == '1':
+            if p.isconvert == True:
                 continue
             update_convert_status(p, check_exists=kwargs['check_exists'])
     else:
-        if pdf.isconvert == '1':
+        if pdf.isconvert == True:
             return;
-        cursor = connection.cursor();
         if 'check_exists' in kwargs.keys() and kwargs['check_exists']:
             book_dir = os.path.dirname(os.path.dirname(pdf.filepath[1:]))
             origin_dir = os.path.join(book_dir, 'origin/')
             if elistdir(origin_dir, 'file'):
-                cursor.execute("UPDATE `pdf_pdf` SET `isconvert`=%s WHERE `id`='%s'", [1,pdf.id])
+                pdf.isconvert = True
+                pdf.save()
         else:
-            cursor.execute("UPDATE pdf_pdf SET isconvert=%s WHERE id='%s'", [1,pdf.id])
+            pdf.isconvert = True
+            pdf.save
     
 
 class PDFUploadView(FormView):
@@ -307,7 +307,7 @@ class PDFListView(ListView):
         super(PDFListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):
-        return pdfModel.objects.raw('SELECT * FROM `pdf_pdf` WHERE displayorder>=0 ORDER by date_upload DESC')
+        return pdfModel.objects.filter(displayorder__gte=0).order_by("-date_upload")
     
     def get_context_data(self, **kwargs):
         context = super(PDFListView, self).get_context_data(**kwargs)
@@ -327,7 +327,7 @@ def download_pdf(request, pk):
 def delete_pdf(request, pk):
     pdf = pdfModel.objects.get(pk=pk)
     pdf.delete()
-    message_body = "Title:%s has been deleted" % pdf.title
+    message_body = "PDF: %s has been deleted" % pdf.title
     messages.success(request, message_body)
     return HttpResponse('')
 

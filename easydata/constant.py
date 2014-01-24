@@ -2,6 +2,7 @@ import datetime
 import time
 from django.utils.timezone import utc
 from django.utils.translation import ugettext as _
+import re
 
 CONTENT_TYPE = {
     'pdf': 'application/pdf',

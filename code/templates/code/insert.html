@@ -1,0 +1,44 @@
+{% extends "tinymce_modal.html" %}
+
+{% load i18n %}
+
+{% block tinymce_modal_body %}
+<div class="form-group mtm">
+	{% blocktrans %}
+	<label class="" for="codeIdSel">
+		<span class="mrn">近期创建的代码(选择后自动填写Code ID)</span>
+		<a href="/code/list/" target="_blank" class="mrn xs1">查看全部代码</a>
+		<a href="/code/new/" target="_blank" class="mrn xs1">创建新代码</a>
+	</label>
+	{% endblocktrans %}
+	<select id="codeIdSel" class="form-control">
+		{% for code in code_list %}
+		<option value="{{ code.id }}">{{ code.title }}</option>
+		{% endfor %}
+	</select>
+</div>
+<div class="form-group">
+	<label class="sr-only" for="codeIdInput">Code ID</label>
+	<input type="text" class="form-control" id="codeIdInput" placeholder="Enter Code ID">
+</div>
+{% endblock %}
+
+
+
+{% block tinymce_modal_javascript %}
+<script type="text/javascript">
+top.tinymce.activeEditor.complete(function(){
+	$("#codeIdSel").trigger("change");
+});
+$(".tinymce_submit_btn").click(function(){
+	var code_id = $("#codeIdInput").val();
+	top.tinymce.activeEditor.insertContent("\{% get_code "+code_id+" %\}");
+	top.tinymce.activeEditor.windowManager.close();
+	
+});
+$("#codeIdSel").change(function(){
+	var code_id = $(this).val();
+	$("#codeIdInput").val(code_id);
+});
+</script>
+{% endblock %}

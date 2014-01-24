@@ -1,0 +1,53 @@
+{% extends "site_base.html" %}
+
+{% load custom_tags %}
+{% load i18n %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+{% block body %}
+<div class="list_area">
+	<table class="list_table table table-bordered table-condensed">
+		<tr>
+			{% blocktrans %}
+			<td width="4%">ID</td>
+			<td width="10%">Category</td>
+			<td>Title</td>
+			<td width="10%">Description</td>
+			<td width="5%">Marks</td>
+			<td width="7%">Language</td>
+			<td width="5%">Gutter</td>
+			<td width="6%">First line</td>
+			<td width="6%">Collapse</td>
+			<td width="6%">Highlight</td>
+			<td width="8%">Url clickable</td>
+			<td width="7%">Max height</td>
+			<td width="8%">Date create</td>
+			{% endblocktrans %}
+		</tr>
+		{% for code in code_list %}
+		{% get_auth_author_admin code.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
+		<tr>
+			<td>{{ code.id }}</td>
+			<td class="category_td">{{ code.cate_id|cate_id_format:category_dict_pk|safe }}</td>
+			<td>
+				{{ code.title }}
+				{% if auth_author_admin %}
+				<a class="text-danger" href="/code/edit/{{ code.id }}/">[{% trans "edit" %}]</a>
+				<a class="text-danger deletelink" href='javascript:;' data-id='{{ code.id }}' data-type='code' data-redirect="/code/list/">[{% trans "delete" %}]</a>
+				{% endif %}
+			</td>
+			<td>{{ code.description }}</td>
+			<td>{{ code.mark }}</td>
+			<td>{{ code.brush|title }}</td>
+			<td>{{ code.gutter|yes_or_no }}</td>
+			<td>{{ code.first_line }}</td>
+			<td>{{ code.collapse|yes_or_no }}</td>
+			<td>{{ code.highlight }}</td>
+			<td>{{ code.url_clickable|yes_or_no }}</td>
+			<td>{{ code.max_height|max_height_convert }}</td>
+			<td>{{ code.date_create|hdate }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

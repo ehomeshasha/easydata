@@ -12,7 +12,7 @@ from easydata.category.forms import CategoryPostForm
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session
 from easydata.func.function_category import get_category_fid_choices_html,\
-    get_category_list_html, get_choices_html
+    get_category_list_html, get_choices_html, get_category_dict_pk
 from easydata.func.function_core import check_login
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
@@ -20,6 +20,7 @@ from easydata.validator import IntegerValidator
 from code.models import Code, Mark
 from code.forms import CodePostForm
 from django.utils.timezone import now
+from django.views.generic.list import ListView
 #class CodePostView(FormView):
 #    pass
 
@@ -166,6 +167,48 @@ class CodePostView(FormView):
         code.date_update = now()
         if commit:
             code.save()
+
+
+class CodeListView(ListView):
+    model = Code
+    template_name = "code/list.html"
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD,{'text': 'Code'},] 
+        super(CodeListView, self).__init__(*args, **kwargs)
+    
+    def get_queryset(self):
+        return Code.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
+    
+    def get_context_data(self, **kwargs):
+        context = super(CodeListView, self).get_context_data(**kwargs)
+        context['head_title_text'] = _('Code List')
+        context['breadcrumb'] = self.breadcrumb
+        context['category_dict_pk'] = get_category_dict_pk()
+        return context 
+
+
+
+
+def insert_code(request):
+    code_list = Code.objects.filter(uid=request.user.id,displayorder__gte=0).order_by("-date_create")[:10]
+    modal_form = {
+        'btn_primary': _("Submit"),
+        'btn_default': _("Close"),
+    }
+    context = {
+        'code_list': code_list,
+        'modal_form': modal_form,
+    }
+    return render(request, 'code/insert.html', context)
+   
+
+def delete_code(request, pk):
+    code = Code.objects.get(pk=pk)
+    code.delete()
+    message_body = "Code: %s has been deleted" % code.title
+    messages.success(request, message_body)
+    return HttpResponse('')
 
 
 def get_mark_nav_href(pk, line_num):
