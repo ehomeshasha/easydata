@@ -58,7 +58,7 @@ class PDFUploadView(FormView):
     pdf_instance = None 
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('PDF'),'href': '/pdf/list/'},] 
         super(PDFUploadView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
@@ -177,7 +177,7 @@ class PDF2HTMLView(DetailView):
     sidebar_width = 35 
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'PDF','href': '/pdf/list/'},]
+        self.breadcrumb = [HOME_BREAD,{'text': _('PDF'),'href': '/pdf/list/'},]
         
         super(PDF2HTMLView, self).__init__(*args, **kwargs)
     
@@ -301,9 +301,10 @@ class PDF2HTMLView(DetailView):
 class PDFListView(ListView):
     model = pdfModel
     template_name = "pdf/list.html"
+    paginate_by = 2
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'PDF'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('PDF')},] 
         super(PDFListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):

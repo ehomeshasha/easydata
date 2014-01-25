@@ -28,7 +28,7 @@ class CategoryPostView(FormView):
     custom_field_errors = []
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Category', 'href': '/category/'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Category'), 'href': '/category/'},] 
         super(CategoryPostView, self).__init__(*args, **kwargs)
     
     def get(self, *args, **kwargs):
@@ -126,7 +126,7 @@ class CategoryListView(TemplateView):
     template_name = 'category/list.html'
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Category'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Category')},] 
         super(CategoryListView, self).__init__(*args, **kwargs)
     
     def get_context_data(self, **kwargs):

@@ -26,6 +26,7 @@ from django.template import Template
 from django.template import Context
 from django.conf import settings
 import re
+from django.views.generic.list import ListView
 #class ArticlePostView(FormView):
 #    pass
 def get_articleindex_choices(articleindex):
@@ -43,7 +44,7 @@ class ArticlePostView(FormView):
     article_instance = None 
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Article','href': '/article/list/'},]
+        self.breadcrumb = [HOME_BREAD,{'text': _('Article'),'href': '/article/list/'},]
         super(ArticlePostView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
@@ -181,7 +182,7 @@ class ArticleView(DetailView):
     s_pattern = re.compile(r'\s+')
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Article','href': '/article/list/'},]
+        self.breadcrumb = [HOME_BREAD,{'text': _('Article'),'href': '/article/list/'},]
         super(ArticleView, self).__init__(*args, **kwargs)
     
     def get(self, *args, **kwargs):
@@ -201,3 +202,26 @@ class ArticleView(DetailView):
         code_syntax_string = re.sub(self.s_pattern, " ", m.group(2))
         t = Template("%s%s" % ("{% load custom_tags %}", code_syntax_string))
         return t.render(Context({}))
+    
+class ArticleIndexListView(ListView):
+    
+    model = ArticleIndex
+    template_name = "article/list.html"
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD,{'text': _('Article')},] 
+        super(ArticleIndexListView, self).__init__(*args, **kwargs)
+    
+    def get_queryset(self):
+        return ArticleIndex.objects.filter(displayorder__gte=0).order_by("date_create")
+    
+    def get_context_data(self, **kwargs):
+        context = super(ArticleIndexListView, self).get_context_data(**kwargs)
+        context['head_title_text'] = _('Article List')
+        context['breadcrumb'] = self.breadcrumb
+        for i,articleindex in enumerate(context['articleindex_list']):
+            context['articleindex_list'][i].articles = Article.objects.filter(fid=articleindex.id,displayorder__gte=0).order_by("displayorder")
+        
+        single_articles = Article.objects.filter(fid=0, displayorder__gte=0).order_by("date_create")
+        context['single_articles'] = single_articles
+        return context 

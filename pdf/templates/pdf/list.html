@@ -5,6 +5,8 @@
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 {% block body %}
+{% get_current_language as LANGUAGE_CODE %}
+{{ LANGUAGE_CODE }}
 <div class="list_area">
 	<table class="list_table table table-bordered table-condensed">
 		<tr>
@@ -44,5 +46,22 @@
 		</tr>
 		{% endfor %}
 	</table>
+	{% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/pdf/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                {% endif %}
+                {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
+                <span class="page-current">
+                    Page {{ page_number }} of {{ num_pages }}
+                </span>
+                {% endblocktrans %}
+                {% if page_obj.has_next %}
+                    <a href="/pdf/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

@@ -1,0 +1,814 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-25 17:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: article/forms.py:12 code/forms.py:16 pdf/forms.py:11 pdf/forms.py:44
+msgid "Title"
+msgstr "标题"
+
+#: article/forms.py:20
+msgid "Display order"
+msgstr ""
+
+#: article/forms.py:30
+msgid "Digit only for displayorder"
+msgstr ""
+
+#: article/models.py:24 article/models.py:45 code/models.py:11
+#: code/models.py:29 easydata/category/views.py:31
+#: easydata/category/views.py:129 pdf/models.py:33
+msgid "Category"
+msgstr ""
+
+#: article/models.py:28
+msgid "ArticleIndex Title"
+msgstr ""
+
+#: article/views.py:47 article/views.py:185 article/views.py:212
+msgid "Article"
+msgstr ""
+
+#: article/views.py:75 article/views.py:76
+msgid "Article Edit"
+msgstr ""
+
+#: article/views.py:77 article/views.py:88 code/views.py:72 code/views.py:78
+#: code/views.py:197 code/views.py:227
+#: easydata/category/templates/category/post.html:23 pdf/views.py:89
+#: pdf/views.py:350 pdf/views.py:466 pdf/views.py:471 pdf/views_bak.py:90
+#: pdf/views_bak.py:379 pdf/views_bak.py:497 pdf/views_bak.py:502
+msgid "Submit"
+msgstr ""
+
+#: article/views.py:86 article/views.py:87
+msgid "Post Article"
+msgstr ""
+
+#: article/views.py:110
+msgid "ArticleIndex"
+msgstr ""
+
+#: article/views.py:140
+msgid "Article has been successfully posted"
+msgstr ""
+
+#: article/views.py:144
+msgid "Information about this Article has been successfully modified"
+msgstr ""
+
+#: article/views.py:220 article_bak/templates/article/article_list.html:11
+msgid "Article List"
+msgstr ""
+
+#: article/templates/article/article_site_base.html:12
+#: article_bak/templates/article_site_base.html:11
+msgid "上一章"
+msgstr ""
+
+#: article/templates/article/article_site_base.html:17
+#: article_bak/templates/article_site_base.html:16
+msgid "下一章"
+msgstr ""
+
+#: article/templates/article/post.html:20 pdf/templates/pdf/comment.html:56
+msgid "Content"
+msgstr ""
+
+#: article_bak/views.py:10
+msgid "Hadoop 安装与部署"
+msgstr ""
+
+#: article_bak/views.py:11
+msgid "Mahout 二次开发"
+msgstr ""
+
+#: article_bak/views.py:12
+msgid "Mahout 安装"
+msgstr ""
+
+#: article_bak/views.py:13
+msgid "Mahout命令执行过程的分析"
+msgstr ""
+
+#: article_bak/views.py:14
+msgid "Mahout参数获取"
+msgstr ""
+
+#: article_bak/views.py:15
+msgid "集体智慧编程"
+msgstr ""
+
+#: article_bak/templates/article/chapter_list.html:12
+msgid "Chapter List"
+msgstr ""
+
+#: article_bak/templates/article/maven_install.html:9
+msgid ""
+"\n"
+"<div>\n"
+"\t<h1>Maven安装与使用介绍</h1>\n"
+"\t\n"
+"\t\n"
+"</div>\n"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/1_mahout_install.html:9
+#, python-format
+msgid ""
+"\n"
+"<div>\n"
+"\t<h1>%(head_title_text)s</h1>\n"
+"\t<h3>Mahout资料</h3>\n"
+"\t<ul>\n"
+"\t\t<li>官方网站: <a href=\"http://mahout.apache.org/\">http://mahout.apache."
+"org/</a></li>\n"
+"\t\t<li>Mahout Core API: <a href=\"https://builds.apache.org/job/Mahout-"
+"Quality/javadoc/index.html?overview-summary.html\">https://builds.apache.org/"
+"job/Mahout-Quality/javadoc/index.html?overview-summary.html</a></li>\n"
+"\t\t<li>Mahout Math API: <a href=\"https://builds.apache.org/job/Mahout-"
+"Quality/ws/trunk/math/target/site/apidocs/index.html?overview-summary.html"
+"\">https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/"
+"apidocs/index.html?overview-summary.html</a>\n"
+"\t\t<li>PDF: <a href=\"%(SITE_URL)s/pdf/view/2/\">%(SITE_URL)s/pdf/view/2/</"
+"a></li>\n"
+"\t</ul>\n"
+"\t\n"
+"\t<h3>安装环境</h3>\n"
+"\t<div>\n"
+"\t\t<div>\n"
+"\t\tCentOS 6.4桌面版\n"
+"\t\t</div>\n"
+"\t\t<div>优点</div>\n"
+"\t\t<ol>\n"
+"\t\t\t<li>安装和部署Hadoop方便</li>\n"
+"\t\t\t<li>开发需要的工具Zend Studio,Eclipse, Chrome, FileZilla都有linux版本</"
+"li>\n"
+"\t\t\t<li>有些软件如QQ, Evernote等虽然没有linux版本, 但是会友网页版, 打开浏览"
+"器就可以使用</li>\n"
+"\t\t\t<li>用时间长了会掌握许多有用的linux指令以及linux下安装和卸载软件的方法"
+"</li>\n"
+"\t\t</ol>\n"
+"\t\t<h5>Java 1.6.0</h5>\n"
+"\t\t<h5>hadoop 1.2.1<a href=\"/article/list/hadoop_deployment/\">如何安装和部"
+"署Hadoop开发环境?</a></h5>\n"
+"\t\t<h5>maven 3.1.0<a href=\"/article/view/maven_install/\">如何安装与使用?</"
+"a></h5>\n"
+"\t</div>\n"
+"\t\n"
+"\t<h3>Mahout安装流程</h3>\n"
+"\t<ol>\n"
+"\t\t<li>安装maven</li>\n"
+"\t\t<li>\n"
+"\t\t\t<p>安装Hadoop并配置好环境变量, 下面是我自己在/etc/profile添加的一些环境"
+"变量设置</p>\n"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/1_mahout_install.html:44
+#, python-format
+msgid ""
+"\n"
+"\n"
+"\t\t</li>\n"
+"\t\t\n"
+"\t\t\n"
+"\t\t<li>下载<a href=\"http://mirrors.cnnic.cn/apache/mahout/0.8/\">Mahout的源"
+"码包</a>,\n"
+"\t\t\t由于我们要进行二次开发，所以请下载mahout-distribution-0.8-src.tar.gz</"
+"li>\n"
+"\t\t<li>解压后cd到解压目录，然后执行命令 <code>mvn install -Dmaven.test."
+"skip=true</code>, \n"
+"\t\t\t如果你是第一次接触maven(我接触mahout的情况就是如此), 请一定记得加上后面"
+"的<code>-Dmaven.skip.test=true</code>\n"
+"\t\t\t要知道如果不加上将会运行mahout里所有的UnitTest，会非常耗费时间。\n"
+"\t\t\t</li>\n"
+"\t\t<li>安装过程中将会自动下载依赖的jar包，因此需要等待几分钟来完成</li>\n"
+"\t\t<li>以后我们进行Mahout的二次开发修改代码后都要执行<code>mvn install -"
+"Dmaven.test.skip=true</code>来确保代码被重新编译和打包</li>\n"
+"\t\t<li>\n"
+"\t\t\t<p>将Mahout导入Eclipse(须先安装maven插件<a href=\"http://eclipse.org/"
+"m2e/download/\">m2eclipse</a>), 这里我附上一张我导入项目后的截图</p>\n"
+"\t\t\t<span class=\"text-danger\">mahout_project.jpg</span><br />\n"
+"\t\t\t<img src=\"%(MEDIA_URL)s/article_image/%(article_name)s/mahout_project."
+"jpg\" width=\"329\" height=\"198\" />\n"
+"\t\t</li>\n"
+"\t</ol>\n"
+"</div>\n"
+"\n"
+"\n"
+"\n"
+"<style type=\"text/css\">\n"
+".syntaxhighlighter{margin-top:0 !important;}</style>\n"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/2_mahout_commands.html:9
+#, python-format
+msgid ""
+"\n"
+"<div>\n"
+"\t<h1>%(head_title_text)s</h1>\n"
+"\t<h4>1. 运行mahout命令</h4>\n"
+"\t<p>在安装完Mahout后我们执行<code>mahout</code>会出现所有可以使用的命令, 就"
+"像下面贴出来的这样</p>\n"
+"\t"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/2_mahout_commands.html:16
+msgid ""
+"\n"
+"\t<div class=\"row\">\n"
+"\t\t<div class=\"col-lg-10 no-padding-right\">\n"
+"\t\t\t<div class=\"panel panel-default\">\n"
+"\t\t\t\t<div class=\"panel-heading\">代码分析</div>\n"
+"\t\t\t\t<div class=\"panel-body\">\n"
+"\t\t\t\t\t<p>\n"
+"\t\t\t\t\t这段代码暗示了Mahout的底层运行机制就是在Hadoop运行环境下执行这个\n"
+"\t\t\t\t\t<code>mahout-examples-0.8-job.jar</code>, \n"
+"\t\t\t\t\t那么具体是不是这样,我们现在就分析一下mahout/bin目录下的mahout文"
+"件。\n"
+"\t\t\t\t\t由于代码内容比较长,我只贴出了执行部分,之前的那些赋值和逻辑判断代码"
+"请自行研读\n"
+"\t\t\t\t\t</p>\n"
+"\t\t\t\t</div>\n"
+"\t\t\t</div>\n"
+"\t\t</div>\n"
+"\t\t<div class=\"col-lg-2\">\n"
+"\t\t\n"
+"\t\t</div>\n"
+"\t</div>\n"
+"\t<h4>2. bin/mahout源码分析</h4>\n"
+"\t"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/2_mahout_commands.html:38
+msgid ""
+"\n"
+"\t<div class=\"row\">\n"
+"\t\t<div class=\"col-lg-10 no-padding-right\">\n"
+"\t\t\t<div class=\"panel panel-default\">\n"
+"\t\t\t\t<div class=\"panel-heading\">代码分析</div>\n"
+"\t\t\t\t<div class=\"panel-body\">\n"
+"\t\t\t\t\t<p>\n"
+"\t\t\t\t\t可以看到Mahout运行分为两种方式,一种是作为普通的java程序在本地模式运"
+"行,另一种\n"
+"\t\t\t\t\t则是在hadoop环境下执行,而在hadoop环境下运行也分为两种,一种是第一个"
+"参数是hadoop,\n"
+"\t\t\t\t\t比如mahout hadoop fs -ls,这种情况其实就等同于执行hadoop fs -ls,另一"
+"种就是执行\n"
+"\t\t\t\t\tmahout-examples-0.8-job.jar的org.apache.mahout.driver."
+"MahoutDriver,\n"
+"\t\t\t\t\t详情可以见本代码的最后一个mark注释。\n"
+"\t\t\t\t\t</p>\n"
+"\t\t\t\t</div>\n"
+"\t\t\t</div>\n"
+"\t\t</div>\n"
+"\t\t<div class=\"col-lg-2\">\n"
+"\t\t\n"
+"\t\t</div>\n"
+"\t</div>\n"
+"\t<h4>3. MahoutDriver源码分析</h4>\n"
+"\t<p>\n"
+"\t\torg.apache.mahout.driver.MahoutDriver在项目mahout-core下的src/main/java"
+"中, 代码的逻辑分为两个部分,\n"
+"\t\t第一部分是读取prop文件来获取命令所需要执行的class,第二部分是用driver获取"
+"的arglist作为参数来执行该class,\n"
+"\t\t这就意味着我们做开发的时候可以在这个文件里面添加内容来增加mahout可以执行"
+"的命令。\n"
+"\t\t代码如下：\n"
+"\t</p>\n"
+"\t"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/2_mahout_commands.html:68
+msgid ""
+"\n"
+"\t<h4>总结</h4>\n"
+"\t<ol>\n"
+"\t\t<li>mahout可以以本地和hadoop两种模式运行</li>\n"
+"\t\t<li>hadoop模式下mahout执行命令是由<code>org.apache.mahout.driver."
+"MahoutDriver</code>来分配具体执行任务的class的</li>\n"
+"\t\t<li>文件<code>driver.classes.default.props</code>位于mahout目录的src/conf"
+"下, 做二次开发时\n"
+"\t\t\t可以在这个文件里面添加内容来增加mahout可以执行的命令。</li>\n"
+"\t</ol>\n"
+"\t\n"
+"\t"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/2_mahout_commands.html:79
+msgid ""
+"\t\n"
+"\n"
+"\t\n"
+"\t\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/3_mahout_arguments.html:9
+#, python-format
+msgid ""
+"\n"
+"<div>\n"
+"\t<h1>%(head_title_text)s</h1>\n"
+"\t<h3>学习目标</h3>\n"
+"\t<ol>\n"
+"\t\t<li>了解mahout参数类型</li>\n"
+"\t\t<li>熟悉mahout内置参数</li>\n"
+"\t\t<li>掌握mahout的对于操作参数的几种方式</li>\n"
+"\t</ol>\n"
+"\t\n"
+"\t<p>为了方便说明, 我们还是从分析一个mahout的源码分析开始</p>\n"
+"\t"
+msgstr ""
+
+#: article_bak/templates/article/mahout_development/3_mahout_arguments.html:22
+msgid ""
+"\t\n"
+"\t\n"
+"\t\n"
+"\t\n"
+"\t\n"
+"\t\n"
+"\t\n"
+"</div>\n"
+msgstr ""
+
+#: code/forms.py:10 code/views.py:36 code/views.py:178
+msgid "Code"
+msgstr ""
+
+#: code/forms.py:24 easydata/category/forms.py:17 pdf/forms.py:19
+msgid "Description"
+msgstr ""
+
+#: code/forms.py:31 code/models.py:15 code/models.py:33
+msgid "Language"
+msgstr ""
+
+#: code/forms.py:33
+msgid "Plain Text"
+msgstr ""
+
+#: code/forms.py:63
+msgid "Gutter"
+msgstr ""
+
+#: code/forms.py:71
+msgid "First line on the gutter"
+msgstr ""
+
+#: code/forms.py:80
+msgid "Enable collapse"
+msgstr ""
+
+#: code/forms.py:88
+msgid "Define highlight lines, seperate by comma"
+msgstr ""
+
+#: code/forms.py:95
+msgid "URL clickable"
+msgstr ""
+
+#: code/forms.py:103
+msgid "Set max height value(unit: px) here, left 0 to ignore this setting"
+msgstr ""
+
+#: code/models.py:54
+msgid "target code"
+msgstr ""
+
+#: code/views.py:70 code/views.py:71
+msgid "Code Edit"
+msgstr ""
+
+#: code/views.py:76 code/views.py:77
+msgid "Post Code"
+msgstr ""
+
+#: code/views.py:120
+msgid "Code has been successfully posted"
+msgstr ""
+
+#: code/views.py:124
+msgid "Information about this Code has been successfully modified"
+msgstr ""
+
+#: code/views.py:186
+msgid "Code List"
+msgstr ""
+
+#: code/views.py:198 code/views.py:228 pdf/views.py:351 pdf/views_bak.py:380
+msgid "Close"
+msgstr ""
+
+#: code/templates/code/insert.html:7
+msgid ""
+"\n"
+"\t<label class=\"\" for=\"codeIdSel\">\n"
+"\t\t<span class=\"mrn\">近期创建的代码(选择后自动填写Code ID)</span>\n"
+"\t\t<a href=\"/code/list/\" target=\"_blank\" class=\"mrn xs1\">查看全部代码"
+"</a>\n"
+"\t\t<a href=\"/code/new/\" target=\"_blank\" class=\"mrn xs1\">创建新代码</"
+"a>\n"
+"\t</label>\n"
+"\t"
+msgstr ""
+
+#: code/templates/code/list.html:11
+#, python-format
+msgid ""
+"\n"
+"\t\t\t<td width=\"4%%\">ID</td>\n"
+"\t\t\t<td width=\"10%%\">Category</td>\n"
+"\t\t\t<td>Title</td>\n"
+"\t\t\t<td width=\"10%%\">Description</td>\n"
+"\t\t\t<td width=\"5%%\">Marks</td>\n"
+"\t\t\t<td width=\"7%%\">Language</td>\n"
+"\t\t\t<td width=\"5%%\">Gutter</td>\n"
+"\t\t\t<td width=\"6%%\">First line</td>\n"
+"\t\t\t<td width=\"6%%\">Collapse</td>\n"
+"\t\t\t<td width=\"6%%\">Highlight</td>\n"
+"\t\t\t<td width=\"8%%\">Url clickable</td>\n"
+"\t\t\t<td width=\"7%%\">Max height</td>\n"
+"\t\t\t<td width=\"8%%\">Date create</td>\n"
+"\t\t\t"
+msgstr ""
+
+#: code/templates/code/list.html:35 easydata/func/function_category.py:85
+#: pdf/templates/pdf/list.html:32
+msgid "edit"
+msgstr ""
+
+#: code/templates/code/list.html:36 code/templates/code/mark_view.html:16
+#: easydata/func/function_category.py:85 pdf/templates/pdf/list.html:33
+#: pdf/templates/pdf/mark_view.html:19
+msgid "delete"
+msgstr ""
+
+#: code/templates/code/list.html:56 pdf/templates/pdf/list.html:53
+msgid "previous"
+msgstr ""
+
+#: code/templates/code/list.html:58 pdf/templates/pdf/list.html:55
+#, python-format
+msgid ""
+"\n"
+"                <span class=\"page-current\">\n"
+"                    Page %(page_number)s of %(num_pages)s\n"
+"                </span>\n"
+"                "
+msgstr ""
+
+#: code/templates/code/list.html:64 pdf/templates/pdf/list.html:61
+msgid "next"
+msgstr ""
+
+#: code/templates/code/mark.html:11 pdf/templates/pdf/mark.html:11
+msgid "post mark"
+msgstr ""
+
+#: code/templates/code/mark.html:12 pdf/templates/pdf/mark.html:12
+msgid "mark on this line"
+msgstr ""
+
+#: code/templates/code/mark.html:13 pdf/templates/pdf/mark.html:14
+msgid "about mark"
+msgstr ""
+
+#: code/templates/code/mark_about.html:4 pdf/templates/pdf/mark_about.html:4
+msgid "About MARK system"
+msgstr ""
+
+#: code/templates/code/mark_about.html:5 pdf/templates/pdf/mark_about.html:5
+msgid "How to mark"
+msgstr ""
+
+#: code/templates/code/mark_about.html:22 pdf/templates/pdf/mark_about.html:22
+msgid "Read marks"
+msgstr ""
+
+#: easydata/constant.py:21 pdf/views.py:61 pdf/views.py:180 pdf/views.py:307
+msgid "PDF"
+msgstr ""
+
+#: easydata/constant.py:22
+msgid "Learning System"
+msgstr ""
+
+#: easydata/constant.py:23
+msgid "Tiku"
+msgstr ""
+
+#: easydata/settings.py:81
+msgid "Chinese"
+msgstr ""
+
+#: easydata/settings.py:82
+msgid "English"
+msgstr ""
+
+#: easydata/uploads.py:14
+msgid "Please login first"
+msgstr ""
+
+#: easydata/uploads.py:84
+msgid "file too large ( > 2mb )"
+msgstr ""
+
+#: easydata/uploads.py:86
+msgid "only image is allowed for this upload"
+msgstr ""
+
+#: easydata/uploads.py:88
+msgid "file must be *.png,*.jpg,*.jpeg,*.gif,*.bmp"
+msgstr ""
+
+#: easydata/validator.py:26 easydata/validator.py:70 easydata/validator.py:98
+#, python-format
+msgid "%s cannot be empty"
+msgstr ""
+
+#: easydata/validator.py:103
+#, python-format
+msgid "%s is not digit"
+msgstr ""
+
+#: easydata/category/forms.py:9
+msgid "Name"
+msgstr ""
+
+#: easydata/category/forms.py:24
+msgid "Module"
+msgstr ""
+
+#: easydata/category/forms.py:32
+msgid "Display Order"
+msgstr ""
+
+#: easydata/category/forms.py:40
+msgid "Whether display"
+msgstr ""
+
+#: easydata/category/views.py:60 easydata/category/views.py:61
+msgid "Category Edit"
+msgstr ""
+
+#: easydata/category/views.py:64 easydata/category/views.py:65
+msgid "New Category"
+msgstr ""
+
+#: easydata/category/views.py:108
+msgid "category is successfully created"
+msgstr ""
+
+#: easydata/category/views.py:117
+msgid "category has been successfully modified"
+msgstr ""
+
+#: easydata/category/views.py:135
+msgid "Category List"
+msgstr ""
+
+#: easydata/templates/_account_bar.html:13
+msgid "Settings"
+msgstr ""
+
+#: easydata/templates/_account_bar.html:15
+msgid "Admin"
+msgstr ""
+
+#: easydata/templates/_account_bar.html:19
+msgid "Log out"
+msgstr ""
+
+#: easydata/templates/_account_bar.html:24
+msgid "Log in"
+msgstr ""
+
+#: easydata/templates/_account_bar.html:26
+msgid "Sign up"
+msgstr ""
+
+#: easydata/templates/_footer.html:3
+msgid "&copy; 2014 ehomeshasha&lt;693946948@qq.com&gt;"
+msgstr ""
+
+#: easydata/templates/homepage.html:5
+msgid "Welcome"
+msgstr ""
+
+#: easydata/templates/homepage.html:10
+msgid "Welcome to EASYDATA"
+msgstr ""
+
+#: easydata/templates/homepage.html:12
+msgid ""
+"\n"
+"        <b>Easydata</b> is a study website for Machine-learning and Data-"
+"mining which is writtern in Python ,based on <a href=\"http://djangoproject."
+"com/\">Django</a> Project. \n"
+"        That means, it is very easy to get testing dataset by python API or "
+"even by using spider iframe like Scrapy. \n"
+"        After that, We could analyze them with some third-party python "
+"packages, NLTK for instance. And \n"
+"        I'll do my best to display and explain many classical algorithm "
+"about this BigData field.\n"
+"        Additionally, there are many useful tools integrate on this site to "
+"help you learning. \n"
+"        "
+msgstr ""
+
+#: easydata/templates/homepage.html:23
+msgid ""
+"\n"
+"        By using PDF2HTML tools, You could read the PDF file on-line with "
+"hight performance and excellent user experience.\n"
+"        On the PDF view page, anyone could make his/her bookmarker on any "
+"line that he/she want to place.\n"
+"        Additionally, a comment function is also built in on this page.You "
+"could visit <a href=\"/pdf/view/1/\">here</a> for detail.    \n"
+"        "
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:16
+msgid " hours ago"
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:18
+msgid "half hour ago"
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:20
+msgid " minutes ago"
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:22
+msgid " seconds ago"
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:26
+msgid "yesterday"
+msgstr ""
+
+#: easydata/templatetags/custom_tags.py:28
+msgid " days ago"
+msgstr ""
+
+#: pdf/forms.py:24
+msgid "PDF file"
+msgstr ""
+
+#: pdf/forms.py:32
+msgid "file too large ( > 150mb )"
+msgstr ""
+
+#: pdf/forms.py:34
+msgid "invalid file type, must be pdf"
+msgstr ""
+
+#: pdf/forms.py:38
+msgid "invalid file suffix, must be .pdf"
+msgstr ""
+
+#: pdf/models.py:38
+msgid "File size"
+msgstr ""
+
+#: pdf/models.py:44
+msgid "Is convert"
+msgstr ""
+
+#: pdf/models.py:62 pdf/models.py:81
+msgid "target pdf"
+msgstr ""
+
+#: pdf/views.py:87 pdf/views.py:88 pdf/views_bak.py:88 pdf/views_bak.py:89
+msgid "PDF Edit"
+msgstr ""
+
+#: pdf/views.py:93 pdf/views.py:94 pdf/views_bak.py:93 pdf/views_bak.py:94
+msgid "PDF Upload"
+msgstr ""
+
+#: pdf/views.py:95 pdf/views_bak.py:95
+msgid "Upload"
+msgstr ""
+
+#: pdf/views.py:141 pdf/views_bak.py:137
+msgid "PDF has been successfully uploaded"
+msgstr ""
+
+#: pdf/views.py:145 pdf/views_bak.py:141
+msgid "Information about this PDF has been successfully modified"
+msgstr ""
+
+#: pdf/views.py:191 pdf/views_bak.py:181
+msgid "PDF Detail"
+msgstr ""
+
+#: pdf/views.py:315 pdf/views_bak.py:344
+msgid "PDF List"
+msgstr ""
+
+#: pdf/views.py:464 pdf/views.py:465 pdf/views_bak.py:495 pdf/views_bak.py:496
+msgid "Edit Comment"
+msgstr ""
+
+#: pdf/views.py:469 pdf/views.py:470 pdf/views_bak.py:500 pdf/views_bak.py:501
+msgid "Create Comment"
+msgstr ""
+
+#: pdf/views.py:534 pdf/views_bak.py:563
+msgid "Comment has been posted successfully"
+msgstr ""
+
+#: pdf/views.py:538 pdf/views_bak.py:567
+msgid "Comment has been successfully modified"
+msgstr ""
+
+#: pdf/templates/pdf/comment.html:18
+msgid "How about this book"
+msgstr ""
+
+#: pdf/templates/pdf/list.html:13
+#, python-format
+msgid ""
+"\n"
+"\t\t\t<td width=\"10%%\">Category</td>\n"
+"\t\t\t<td>Title</td>\n"
+"\t\t\t<td width=\"5%%\">Views</td>\n"
+"\t\t\t<td width=\"5%%\">Marks</td>\n"
+"\t\t\t<td width=\"7%%\">Comment</td>\n"
+"\t\t\t<td width=\"10%%\">Contributor</td>\n"
+"\t\t\t<td width=\"8%%\">Upload Date</td>\n"
+"\t\t\t<td width=\"6%%\">Size</td>\n"
+"\t\t\t<td width=\"7%%\">Operate</td>\n"
+"\t\t\t"
+msgstr ""
+
+#: pdf/templates/pdf/list.html:43
+msgid "View PDF"
+msgstr ""
+
+#: pdf/templates/pdf/list.html:44
+msgid "Download"
+msgstr ""
+
+#: pdf/templates/pdf/mark.html:13
+msgid "mark on this page"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:21
+msgid "Views:"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:22
+msgid "Mark:"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:23
+msgid "Comment:"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:28
+msgid "download"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:29
+msgid "view pdf"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:30
+msgid "comment"
+msgstr ""

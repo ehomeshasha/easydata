@@ -33,7 +33,7 @@ class CodePostView(FormView):
     code_instance = None 
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Code','href': '/code/list/'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Code'),'href': '/code/list/'},] 
         super(CodePostView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
@@ -172,9 +172,10 @@ class CodePostView(FormView):
 class CodeListView(ListView):
     model = Code
     template_name = "code/list.html"
+    paginate_by = 20
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': 'Code'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Code')},] 
         super(CodeListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):

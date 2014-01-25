@@ -73,13 +73,15 @@ class CharValidator(Validator):
         
         if self.minlength and isinstance(self.minlength, int) and \
             len(self.post[self.validate_key]) < self.minlength:
-            self.error_text = [_("%s must longer than %d characters" % (self.validate_label, self.minlength))]
+            error_text_body = "%s must longer than %d characters" % (self.validate_label, self.minlength)
+            self.error_text = [_(error_text_body)]
             self.do_invalid()
             return False
     
         if self.maxlength and isinstance(self.maxlength, int) and \
             len(self.post[self.validate_key]) > self.maxlength:
-            self.error_text = [_("%s exceed %d characters" % (self.validate_label, self.minlength))]
+            error_text_body = "%s exceed %d characters" % (self.validate_label, self.minlength)
+            self.error_text = [_(error_text_body)]
             self.do_invalid()
             return False
         self.validate_value = self.post[self.validate_key]
