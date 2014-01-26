@@ -630,7 +630,7 @@ msgstr ""
 
 #: easydata/templates/homepage.html:10
 msgid "Welcome to EASYDATA"
-msgstr ""
+msgstr "欢迎来到EASYDATA"
 
 #: easydata/templates/homepage.html:12
 msgid ""
