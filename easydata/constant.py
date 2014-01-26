@@ -23,3 +23,8 @@ CTYPE_DICT = {
     'tiku': _('Tiku'),
 }
 HOME_BREAD = {'text': 'Home', 'href': '/'}
+
+LANGUAGE_DICT = {
+    'en': {'shortname': _("en")},
+    'zh-cn': {'shortname': _("zh")},
+}

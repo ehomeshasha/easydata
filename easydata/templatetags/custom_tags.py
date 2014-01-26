@@ -3,6 +3,7 @@ from django.utils.timezone import now
 from code.models import Code
 from code.syntaxhighlighter import Syntaxhighlighter
 import re
+from easydata.constant import LANGUAGE_DICT
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
@@ -115,3 +116,11 @@ def max_height_convert(value):
         return "%spx" % max_height_match.group(1)
     else:
         return ''
+    
+@register.filter()  
+def get_language_shortname(language_code):
+    try:
+        return LANGUAGE_DICT[language_code]['shortname']
+    except KeyError:
+        return ''
+    

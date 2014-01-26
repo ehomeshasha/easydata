@@ -5,10 +5,10 @@ from django.views.generic import TemplateView
 
 from django.contrib import admin
 from easydata import uploads
-
+from easydata.views import change_account_language, HomeView
 
 urlpatterns = patterns("",
-    url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+    url(r"^$", HomeView.as_view(), name="home"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
     url(r'^blog/', include("blog.urls")),
@@ -20,7 +20,8 @@ urlpatterns = patterns("",
     url(r'^article/', include("article.urls")),
     url(r'^code/', include("code.urls")),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
+    url(r'^change_account_language/(?P<pk>\d+)/(?P<code>[-_\w]+)/$', change_account_language),
+    
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

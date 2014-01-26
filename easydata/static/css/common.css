@@ -1,3 +1,15 @@
+.lang_select_area {
+	font-size:12px;
+	padding-left:2px;
+	padding-right:2px;
+}
+.lang_select_area a {}
+
+
+
+
+
+
 .code_info .tooltip {
   position: absolute;
   z-index: 1030;

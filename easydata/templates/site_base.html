@@ -36,7 +36,33 @@
             <span class="fa fa-bar"></span>
             <span class="fa fa-bar"></span>
         </button>
-        {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+        {% block site_brand %}
+        <a class="navbar-brand" href="{% url "home" %}">
+        	{{ SITE_NAME }}</a>
+        	<div class="lang_select_area navbar-brand">
+	        	[
+	        	{% get_language_info_list for LANGUAGES as languages %}
+				{% for language in languages %}
+				<a class="lang_select" href="javascript:;" data-uid="{{ request.user.id }}" data-code="{{ language.code }}">{{ language.code|get_language_shortname }}</a>
+				{% if not forloop.last %}|{% endif %}
+				{% endfor %}
+				]
+	        	{% if not request.user.is_authenticated %}
+	        	<form action="/i18n/setlang/" method="post" style="display:none;" id="lang_select_form">
+				{% csrf_token %}
+				<input name="next" type="hidden" value="{{ redirect_to }}" />
+				<select name="language" id="languageSel">
+				{% get_language_info_list for LANGUAGES as languages %}
+				{% for language in languages %}
+				<option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+				{% endfor %}
+				</select>
+				<input type="submit" value="Go" />
+				</form>
+	        	{% endif %}
+        	</div>
+        
+        {% endblock %}
     </div>
     <div class="collapse navbar-collapse">
     	{% block nav %}

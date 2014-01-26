@@ -12,6 +12,19 @@ function closeAlertMessageBox(delay) {
 }
 
 $(function(){
+	$(".lang_select").click(function(){
+		var lang_code = $(this).attr("data-code");
+		var uid = $(this).attr("data-uid");
+		if(uid != "None") {
+			location.href = "/change_account_language/"+uid+"/"+lang_code+"/?next="+location.href
+		} else {
+			$("#languageSel").val(lang_code);
+			$("#lang_select_form").submit();
+		}
+		
+		
+		
+	});
 	$(document).on('change', '#upload_file', function(){
 		//var formData = new FormData($('#mark_form')[0]);
 		var formData = new FormData();
