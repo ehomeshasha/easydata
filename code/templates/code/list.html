@@ -30,13 +30,13 @@
 			<td>{{ code.id }}</td>
 			<td class="category_td">{{ code.cate_id|cate_id_format:category_dict_pk|safe }}</td>
 			<td>
-				{{ code.title }}
+				<a href="/code/view/{{ code.id }}">{{ code.title }}</a>
 				{% if auth_author_admin %}
 				<a class="text-danger" href="/code/edit/{{ code.id }}/">[{% trans "edit" %}]</a>
 				<a class="text-danger deletelink" href='javascript:;' data-id='{{ code.id }}' data-type='code' data-redirect="/code/list/">[{% trans "delete" %}]</a>
 				{% endif %}
 			</td>
-			<td>{{ code.description }}</td>
+			<td><span title="{{ code.description }}">{{ code.description|slice:":18" }}</span></td>
 			<td>{{ code.mark }}</td>
 			<td>{{ code.brush|title }}</td>
 			<td>{{ code.gutter|yes_or_no }}</td>
@@ -53,7 +53,7 @@
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/pdf/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                    <a href="/code/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
                 {% endif %}
                 {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
                 <span class="page-current">
@@ -61,7 +61,7 @@
                 </span>
                 {% endblocktrans %}
                 {% if page_obj.has_next %}
-                    <a href="/pdf/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                    <a href="/code/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
                 {% endif %}
             </span>
         </div>

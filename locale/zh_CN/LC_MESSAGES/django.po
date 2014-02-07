@@ -23,17 +23,17 @@ msgstr "标题"
 
 #: article/forms.py:20
 msgid "Display order"
-msgstr ""
+msgstr "显示顺序"
 
 #: article/forms.py:30
 msgid "Digit only for displayorder"
-msgstr ""
+msgstr "显示顺序的设置值必须为数字"
 
 #: article/models.py:24 article/models.py:45 code/models.py:11
 #: code/models.py:29 easydata/category/views.py:31
 #: easydata/category/views.py:129 pdf/models.py:33
 msgid "Category"
-msgstr ""
+msgstr "类别"
 
 #: article/models.py:28
 msgid "ArticleIndex Title"

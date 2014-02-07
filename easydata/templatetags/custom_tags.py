@@ -1,9 +1,9 @@
 from django import template
 from django.utils.timezone import now
-from code.models import Code
 from code.syntaxhighlighter import Syntaxhighlighter
 import re
 from easydata.constant import LANGUAGE_DICT
+from code.models import Code
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
@@ -88,7 +88,7 @@ def get_code(pk):
     try:
         code_instance = Code.objects.get(pk=pk)
     except Code.DoesNotExist:
-        return '<code>Code (ID:%d) does not exist, please check</code>' % pk
+        return _('<code>Code (ID:%d) does not exist, please check</code>' % pk)
     hl = Syntaxhighlighter(code_instance)
     code = hl.get_code()
     return template.defaultfilters.safe(code)
@@ -103,9 +103,9 @@ def get_dict_value(key, dictionary):
 @register.filter()
 def yes_or_no(value):
     if value==True or value==1 or value=='1':
-        return 'Yes'
+        return _('Yes')
     elif value==False or value==0 or value == '0':
-        return 'No'
+        return _('No')
     else:
         return ''
 max_height_pattern = re.compile(r'max_height(\d+)')
@@ -123,4 +123,17 @@ def get_language_shortname(language_code):
         return LANGUAGE_DICT[language_code]['shortname']
     except KeyError:
         return ''
+    
+code_pattern = re.compile(r'{%\s*get_code\s*(\d+)\s*%}')
+@register.filter()
+def get_code_detail_from_content(content):
+    matches = re.finditer(code_pattern, content)
+    if matches:
+        html = "<ul class='no-margin plw prm'>"
+        for m in matches:
+            code = Code.objects.get(pk=int(m.group(1)))
+            html += "<li><a title='%s' href='/code/view/%d' class=''>%s</a></li>" % (code.description, code.id,code.title) 
+        html += "</ul>"
+    return template.defaultfilters.safe(html)
+        
     

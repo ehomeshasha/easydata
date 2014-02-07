@@ -15,28 +15,26 @@
 			<td width="4%">ID</td>
 			<td width="10%">Category</td>
 			<td width="10%">Username</td>
-			<td width="">Title</td>
-			<td width="20%">ArticleIndex</td>
-			<td width="20%">Code Detail</td>
+			<td width="20%">Title</td>
+			<td width="">Description</td>
 			<td width="8%">Date create</td>
 			{% endblocktrans %}
 		</tr>
-		{% for article in article_list %}
-		{% get_auth_author_admin article.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
+		{% for articleindex in articleindex_list %}
+		{% get_auth_author_admin articleindex.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
-			<td>{{ article.id }}</td>
-			<td class="category_td">{{ article.cate_id|cate_id_format:category_dict_pk|safe }}</td>
-			<td>{{ article.username }}</td>
+			<td>{{ articleindex.id }}</td>
+			<td class="category_td">{{ articleindex.cate_id|cate_id_format:category_dict_pk|safe }}</td>
+			<td>{{ articleindex.username }}</td>
 			<td>
-				<a href="/article/view/{{ article.id }}/">{{ article.title }}</a>
+				{{ articleindex.title }}
 				{% if auth_author_admin %}
-				<a class="text-danger" href="/article/edit/{{ article.id }}/">[{% trans "edit" %}]</a>
-				<a class="text-danger deletelink" href='javascript:;' data-id='{{ article.id }}' data-type='article' data-redirect="/article/list/">[{% trans "delete" %}]</a>
+				<a class="text-danger" href="/articleindex/edit/{{ articleindex.id }}/">[{% trans "edit" %}]</a>
+				<a class="text-danger deletelink" href='javascript:;' data-id='{{ articleindex.id }}' data-type='articleindex' data-redirect="/articleindex/list/">[{% trans "delete" %}]</a>
 				{% endif %}
 			</td>
-			<td>{{ article.articleindex_title }}</td>
-			<td>{{ article.content|get_code_detail_from_content }}</td>
-			<td>{{ article.date_create|hdate }}</td>
+			<td><span title="{{ articleindex.description }}">{{ articleindex.description|slice:":100" }}</span></td>
+			<td>{{ articleindex.date_create|hdate }}</td>
 		</tr>
 		{% endfor %}
 	</table>

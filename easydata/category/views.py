@@ -13,7 +13,7 @@ from easydata.func.function_session import initial_form_session_for_custom_field
     clear_form_session
 from easydata.func.function_category import get_category_fid_choices_html,\
     get_category_list_html
-from easydata.func.function_core import check_login
+from easydata.func.function_core import check_login, get_add_icon
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
 from easydata.validator import IntegerValidator
@@ -28,7 +28,7 @@ class CategoryPostView(FormView):
     custom_field_errors = []
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('Category'), 'href': '/category/'},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Category'), 'href': '/category/list/'},] 
         super(CategoryPostView, self).__init__(*args, **kwargs)
     
     def get(self, *args, **kwargs):
@@ -118,7 +118,7 @@ class CategoryPostView(FormView):
                 
             messages.success(self.request, message_body)
             
-            return redirect('/category/')
+            return redirect('/category/list/')
             
 
 class CategoryListView(TemplateView):
@@ -126,7 +126,7 @@ class CategoryListView(TemplateView):
     template_name = 'category/list.html'
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('Category')},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Category')},get_add_icon('/category/new/',_('Create a new category'))] 
         super(CategoryListView, self).__init__(*args, **kwargs)
     
     def get_context_data(self, **kwargs):

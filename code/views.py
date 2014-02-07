@@ -13,7 +13,7 @@ from easydata.func.function_session import initial_form_session_for_custom_field
     clear_form_session
 from easydata.func.function_category import get_category_fid_choices_html,\
     get_category_list_html, get_choices_html, get_category_dict_pk
-from easydata.func.function_core import check_login
+from easydata.func.function_core import check_login, get_add_icon
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
 from easydata.validator import IntegerValidator
@@ -73,10 +73,10 @@ class CodePostView(FormView):
             self.breadcrumb.append({'text': 'Edit'})
             context['form'].choice_html = get_choices_html(cid=self.code_instance.cate_id,ctype='pdf')
         else:
-            context['head_title_text'] = _('Post Code')
-            context['legend_text'] = _('Post Code')
+            context['head_title_text'] = _('New Code')
+            context['legend_text'] = _('New Code')
             context['submit_btn_text'] = _('Submit')
-            self.breadcrumb.append({'text': 'Post'})
+            self.breadcrumb.append({'text': 'Create'})
             context['form'].choice_html = get_choices_html(cid=0,ctype='pdf')
         
         context['breadcrumb'] = self.breadcrumb
@@ -175,7 +175,7 @@ class CodeListView(ListView):
     paginate_by = 20
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('Code')},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Code')},get_add_icon('/code/new/',_('Create new Code'))] 
         super(CodeListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):

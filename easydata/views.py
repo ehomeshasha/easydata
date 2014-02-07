@@ -6,7 +6,6 @@ class HomeView(TemplateView):
     template_name="homepage.html"
     
     def get(self, *args, **kwargs):
-        print self.request
         return super(HomeView, self).get(*args, **kwargs)
         
 

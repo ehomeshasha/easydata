@@ -2,10 +2,13 @@
 <div class="breadcrumb_area">
 	<ol class="breadcrumb">
 		{% for bc in breadcrumb %}
-		{% if forloop.last and not bc.href %}
+		{% if not bc.href %}
 		<li class="active">{{ bc.text }}</li>
 		{% else %}
-		<li><a href="{{ bc.href }}" title="{{ bc.title }}">{{ bc.text }}</a></li>
+		<li><a href="{{ bc.href }}" 
+			{% if bc.is_label %}class="addicon label label-{{ bc.label_type|default:"default" }}"
+			data-toggle="tooltip" data-trigger="hover" data-placement="right" 
+			data-original-title="{{ bc.tooltip }}"{% endif %}>{{ bc.text }}</a></li>
 		{% endif %}
 		{% endfor %}
 	</ol>

@@ -1,6 +1,8 @@
 from code.models import Mark
 from django.utils.html import strip_tags
 from django import template
+from django.utils.translation import ugettext as _
+
 class Syntaxhighlighter():
     
     def __init__(self, code):
@@ -43,7 +45,9 @@ class Syntaxhighlighter():
                     <div class="col-lg-2 code_info">\
                     \
                     </div>\
-                </div>' % (
+                </div>\
+                %s\
+                ' % (
                     self.code.description, 
                     self.code.id,
                     self.code.title,
@@ -51,10 +55,25 @@ class Syntaxhighlighter():
                     self.get_mark(),
                     self.get_class_configuration(), 
                     self.code.code,
+                    self.get_description(),
                 )
         
         return html
         
+    def get_description(self):
+        if not self.code.description:
+            return ''
+        desc = '<div class="row">\
+                    <div class="col-lg-10 no-padding-right">\
+                        <div class="panel panel-default">\
+                            <div class="panel-heading">%s</div>\
+                            <div class="panel-body">\
+                                <p>%s</p>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>' % (_('code description'), self.code.description)
+        return desc
         
     def get_mark(self):
         marks = Mark.objects.filter(code_id=self.code.id, displayorder__gte=0).order_by("line_num")

@@ -1,3 +1,7 @@
+.breadcrumb .label{font-size:100%;padding:.0em .3em;}
+
+
+
 .lang_select_area {
 	font-size:12px;
 	padding-left:2px;
@@ -195,9 +199,10 @@
 .max_height300 {max-height:300px;}
 
 
+.rfd-link {color:#006;}
+.xi2 {color:#336699;}
 
-
-
+.background-grey {background-color:#f9f9f9;}
 
 .xs1 {font-size:12px !important;}
 .xs2 {font-size:14px !important;}
@@ -238,6 +243,7 @@
 .no-padding-left {padding-left: 0 !important;}
 .no-padding-bottom {padding-bottom: 0 !important;}
 .no-padding-right {padding-right: 0 !important;}
+.no-liststyle {list-style:none;}
 .dropdown-menu.dropdown-menu-xs>li>a {padding:1px 5px;font-size:12px;}
 .dropdown-menu.dropdown-menu-xs {min-width:120px;}
 .opacity-grey {

@@ -12,6 +12,9 @@ function closeAlertMessageBox(delay) {
 }
 
 $(function(){
+	
+	$('.breadcrumb .addicon').tooltip();
+	
 	$(".lang_select").click(function(){
 		var lang_code = $(this).attr("data-code");
 		var uid = $(this).attr("data-uid");

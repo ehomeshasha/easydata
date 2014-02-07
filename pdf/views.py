@@ -8,7 +8,8 @@ from django.views.generic.edit import FormView
 from pdf.forms import PDFUploadForm, PDFCommentForm
 
 from pdf.models import pdf as pdfModel, Mark, Comment
-from easydata.func.function_core import check_login, elistdir, page_jump
+from easydata.func.function_core import check_login, elistdir, page_jump,\
+    get_add_icon
 from pdf.uploads import handle_uploaded_file
 
 import os
@@ -304,7 +305,7 @@ class PDFListView(ListView):
     paginate_by = 2
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('PDF')},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('PDF')},get_add_icon('/pdf/upload/',_('Upload PDF'))] 
         super(PDFListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):

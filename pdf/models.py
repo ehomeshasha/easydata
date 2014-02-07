@@ -23,7 +23,7 @@ class pdf(models.Model):
     comment = C_MediumIntegerField(max_length=8, default=0)
     date_upload = models.DateTimeField('date uploaded')
     displayorder = C_TinyIntegerField(max_length=1, default=0, unsigned=False)
-    isconvert = models.BooleanField(default=0)
+    isconvert = C_TinyIntegerField(max_length=1,default=0)
     
     def __unicode__(self):
         return self.title

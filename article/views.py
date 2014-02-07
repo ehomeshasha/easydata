@@ -12,8 +12,9 @@ from easydata.category.forms import CategoryPostForm
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session
 from easydata.func.function_category import get_category_fid_choices_html,\
-    get_category_list_html, get_choices_html
-from easydata.func.function_core import check_login
+    get_category_list_html, get_choices_html, get_category_dict_pk
+from easydata.func.function_core import check_login, get_add_icon, get_curpage,\
+    get_pagination_from_rawqueryset
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
 from easydata.validator import IntegerValidator
@@ -27,6 +28,7 @@ from django.template import Context
 from django.conf import settings
 import re
 from django.views.generic.list import ListView
+from django.core.paginator import Paginator
 #class ArticlePostView(FormView):
 #    pass
 def get_articleindex_choices(articleindex):
@@ -203,13 +205,38 @@ class ArticleView(DetailView):
         t = Template("%s%s" % ("{% load custom_tags %}", code_syntax_string))
         return t.render(Context({}))
     
-class ArticleIndexListView(ListView):
-    
-    model = ArticleIndex
+class ArticleListView(ListView):
+    model = Article
     template_name = "article/list.html"
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('Article')},] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('Article')},get_add_icon('/article/new/',_('Create a new Article'))] 
+        super(ArticleListView, self).__init__(*args, **kwargs)
+    
+    def get_queryset(self):
+        #return Article.objects.filter(displayorder__gte=0).order_by("date_create")
+        rawqueryset = Article.objects.raw("SELECT a.*,b.title AS articleindex_title FROM \
+            article_article AS a LEFT JOIN article_articleindex AS b ON a.fid=b.id \
+            WHERE a.displayorder>=0 ORDER BY a.date_create DESC")
+        return rawqueryset
+    
+    def get_context_data(self, **kwargs):
+        context = super(ArticleListView, self).get_context_data(**kwargs)
+        context['head_title_text'] = _('Article List')
+        context['breadcrumb'] = self.breadcrumb
+        context['category_dict_pk'] = get_category_dict_pk()
+        context['article_list'], context['page_obj'], context['is_paginated'] = get_pagination_from_rawqueryset(context, 10)
+        
+        return context
+    
+class ArticleIndexListView(ListView):
+    
+    model = ArticleIndex
+    template_name = "article/indexlist.html"
+    paginate_by = 1
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD,{'text': _('Article')},get_add_icon('/article/new/',_('Create a new Article'))] 
         super(ArticleIndexListView, self).__init__(*args, **kwargs)
     
     def get_queryset(self):
@@ -219,6 +246,8 @@ class ArticleIndexListView(ListView):
         context = super(ArticleIndexListView, self).get_context_data(**kwargs)
         context['head_title_text'] = _('Article List')
         context['breadcrumb'] = self.breadcrumb
+        context['category_dict_pk'] = get_category_dict_pk()
+        
         for i,articleindex in enumerate(context['articleindex_list']):
             context['articleindex_list'][i].articles = Article.objects.filter(fid=articleindex.id,displayorder__gte=0).order_by("displayorder")
         

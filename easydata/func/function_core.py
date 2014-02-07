@@ -5,6 +5,7 @@ from django.contrib import messages
 import time
 from django.utils.timezone import now
 import math
+from django.core.paginator import Paginator
 
 def check_login(request):
     if request.user.is_authenticated():
@@ -46,7 +47,8 @@ def get_auth_author_admin(user, authorid):
     return False
 
 
-
+def get_add_icon(href,tooltip):
+    return {'text':'+', 'href':href, 'tooltip':tooltip, 'is_label':1}
 
 
 def multi(num, perpage, curpage, mpurl, maxpages = 0, page = 10, autogoto = False, simple = False):
@@ -129,3 +131,21 @@ def page_jump(pn,curpage):
             <a href="javascript:;" class="next_btn btn btn-default btn-xs %s" data-num="%d">&rsaquo;</a>\
             ' % (prev_class, prev_num, curpage, pn, next_class, next_num)
     return html
+
+def get_curpage(page, maxpage):
+    if not page or not page.isdigit():
+        return 1
+    elif int(page) > maxpage:
+        return maxpage
+    else:
+        return int(page)
+    
+def get_pagination_from_rawqueryset(context, perpage):
+    
+    object_list = list(context['object_list']) 
+    p = Paginator(object_list,perpage)
+    curpage = get_curpage(context['view'].request.GET.get('page'), p.num_pages)
+    cur_paginator = p.page(curpage)
+    return cur_paginator.object_list, cur_paginator, p.num_pages-1 
+    
+    
