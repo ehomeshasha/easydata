@@ -10,10 +10,10 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="{% url "account_settings" %}"><i class="fa fa-user"></i> {% trans "Settings" %}</a></li>
+                <li><a href="{% url "account_settings" %}"><i class="fa fa-user"></i> {% trans "Personal Settings" %}</a></li>
                 {% if request.user.is_staff %}
                     <li><a href="{% url THEME_ADMIN_URL|default:"admin:index" %}"><i class="fa fa-cog"></i> {% trans "Admin" %}</a></li>
-                    <li><a href="/category/list/"><i class="fa fa-cog"></i> {% trans "Category" %}</a></li>
+                    <li><a href="/category/list/"><i class="fa fa-cog"></i> {% trans "Category Management" %}</a></li>
                 {% endif %}
                 <li class="divider"></li>
                 <li>

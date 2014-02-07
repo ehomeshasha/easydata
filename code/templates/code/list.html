@@ -8,21 +8,19 @@
 <div class="list_area">
 	<table class="list_table table table-bordered table-condensed">
 		<tr>
-			{% blocktrans %}
-			<td width="4%">ID</td>
-			<td width="10%">Category</td>
-			<td>Title</td>
-			<td width="10%">Description</td>
-			<td width="5%">Marks</td>
-			<td width="7%">Language</td>
-			<td width="5%">Gutter</td>
-			<td width="6%">First line</td>
-			<td width="6%">Collapse</td>
-			<td width="6%">Highlight</td>
-			<td width="8%">Url clickable</td>
-			<td width="7%">Max height</td>
-			<td width="8%">Date create</td>
-			{% endblocktrans %}
+			<td width="4%">{% trans "ID" %}</td>
+			<td width="10%">{% trans "Category" %}</td>
+			<td>{% trans "Title" %}</td>
+			<td width="10%">{% trans "Description" %}</td>
+			<td width="5%">{% trans "Marks" %}</td>
+			<td width="7%">{% trans "Language" %}</td>
+			<td width="5%">{% trans "Gutter" %}</td>
+			<td width="6%">{% trans "First line" %}</td>
+			<td width="6%">{% trans "Collapse" %}</td>
+			<td width="6%">{% trans "Highlight" %}</td>
+			<td width="8%">{% trans "Url clickable" %}</td>
+			<td width="7%">{% trans "Max height" %}</td>
+			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
 		{% for code in code_list %}
 		{% get_auth_author_admin code.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
@@ -53,7 +51,7 @@
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/code/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                    <a href="/code/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
                 {% endif %}
                 {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
                 <span class="page-current">
@@ -61,7 +59,7 @@
                 </span>
                 {% endblocktrans %}
                 {% if page_obj.has_next %}
-                    <a href="/code/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                    <a href="/code/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
                 {% endif %}
             </span>
         </div>

@@ -1,7 +1,7 @@
 import datetime
 import time
 from django.utils.timezone import utc
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 import re
 
 CONTENT_TYPE = {

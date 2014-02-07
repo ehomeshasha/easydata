@@ -21,6 +21,7 @@ from code.models import Code, Mark
 from code.forms import CodePostForm
 from django.utils.timezone import now
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 #class CodePostView(FormView):
 #    pass
 
@@ -117,7 +118,7 @@ class CodePostView(FormView):
         if self.action == 'new':
             #save information about code to database
             self.code_save(form, commit=True, cate_id=cleaned_cate_id)
-            message_body = _('Code has been successfully posted')
+            message_body = _('Code has been successfully created')
         else:
             #update code information
             self.code_update(form, commit=True, cate_id=cleaned_cate_id)
@@ -188,8 +189,31 @@ class CodeListView(ListView):
         context['category_dict_pk'] = get_category_dict_pk()
         return context 
 
-
-
+class CodeView(DetailView):
+    model = Code
+    template_name = "code/view.html"
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD,{'text': _('Code'),'href': '/code/list/'},]
+        super(CodeView, self).__init__(*args, **kwargs)
+    
+    def get(self, *args, **kwargs):
+        return super(CodeView, self).get(*args, **kwargs)    
+    
+    def get_context_data(self, **kwargs):
+        context = super(CodeView, self).get_context_data(**kwargs)
+        code_instance = context['code']
+        context['head_title_text'] = code_instance.title
+        self.breadcrumb.append({'text': code_instance.title})
+        context['breadcrumb'] = self.breadcrumb
+        #context['SITE_URL'] = settings.SITE_URL
+        #context['content'] = re.sub(self.code_pattern, self.render_code, article_instance.content)
+        return context
+    
+    #def render_code(self, m):
+    #    code_syntax_string = re.sub(self.s_pattern, " ", m.group(2))
+    #    t = Template("%s%s" % ("{% load custom_tags %}", code_syntax_string))
+    #    return t.render(Context({}))
 
 def insert_code(request):
     code_list = Code.objects.filter(uid=request.user.id,displayorder__gte=0).order_by("-date_create")[:10]

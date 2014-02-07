@@ -8,17 +8,15 @@
 <div class="list_area">
 	<table class="list_table table table-bordered table-condensed">
 		<tr>
-			{% blocktrans %}
-			<td width="10%">Category</td>
-			<td>Title</td>
-			<td width="5%">Views</td>
-			<td width="5%">Marks</td>
-			<td width="7%">Comment</td>
-			<td width="10%">Contributor</td>
-			<td width="8%">Upload Date</td>
-			<td width="6%">Size</td>
-			<td width="7%">Operate</td>
-			{% endblocktrans %}
+			<td width="10%">{% trans "Category" %}</td>
+			<td>{% trans "Title" %}</td>
+			<td width="5%">{% trans "Views" %}</td>
+			<td width="5%">{% trans "Marks" %}</td>
+			<td width="7%">{% trans "Comment" %}</td>
+			<td width="10%">{% trans "Contributor" %}</td>
+			<td width="8%">{% trans "Upload Date" %}</td>
+			<td width="6%">{% trans "Size" %}</td>
+			<td width="7%">{% trans "Operate" %}</td>
 		</tr>
 		{% for pdf in pdf_list %}
 		{% get_auth_author_admin pdf.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
@@ -48,7 +46,7 @@
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/pdf/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                    <a href="/pdf/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
                 {% endif %}
                 {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
                 <span class="page-current">
@@ -56,7 +54,7 @@
                 </span>
                 {% endblocktrans %}
                 {% if page_obj.has_next %}
-                    <a href="/pdf/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                    <a href="/pdf/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
                 {% endif %}
             </span>
         </div>

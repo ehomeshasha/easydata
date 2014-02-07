@@ -23,7 +23,7 @@ class Validator():
         
     def check(self):
         if self.validate_key not in self.post or not self.post[self.validate_key]:
-            self.error_text = [_("%s cannot be empty" % self.validate_label)]
+            self.error_text = [self.validate_label+_(" cannot be empty")]
             self.do_invalid()
             return False
         
@@ -67,20 +67,22 @@ class CharValidator(Validator):
     
     def check(self):
         if self.validate_key not in self.post or not self.post[self.validate_key]:
-            self.error_text = [_("%s cannot be empty" % self.validate_label)]
+            self.error_text = [self.validate_label+_(" cannot be empty")]
             self.do_invalid()
             return False
         
         if self.minlength and isinstance(self.minlength, int) and \
             len(self.post[self.validate_key]) < self.minlength:
-            error_text_body = "%s must longer than %d characters" % (self.validate_label, self.minlength)
+            #error_text_body = "%s must longer than %d characters" % (self.validate_label, self.minlength)
+            error_text_body = self.validate_label+_(" must longer than ")+str(self.minlength)+_(" characters")
             self.error_text = [_(error_text_body)]
             self.do_invalid()
             return False
     
         if self.maxlength and isinstance(self.maxlength, int) and \
             len(self.post[self.validate_key]) > self.maxlength:
-            error_text_body = "%s exceed %d characters" % (self.validate_label, self.minlength)
+            #error_text_body = "%s exceed %d characters" % (self.validate_label, self.minlength)
+            error_text_body = self.validate_label+_(" exceed ")+str(self.minlength)+_(" characters")
             self.error_text = [_(error_text_body)]
             self.do_invalid()
             return False
@@ -95,12 +97,12 @@ class IntegerValidator(Validator):
         
     def check(self):
         if self.validate_key not in self.post or not self.post[self.validate_key]:
-            self.error_text = [_("%s cannot be empty" % self.validate_label)]
+            self.error_text = [self.validate_label+_(" cannot be empty")]
             self.do_invalid()
             return False
         
         if not self.post[self.validate_key].isdigit():
-            self.error_text = [_("%s is not digit" % self.validate_label)]
+            self.error_text = [self.validate_label+_(" is not digit")]
             self.do_invalid()
             return False
             

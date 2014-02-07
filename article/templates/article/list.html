@@ -11,15 +11,13 @@
 <div class="list_area">
 	<table class="list_table table table-bordered table-condensed">
 		<tr>
-			{% blocktrans %}
-			<td width="4%">ID</td>
-			<td width="10%">Category</td>
-			<td width="10%">Username</td>
-			<td width="">Title</td>
-			<td width="20%">ArticleIndex</td>
-			<td width="20%">Code Detail</td>
-			<td width="8%">Date create</td>
-			{% endblocktrans %}
+			<td width="4%">{% trans "ID" %}</td>
+			<td width="10%">{% trans "Category" %}</td>
+			<td width="10%">{% trans "Username" %}</td>
+			<td width="">{% trans "Title" %}</td>
+			<td width="20%">{% trans "ArticleIndex" %}</td>
+			<td width="20%">{% trans "Code Detail" %}</td>
+			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
 		{% for article in article_list %}
 		{% get_auth_author_admin article.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
@@ -44,7 +42,7 @@
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                    <a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
                 {% endif %}
                 {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
                 <span class="page-current">
@@ -52,7 +50,7 @@
                 </span>
                 {% endblocktrans %}
                 {% if page_obj.has_next %}
-                    <a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                    <a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
                 {% endif %}
             </span>
         </div>

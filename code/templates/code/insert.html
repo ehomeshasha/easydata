@@ -4,13 +4,11 @@
 
 {% block tinymce_modal_body %}
 <div class="form-group mtm">
-	{% blocktrans %}
 	<label class="" for="codeIdSel">
-		<span class="mrn">近期创建的代码(选择后自动填写Code ID)</span>
-		<a href="/code/list/" target="_blank" class="mrn xs1">查看全部代码</a>
-		<a href="/code/new/" target="_blank" class="mrn xs1">创建新代码</a>
+		<span class="mrn">{% trans "code created(auto-input code ID after selection)" %}</span>
+		<a href="/code/list/" target="_blank" class="mrn xs1">{% trans "view all codes" %}</a>
+		<a href="/code/new/" target="_blank" class="mrn xs1">{% trans "create new code" %}</a>
 	</label>
-	{% endblocktrans %}
 	<select id="codeIdSel" class="form-control">
 		{% for code in code_list %}
 		<option value="{{ code.id }}">{{ code.title }}</option>

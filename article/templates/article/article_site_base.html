@@ -9,12 +9,12 @@
 <div class="clearfix mtw mbw xw1">
 	{% if last_chapter %}
 	<div class="pull-left">
-		<a href="/article/view/{{ article_name }}/{{ last_chapter }}/">{% trans "上一章" %}: {{ last_chapter|get_dict_value:article_title_dict }}</a>
+		<a href="/article/view/{{ article_name }}/{{ last_chapter }}/">{% trans "last chapter" %}: {{ last_chapter|get_dict_value:article_title_dict }}</a>
 	</div>
 	{% endif %}
 	{% if next_chapter %}
 	<div class="pull-right">
-		<a href="/article/view/{{ article_name }}/{{ next_chapter }}/">{% trans "下一章" %}: {{ next_chapter|get_dict_value:article_title_dict }}</a>
+		<a href="/article/view/{{ article_name }}/{{ next_chapter }}/">{% trans "next chapter" %}: {{ next_chapter|get_dict_value:article_title_dict }}</a>
 	</div>
 	{% endif %}
 </div>

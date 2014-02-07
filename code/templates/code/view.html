@@ -1,0 +1,14 @@
+{% extends "article/article_site_base.html" %}
+
+{% load i18n %}
+{% load custom_tags %}
+
+{% block head_title %}{{ head_title_text }}{% endblock %}
+
+{% block body %}
+<div class="main_body">
+	<div class="code_body">
+		{% get_code code.id %}
+	</div>
+</div>
+{% endblock %}
