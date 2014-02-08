@@ -22,7 +22,7 @@ CTYPE_DICT = {
     'learning': _('Learning System'),
     'tiku': _('Tiku'),
 }
-HOME_BREAD = {'text': 'Home', 'href': '/'}
+HOME_BREAD = {'text': _('Home'), 'href': '/'}
 
 LANGUAGE_DICT = {
     'en': {'shortname': _("en")},

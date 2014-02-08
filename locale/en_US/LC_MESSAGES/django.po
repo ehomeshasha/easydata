@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 21:55+0800\n"
+"POT-Creation-Date: 2014-02-08 11:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgid "ArticleIndex Title"
 msgstr ""
 
 #: article/views.py:49 article/views.py:187 article/views.py:213
-#: article/views.py:239
+#: article/views.py:239 easydata/templates/site_base.html:71
 msgid "Article"
 msgstr ""
 
@@ -160,6 +160,7 @@ msgid "Content"
 msgstr ""
 
 #: code/forms.py:10 code/views.py:37 code/views.py:179 code/views.py:197
+#: easydata/templates/site_base.html:72
 msgid "Code"
 msgstr ""
 
@@ -292,7 +293,8 @@ msgstr ""
 msgid "Read marks"
 msgstr ""
 
-#: easydata/constant.py:21 pdf/views.py:62 pdf/views.py:181 pdf/views.py:308
+#: easydata/constant.py:21 easydata/templates/site_base.html:70
+#: pdf/views.py:62 pdf/views.py:181 pdf/views.py:308
 msgid "PDF"
 msgstr ""
 
@@ -302,6 +304,10 @@ msgstr ""
 
 #: easydata/constant.py:23
 msgid "Tiku"
+msgstr ""
+
+#: easydata/constant.py:25
+msgid "Home"
 msgstr ""
 
 #: easydata/constant.py:28
@@ -396,6 +402,32 @@ msgstr ""
 msgid "Category List"
 msgstr ""
 
+#: easydata/templates/404.html:5
+msgid "Not Found"
+msgstr ""
+
+#: easydata/templates/404.html:9
+msgid "Page not found"
+msgstr ""
+
+#: easydata/templates/404.html:10
+msgid "We're sorry but that page could not be found."
+msgstr ""
+
+#: easydata/templates/500.html:5
+msgid "Server Error"
+msgstr ""
+
+#: easydata/templates/500.html:9
+msgid "Something went wrong"
+msgstr ""
+
+#: easydata/templates/500.html:10
+msgid ""
+"We're sorry but a server error has occurred. We've been notified and will "
+"look into it as soon as possible."
+msgstr ""
+
 #: easydata/templates/_account_bar.html:13
 msgid "Personal Settings"
 msgstr ""
@@ -406,17 +438,26 @@ msgstr ""
 
 #: easydata/templates/_account_bar.html:16
 msgid "Category Management"
-msgstr "类别管理"
+msgstr ""
 
 #: easydata/templates/_account_bar.html:20
+#: easydata/templates/account/logout.html:6
+#: easydata/templates/account/logout.html:12
+#: easydata/templates/account/logout.html:16
 msgid "Log out"
 msgstr ""
 
 #: easydata/templates/_account_bar.html:25
+#: easydata/templates/account/login.html:7
+#: easydata/templates/account/login.html:20
 msgid "Log in"
 msgstr ""
 
 #: easydata/templates/_account_bar.html:27
+#: easydata/templates/account/signup.html:7
+#: easydata/templates/account/signup.html:13
+#: easydata/templates/account/signup.html:19
+#: easydata/templates/account/signup_closed.html:6
 msgid "Sign up"
 msgstr ""
 
@@ -459,6 +500,212 @@ msgid ""
 "        Additionally, a comment function is also built in on this page.You "
 "could visit <a href=\"/pdf/view/1/\">here</a> for detail.    \n"
 "        "
+msgstr ""
+
+#: easydata/templates/account/base.html:10
+msgid "Account"
+msgstr ""
+
+#: easydata/templates/account/base.html:13
+msgid "Settings"
+msgstr ""
+
+#: easydata/templates/account/base.html:16
+#: easydata/templates/account/password_change.html:9
+#: easydata/templates/account/password_change.html:15
+msgid "Change password"
+msgstr ""
+
+#: easydata/templates/account/base.html:19
+msgid "Delete account"
+msgstr ""
+
+#: easydata/templates/account/delete.html:11
+msgid "Delete Account"
+msgstr ""
+
+#: easydata/templates/account/delete.html:13
+#, python-format
+msgid ""
+"If you go ahead and delete your account, your information will be "
+"<b>expunged within %(ACCOUNT_DELETION_EXPUNGE_HOURS)s hours</b>."
+msgstr ""
+
+#: easydata/templates/account/delete.html:17
+msgid "Delete My Account"
+msgstr ""
+
+#: easydata/templates/account/email_confirm.html:6
+#: easydata/templates/account/email_confirm.html:12
+msgid "Confirm Email"
+msgstr ""
+
+#: easydata/templates/account/email_confirm.html:15
+#, python-format
+msgid "Confirm email address <b>%(email)s</b>?"
+msgstr ""
+
+#: easydata/templates/account/email_confirm.html:16
+msgid "Confirm"
+msgstr ""
+
+#: easydata/templates/account/email_confirmation_sent.html:6
+#: easydata/templates/account/email_confirmation_sent.html:9
+msgid "Confirm your email address"
+msgstr ""
+
+#: easydata/templates/account/email_confirmation_sent.html:11
+#, python-format
+msgid ""
+"We have sent you an email to <b>%(email)s</b> for verification. Follow the "
+"link provided to finalize the signup process. If you do not receive it "
+"within a few minutes, contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s"
+"\">%(THEME_CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: easydata/templates/account/email_confirmed.html:6
+#: easydata/templates/account/email_confirmed.html:9
+msgid "Email confirmed"
+msgstr ""
+
+#: easydata/templates/account/email_confirmed.html:10
+#, python-format
+msgid "You have confirmed <b>%(email)s</b>"
+msgstr ""
+
+#: easydata/templates/account/login.html:13
+msgid "Log in to an existing account"
+msgstr ""
+
+#: easydata/templates/account/login.html:19
+msgid "Forgot your password?"
+msgstr ""
+
+#: easydata/templates/account/logout.html:15
+msgid "Are you sure you want to log out?"
+msgstr ""
+
+#: easydata/templates/account/password_change.html:19
+#: easydata/templates/account/password_reset_token.html:17
+msgid "Save"
+msgstr ""
+
+#: easydata/templates/account/password_reset.html:8
+#: easydata/templates/account/password_reset.html:16
+msgid "Password reset"
+msgstr ""
+
+#: easydata/templates/account/password_reset.html:17
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr ""
+
+#: easydata/templates/account/password_reset.html:23
+msgid "Reset my password"
+msgstr ""
+
+#: easydata/templates/account/password_reset.html:30
+#, python-format
+msgid ""
+"If you have any trouble resetting your password, contact us at <a href="
+"\"mailto:%(THEME_CONTACT_EMAIL)s\">%(THEME_CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: easydata/templates/account/password_reset_sent.html:7
+#: easydata/templates/account/password_reset_sent.html:10
+msgid "Password reset sent"
+msgstr ""
+
+#: easydata/templates/account/password_reset_sent.html:12
+#, python-format
+msgid ""
+"We have sent you an email. If you do not receive it within a few minutes, "
+"try resending or contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%"
+"(THEME_CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: easydata/templates/account/password_reset_sent.html:21
+msgid "Resend"
+msgstr ""
+
+#: easydata/templates/account/password_reset_sent.html:26
+#, python-format
+msgid ""
+"We have resent the password email. If you do not receive it within a few "
+"minutes, contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%"
+"(THEME_CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: easydata/templates/account/password_reset_token.html:7
+#: easydata/templates/account/password_reset_token.html:13
+msgid "Set your new password"
+msgstr ""
+
+#: easydata/templates/account/password_reset_token_fail.html:6
+#: easydata/templates/account/password_reset_token_fail.html:9
+msgid "Bad token"
+msgstr ""
+
+#: easydata/templates/account/password_reset_token_fail.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(url)s\">new password reset</a>."
+msgstr ""
+
+#: easydata/templates/account/signup_closed.html:9
+msgid "This site is in private beta"
+msgstr ""
+
+#: easydata/templates/account/signup_closed.html:10
+msgid "If you have signup code you can enter it below."
+msgstr ""
+
+#: easydata/templates/account/email/email_confirmation_message.txt:1
+#, python-format
+msgid ""
+"A user on %(site_name)s has created an account using this email address.\n"
+"\n"
+"To confirm this email address, go to %(activate_url)s\n"
+"\n"
+"If you did not sign up for this site, you can ignore this message.\n"
+msgstr ""
+
+#: easydata/templates/account/email/email_confirmation_subject.txt:1
+#, python-format
+msgid "Confirm email address for %(site_name)s"
+msgstr ""
+
+#: easydata/templates/account/email/password_reset.txt:1
+#, python-format
+msgid ""
+"You're receiving this email because you or someone else has requested a "
+"password for your user account at %(site_name)s.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password.\n"
+"\n"
+"%(password_reset_url)s\n"
+msgstr ""
+
+#: easydata/templates/account/email/password_reset_subject.txt:1
+#, python-format
+msgid "[%(site_name)s] Password reset"
+msgstr ""
+
+#: easydata/templates/pagination/builtin_pagination.html:10
+#: easydata/templates/pagination/builtin_pagination.html:13
+#: easydata/templates/pagination/django_pagination_pagination.html:9
+#: easydata/templates/pagination/django_pagination_pagination.html:12
+#, fuzzy
+msgid "Previous"
+msgstr "previous"
+
+#: easydata/templates/pagination/builtin_pagination.html:19
+#: easydata/templates/pagination/builtin_pagination.html:21
+#: easydata/templates/pagination/django_pagination_pagination.html:22
+#: easydata/templates/pagination/django_pagination_pagination.html:24
+msgid "Next"
 msgstr ""
 
 #: easydata/templatetags/custom_tags.py:17
