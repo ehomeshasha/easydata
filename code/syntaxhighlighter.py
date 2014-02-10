@@ -68,11 +68,11 @@ class Syntaxhighlighter():
                         <div class="panel panel-default">\
                             <div class="panel-heading">%s</div>\
                             <div class="panel-body">\
-                                <p>%s</p>\
+                                <p class="no-margin-bottom">%s</p>\
                             </div>\
                         </div>\
                     </div>\
-                </div>' % (_('code description'), self.code.description)
+                </div>' % (_('code description'), self.code.description.replace('\n', '<br />'))
         return desc
         
     def get_mark(self):

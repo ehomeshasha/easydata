@@ -2,11 +2,13 @@
 
 {% load custom_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 {% block body %}
 <div class="list_area">
-	<table class="list_table table table-bordered table-condensed">
+	<table class="list_table table table-bordered table-hover table-condensed sort_table" id="table">
+		<thead>
 		<tr>
 			<td width="4%">{% trans "ID" %}</td>
 			<td width="10%">{% trans "Category" %}</td>
@@ -22,6 +24,8 @@
 			<td width="7%">{% trans "Max height" %}</td>
 			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
+		</thead>
+		<tbody>
 		{% for code in code_list %}
 		{% get_auth_author_admin code.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
@@ -46,6 +50,7 @@
 			<td>{{ code.date_create|hdate }}</td>
 		</tr>
 		{% endfor %}
+		</tbody>
 	</table>
 	{% if is_paginated %}
         <div class="pagination">
@@ -65,4 +70,10 @@
         </div>
     {% endif %}
 </div>
+{% endblock %}
+
+
+{% block extra_script %}
+<script type="text/javascript">var pageSize={{ view.paginate_by }};</script>
+<script type="text/javascript" src="{% static "js/sort_table.js" %}"></script>
 {% endblock %}

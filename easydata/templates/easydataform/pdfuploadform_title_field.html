@@ -1,5 +1,6 @@
+{% load i18n %}
 <div class="form-group {{ form.custom_field_error_css.cate_id }}">
-    <label for="id_category">Category:</label>
+    <label for="id_category">{% trans "Category" %}:</label>
     <select id="id_category" name="cate_id" class="form-control">
 		{{ form.choice_html|safe }}    	
     </select>

@@ -1,5 +1,6 @@
+{% load i18n %}
 <div class="form-group {{ form.custom_field_error_css.fid }}">
-    <label for="id_fid">Father category:</label>
+    <label for="id_fid">{% trans "Father Category" %}:</label>
     <select id="id_fid" name="fid" class="form-control">
 		{{ form.fid_choice_html|safe }}    	
     </select>

@@ -1,36 +1,36 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
+{% load staticfiles %}
 {% load bootstrap %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
-	<style type="text/css">
-	#id_description {height:100px;}
-	</style>
     <div class="row">
-        <div class="col-lg-4">
-        	{{ cate.name }}
+        <div class="col-lg-10">
             <form id="post_form" method="post" action="">
             <fieldset>
                 <legend>{{ legend_text }}</legend>
-                {% csrf_token %}              
-  				{{ form|bootstrap:"name" }}
+                {% csrf_token %}
+                {{ form|bootstrap:"title" }}
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
-            </fieldset>
+                <button type="submit" class="btn btn-primary">{{ submit_btn_text }}</button>
+			</fieldset>
             </form>
         </div>
     </div>
+<style type="text/css">
+#id_description {height:100px;}
+</style>
 {% endblock %}
 
 {% block extra_script %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#id_catename').focus();
-        });
-    </script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#id_title').focus();
+});
+</script>
 {% endblock %}

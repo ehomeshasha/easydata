@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-08 11:32+0800\n"
+"POT-Creation-Date: 2014-02-10 18:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,27 +16,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: article/forms.py:12 article/templates/article/indexlist.html:17
+#: article/forms.py:12 article/forms.py:37
+#: article/templates/article/indexlist.html:17
 #: article/templates/article/list.html:17 code/forms.py:16
-#: code/templates/code/list.html:13 pdf/forms.py:11 pdf/forms.py:44
+#: code/templates/code/list.html:15 pdf/forms.py:11 pdf/forms.py:44
 #: pdf/templates/pdf/list.html:12
 msgid "Title"
 msgstr ""
 
-#: article/forms.py:20
+#: article/forms.py:20 article/forms.py:53
 msgid "Display order"
 msgstr ""
 
-#: article/forms.py:30
+#: article/forms.py:30 article/forms.py:63
 msgid "Digit only for displayorder"
+msgstr ""
+
+#: article/forms.py:45 article/templates/article/indexlist.html:18
+#: code/forms.py:24 code/templates/code/list.html:16
+#: easydata/category/forms.py:17 pdf/forms.py:19
+msgid "Description"
 msgstr ""
 
 #: article/models.py:24 article/models.py:45
 #: article/templates/article/indexlist.html:15
 #: article/templates/article/list.html:15 code/models.py:11 code/models.py:29
-#: code/templates/code/list.html:12 easydata/category/views.py:31
-#: easydata/category/views.py:129 pdf/models.py:33
-#: pdf/templates/pdf/list.html:11
+#: code/templates/code/list.html:14 easydata/category/views.py:31
+#: easydata/category/views.py:129
+#: easydata/templates/easydataform/articleindexpostform_title_field.html:3
+#: easydata/templates/easydataform/articlepostform_title_field.html:3
+#: easydata/templates/easydataform/codepostform_title_field.html:3
+#: easydata/templates/easydataform/pdfuploadform_title_field.html:3
+#: pdf/models.py:33 pdf/templates/pdf/list.html:11
 msgid "Category"
 msgstr ""
 
@@ -45,7 +56,7 @@ msgid "ArticleIndex Title"
 msgstr ""
 
 #: article/views.py:49 article/views.py:187 article/views.py:213
-#: article/views.py:239 easydata/templates/site_base.html:71
+#: article/views.py:376 easydata/templates/site_base.html:71
 msgid "Article"
 msgstr ""
 
@@ -53,11 +64,12 @@ msgstr ""
 msgid "Article Edit"
 msgstr ""
 
-#: article/views.py:79 article/views.py:90 code/views.py:73 code/views.py:79
-#: code/views.py:221 code/views.py:251
-#: easydata/category/templates/category/post.html:23 pdf/views.py:90
-#: pdf/views.py:351 pdf/views.py:467 pdf/views.py:472 pdf/views_bak.py:90
-#: pdf/views_bak.py:379 pdf/views_bak.py:497 pdf/views_bak.py:502
+#: article/views.py:79 article/views.py:90 article/views.py:271
+#: article/views.py:279 code/views.py:73 code/views.py:79 code/views.py:221
+#: code/views.py:251 easydata/category/templates/category/post.html:23
+#: pdf/views.py:90 pdf/views.py:351 pdf/views.py:467 pdf/views.py:472
+#: pdf/views_bak.py:90 pdf/views_bak.py:379 pdf/views_bak.py:497
+#: pdf/views_bak.py:502
 msgid "Submit"
 msgstr ""
 
@@ -65,7 +77,8 @@ msgstr ""
 msgid "Post Article"
 msgstr ""
 
-#: article/views.py:112 article/templates/article/list.html:18
+#: article/views.py:112 article/views.py:241
+#: article/templates/article/list.html:18
 msgid "ArticleIndex"
 msgstr ""
 
@@ -77,12 +90,28 @@ msgstr ""
 msgid "Information about this Article has been successfully modified"
 msgstr ""
 
-#: article/views.py:213 article/views.py:239
+#: article/views.py:213 article/views.py:376
 msgid "Create a new Article"
 msgstr ""
 
-#: article/views.py:225 article/views.py:247
+#: article/views.py:225 article/views.py:384
 msgid "Article List"
+msgstr ""
+
+#: article/views.py:269 article/views.py:270
+msgid "ArticleIndex Edit"
+msgstr ""
+
+#: article/views.py:277 article/views.py:278
+msgid "Post ArticleIndex"
+msgstr ""
+
+#: article/views.py:322
+msgid "ArticleIndex has been successfully posted"
+msgstr ""
+
+#: article/views.py:326
+msgid "Information about this ArticleIndex has been successfully modified"
 msgstr ""
 
 #: article/templates/article/article_site_base.html:12
@@ -94,7 +123,7 @@ msgid "next chapter"
 msgstr ""
 
 #: article/templates/article/indexlist.html:14
-#: article/templates/article/list.html:14 code/templates/code/list.html:11
+#: article/templates/article/list.html:14 code/templates/code/list.html:13
 msgid "ID"
 msgstr ""
 
@@ -103,38 +132,32 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: article/templates/article/indexlist.html:18 code/forms.py:24
-#: code/templates/code/list.html:14 easydata/category/forms.py:17
-#: pdf/forms.py:19
-msgid "Description"
-msgstr ""
-
 #: article/templates/article/indexlist.html:19
-#: article/templates/article/list.html:20 code/templates/code/list.html:23
+#: article/templates/article/list.html:20 code/templates/code/list.html:25
 msgid "Date create"
 msgstr ""
 
 #: article/templates/article/indexlist.html:30
-#: article/templates/article/list.html:31 code/templates/code/list.html:33
+#: article/templates/article/list.html:31 code/templates/code/list.html:37
 #: easydata/func/function_category.py:85 pdf/templates/pdf/list.html:28
 msgid "edit"
 msgstr ""
 
 #: article/templates/article/indexlist.html:31
-#: article/templates/article/list.html:32 code/templates/code/list.html:34
+#: article/templates/article/list.html:32 code/templates/code/list.html:38
 #: code/templates/code/mark_view.html:16 easydata/func/function_category.py:85
 #: pdf/templates/pdf/list.html:29 pdf/templates/pdf/mark_view.html:19
 msgid "delete"
 msgstr ""
 
 #: article/templates/article/indexlist.html:43
-#: article/templates/article/list.html:45 code/templates/code/list.html:54
+#: article/templates/article/list.html:45 code/templates/code/list.html:59
 #: pdf/templates/pdf/list.html:49
 msgid "previous page"
 msgstr "previous"
 
 #: article/templates/article/indexlist.html:45
-#: article/templates/article/list.html:47 code/templates/code/list.html:56
+#: article/templates/article/list.html:47 code/templates/code/list.html:61
 #: pdf/templates/pdf/list.html:51
 #, python-format
 msgid ""
@@ -146,7 +169,7 @@ msgid ""
 msgstr ""
 
 #: article/templates/article/indexlist.html:51
-#: article/templates/article/list.html:53 code/templates/code/list.html:62
+#: article/templates/article/list.html:53 code/templates/code/list.html:67
 #: pdf/templates/pdf/list.html:57
 msgid "next page"
 msgstr "next"
@@ -165,7 +188,7 @@ msgid "Code"
 msgstr ""
 
 #: code/forms.py:31 code/models.py:15 code/models.py:33
-#: code/templates/code/list.html:16
+#: code/templates/code/list.html:18
 msgid "Language"
 msgstr ""
 
@@ -173,7 +196,7 @@ msgstr ""
 msgid "Plain Text"
 msgstr ""
 
-#: code/forms.py:63 code/templates/code/list.html:17
+#: code/forms.py:63 code/templates/code/list.html:19
 msgid "Gutter"
 msgstr ""
 
@@ -245,27 +268,27 @@ msgstr ""
 msgid "create new code"
 msgstr ""
 
-#: code/templates/code/list.html:15 pdf/templates/pdf/list.html:14
+#: code/templates/code/list.html:17 pdf/templates/pdf/list.html:14
 msgid "Marks"
 msgstr ""
 
-#: code/templates/code/list.html:18
+#: code/templates/code/list.html:20
 msgid "First line"
 msgstr ""
 
-#: code/templates/code/list.html:19
+#: code/templates/code/list.html:21
 msgid "Collapse"
 msgstr ""
 
-#: code/templates/code/list.html:20
+#: code/templates/code/list.html:22
 msgid "Highlight"
 msgstr ""
 
-#: code/templates/code/list.html:21
+#: code/templates/code/list.html:23
 msgid "Url clickable"
 msgstr ""
 
-#: code/templates/code/list.html:22
+#: code/templates/code/list.html:24
 msgid "Max height"
 msgstr ""
 
@@ -503,6 +526,7 @@ msgid ""
 msgstr ""
 
 #: easydata/templates/account/base.html:10
+#: easydata/templates/account/settings.html:15
 msgid "Account"
 msgstr ""
 
@@ -691,6 +715,10 @@ msgstr ""
 #: easydata/templates/account/email/password_reset_subject.txt:1
 #, python-format
 msgid "[%(site_name)s] Password reset"
+msgstr ""
+
+#: easydata/templates/easydataform/categorypostform_name_field.html:3
+msgid "Father Category"
 msgstr ""
 
 #: easydata/templates/pagination/builtin_pagination.html:10

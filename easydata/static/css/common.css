@@ -13,7 +13,6 @@
 
 
 
-
 .code_info .tooltip {
   position: absolute;
   z-index: 1030;
@@ -275,4 +274,21 @@
 .category_td ul {margin-bottom:0;padding-left:20px;}
 
 
-
+/*sort table*/
+.table-bordered>caption+thead>tr:first-child>th, .table-bordered>colgroup+thead>tr:first-child>th, .table-bordered>thead:first-child>tr:first-child>th, .table-bordered>caption+thead>tr:first-child>td, .table-bordered>colgroup+thead>tr:first-child>td, .table-bordered>thead:first-child>tr:first-child>td {
+	border-bottom:0;
+}
+.table.sort_table thead td {
+	cursor:pointer;
+}
+.table.sort_table .head {
+	background:url("../image/arrow_up_down.png") no-repeat scroll 94% 50%;
+}
+.table.sort_table thead:first-child>tr:first-child>td.asc {
+	background:url("../image/arrow-up.gif") no-repeat 95% 50%;
+	border-top:3px solid #FFCC00;
+}
+.table.sort_table thead:first-child>tr:first-child>td.desc {
+	background:url("../image/arrow-down.gif") no-repeat 95% 50%;
+	border-top:3px solid #FFCC00;
+}

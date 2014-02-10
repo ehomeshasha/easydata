@@ -19,7 +19,7 @@ from django.contrib import messages
 from easydata.constant import HOME_BREAD
 from easydata.validator import IntegerValidator
 from django.utils.timezone import now
-from article.forms import ArticlePostForm
+from article.forms import ArticlePostForm, ArticleIndexPostForm
 from article.models import Article, ArticleIndex
 from django import forms
 from django.views.generic.detail import DetailView
@@ -228,7 +228,144 @@ class ArticleListView(ListView):
         context['article_list'], context['page_obj'], context['is_paginated'] = get_pagination_from_rawqueryset(context, 10)
         
         return context
+
+
+class ArticleIndexPostView(FormView):
+    template_name = "article/indexpost.html"
+    form_class = ArticleIndexPostForm
     
+    action = 'new'
+    articleindex_instance = None 
+    
+    def __init__(self, *args, **kwargs):
+        self.breadcrumb = [HOME_BREAD,{'text': _('ArticleIndex'),'href': '/article/indexlist/'},]
+        super(ArticleIndexPostView, self).__init__(*args, **kwargs)
+        
+    def get(self, *args, **kwargs):
+        
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.articleindex_instance = ArticleIndex.objects.get(pk=self.kwargs['pk'])
+        
+        
+        
+        return super(ArticleIndexPostView, self).get(*args, **kwargs)
+    
+    def get_initial(self):
+        initial = super(ArticleIndexPostView, self).get_initial()
+        if self.action == 'edit':
+            initial["title"] = self.articleindex_instance.title
+            initial["description"] = self.articleindex_instance.description
+            initial["displayorder"] = self.articleindex_instance.displayorder
+            
+        return initial
+    
+    def get_context_data(self, **kwargs):
+        context = super(ArticleIndexPostView, self).get_context_data(**kwargs)
+        initial_form_session_for_custom_field(context['form'], self.request.session)
+        if self.action == 'edit':
+            context['head_title_text'] = _('ArticleIndex Edit')
+            context['legend_text'] = _('ArticleIndex Edit')
+            context['submit_btn_text'] = _('Submit')
+            self.breadcrumb.append({'text': 'Edit'})
+            context['form'].choice_html = get_choices_html(cid=self.articleindex_instance.cate_id,ctype='pdf')
+            
+            
+        else:
+            context['head_title_text'] = _('Post ArticleIndex')
+            context['legend_text'] = _('Post ArticleIndex')
+            context['submit_btn_text'] = _('Submit')
+            self.breadcrumb.append({'text': 'Post'})
+            context['form'].choice_html = get_choices_html(cid=0,ctype='pdf')
+
+        
+        context['breadcrumb'] = self.breadcrumb
+        
+        
+        return context
+    
+    def post(self, *args, **kwargs):
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+            self.action = 'edit'
+            self.articleindex_instance = ArticleIndex.objects.get(pk=self.kwargs['pk'])
+            
+        return super(ArticleIndexPostView, self).post(*args, **kwargs)
+    
+    def get_form(self, form_class):
+        instance = form_class(**self.get_form_kwargs())
+        return instance
+    
+    def form_valid(self, form):
+        
+        self.User = self.request.user
+        
+        #validate cate_id
+        cate_id_validator = IntegerValidator(validate_key='cate_id',
+                                    validate_label='Category ID', 
+                                    session=self.request.session, 
+                                    post=self.request.POST)
+        cate_id_validate_result = cate_id_validator.check()
+        if cate_id_validate_result:
+            cleaned_cate_id = cate_id_validator.get_value()
+            clear_form_session(self.request.session)
+        else:
+            self.request.session.modified = True
+            return redirect(self.request.get_full_path())
+        
+        if self.action == 'new':
+            #save information about article to database
+            self.articleindex_save(form, commit=True, cate_id=cleaned_cate_id)
+            message_body = _('ArticleIndex has been successfully posted')
+        else:
+            #update article information
+            self.articleindex_update(form, commit=True, cate_id=cleaned_cate_id)
+            message_body = _('Information about this ArticleIndex has been successfully modified')
+        
+        messages.success(self.request, message_body)
+        return redirect('/article/indexlist/');
+        
+    def articleindex_save(self, form, commit=True, **kwargs):
+        articleindex = ArticleIndex()
+        articleindex.title = form.cleaned_data.get("title")
+        articleindex.description = form.cleaned_data.get("description")
+        articleindex.cate_id = kwargs['cate_id']
+        articleindex.displayorder = form.cleaned_data.get("displayorder")
+        articleindex.uid = self.User.id
+        articleindex.username = self.User.username
+        articleindex.date_create = now()
+        articleindex.date_update = now()
+        
+        if commit:
+            articleindex.save()
+
+    def articleindex_update(self, form, commit=True, **kwargs):
+        articleindex = self.articleindex_instance
+        articleindex.title = form.cleaned_data.get("title")
+        articleindex.description = form.cleaned_data.get("description")
+        articleindex.cate_id = kwargs['cate_id']
+        articleindex.displayorder = form.cleaned_data.get("displayorder")
+        articleindex.date_update = now()
+        
+        if commit:
+            articleindex.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class ArticleIndexListView(ListView):
     
     model = ArticleIndex
