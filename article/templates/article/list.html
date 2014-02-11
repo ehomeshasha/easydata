@@ -44,22 +44,22 @@
 		</tbody>
 	</table>
 	{% if is_paginated %}
-        <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
-                {% endif %}
-                {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
-                <span class="page-current">
-                    Page {{ page_number }} of {{ num_pages }}
-                </span>
-                {% endblocktrans %}
-                {% if page_obj.has_next %}
-                    <a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
-                {% endif %}
-            </span>
-        </div>
-    {% endif %}
+		<div class="pagination">
+			<span class="page-links">
+				{% if page_obj.has_previous %}
+				<a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
+				{% endif %}
+				{% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
+				<span class="page-current">
+				Page {{ page_number }} of {{ num_pages }}
+				</span>
+				{% endblocktrans %}
+				{% if page_obj.has_next %}
+				<a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
+				{% endif %}
+			</span>
+		</div>
+	{% endif %}
 </div>		
 
 

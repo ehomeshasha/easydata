@@ -28,3 +28,5 @@ LANGUAGE_DICT = {
     'en': {'shortname': _("en")},
     'zh-cn': {'shortname': _("zh")},
 }
+
+PERPAGE = 20

@@ -13,7 +13,7 @@ from easydata.func.function_category import get_choices_html, get_category_dict_
 from easydata.func.function_core import check_login, get_add_icon, \
     get_pagination_from_rawqueryset
 from django.contrib import messages
-from easydata.constant import HOME_BREAD
+from easydata.constant import HOME_BREAD, PERPAGE
 from easydata.validator import IntegerValidator
 from django.utils.timezone import now
 from article.forms import ArticlePostForm, ArticleIndexPostForm
@@ -204,7 +204,7 @@ class ArticleView(DetailView):
 class ArticleListView(ListView):
     model = Article
     template_name = "article/list.html"
-    perpage = 20
+    perpage = PERPAGE
     
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('Article')},get_add_icon('/article/new/',_('Create a new Article'))] 
@@ -215,6 +215,7 @@ class ArticleListView(ListView):
         rawqueryset = Article.objects.raw("SELECT a.*,b.title AS articleindex_title FROM \
             article_article AS a LEFT JOIN article_articleindex AS b ON a.fid=b.id \
             WHERE a.displayorder>=0 ORDER BY a.date_create DESC")
+        print rawqueryset
         return rawqueryset
     
     def get_context_data(self, **kwargs):
@@ -376,7 +377,7 @@ class ArticleIndexListView(ListView):
     
     model = ArticleIndex
     template_name = "article/indexlist.html"
-    paginate_by = 20
+    paginate_by = PERPAGE
     
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('ArticleIndex')},get_add_icon('/article/indexnew/',_('Create new ArticleIndex'))] 
@@ -388,6 +389,7 @@ class ArticleIndexListView(ListView):
         return super(ArticleIndexListView, self).get(*args, **kwargs)
         
     def get_queryset(self):
+        print ArticleIndex.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
         return ArticleIndex.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
     
     def get_context_data(self, **kwargs):

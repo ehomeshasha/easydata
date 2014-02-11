@@ -27,7 +27,7 @@ from easydata.func.function_category import get_choices_html, get_category_dict_
 from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
-from easydata.constant import CONTENT_TYPE, HOME_BREAD
+from easydata.constant import CONTENT_TYPE, HOME_BREAD, PERPAGE
 from easydata.validator import CharValidator, IntegerValidator, \
     save_cleaned_data
 
@@ -303,7 +303,7 @@ class PDF2HTMLView(DetailView):
 class PDFListView(ListView):
     model = pdfModel
     template_name = "pdf/list.html"
-    paginate_by = 2
+    paginate_by = PERPAGE
     
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('PDF')},get_add_icon('/pdf/upload/',_('Upload PDF'))] 

@@ -15,7 +15,7 @@ from easydata.func.function_category import get_category_fid_choices_html,\
     get_category_list_html, get_choices_html, get_category_dict_pk
 from easydata.func.function_core import check_login, get_add_icon
 from django.contrib import messages
-from easydata.constant import HOME_BREAD
+from easydata.constant import HOME_BREAD, PERPAGE
 from easydata.validator import IntegerValidator
 from code.models import Code, Mark
 from code.forms import CodePostForm
@@ -173,7 +173,7 @@ class CodePostView(FormView):
 class CodeListView(ListView):
     model = Code
     template_name = "code/list.html"
-    paginate_by = 20
+    paginate_by = PERPAGE
     
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('Code')},get_add_icon('/code/new/',_('Create new Code'))] 
