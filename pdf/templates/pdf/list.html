@@ -2,11 +2,13 @@
 
 {% load custom_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 {% block body %}
 <div class="list_area">
-	<table class="list_table table table-bordered table-condensed">
+	<table class="list_table table table-bordered table-condensed sort_table" id="table">
+		<thead>
 		<tr>
 			<td width="10%">{% trans "Category" %}</td>
 			<td>{% trans "Title" %}</td>
@@ -16,8 +18,10 @@
 			<td width="10%">{% trans "Contributor" %}</td>
 			<td width="8%">{% trans "Upload Date" %}</td>
 			<td width="6%">{% trans "Size" %}</td>
-			<td width="7%">{% trans "Operate" %}</td>
+			<td width="7%" class="nosort">{% trans "Operate" %}</td>
 		</tr>
+		</thead>
+		<tbody>
 		{% for pdf in pdf_list %}
 		{% get_auth_author_admin pdf.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
@@ -41,6 +45,7 @@
 			</td>
 		</tr>
 		{% endfor %}
+		</tbody>
 	</table>
 	{% if is_paginated %}
         <div class="pagination">
@@ -60,4 +65,8 @@
         </div>
     {% endif %}
 </div>
+{% endblock %}
+
+{% block extra_script %}
+<script type="text/javascript" src="{% static "js/sort_table.js" %}"></script>
 {% endblock %}

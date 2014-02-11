@@ -5,6 +5,27 @@
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
+{% block fix_button_area %}
+<div class="fix_button_area">
+	<div class="btn-group-vertical">
+		{% if view.request.user.id == article.uid %}
+  		<a class="btn btn-default" href="/article/edit/{{ article.id }}">
+  			<span class="glyphicon glyphicon-edit"></span>
+  			<span class="fix_button_text">{% trans "edit" %}</span>
+  		</a>
+  		<a class="btn btn-default deletelink" href='javascript:;' data-id='{{ article.id }}' data-type='article' data-redirect="/article/list/">
+  			<span class="glyphicon glyphicon-remove"></span>
+  			<span class="fix_button_text">{% trans "delete" %}</span>
+  		</a>
+  		{% endif %}
+  		<button type="button" class="btn btn-default gotop_btn">
+  			<span class="glyphicon glyphicon-chevron-up"></span>
+  			<span class="fix_button_text">{% trans "TOP" %}</span>
+  		</button>
+	</div>
+</div>
+{% endblock %}
+
 {% block body %}
 <div class="main_body">
 	<h1 class="article_title">{{ head_title_text }}</h1>

@@ -2,6 +2,7 @@
 
 {% load custom_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
@@ -9,38 +10,37 @@
 
 
 <div class="list_area">
-	<table class="list_table table table-bordered table-condensed">
+	<table class="list_table table table-bordered table-condensed sort_table" id="table">
+		<thead>
 		<tr>
 			<td width="4%">{% trans "ID" %}</td>
 			<td width="10%">{% trans "Category" %}</td>
-			<td width="10%">{% trans "Username" %}</td>
 			<td width="20%">{% trans "Title" %}</td>
-			<td width="">{% trans "Description" %}</td>
+			<td width="">{% trans "Articles" %}</td>
 			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
+		</thead>
+		<tbody>
 		{% for articleindex in articleindex_list %}
-		{% get_auth_author_admin articleindex.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
 			<td>{{ articleindex.id }}</td>
 			<td class="category_td">{{ articleindex.cate_id|cate_id_format:category_dict_pk|safe }}</td>
-			<td>{{ articleindex.username }}</td>
 			<td>
-				{{ articleindex.title }}
-				{% if auth_author_admin %}
-				<a class="text-danger" href="/articleindex/edit/{{ articleindex.id }}/">[{% trans "edit" %}]</a>
-				<a class="text-danger deletelink" href='javascript:;' data-id='{{ articleindex.id }}' data-type='articleindex' data-redirect="/articleindex/list/">[{% trans "delete" %}]</a>
-				{% endif %}
+				<span title="{{ articleindex.description }}">{{ articleindex.title }}</span>
+				<a class="text-danger" href="/article/indexedit/{{ articleindex.id }}/">[{% trans "edit" %}]</a>
+				<a class="text-danger deletelink" href='javascript:;' data-id='{{ articleindex.id }}' data-type='article/index' data-noslash='1' data-redirect="/article/indexlist/">[{% trans "delete" %}]</a>
 			</td>
-			<td><span title="{{ articleindex.description }}">{{ articleindex.description|slice:":100" }}</span></td>
+			<td>{% get_articles articleindex.id %}</td>
 			<td>{{ articleindex.date_create|hdate }}</td>
 		</tr>
 		{% endfor %}
+		</tbody>
 	</table>
 	{% if is_paginated %}
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
+                    <a href="/article/indexlist/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
                 {% endif %}
                 {% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
                 <span class="page-current">
@@ -48,7 +48,7 @@
                 </span>
                 {% endblocktrans %}
                 {% if page_obj.has_next %}
-                    <a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
+                    <a href="/article/indexlist/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
                 {% endif %}
             </span>
         </div>
@@ -65,7 +65,5 @@
 {% endblock %}
 
 {% block extra_script %}
-<script type="text/javascript">
-</script>
+<script type="text/javascript" src="{% static "js/sort_table.js" %}"></script>
 {% endblock %}
-

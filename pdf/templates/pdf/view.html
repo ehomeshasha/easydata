@@ -7,6 +7,39 @@
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
+{% block fix_button_area %}
+<div class="fix_button_area">
+	<div class="btn-group-vertical">
+		<button type="button" class="btn btn-default go_previous">
+  			<span class="glyphicon glyphicon-chevron-up"></span>
+  			<span class="fix_button_text">{% trans "Previous" %}</span>
+  		</button>
+  		<button type="button" class="btn btn-default go_next">
+  			<span class="glyphicon glyphicon-chevron-down"></span>
+  			<span class="fix_button_text">{% trans "Next" %}</span>
+  		</button>
+  		<button type="button" class="btn btn-default go_page">
+  			<form id="jump_page_form">
+ 			{% blocktrans with pn=view.kwargs.page_num %}
+ 			To
+ 			<input type="text" maxlength="5" id="jump_page_input" value="{{ pn }}" class="small_input" />
+ 			{% endblocktrans %}
+  			</form>
+  		</button>
+		{% if view.request.user.id == pdf.uid %}
+  		<a class="btn btn-default" href="/pdf/edit/{{ pdf.id }}">
+  			<span class="glyphicon glyphicon-edit"></span>
+  			<span class="fix_button_text">{% trans "edit" %}</span>
+  		</a>
+  		<a class="btn btn-default deletelink" href='javascript:;' data-id='{{ pdf.id }}' data-type='pdf' data-redirect="/pdf/list/">
+  			<span class="glyphicon glyphicon-remove"></span>
+  			<span class="fix_button_text">{% trans "delete" %}</span>
+  		</a>
+  		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
 {% block body %}
 {% if pdf_content %}
 <input type="hidden" name="pdf_id" value="{{ pdf.id }}" id="pdf_id" />

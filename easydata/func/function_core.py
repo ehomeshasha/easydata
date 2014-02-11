@@ -125,7 +125,7 @@ def page_jump(pn,curpage):
     
     html = '<a href="javascript:;" class="prev_btn btn btn-default btn-xs %s" data-num="%d">&lsaquo;</a>\
             <span class="btn btn-default pn_input_area btn-xs">\
-                <input type="text" class="pn_input col-md-6" value="%d" />\
+                <input type="text" class="pn_input col-md-6" value="%d" maxlength="5" />\
                 <span class="maxpn">/%d</span>\
             </span>\
             <a href="javascript:;" class="next_btn btn btn-default btn-xs %s" data-num="%d">&rsaquo;</a>\

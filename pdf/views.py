@@ -290,7 +290,8 @@ class PDF2HTMLView(DetailView):
             
         else:
             pass
-        
+        print context['pdf']
+        print context['pdf'].filepn
         return context
     
     def getDictFromCSSString(self, css_string):

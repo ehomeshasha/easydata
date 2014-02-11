@@ -1,19 +1,16 @@
 from __future__ import unicode_literals
 
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormView
 
 from django.http.response import HttpResponse
 
 from django.views.generic.base import TemplateView
-from easydata.category.models import category
-from easydata.category.forms import CategoryPostForm
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session
-from easydata.func.function_category import get_category_fid_choices_html,\
-    get_category_list_html, get_choices_html, get_category_dict_pk
-from easydata.func.function_core import check_login, get_add_icon, get_curpage,\
+from easydata.func.function_category import get_choices_html, get_category_dict_pk
+from easydata.func.function_core import check_login, get_add_icon, \
     get_pagination_from_rawqueryset
 from django.contrib import messages
 from easydata.constant import HOME_BREAD
@@ -28,11 +25,10 @@ from django.template import Context
 from django.conf import settings
 import re
 from django.views.generic.list import ListView
-from django.core.paginator import Paginator
-#class ArticlePostView(FormView):
-#    pass
+
+
 def get_articleindex_choices(articleindex):
-    l = []
+    l = [(0, _("None"))]
     for index in articleindex:
         l.append((index.id, index.title))
     return tuple(l)
@@ -109,7 +105,7 @@ class ArticlePostView(FormView):
     def get_form(self, form_class):
         instance = form_class(**self.get_form_kwargs())
         fid = forms.ChoiceField(
-            label=_("ArticleIndex"),
+            label=_("ArticleIndex <a href='/article/indexnew/' target='_blank'>create ArticleIndex</a>"),
             choices=get_articleindex_choices(ArticleIndex.objects.filter(uid=self.request.user.id, displayorder__gte=0)),
             widget=forms.Select(),
             required=True,
@@ -208,6 +204,7 @@ class ArticleView(DetailView):
 class ArticleListView(ListView):
     model = Article
     template_name = "article/list.html"
+    perpage = 20
     
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('Article')},get_add_icon('/article/new/',_('Create a new Article'))] 
@@ -225,9 +222,18 @@ class ArticleListView(ListView):
         context['head_title_text'] = _('Article List')
         context['breadcrumb'] = self.breadcrumb
         context['category_dict_pk'] = get_category_dict_pk()
-        context['article_list'], context['page_obj'], context['is_paginated'] = get_pagination_from_rawqueryset(context, 10)
+        context['article_list'], context['page_obj'], context['is_paginated'] = get_pagination_from_rawqueryset(context, self.perpage)
         
         return context
+
+
+def delete_article(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.delete()
+    message_body = _("This article has been deleted")  
+    messages.success(request, message_body)
+    return HttpResponse('')
+
 
 
 class ArticleIndexPostView(FormView):
@@ -370,24 +376,35 @@ class ArticleIndexListView(ListView):
     
     model = ArticleIndex
     template_name = "article/indexlist.html"
-    paginate_by = 1
+    paginate_by = 20
     
     def __init__(self, *args, **kwargs):
-        self.breadcrumb = [HOME_BREAD,{'text': _('Article')},get_add_icon('/article/new/',_('Create a new Article'))] 
+        self.breadcrumb = [HOME_BREAD,{'text': _('ArticleIndex')},get_add_icon('/article/indexnew/',_('Create new ArticleIndex'))] 
         super(ArticleIndexListView, self).__init__(*args, **kwargs)
     
+    def get(self, *args, **kwargs):
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        return super(ArticleIndexListView, self).get(*args, **kwargs)
+        
     def get_queryset(self):
-        return ArticleIndex.objects.filter(displayorder__gte=0).order_by("date_create")
+        return ArticleIndex.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
     
     def get_context_data(self, **kwargs):
         context = super(ArticleIndexListView, self).get_context_data(**kwargs)
-        context['head_title_text'] = _('Article List')
+        context['head_title_text'] = _('ArticleIndex List')
         context['breadcrumb'] = self.breadcrumb
         context['category_dict_pk'] = get_category_dict_pk()
         
         for i,articleindex in enumerate(context['articleindex_list']):
             context['articleindex_list'][i].articles = Article.objects.filter(fid=articleindex.id,displayorder__gte=0).order_by("displayorder")
         
-        single_articles = Article.objects.filter(fid=0, displayorder__gte=0).order_by("date_create")
-        context['single_articles'] = single_articles
         return context 
+    
+    
+def delete_articleindex(request, pk):
+    articleindex = ArticleIndex.objects.get(pk=pk)
+    articleindex.delete()
+    message_body = _("This articleindex has been deleted")  
+    messages.success(request, message_body)
+    return HttpResponse('')

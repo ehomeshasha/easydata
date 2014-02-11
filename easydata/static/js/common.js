@@ -59,8 +59,15 @@ $(function(){
 		var id = jQuery(this).attr("data-id");
 		var type = jQuery(this).attr("data-type");
 		var redirect_url = jQuery(this).attr("data-redirect");
-		var url = '/'+type+'/delete/'+id+'/'
-		var confirm_msg = 'Are you sure to delete this '+type+'?'
+		
+		if(jQuery(this).attr("data-noslash") == '1') {
+			var url = '/'+type+'delete/'+id+'/'
+		} else {
+			var url = '/'+type+'/delete/'+id+'/'
+		}
+		
+		
+		var confirm_msg = 'Are you sure to delete this '+type+'?(cannot be undone)';
 		
 		if(confirm(confirm_msg)) {
 			jQuery.ajax({
@@ -78,26 +85,9 @@ $(function(){
 			});
 		}
 	});
-	$(document).on('submit', '.pn_form', function(){
-	//$(".pn_form").submit(function(){
-		var pn_input = $(this).find(".pn_input").val();
-		var pn = parseInt($(this).find(".maxpn").html().substr(1));
-		if(!digit_regex.test(pn_input) || parseInt(pn_input) < 1 || parseInt(pn_input) > pn) {
-			alert('Invalid pagenumber input')
-			return false;
-		}
-		var data_mpurl = $(this).attr("data-mpurl");
-		var url = data_mpurl + pn_input + '/'
-		location.href = url
-		return false;
-	});
 	
-	$(document).on('click', '.prev_btn, .next_btn', function(){
-		var data_mpurl = $(this).parent().attr("data-mpurl");
-		var num = $(this).attr("data-num");
-		var url = data_mpurl + num + '/?ajax=1';
-		$(".pdf_content").load(url);
-	});
+	
+	
 	$('[data-toggle="modal"]').bind('click',function(e) {
 		
 		e.preventDefault();
@@ -112,6 +102,12 @@ $(function(){
 				$('#response_modal input:text:visible:first').focus();
 			});
 		}
+	});
+	
+	
+	$(".gotop_btn").click(function(){
+		$("html, body").animate({ scrollTop: 0 }, "fast");
+		return false;
 	});
 	/*
 	$('#response_modal').on('hidden.bs.modal', function (e) {

@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from easydata.db.mysql.fields import C_SmallIntegerField, C_TinyIntegerField,\
-    C_MediumIntegerField, C_AutoField, C_IntegerField
+from easydata.db.mysql.fields import C_SmallIntegerField, C_AutoField, C_IntegerField
 from easydata.category.models import category
 
 class Article(models.Model):

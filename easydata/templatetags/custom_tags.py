@@ -4,6 +4,7 @@ from code.syntaxhighlighter import Syntaxhighlighter
 import re
 from easydata.constant import LANGUAGE_DICT
 from code.models import Code
+from article.models import Article
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
@@ -136,4 +137,11 @@ def get_code_detail_from_content(content):
         html += "</ul>"
     return template.defaultfilters.safe(html)
         
-    
+@register.simple_tag 
+def get_articles(articleindex_id):
+    articles = Article.objects.filter(fid=articleindex_id, displayorder__gte=0)
+    html = "<ul class='no-margin plw prm'>"
+    for article in articles:
+        html += "<li><a href='/article/view/%d/'>%s</a></li>" % (article.id, article.title[:60])
+    html += "</ul>"
+    return template.defaultfilters.safe(html)

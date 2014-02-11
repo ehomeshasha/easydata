@@ -67,9 +67,9 @@
     <div class="collapse navbar-collapse">
     	{% block nav %}
         <ul class="nav navbar-nav">
-        	<li class="{{ request.path | get_active_class:"/pdf" }}"><a href="/pdf/list/">{% trans "PDF" %}</a></li>
-        	<li class="{{ request.path | get_active_class:"/article" }}"><a href="/article/list/">{% trans "Article" %}</a></li>
-        	<li class="{{ request.path | get_active_class:"/code" }}"><a href="/code/list/">{% trans "Code" %}</a></li>
+        	<li class="{{ request.path | get_active_class:"/pdf/" }}"><a href="/pdf/list/">{% trans "PDF" %}</a></li>
+        	<li class="{{ request.path | get_active_class:"/article/" }}"><a href="/article/list/">{% trans "Article" %}</a></li>
+        	<li class="{{ request.path | get_active_class:"/code/" }}"><a href="/code/list/">{% trans "Code" %}</a></li>
         </ul>
         {% endblock %}
         {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
@@ -90,8 +90,10 @@
 	    <span class="hide_data_uid">{{ request.user.id }}</span>
     </div>
     <div id="response_modal" class="modal fade"></div>
-    {% endblock %}
     
+    {% endblock %}
+    {% block fix_button_area %}
+    {% endblock %}
 {% endblock %}
 
 

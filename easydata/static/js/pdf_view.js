@@ -82,4 +82,38 @@ $(function(){
 			});
 		}
 	});
+	
+	$(document).on('click', '.prev_btn, .next_btn', function(){
+		var data_mpurl = $(this).parent().attr("data-mpurl");
+		var num = $(this).attr("data-num");
+		var url = data_mpurl + num + '/?ajax=1';
+		$(".pdf_content").load(url);
+		$("#jump_page_input").val(num)
+	});
+	
+	$(document).on('submit', '.pn_form', function(){
+		//$(".pn_form").submit(function(){
+		var pn_input = $(this).find(".pn_input").val();
+		var pn = parseInt($(this).find(".maxpn").html().substr(1));
+		if(!digit_regex.test(pn_input) || parseInt(pn_input) < 1 || parseInt(pn_input) > pn) {
+			alert('Invalid pagenumber input')
+			return false;
+		}
+		var data_mpurl = $(this).attr("data-mpurl");
+		var url = data_mpurl + pn_input + '/'
+		location.href = url
+		return false;
+	});
+	
+	$(".go_previous").click(function(){
+		$(".prev_btn").trigger("click");
+	});
+	$(".go_next").click(function(){
+		$(".next_btn").trigger("click");
+	});
+	$("#jump_page_form").submit(function(){
+		$(".pn_input").val($("#jump_page_input").val());
+		$(".pn_form").trigger("submit");
+		return false;
+	});
 });

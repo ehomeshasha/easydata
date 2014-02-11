@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-10 18:03+0800\n"
+"POT-Creation-Date: 2014-02-11 14:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,107 +17,128 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: article/forms.py:12 article/forms.py:37
-#: article/templates/article/indexlist.html:17
-#: article/templates/article/list.html:17 code/forms.py:16
+#: article/forms.py:11 article/forms.py:36
+#: article/templates/article/indexlist.html:18
+#: article/templates/article/list.html:19 code/forms.py:16
 #: code/templates/code/list.html:15 pdf/forms.py:11 pdf/forms.py:44
-#: pdf/templates/pdf/list.html:12
+#: pdf/templates/pdf/list.html:14
 msgid "Title"
 msgstr "标题"
 
-#: article/forms.py:20 article/forms.py:53
+#: article/forms.py:19 article/forms.py:52
 msgid "Display order"
 msgstr "显示顺序"
 
-#: article/forms.py:30 article/forms.py:63
+#: article/forms.py:29 article/forms.py:62
 msgid "Digit only for displayorder"
 msgstr "显示顺序的设置值必须为数字"
 
-#: article/forms.py:45 article/templates/article/indexlist.html:18
-#: code/forms.py:24 code/templates/code/list.html:16
+#: article/forms.py:44 code/forms.py:24 code/templates/code/list.html:16
 #: easydata/category/forms.py:17 pdf/forms.py:19
 msgid "Description"
 msgstr "描述"
 
-#: article/models.py:24 article/models.py:45
-#: article/templates/article/indexlist.html:15
-#: article/templates/article/list.html:15 code/models.py:11 code/models.py:29
+#: article/models.py:23 article/models.py:44
+#: article/templates/article/indexlist.html:17
+#: article/templates/article/list.html:17 code/models.py:11 code/models.py:29
 #: code/templates/code/list.html:14 easydata/category/views.py:31
 #: easydata/category/views.py:129
 #: easydata/templates/easydataform/articleindexpostform_title_field.html:3
 #: easydata/templates/easydataform/articlepostform_title_field.html:3
 #: easydata/templates/easydataform/codepostform_title_field.html:3
 #: easydata/templates/easydataform/pdfuploadform_title_field.html:3
-#: pdf/models.py:33 pdf/templates/pdf/list.html:11
+#: pdf/models.py:33 pdf/templates/pdf/list.html:13
 msgid "Category"
 msgstr "类别"
 
-#: article/models.py:28
+#: article/models.py:27
 msgid "ArticleIndex Title"
 msgstr "文章索引标题"
 
-#: article/views.py:49 article/views.py:187 article/views.py:213
-#: article/views.py:376 easydata/templates/site_base.html:71
+#: article/views.py:31
+msgid "None"
+msgstr ""
+
+#: article/views.py:45 article/views.py:183 article/views.py:210
+#: easydata/templates/site_base.html:71
 msgid "Article"
 msgstr "文章"
 
-#: article/views.py:77 article/views.py:78
+#: article/views.py:73 article/views.py:74
 msgid "Article Edit"
 msgstr "编辑文章"
 
-#: article/views.py:79 article/views.py:90 article/views.py:271
-#: article/views.py:279 code/views.py:73 code/views.py:79 code/views.py:221
-#: code/views.py:251 easydata/category/templates/category/post.html:23
-#: pdf/views.py:90 pdf/views.py:351 pdf/views.py:467 pdf/views.py:472
+#: article/views.py:75 article/views.py:86 article/views.py:277
+#: article/views.py:285 code/views.py:73 code/views.py:79 code/views.py:226
+#: code/views.py:256 easydata/category/templates/category/post.html:23
+#: pdf/views.py:90 pdf/views.py:352 pdf/views.py:468 pdf/views.py:473
 #: pdf/views_bak.py:90 pdf/views_bak.py:379 pdf/views_bak.py:497
 #: pdf/views_bak.py:502
 msgid "Submit"
 msgstr "提交"
 
-#: article/views.py:88 article/views.py:89
+#: article/views.py:84 article/views.py:85
 msgid "Post Article"
 msgstr "发布文章"
 
-#: article/views.py:112 article/views.py:241
-#: article/templates/article/list.html:18
-msgid "ArticleIndex"
-msgstr "文章索引"
+#: article/views.py:108
+msgid ""
+"ArticleIndex <a href='/article/indexnew/' target='_blank'>create "
+"ArticleIndex</a>"
+msgstr "文章索引 <a href='/article/indexnew/' target='_blank'>添加文章索引</a>"
 
-#: article/views.py:142
+#: article/views.py:138
 msgid "Article has been successfully posted"
 msgstr "文章已经成功发布"
 
-#: article/views.py:146
+#: article/views.py:142
 msgid "Information about this Article has been successfully modified"
 msgstr "文章相关信息已成功修改"
 
-#: article/views.py:213 article/views.py:376
+#: article/views.py:210
 msgid "Create a new Article"
 msgstr "创建新文章"
 
-#: article/views.py:225 article/views.py:384
+#: article/views.py:222
 msgid "Article List"
 msgstr "文章列表"
 
-#: article/views.py:269 article/views.py:270
-#, fuzzy
+#: article/views.py:233
+msgid "This article has been deleted"
+msgstr "文章已经成功删除"
+
+#: article/views.py:247 article/views.py:382
+#: article/templates/article/list.html:20
+msgid "ArticleIndex"
+msgstr "文章索引"
+
+#: article/views.py:275 article/views.py:276
 msgid "ArticleIndex Edit"
-msgstr "文章索引标题"
+msgstr "编辑文章索引"
 
-#: article/views.py:277 article/views.py:278
-#, fuzzy
+#: article/views.py:283 article/views.py:284
 msgid "Post ArticleIndex"
-msgstr "发布文章"
+msgstr "发布文章索引"
 
-#: article/views.py:322
-#, fuzzy
+#: article/views.py:328
 msgid "ArticleIndex has been successfully posted"
-msgstr "文章已经成功发布"
+msgstr "文章索引已经成功发布"
 
-#: article/views.py:326
-#, fuzzy
+#: article/views.py:332
 msgid "Information about this ArticleIndex has been successfully modified"
-msgstr "文章相关信息已成功修改"
+msgstr "文章索引相关信息已成功修改"
+
+#: article/views.py:382
+msgid "Create new ArticleIndex"
+msgstr "创建文章索引"
+
+#: article/views.py:395
+msgid "ArticleIndex List"
+msgstr "编辑文章索引"
+
+#: article/views.py:408
+msgid "This articleindex has been deleted"
+msgstr "文章索引已经成功删除"
 
 #: article/templates/article/article_site_base.html:12
 msgid "last chapter"
@@ -127,43 +148,46 @@ msgstr "上一章节"
 msgid "next chapter"
 msgstr "下一章节"
 
-#: article/templates/article/indexlist.html:14
-#: article/templates/article/list.html:14 code/templates/code/list.html:13
+#: article/templates/article/indexlist.html:16
+#: article/templates/article/list.html:16 code/templates/code/list.html:13
 msgid "ID"
 msgstr "ID"
 
-#: article/templates/article/indexlist.html:16
-#: article/templates/article/list.html:16
-msgid "Username"
-msgstr "用户名"
-
 #: article/templates/article/indexlist.html:19
-#: article/templates/article/list.html:20 code/templates/code/list.html:25
+msgid "Articles"
+msgstr "文章列表"
+
+#: article/templates/article/indexlist.html:20
+#: article/templates/article/list.html:22 code/templates/code/list.html:25
 msgid "Date create"
 msgstr "创建时间"
 
 #: article/templates/article/indexlist.html:30
-#: article/templates/article/list.html:31 code/templates/code/list.html:37
-#: easydata/func/function_category.py:85 pdf/templates/pdf/list.html:28
+#: article/templates/article/list.html:35
+#: article/templates/article/view.html:14 code/templates/code/list.html:37
+#: code/templates/code/view.html:14 easydata/func/function_category.py:85
+#: pdf/templates/pdf/list.html:32 pdf/templates/pdf/view.html:32
 msgid "edit"
 msgstr "修改"
 
 #: article/templates/article/indexlist.html:31
-#: article/templates/article/list.html:32 code/templates/code/list.html:38
-#: code/templates/code/mark_view.html:16 easydata/func/function_category.py:85
-#: pdf/templates/pdf/list.html:29 pdf/templates/pdf/mark_view.html:19
+#: article/templates/article/list.html:36
+#: article/templates/article/view.html:18 code/templates/code/list.html:38
+#: code/templates/code/mark_view.html:16 code/templates/code/view.html:18
+#: easydata/func/function_category.py:85 pdf/templates/pdf/list.html:33
+#: pdf/templates/pdf/mark_view.html:19 pdf/templates/pdf/view.html:36
 msgid "delete"
 msgstr "删除"
 
 #: article/templates/article/indexlist.html:43
-#: article/templates/article/list.html:45 code/templates/code/list.html:59
-#: pdf/templates/pdf/list.html:49
+#: article/templates/article/list.html:50 code/templates/code/list.html:59
+#: pdf/templates/pdf/list.html:54
 msgid "previous page"
 msgstr "上一页"
 
 #: article/templates/article/indexlist.html:45
-#: article/templates/article/list.html:47 code/templates/code/list.html:61
-#: pdf/templates/pdf/list.html:51
+#: article/templates/article/list.html:52 code/templates/code/list.html:61
+#: pdf/templates/pdf/list.html:56
 #, python-format
 msgid ""
 "\n"
@@ -179,12 +203,16 @@ msgstr ""
 "                "
 
 #: article/templates/article/indexlist.html:51
-#: article/templates/article/list.html:53 code/templates/code/list.html:67
-#: pdf/templates/pdf/list.html:57
+#: article/templates/article/list.html:58 code/templates/code/list.html:67
+#: pdf/templates/pdf/list.html:62
 msgid "next page"
 msgstr "下一页"
 
-#: article/templates/article/list.html:19
+#: article/templates/article/list.html:18
+msgid "Username"
+msgstr "用户名"
+
+#: article/templates/article/list.html:21
 msgid "Code Detail"
 msgstr "代码细节"
 
@@ -192,7 +220,11 @@ msgstr "代码细节"
 msgid "Content"
 msgstr "内容"
 
-#: code/forms.py:10 code/views.py:37 code/views.py:179 code/views.py:197
+#: article/templates/article/view.html:23 code/templates/code/view.html:23
+msgid "TOP"
+msgstr ""
+
+#: code/forms.py:10 code/views.py:37 code/views.py:179 code/views.py:202
 #: easydata/templates/site_base.html:72
 msgid "Code"
 msgstr "代码"
@@ -258,11 +290,11 @@ msgstr "已成功修改代码信息"
 msgid "Create new Code"
 msgstr "创建新代码"
 
-#: code/views.py:187
+#: code/views.py:192
 msgid "Code List"
 msgstr "代码列表"
 
-#: code/views.py:222 code/views.py:252 pdf/views.py:352 pdf/views_bak.py:380
+#: code/views.py:227 code/views.py:257 pdf/views.py:353 pdf/views_bak.py:380
 msgid "Close"
 msgstr "关闭"
 
@@ -278,7 +310,7 @@ msgstr "查看全部代码"
 msgid "create new code"
 msgstr "创建新代码"
 
-#: code/templates/code/list.html:17 pdf/templates/pdf/list.html:14
+#: code/templates/code/list.html:17 pdf/templates/pdf/list.html:16
 msgid "Marks"
 msgstr "注记"
 
@@ -327,7 +359,7 @@ msgid "Read marks"
 msgstr "阅读注记"
 
 #: easydata/constant.py:21 easydata/templates/site_base.html:70
-#: pdf/views.py:62 pdf/views.py:181 pdf/views.py:308
+#: pdf/views.py:62 pdf/views.py:181 pdf/views.py:309
 msgid "PDF"
 msgstr "PDF"
 
@@ -465,28 +497,32 @@ msgstr ""
 msgid "Personal Settings"
 msgstr "个人设置"
 
-#: easydata/templates/_account_bar.html:15
+#: easydata/templates/_account_bar.html:14
+msgid "ArticleIndex Management"
+msgstr "编辑文章索引"
+
+#: easydata/templates/_account_bar.html:16
 msgid "Admin"
 msgstr "管理后台"
 
-#: easydata/templates/_account_bar.html:16
+#: easydata/templates/_account_bar.html:17
 msgid "Category Management"
 msgstr "类别管理"
 
-#: easydata/templates/_account_bar.html:20
+#: easydata/templates/_account_bar.html:21
 #: easydata/templates/account/logout.html:6
 #: easydata/templates/account/logout.html:12
 #: easydata/templates/account/logout.html:16
 msgid "Log out"
 msgstr "退出"
 
-#: easydata/templates/_account_bar.html:25
+#: easydata/templates/_account_bar.html:26
 #: easydata/templates/account/login.html:7
 #: easydata/templates/account/login.html:20
 msgid "Log in"
 msgstr "登录"
 
-#: easydata/templates/_account_bar.html:27
+#: easydata/templates/_account_bar.html:28
 #: easydata/templates/account/signup.html:7
 #: easydata/templates/account/signup.html:13
 #: easydata/templates/account/signup.html:19
@@ -656,7 +692,6 @@ msgid "Password reset sent"
 msgstr "密码重置邮件已经发送"
 
 #: easydata/templates/account/password_reset_sent.html:12
-#, fuzzy, python-format
 msgid ""
 "We have sent you an email. If you do not receive it within a few minutes, "
 "try resending or contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%"
@@ -670,7 +705,6 @@ msgid "Resend"
 msgstr "重新发送"
 
 #: easydata/templates/account/password_reset_sent.html:26
-#, fuzzy, python-format
 msgid ""
 "We have resent the password email. If you do not receive it within a few "
 "minutes, contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%"
@@ -743,6 +777,7 @@ msgstr "所属类别"
 #: easydata/templates/pagination/builtin_pagination.html:13
 #: easydata/templates/pagination/django_pagination_pagination.html:9
 #: easydata/templates/pagination/django_pagination_pagination.html:12
+#: pdf/templates/pdf/view.html:15
 msgid "Previous"
 msgstr "上一页"
 
@@ -750,43 +785,44 @@ msgstr "上一页"
 #: easydata/templates/pagination/builtin_pagination.html:21
 #: easydata/templates/pagination/django_pagination_pagination.html:22
 #: easydata/templates/pagination/django_pagination_pagination.html:24
+#: pdf/templates/pdf/view.html:19
 msgid "Next"
 msgstr "下一页"
 
-#: easydata/templatetags/custom_tags.py:17
+#: easydata/templatetags/custom_tags.py:18
 msgid " hours ago"
 msgstr "小时前"
 
-#: easydata/templatetags/custom_tags.py:19
+#: easydata/templatetags/custom_tags.py:20
 msgid "half hour ago"
 msgstr "半小时前"
 
-#: easydata/templatetags/custom_tags.py:21
+#: easydata/templatetags/custom_tags.py:22
 msgid " minutes ago"
 msgstr "分钟前"
 
-#: easydata/templatetags/custom_tags.py:23
+#: easydata/templatetags/custom_tags.py:24
 msgid " seconds ago"
 msgstr "秒前"
 
-#: easydata/templatetags/custom_tags.py:27
+#: easydata/templatetags/custom_tags.py:28
 msgid "yesterday"
 msgstr "昨天"
 
-#: easydata/templatetags/custom_tags.py:29
+#: easydata/templatetags/custom_tags.py:30
 msgid " days ago"
 msgstr "天前"
 
-#: easydata/templatetags/custom_tags.py:91
+#: easydata/templatetags/custom_tags.py:92
 #, python-format
 msgid "<code>Code (ID:%d) does not exist, please check</code>"
 msgstr "<code>代码 (ID:%d) 不存在, please check</code>"
 
-#: easydata/templatetags/custom_tags.py:106
+#: easydata/templatetags/custom_tags.py:107
 msgid "Yes"
 msgstr "是"
 
-#: easydata/templatetags/custom_tags.py:108
+#: easydata/templatetags/custom_tags.py:109
 msgid "No"
 msgstr "否"
 
@@ -842,27 +878,27 @@ msgstr "已成功修改PDF信息"
 msgid "PDF Detail"
 msgstr "PDF详情"
 
-#: pdf/views.py:308
+#: pdf/views.py:309
 msgid "Upload PDF"
 msgstr "上传PDF"
 
-#: pdf/views.py:316 pdf/views_bak.py:344
+#: pdf/views.py:317 pdf/views_bak.py:344
 msgid "PDF List"
 msgstr "PDF列表"
 
-#: pdf/views.py:465 pdf/views.py:466 pdf/views_bak.py:495 pdf/views_bak.py:496
+#: pdf/views.py:466 pdf/views.py:467 pdf/views_bak.py:495 pdf/views_bak.py:496
 msgid "Edit Comment"
 msgstr "编辑评论"
 
-#: pdf/views.py:470 pdf/views.py:471 pdf/views_bak.py:500 pdf/views_bak.py:501
+#: pdf/views.py:471 pdf/views.py:472 pdf/views_bak.py:500 pdf/views_bak.py:501
 msgid "Create Comment"
 msgstr "写评论"
 
-#: pdf/views.py:535 pdf/views_bak.py:563
+#: pdf/views.py:536 pdf/views_bak.py:563
 msgid "Comment has been posted successfully"
 msgstr "已成功创建新评论"
 
-#: pdf/views.py:539 pdf/views_bak.py:567
+#: pdf/views.py:540 pdf/views_bak.py:567
 msgid "Comment has been successfully modified"
 msgstr "已成功修改评论"
 
@@ -870,35 +906,35 @@ msgstr "已成功修改评论"
 msgid "How about this PDF"
 msgstr "PDF打分"
 
-#: pdf/templates/pdf/list.html:13
+#: pdf/templates/pdf/list.html:15
 msgid "Views"
 msgstr "查看"
 
-#: pdf/templates/pdf/list.html:15
+#: pdf/templates/pdf/list.html:17
 msgid "Comment"
 msgstr "评论"
 
-#: pdf/templates/pdf/list.html:16
+#: pdf/templates/pdf/list.html:18
 msgid "Contributor"
 msgstr "贡献者"
 
-#: pdf/templates/pdf/list.html:17
+#: pdf/templates/pdf/list.html:19
 msgid "Upload Date"
 msgstr "上传日期"
 
-#: pdf/templates/pdf/list.html:18
+#: pdf/templates/pdf/list.html:20
 msgid "Size"
 msgstr "大小"
 
-#: pdf/templates/pdf/list.html:19
+#: pdf/templates/pdf/list.html:21
 msgid "Operate"
 msgstr "操作"
 
-#: pdf/templates/pdf/list.html:39
+#: pdf/templates/pdf/list.html:43
 msgid "View PDF"
 msgstr "查看PDF"
 
-#: pdf/templates/pdf/list.html:40
+#: pdf/templates/pdf/list.html:44
 msgid "Download"
 msgstr "下载PDF"
 
@@ -906,26 +942,36 @@ msgstr "下载PDF"
 msgid "mark on this page"
 msgstr "本页注记"
 
-#: pdf/templates/pdf/view.html:21
+#: pdf/templates/pdf/view.html:23
+#, python-format
+msgid ""
+"\n"
+" \t\t\tTo\n"
+" \t\t\t<input type=\"text\" maxlength=\"5\" id=\"jump_page_input\" value=\"%"
+"(pn)s\" class=\"small_input\" />\n"
+" \t\t\t"
+msgstr ""
+
+#: pdf/templates/pdf/view.html:54
 msgid "Views:"
 msgstr "查看:"
 
-#: pdf/templates/pdf/view.html:22
+#: pdf/templates/pdf/view.html:55
 msgid "Mark:"
 msgstr "注记:"
 
-#: pdf/templates/pdf/view.html:23
+#: pdf/templates/pdf/view.html:56
 msgid "Comment:"
 msgstr "评论:"
 
-#: pdf/templates/pdf/view.html:28
+#: pdf/templates/pdf/view.html:61
 msgid "download"
 msgstr "下载"
 
-#: pdf/templates/pdf/view.html:29
+#: pdf/templates/pdf/view.html:62
 msgid "view pdf"
 msgstr "查看pdf"
 
-#: pdf/templates/pdf/view.html:30
+#: pdf/templates/pdf/view.html:63
 msgid "comment"
 msgstr "评论"

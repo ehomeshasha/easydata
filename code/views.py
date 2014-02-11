@@ -178,6 +178,11 @@ class CodeListView(ListView):
     def __init__(self, *args, **kwargs):
         self.breadcrumb = [HOME_BREAD,{'text': _('Code')},get_add_icon('/code/new/',_('Create new Code'))] 
         super(CodeListView, self).__init__(*args, **kwargs)
+        
+    def get(self, *args, **kwargs):
+        if not check_login(self.request):
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        return super(CodeListView, self).get(*args, **kwargs)
     
     def get_queryset(self):
         return Code.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")

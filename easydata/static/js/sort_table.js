@@ -3,9 +3,9 @@ function T$(i){return document.getElementById(i)}
 function T$$(e,p){return p.getElementsByTagName(e)}
 
 TINY.table=function(){
-	function sorter(n){this.n=n; this.pagesize=pageSize; this.paginate=0}
+	function sorter(n){this.n=n; this.paginate=0}
 	sorter.prototype.init=function(e,f){
-		var t=ge(e), i=0; this.e=e; this.l=t.r.length; t.a=[];
+		var t=ge(e), i=0; this.e=e; this.l=t.r.length; t.a=[]; this.pagesize=this.l; 
 		t.h=T$$('thead',T$(e))[0].rows[0]; t.w=t.h.cells.length;
 		for(i;i<t.w;i++){
 			var c=t.h.cells[i];

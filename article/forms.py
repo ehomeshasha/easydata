@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from article.models import ArticleIndex
 
 
 class ArticlePostForm(forms.Form):

@@ -2,6 +2,7 @@
 
 {% load custom_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
@@ -9,7 +10,8 @@
 
 
 <div class="list_area">
-	<table class="list_table table table-bordered table-condensed">
+	<table class="list_table table table-bordered table-condensed sort_table" id="table">
+		<thead>
 		<tr>
 			<td width="4%">{% trans "ID" %}</td>
 			<td width="10%">{% trans "Category" %}</td>
@@ -19,6 +21,8 @@
 			<td width="20%">{% trans "Code Detail" %}</td>
 			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
+		</thead>
+		<tbody>
 		{% for article in article_list %}
 		{% get_auth_author_admin article.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
@@ -32,11 +36,12 @@
 				<a class="text-danger deletelink" href='javascript:;' data-id='{{ article.id }}' data-type='article' data-redirect="/article/list/">[{% trans "delete" %}]</a>
 				{% endif %}
 			</td>
-			<td>{{ article.articleindex_title }}</td>
+			<td>{{ article.articleindex_title|default:"" }}</td>
 			<td>{{ article.content|get_code_detail_from_content }}</td>
 			<td>{{ article.date_create|hdate }}</td>
 		</tr>
 		{% endfor %}
+		</tbody>
 	</table>
 	{% if is_paginated %}
         <div class="pagination">
@@ -67,7 +72,6 @@
 {% endblock %}
 
 {% block extra_script %}
-<script type="text/javascript">
-</script>
+<script type="text/javascript" src="{% static "js/sort_table.js" %}"></script>
 {% endblock %}
 
