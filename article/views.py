@@ -410,3 +410,9 @@ def delete_articleindex(request, pk):
     message_body = _("This articleindex has been deleted")  
     messages.success(request, message_body)
     return HttpResponse('')
+
+
+
+
+
+

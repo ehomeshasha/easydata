@@ -5,10 +5,14 @@ import re
 from easydata.constant import LANGUAGE_DICT
 from code.models import Code
 from article.models import Article
+from easydata.category.models import category
 register = template.Library()
 from django.utils.translation import ugettext as _
 @register.filter()
 def hdate(value):
+    if not value:
+        return ""
+    
     timedelta = now() - value
 
     days = int(timedelta.days)
@@ -40,6 +44,11 @@ def hsize(size):
             return "%3.1f%s" % (num, x)
         num /= 1024.0
     return "%3.1f%s" % (num, 'TB')
+
+@register.filter()
+def get_category_name(pk):
+    return category.objects.get(pk=pk).name
+
 
 @register.filter()
 def cate_id_format(cate_id, category_dict_pk):

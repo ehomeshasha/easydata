@@ -27,16 +27,11 @@
 		</thead>
 		<tbody>
 		{% for code in code_list %}
-		{% get_auth_author_admin code.uid view.request.user.id view.request.user.is_superuser as auth_author_admin %}
 		<tr>
 			<td>{{ code.id }}</td>
-			<td class="category_td">{{ code.cate_id|cate_id_format:category_dict_pk|safe }}</td>
+			<td>{{ code.cate_id|get_category_name }}</td>
 			<td>
 				<a href="/code/view/{{ code.id }}">{{ code.title }}</a>
-				{% if auth_author_admin %}
-				<a class="text-danger" href="/code/edit/{{ code.id }}/">[{% trans "edit" %}]</a>
-				<a class="text-danger deletelink" href='javascript:;' data-id='{{ code.id }}' data-type='code' data-redirect="/code/list/">[{% trans "delete" %}]</a>
-				{% endif %}
 			</td>
 			<td><span title="{{ code.description }}">{{ code.description|slice:":18" }}</span></td>
 			<td>{{ code.mark }}</td>

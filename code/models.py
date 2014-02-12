@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from easydata.db.mysql.fields import C_SmallIntegerField, C_TinyIntegerField,\
-    C_MediumIntegerField, C_AutoField, C_IntegerField
+    C_MediumIntegerField, C_AutoField, C_IntegerField, NormalTextField
 from easydata.category.models import category
 
 class Code(models.Model):
@@ -9,7 +9,7 @@ class Code(models.Model):
     code = models.TextField()
     title = models.CharField(max_length=100)
     cate_id = C_SmallIntegerField(max_length=5, default=0, verbose_name=_("Category"))
-    description = models.CharField(max_length=255)
+    description = NormalTextField()
     uid = C_IntegerField(max_length=11, default=0)
     username = models.CharField(max_length=30)
     brush = models.CharField(max_length=20, verbose_name=_("Language"))

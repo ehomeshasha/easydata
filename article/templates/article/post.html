@@ -50,7 +50,7 @@ tinymce.init({
     selector: '#comment_editor',
     tools: "inserttable",
     plugins: ["image", "emoticons", "textcolor", "link", "table","code"],
-    toolbar: " emoticons | styleselect bold italic underline forecolor backcolor highlight_text | link image insertcode table code | alignleft aligncenter alignright | undo redo ",
+    toolbar: " emoticons | styleselect fontsizeselect | bold italic underline forecolor backcolor highlight_text | link image insertcode table code | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
     		$("#upload_file").attr("data-inputid", field_name)
@@ -60,24 +60,24 @@ tinymce.init({
     },
     
     setup: function(editor) {
-    	editor.on('focus', function(e) {
-            alert('dddd')
-        });
+    	/*
+    	editor.on('click', function(e) {
+    		var node_name = editor.selection.getNode().nodeName;
+    		if(node_name == "CODE") {
+    			
+    		}
+        });*/
     	editor.addButton('highlight_text', {
             text: '高亮',
             icon: false,
             onclick: function() {
             	var content = editor.selection.getContent();
-            	alert(editor.selection.getNode().nodeName)
             	if(editor.selection.getNode().nodeName != "CODE") {
-            		editor.selection.setNode(editor.dom.create('code',{}, content)); 
+            		editor.selection.setNode(editor.dom.create('code',{"style":"white-space:normal;"}, content)); 
             	} else {
             		editor.dom.remove(editor.selection.getNode())
             		editor.insertContent(content);
             	}
-            	
-            	//alert(new_content)
-            	//tinymce.activeEditor.selection.setContent(new_content);
             }
         });
         editor.addButton('insertcode', {

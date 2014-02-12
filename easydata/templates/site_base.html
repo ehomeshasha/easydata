@@ -70,6 +70,7 @@
         	<li class="{{ request.path | get_active_class:"/pdf/" }}"><a href="/pdf/list/">{% trans "PDF" %}</a></li>
         	<li class="{{ request.path | get_active_class:"/article/" }}"><a href="/article/list/">{% trans "Article" %}</a></li>
         	<li class="{{ request.path | get_active_class:"/code/" }}"><a href="/code/list/">{% trans "Code" %}</a></li>
+        	<li class="{{ request.path | get_active_class:"/note/" }}"><a href="/note/list/">{% trans "Note" %}</a></li>
         </ul>
         {% endblock %}
         {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}

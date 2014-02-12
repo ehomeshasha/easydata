@@ -113,5 +113,24 @@ $(function(){
 	$('#response_modal').on('hidden.bs.modal', function (e) {
 		location.href = location.href;
 	});*/
-	
+	$("#table td").mouseenter(function(){
+		$(this).parent().find(".viewmore_td").each(function(){
+			var td = $(this).find("div");
+			var td0 = td.eq(0);
+			var td1 = td.eq(1);
+			td0.addClass("hidden");
+			td1.removeClass("hidden");
+			
+		});
+	});
+	$("#table td").mouseleave(function(){
+		$(this).parent().find(".viewmore_td").each(function(){
+			var td = $(this).find("div");
+			var td0 = td.eq(0);
+			var td1 = td.eq(1);
+			td1.addClass("hidden");
+			td0.removeClass("hidden");
+			
+		});
+	});
 });

@@ -14,32 +14,20 @@
 		<thead>
 		<tr>
 			<td width="4%">{% trans "ID" %}</td>
-			<td width="10%">{% trans "Category" %}</td>
 			<td width="10%">{% trans "Username" %}</td>
-			<td width="">{% trans "Title" %}</td>
-			<td width="20%">{% trans "ArticleIndex" %}</td>
-			<td width="20%">{% trans "Code Detail" %}</td>
+			<td width="">{% trans "Content" %}</td>
 			<td width="8%">{% trans "Date create" %}</td>
 		</tr>
 		</thead>
 		<tbody>
-		{% for article in article_list %}
+		{% for note in note_list %}
 		<tr>
-			<td>{{ article.id }}</td>
-			<td>{{ article.cate_id|get_category_name }}</td>
-			<td>{{ article.username }}</td>
+			<td>{{ note.id }}</td>
+			<td>{{ note.username }}</td>
 			<td>
-				<a href="/article/view/{{ article.id }}/" title="{{ article.title }}">{{ article.title|slice:":40" }}</a>
+				<a href="/note/view/{{ note.id }}/" title="{{ note.content }}">{{ note.content|linebreaksbr|slice:":255" }}</a>
 			</td>
-			<td>{{ article.articleindex_title|default:"" }}</td>
-			<td class="viewmore_td">
-				<div class="">
-				</div>
-				<div class="hidden">
-				{{ article.content|get_code_detail_from_content }}
-				</div>
-			</td>
-			<td>{{ article.date_create|hdate }}</td>
+			<td>{{ note.date_create|hdate }}</td>
 		</tr>
 		{% endfor %}
 		</tbody>
@@ -48,7 +36,7 @@
 		<div class="pagination">
 			<span class="page-links">
 				{% if page_obj.has_previous %}
-				<a href="/article/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
+				<a href="/note/list/?page={{ page_obj.previous_page_number }}">{% trans "previous page" %}</a>
 				{% endif %}
 				{% blocktrans with page_number=page_obj.number num_pages=page_obj.paginator.num_pages %}
 				<span class="page-current">
@@ -56,7 +44,7 @@
 				</span>
 				{% endblocktrans %}
 				{% if page_obj.has_next %}
-				<a href="/article/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
+				<a href="/note/list/?page={{ page_obj.next_page_number }}">{% trans "next page" %}</a>
 				{% endif %}
 			</span>
 		</div>

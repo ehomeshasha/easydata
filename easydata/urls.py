@@ -16,6 +16,7 @@ urlpatterns = patterns("",
     url(r'ajax_upload/$', uploads.ajax_upload),
     url(r'^article/', include("article.urls")),
     url(r'^code/', include("code.urls")),
+    url(r'^note/', include("note.urls")),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^change_account_language/(?P<pk>\d+)/(?P<code>[-_\w]+)/$', change_account_language),
     

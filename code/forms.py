@@ -22,7 +22,6 @@ class CodePostForm(forms.Form):
     
     description = forms.CharField(
         label=_("Description"),
-        max_length=255,
         widget=forms.Textarea(),
         required=False,
     )
