@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-11 14:41+0800\n"
+"POT-Creation-Date: 2014-02-13 15:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,12 +67,12 @@ msgstr ""
 msgid "Article Edit"
 msgstr ""
 
-#: article/views.py:75 article/views.py:86 article/views.py:277
-#: article/views.py:285 code/views.py:73 code/views.py:79 code/views.py:226
+#: article/views.py:75 article/views.py:86 article/views.py:278
+#: article/views.py:286 code/views.py:73 code/views.py:79 code/views.py:226
 #: code/views.py:256 easydata/category/templates/category/post.html:23
-#: pdf/views.py:90 pdf/views.py:352 pdf/views.py:468 pdf/views.py:473
-#: pdf/views_bak.py:90 pdf/views_bak.py:379 pdf/views_bak.py:497
-#: pdf/views_bak.py:502
+#: note/views.py:55 note/views.py:61 pdf/views.py:90 pdf/views.py:352
+#: pdf/views.py:468 pdf/views.py:473 pdf/views_bak.py:90 pdf/views_bak.py:379
+#: pdf/views_bak.py:497 pdf/views_bak.py:502
 msgid "Submit"
 msgstr ""
 
@@ -98,44 +98,44 @@ msgstr ""
 msgid "Create a new Article"
 msgstr ""
 
-#: article/views.py:222
+#: article/views.py:223
 msgid "Article List"
 msgstr ""
 
-#: article/views.py:233
+#: article/views.py:234
 msgid "This article has been deleted"
 msgstr ""
 
-#: article/views.py:247 article/views.py:382
+#: article/views.py:248 article/views.py:383
 #: article/templates/article/list.html:20
 msgid "ArticleIndex"
 msgstr ""
 
-#: article/views.py:275 article/views.py:276
+#: article/views.py:276 article/views.py:277
 msgid "ArticleIndex Edit"
 msgstr ""
 
-#: article/views.py:283 article/views.py:284
+#: article/views.py:284 article/views.py:285
 msgid "Post ArticleIndex"
 msgstr ""
 
-#: article/views.py:328
+#: article/views.py:329
 msgid "ArticleIndex has been successfully posted"
 msgstr ""
 
-#: article/views.py:332
+#: article/views.py:333
 msgid "Information about this ArticleIndex has been successfully modified"
 msgstr ""
 
-#: article/views.py:382
+#: article/views.py:383
 msgid "Create new ArticleIndex"
 msgstr ""
 
-#: article/views.py:395
+#: article/views.py:397
 msgid "ArticleIndex List"
 msgstr ""
 
-#: article/views.py:408
+#: article/views.py:410
 msgid "This articleindex has been deleted"
 msgstr ""
 
@@ -149,6 +149,7 @@ msgstr ""
 
 #: article/templates/article/indexlist.html:16
 #: article/templates/article/list.html:16 code/templates/code/list.html:13
+#: note/templates/note/list.html:16
 msgid "ID"
 msgstr ""
 
@@ -158,35 +159,33 @@ msgstr ""
 
 #: article/templates/article/indexlist.html:20
 #: article/templates/article/list.html:22 code/templates/code/list.html:25
+#: note/templates/note/list.html:19
 msgid "Date create"
 msgstr ""
 
 #: article/templates/article/indexlist.html:30
-#: article/templates/article/list.html:35
-#: article/templates/article/view.html:14 code/templates/code/list.html:37
-#: code/templates/code/view.html:14 easydata/func/function_category.py:85
-#: pdf/templates/pdf/list.html:32 pdf/templates/pdf/view.html:32
+#: article/templates/article/view.html:14 code/templates/code/view.html:14
+#: easydata/func/function_category.py:85 note/templates/note/view.html:13
+#: pdf/templates/pdf/view.html:32
 msgid "edit"
 msgstr ""
 
 #: article/templates/article/indexlist.html:31
-#: article/templates/article/list.html:36
-#: article/templates/article/view.html:18 code/templates/code/list.html:38
+#: article/templates/article/view.html:18
 #: code/templates/code/mark_view.html:16 code/templates/code/view.html:18
-#: easydata/func/function_category.py:85 pdf/templates/pdf/list.html:33
+#: easydata/func/function_category.py:85 note/templates/note/view.html:17
 #: pdf/templates/pdf/mark_view.html:19 pdf/templates/pdf/view.html:36
 msgid "delete"
 msgstr ""
 
 #: article/templates/article/indexlist.html:43
-#: article/templates/article/list.html:50 code/templates/code/list.html:59
-#: pdf/templates/pdf/list.html:54
+#: article/templates/article/list.html:51 code/templates/code/list.html:54
+#: note/templates/note/list.html:39 pdf/templates/pdf/list.html:50
 msgid "previous page"
 msgstr "previous"
 
 #: article/templates/article/indexlist.html:45
-#: article/templates/article/list.html:52 code/templates/code/list.html:61
-#: pdf/templates/pdf/list.html:56
+#: code/templates/code/list.html:56 pdf/templates/pdf/list.html:52
 #, python-format
 msgid ""
 "\n"
@@ -197,12 +196,12 @@ msgid ""
 msgstr ""
 
 #: article/templates/article/indexlist.html:51
-#: article/templates/article/list.html:58 code/templates/code/list.html:67
-#: pdf/templates/pdf/list.html:62
+#: article/templates/article/list.html:59 code/templates/code/list.html:62
+#: note/templates/note/list.html:47 pdf/templates/pdf/list.html:58
 msgid "next page"
 msgstr "next"
 
-#: article/templates/article/list.html:18
+#: article/templates/article/list.html:18 note/templates/note/list.html:17
 msgid "Username"
 msgstr ""
 
@@ -210,7 +209,18 @@ msgstr ""
 msgid "Code Detail"
 msgstr ""
 
-#: article/templates/article/post.html:18 pdf/templates/pdf/comment.html:56
+#: article/templates/article/list.html:53 note/templates/note/list.html:41
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t<span class=\"page-current\">\n"
+"\t\t\t\tPage %(page_number)s of %(num_pages)s\n"
+"\t\t\t\t</span>\n"
+"\t\t\t\t"
+msgstr ""
+
+#: article/templates/article/post.html:18 note/forms.py:11
+#: note/templates/note/list.html:18 pdf/templates/pdf/comment.html:56
 msgid "Content"
 msgstr ""
 
@@ -223,36 +233,36 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-#: code/forms.py:31 code/models.py:15 code/models.py:33
+#: code/forms.py:30 code/models.py:15 code/models.py:33
 #: code/templates/code/list.html:18
 msgid "Language"
 msgstr ""
 
-#: code/forms.py:33
+#: code/forms.py:32
 msgid "Plain Text"
 msgstr ""
 
-#: code/forms.py:63 code/templates/code/list.html:19
+#: code/forms.py:62 code/templates/code/list.html:19
 msgid "Gutter"
 msgstr ""
 
-#: code/forms.py:71
+#: code/forms.py:70
 msgid "First line on the gutter"
 msgstr ""
 
-#: code/forms.py:80
+#: code/forms.py:79
 msgid "Enable collapse"
 msgstr ""
 
-#: code/forms.py:88
+#: code/forms.py:87
 msgid "Define highlight lines, seperate by comma"
 msgstr ""
 
-#: code/forms.py:95
+#: code/forms.py:94
 msgid "URL clickable"
 msgstr ""
 
-#: code/forms.py:103
+#: code/forms.py:102
 msgid "Set max height value(unit: px) here, left 0 to ignore this setting"
 msgstr ""
 
@@ -260,8 +270,8 @@ msgstr ""
 msgid "target code"
 msgstr ""
 
-#: code/syntaxhighlighter.py:75
-msgid "code description"
+#: code/syntaxhighlighter.py:70
+msgid "Code details"
 msgstr ""
 
 #: code/views.py:71 code/views.py:72
@@ -565,6 +575,11 @@ msgid ""
 "        "
 msgstr ""
 
+#: easydata/templates/site_base.html:73 note/views.py:28 note/views.py:119
+#: note/views.py:139
+msgid "Note"
+msgstr ""
+
 #: easydata/templates/account/base.html:10
 #: easydata/templates/account/settings.html:15
 msgid "Account"
@@ -778,41 +793,77 @@ msgstr "previous"
 msgid "Next"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:18
+#: easydata/templatetags/custom_tags.py:22
 msgid " hours ago"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:20
+#: easydata/templatetags/custom_tags.py:24
 msgid "half hour ago"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:22
+#: easydata/templatetags/custom_tags.py:26
 msgid " minutes ago"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:24
+#: easydata/templatetags/custom_tags.py:28
 msgid " seconds ago"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:28
+#: easydata/templatetags/custom_tags.py:32
 msgid "yesterday"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:30
+#: easydata/templatetags/custom_tags.py:34
 msgid " days ago"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:92
+#: easydata/templatetags/custom_tags.py:101
 #, python-format
 msgid "<code>Code (ID:%d) does not exist, please check</code>"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:107
+#: easydata/templatetags/custom_tags.py:116
 msgid "Yes"
 msgstr ""
 
-#: easydata/templatetags/custom_tags.py:109
+#: easydata/templatetags/custom_tags.py:118
 msgid "No"
+msgstr ""
+
+#: note/views.py:53 note/views.py:54
+msgid "Note Edit"
+msgstr ""
+
+#: note/views.py:59 note/views.py:60
+msgid "Post Note"
+msgstr ""
+
+#: note/views.py:84
+msgid "Note has been successfully posted"
+msgstr ""
+
+#: note/views.py:88
+msgid "Note has been successfully modified"
+msgstr ""
+
+#: note/views.py:127
+msgid "Note View"
+msgstr ""
+
+#: note/views.py:128
+msgid "View"
+msgstr ""
+
+#: note/views.py:139
+msgid "Create new note"
+msgstr ""
+
+#: note/views.py:152
+msgid "Note List"
+msgstr ""
+
+#: note/views.py:161
+msgid "This note has been deleted"
 msgstr ""
 
 #: pdf/forms.py:24
@@ -919,11 +970,11 @@ msgstr ""
 msgid "Operate"
 msgstr ""
 
-#: pdf/templates/pdf/list.html:43
+#: pdf/templates/pdf/list.html:39
 msgid "View PDF"
 msgstr ""
 
-#: pdf/templates/pdf/list.html:44
+#: pdf/templates/pdf/list.html:40
 msgid "Download"
 msgstr ""
 
