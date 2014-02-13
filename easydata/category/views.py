@@ -129,6 +129,11 @@ class CategoryListView(TemplateView):
         self.breadcrumb = [HOME_BREAD,{'text': _('Category')},get_add_icon('/category/new/',_('Create a new category'))] 
         super(CategoryListView, self).__init__(*args, **kwargs)
     
+    def get(self, *args, **kwargs):
+        if not check_login(self.request) or self.request.user.is_superuser != True:
+            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        return super(CategoryListView, self).get(*args, **kwargs)
+    
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
         context['category_list_html'] = get_category_list_html()
@@ -138,6 +143,8 @@ class CategoryListView(TemplateView):
     
 def delete_category(request, pk):
     cate = category.objects.get(pk=pk)
+    if not check_login(request) or request.user.is_superuser != True:
+        return redirect("/account/login/?next=%s" % request.get_full_path())
     cate.delete()
     message_body = "The category %s has been deleted" % cate.name  
     messages.success(request, message_body)

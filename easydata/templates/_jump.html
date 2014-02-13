@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{{ message.title }}{% endblock %}
+
+{% block body %}
+    <header class="jumbotron subhead" id="overview">
+        <h1>{{ message.title }}</h1>
+        <p class="lead">{{ message.body }}</p>
+    </header>
+{% endblock %}

@@ -1,8 +1,4 @@
-import datetime
-import time
-from django.utils.timezone import utc
 from django.utils.translation import ugettext_lazy as _
-import re
 
 CONTENT_TYPE = {
     'pdf': 'application/pdf',
@@ -30,3 +26,10 @@ LANGUAGE_DICT = {
 }
 
 PERPAGE = 20
+
+
+PERMISSION_ERROR = {
+    'level': 'ERROR',
+    'title': _('Permission Error'),
+    'body':_('You\'re not allowed to handle this request'),
+}

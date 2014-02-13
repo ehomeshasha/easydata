@@ -9,7 +9,7 @@ from pdf.forms import PDFUploadForm, PDFCommentForm
 
 from pdf.models import pdf as pdfModel, Mark, Comment
 from easydata.func.function_core import check_login, elistdir, page_jump,\
-    get_add_icon
+    get_add_icon, showmessage
 from pdf.uploads import handle_uploaded_file
 
 import os
@@ -27,9 +27,11 @@ from easydata.func.function_category import get_choices_html, get_category_dict_
 from django.contrib import messages
 from easydata.settings import PROJECT_ROOT
 from django.http.response import HttpResponse
-from easydata.constant import CONTENT_TYPE, HOME_BREAD, PERPAGE
+from easydata.constant import CONTENT_TYPE, HOME_BREAD, PERPAGE,\
+    PERMISSION_ERROR
 from easydata.validator import CharValidator, IntegerValidator, \
     save_cleaned_data
+from easydata.templatetags.custom_tags import get_auth_author_admin
 
 def update_convert_status(pdf, **kwargs):
     if 'list' in kwargs.keys() and kwargs['list']:
@@ -70,7 +72,8 @@ class PDFUploadView(FormView):
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
         
-        
+            if not get_auth_author_admin(self.pdf_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
         
         return super(PDFUploadView, self).get(*args, **kwargs)
     
@@ -108,6 +111,9 @@ class PDFUploadView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pk'])
+            
+            if not get_auth_author_admin(self.pdf_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
             
         return super(PDFUploadView, self).post(*args, **kwargs)
     
@@ -290,8 +296,6 @@ class PDF2HTMLView(DetailView):
             
         else:
             pass
-        print context['pdf']
-        print context['pdf'].filepn
         return context
     
     def getDictFromCSSString(self, css_string):
@@ -329,6 +333,8 @@ def download_pdf(request, pk):
 
 def delete_pdf(request, pk):
     pdf = pdfModel.objects.get(pk=pk)
+    if not get_auth_author_admin(pdf.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
     pdf.delete()
     message_body = "PDF: %s has been deleted" % pdf.title
     messages.success(request, message_body)
@@ -419,7 +425,10 @@ def mark_about(request,  **kwargs):
     return render(request, 'pdf/mark.html', context)
 
 def mark_delete(request, pk):
-    Mark.objects.get(pk=pk).delete()
+    mark = Mark.objects.get(pk=pk)
+    mark.delete()
+    if not get_auth_author_admin(mark.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
     return HttpResponse('')
 
 
@@ -441,7 +450,9 @@ class PDFCommentView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
-        #self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
+        
+            if not get_auth_author_admin(self.comment_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
         
         self.request.session.modified = True
         
@@ -484,6 +495,9 @@ class PDFCommentView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.comment_instance = Comment.objects.get(pk=self.kwargs['pk'])
+            
+            if not get_auth_author_admin(self.comment_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
         
         self.pdf_instance = pdfModel.objects.get(pk=self.kwargs['pdf_id'])
         

@@ -6,22 +6,19 @@ from django.views.generic.edit import FormView
 
 from django.http.response import HttpResponse
 
-from django.views.generic.base import TemplateView
-from easydata.category.models import category
-from easydata.category.forms import CategoryPostForm
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session
-from easydata.func.function_category import get_category_fid_choices_html,\
-    get_category_list_html, get_choices_html, get_category_dict_pk
-from easydata.func.function_core import check_login, get_add_icon
+from easydata.func.function_category import get_choices_html, get_category_dict_pk
+from easydata.func.function_core import check_login, get_add_icon, showmessage
 from django.contrib import messages
-from easydata.constant import HOME_BREAD, PERPAGE
+from easydata.constant import HOME_BREAD, PERPAGE, PERMISSION_ERROR
 from easydata.validator import IntegerValidator
 from code.models import Code, Mark
 from code.forms import CodePostForm
 from django.utils.timezone import now
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from easydata.templatetags.custom_tags import get_auth_author_admin
 #class CodePostView(FormView):
 #    pass
 
@@ -45,6 +42,8 @@ class CodePostView(FormView):
             self.action = 'edit'
             self.code_instance = Code.objects.get(pk=self.kwargs['pk'])
         
+            if not get_auth_author_admin(self.code_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
         
         
         return super(CodePostView, self).get(*args, **kwargs)
@@ -91,6 +90,9 @@ class CodePostView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.code_instance = Code.objects.get(pk=self.kwargs['pk'])
+            
+            if not get_auth_author_admin(self.code_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
             
         return super(CodePostView, self).post(*args, **kwargs)
     
@@ -185,7 +187,7 @@ class CodeListView(ListView):
         return super(CodeListView, self).get(*args, **kwargs)
     
     def get_queryset(self):
-        return Code.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
+        return Code.objects.filter(displayorder__gte=0).order_by("-date_create")
     
     def get_context_data(self, **kwargs):
         context = super(CodeListView, self).get_context_data(**kwargs)
@@ -235,6 +237,8 @@ def insert_code(request):
 
 def delete_code(request, pk):
     code = Code.objects.get(pk=pk)
+    if not get_auth_author_admin(code.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
     code.delete()
     message_body = "Code: %s has been deleted" % code.title
     messages.success(request, message_body)
@@ -305,5 +309,8 @@ def mark_about(request,  **kwargs):
     return render(request, 'code/mark.html', context)
 
 def mark_delete(request, pk):
-    Mark.objects.get(pk=pk).delete()
+    mark_instance = Mark.objects.get(pk=pk)
+    if not get_auth_author_admin(mark_instance.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
+    mark_instance.delete()
     return HttpResponse('')

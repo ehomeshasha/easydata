@@ -6,6 +6,18 @@ import time
 from django.utils.timezone import now
 import math
 from django.core.paginator import Paginator
+from django.http import HttpResponse
+from django.template import RequestContext, loader
+
+
+
+def showmessage(request, message):
+    template = loader.get_template('_jump.html')
+    context = RequestContext(request, {
+        'message': message,
+    })
+    return HttpResponse(template.render(context))
+
 
 def check_login(request):
     if request.user.is_authenticated():

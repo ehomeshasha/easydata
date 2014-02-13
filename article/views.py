@@ -6,14 +6,13 @@ from django.views.generic.edit import FormView
 
 from django.http.response import HttpResponse
 
-from django.views.generic.base import TemplateView
 from easydata.func.function_session import initial_form_session_for_custom_field,\
     clear_form_session
 from easydata.func.function_category import get_choices_html, get_category_dict_pk
 from easydata.func.function_core import check_login, get_add_icon, \
-    get_pagination_from_rawqueryset
+    get_pagination_from_rawqueryset, showmessage
 from django.contrib import messages
-from easydata.constant import HOME_BREAD, PERPAGE
+from easydata.constant import HOME_BREAD, PERPAGE, PERMISSION_ERROR
 from easydata.validator import IntegerValidator
 from django.utils.timezone import now
 from article.forms import ArticlePostForm, ArticleIndexPostForm
@@ -25,6 +24,7 @@ from django.template import Context
 from django.conf import settings
 import re
 from django.views.generic.list import ListView
+from easydata.templatetags.custom_tags import get_auth_author_admin
 
 
 def get_articleindex_choices(articleindex):
@@ -52,8 +52,10 @@ class ArticlePostView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.article_instance = Article.objects.get(pk=self.kwargs['pk'])
-        
-        
+            
+            if not get_auth_author_admin(self.article_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
+                
         
         return super(ArticlePostView, self).get(*args, **kwargs)
     
@@ -99,6 +101,9 @@ class ArticlePostView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.article_instance = Article.objects.get(pk=self.kwargs['pk'])
+            
+            if not get_auth_author_admin(self.article_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
             
         return super(ArticlePostView, self).post(*args, **kwargs)
     
@@ -215,7 +220,6 @@ class ArticleListView(ListView):
         rawqueryset = Article.objects.raw("SELECT a.*,b.title AS articleindex_title FROM \
             article_article AS a LEFT JOIN article_articleindex AS b ON a.fid=b.id \
             WHERE a.displayorder>=0 ORDER BY a.date_create DESC")
-        print rawqueryset
         return rawqueryset
     
     def get_context_data(self, **kwargs):
@@ -230,6 +234,8 @@ class ArticleListView(ListView):
 
 def delete_article(request, pk):
     article = Article.objects.get(pk=pk)
+    if not get_auth_author_admin(article.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
     article.delete()
     message_body = _("This article has been deleted")  
     messages.success(request, message_body)
@@ -256,7 +262,8 @@ class ArticleIndexPostView(FormView):
             self.action = 'edit'
             self.articleindex_instance = ArticleIndex.objects.get(pk=self.kwargs['pk'])
         
-        
+            if not get_auth_author_admin(self.articleindex_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
         
         return super(ArticleIndexPostView, self).get(*args, **kwargs)
     
@@ -299,6 +306,9 @@ class ArticleIndexPostView(FormView):
         if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
             self.action = 'edit'
             self.articleindex_instance = ArticleIndex.objects.get(pk=self.kwargs['pk'])
+            
+            if not get_auth_author_admin(self.articleindex_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                return showmessage(self.request, PERMISSION_ERROR)
             
         return super(ArticleIndexPostView, self).post(*args, **kwargs)
     
@@ -389,7 +399,6 @@ class ArticleIndexListView(ListView):
         return super(ArticleIndexListView, self).get(*args, **kwargs)
         
     def get_queryset(self):
-        print ArticleIndex.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
         return ArticleIndex.objects.filter(uid=self.request.user.id,displayorder__gte=0).order_by("-date_create")
     
     def get_context_data(self, **kwargs):
@@ -406,6 +415,8 @@ class ArticleIndexListView(ListView):
     
 def delete_articleindex(request, pk):
     articleindex = ArticleIndex.objects.get(pk=pk)
+    if not get_auth_author_admin(articleindex.uid, request.user.id, request.user.is_superuser):
+        return showmessage(request, PERMISSION_ERROR)
     articleindex.delete()
     message_body = _("This articleindex has been deleted")  
     messages.success(request, message_body)
