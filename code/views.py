@@ -182,8 +182,8 @@ class CodeListView(ListView):
         super(CodeListView, self).__init__(*args, **kwargs)
         
     def get(self, *args, **kwargs):
-        if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.get_full_path())
+        #if not check_login(self.request):
+        #    return redirect("/account/login/?next=%s" % self.request.get_full_path())
         return super(CodeListView, self).get(*args, **kwargs)
     
     def get_queryset(self):
