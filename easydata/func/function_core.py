@@ -8,8 +8,21 @@ import math
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.template import RequestContext, loader
+import os.path
+from easydata.constant import CONTENT_TYPE
+from easydata.settings import PROJECT_ROOT
 
-
+def download(filepath, filetype=None, mimetype=None):
+    filepath = os.path.join(PROJECT_ROOT, filepath[1:])
+    fsock = open(filepath, 'r')
+    
+    if not filetype and not mimetype:
+        return HttpResponse('')
+    mimetype = mimetype if mimetype else CONTENT_TYPE[filetype]
+    print mimetype
+    response = HttpResponse(fsock, mimetype=mimetype)
+    response['Content-Disposition'] = "attachment; filename=%s" % os.path.basename(filepath)
+    return response
 
 def showmessage(request, message):
     template = loader.get_template('_jump.html')

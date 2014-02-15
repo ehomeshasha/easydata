@@ -1,32 +1,32 @@
 <div>
+{% load custom_tags %}
 <textarea id="mark_editor" name="content"></textarea>
-<!-- <form id="mark_form" action="/ajax_upload/" target="form_target" method="post" enctype="multipart/form-data" style="">
-{% csrf_token %}
-<input name="module" type="hidden" value="mark_image" />
-<input name="upload_file" id="upload_file" type="file" />
-<button>submit</button>
-</form>
--->
-<input name="module" type="hidden" value="pdf_mark_image" class="module" />
-<input name="upload_file" id="upload_file" type="file" style="display:none;" />
+<input class="upload_file" id="upload_image" type="file" style="display:none;" data-type="image" data-module="code_mark_image" />
+<input class="upload_file" id="upload_file" type="file" style="display:none;" data-type="file" data-module="code_mark_file" />
 </div>
-<style type="text/css">
-.modal-body .mce-btn button {padding:2px 4px;}
-</style>
 <script type="text/javascript">
 tinymce.init({
+	relative_urls : false,
+	remove_script_host : false,
+	convert_urls : true,
+	language:'{{ CONSTANT.tinymce.language|get:LANGUAGE_CODE }}',
 	menubar:false,
     statusbar: false,
     selector: '#mark_editor',
-    tools: "inserttable",
-    plugins: ["image", "emoticons", "textcolor", "link", "table"],
-    toolbar: " emoticons | fontsizeselect bold italic underline forecolor backcolor | link image table | alignleft aligncenter alignright | undo redo ",
+    plugins: ["image", "emoticons", "textcolor", "link", "fileupload", "highlight_text"],
+    toolbar: " emoticons | fontsizeselect | bold italic underline forecolor backcolor highlight_text | link image fileupload | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
+    		$("#upload_image").attr("data-inputid", field_name)
+    		$('#upload_image').click();
+    	} else if(type == 'file') {
     		$("#upload_file").attr("data-inputid", field_name)
     		$('#upload_file').click();
     	}
          
+    },
+    setup: function(editor) {
+    	
     }
 });
 </script>

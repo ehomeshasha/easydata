@@ -9,7 +9,7 @@ from pdf.forms import PDFUploadForm, PDFCommentForm
 
 from pdf.models import pdf as pdfModel, Mark, Comment
 from easydata.func.function_core import check_login, elistdir, page_jump,\
-    get_add_icon, showmessage
+    get_add_icon, showmessage, download
 from pdf.uploads import handle_uploaded_file
 
 import os
@@ -325,11 +325,8 @@ class PDFListView(ListView):
 
 def download_pdf(request, pk):
     pdf = pdfModel.objects.get(pk=pk)
-    pdf_path = os.path.join(PROJECT_ROOT, pdf.filepath[1:])
-    fsock = open(pdf_path, 'r')
-    response = HttpResponse(fsock, mimetype=CONTENT_TYPE['pdf'])
-    response['Content-Disposition'] = "attachment; filename=%s" % pdf.filename 
-    return response
+    pdf_path = pdf.filepath
+    return download(pdf_path, filetype='pdf')
 
 def delete_pdf(request, pk):
     pdf = pdfModel.objects.get(pk=pk)

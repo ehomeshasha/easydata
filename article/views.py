@@ -92,7 +92,6 @@ class ArticlePostView(FormView):
         
         context['breadcrumb'] = self.breadcrumb
         
-        
         return context
     
     def post(self, *args, **kwargs):

@@ -13,15 +13,20 @@ def ajax_upload(request):
     if not user:
         return HttpResponse('{"code":-1,"msg":"%s"}' % _('Please login first'))
     module = request.POST['module']
+    upload_type = request.POST['upload_type']
     upload_file = request.FILES['upload_file']
-    pdf_ajax_upload = ImageAjaxUpload(module=module, upload_file=upload_file, username=user.username)
     
-    clean_result = pdf_ajax_upload.clean()
+    if upload_type == 'image':
+        ajax_upload = ImageAjaxUpload(module=module, upload_file=upload_file, username=user.username)
+    elif upload_type == 'file':
+        ajax_upload = FileAjaxUpload(module=module, upload_file=upload_file, username=user.username)
+    
+    clean_result = ajax_upload.clean()
     if clean_result:
         return HttpResponse('{"code":-1,"msg":"%s"}' % _(clean_result))
     else:
-        pdf_ajax_upload.save()
-        return HttpResponse(json.dumps(pdf_ajax_upload.get_attribute_json()))
+        ajax_upload.save()
+        return HttpResponse(json.dumps(ajax_upload.get_attribute_json()))
 
 class AjaxUpload():
     pass
@@ -87,5 +92,8 @@ class ImageAjaxUpload(AjaxUpload):
         if self.ext not in UPLOAD_EXT['image']:
             return _("file must be *.png,*.jpg,*.jpeg,*.gif,*.bmp")
         return None
+    
+class FileAjaxUpload(AjaxUpload):
+    pass
     
     

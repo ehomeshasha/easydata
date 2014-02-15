@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
 
+{% load custom_tags %}
 {% load i18n %}
 {% load staticfiles %}
 {% load bootstrap %}
@@ -7,6 +8,7 @@
 {% block head_title %}{{ head_title_text }}{% endblock %}
 
 {% block body %}
+
     <div class="row">
         <div class="col-lg-10">
             <form id="post_form" method="post" action="">
@@ -18,8 +20,8 @@
 					<label class="control-label  " for="id_content">{% trans "Content" %}</label>
 	                <div class=" ">
 	            		<textarea id="comment_editor" name="content">{{ form.custom_field_value.content }}</textarea>
-						<input name="module" type="hidden" value="article_image" class="module" />
-						<input name="upload_file" id="upload_file" type="file" style="display:none;" />
+						<input class="upload_file" id="upload_image" type="file" style="display:none;" data-type="image" data-module="article_image" />
+						<input class="upload_file" id="upload_file" type="file" style="display:none;" data-type="file" data-module="article_file" />
 			        </div>
 			        {% for error in form.custom_field_error_text.content %}
 				        <span class="help-block">{{ error }}</span>
@@ -44,15 +46,22 @@ $(document).ready(function() {
     $('#id_title').focus();
 });
 tinymce.init({
+	relative_urls : false,
+	remove_script_host : false,
+	convert_urls : true,
+	language:'{{ CONSTANT.tinymce.language|get:LANGUAGE_CODE }}',
 	height : 300,
 	menubar:false,
     statusbar: true,
     selector: '#comment_editor',
     tools: "inserttable",
-    plugins: ["image", "emoticons", "textcolor", "link", "table","code"],
-    toolbar: " emoticons | styleselect fontsizeselect | bold italic underline forecolor backcolor highlight_text | link image insertcode table code | alignleft aligncenter alignright | undo redo ",
+    plugins: ["image", "media", "emoticons", "textcolor", "link", "table","code","fileupload","highlight_text"],
+    toolbar: " emoticons | styleselect fontsizeselect | bold italic underline forecolor backcolor highlight_text | link insertcode image fileupload table code | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
+    		$("#upload_image").attr("data-inputid", field_name)
+    		$('#upload_image').click();
+    	} else if(type == 'file') {
     		$("#upload_file").attr("data-inputid", field_name)
     		$('#upload_file').click();
     	}
@@ -60,35 +69,16 @@ tinymce.init({
     },
     
     setup: function(editor) {
-    	/*
-    	editor.on('click', function(e) {
-    		var node_name = editor.selection.getNode().nodeName;
-    		if(node_name == "CODE") {
-    			
-    		}
-        });*/
-    	editor.addButton('highlight_text', {
-            text: '高亮',
-            icon: false,
-            onclick: function() {
-            	var content = editor.selection.getContent();
-            	if(editor.selection.getNode().nodeName != "CODE") {
-            		editor.selection.setNode(editor.dom.create('code',{"style":"white-space:normal;"}, content)); 
-            	} else {
-            		editor.dom.remove(editor.selection.getNode())
-            		editor.insertContent(content);
-            	}
-            }
-        });
-        editor.addButton('insertcode', {
-            text: '插入代码',
+    	editor.addButton('insertcode', {
+            text: 'Code',
+            tooltip: 'insert code',
             icon: false,
             onclick: function() {
             	
             	var url = "/code/insert/";
             	
             	editor.windowManager.open({
-            	    title: "插入代码",
+            	    title: "insert code",
             	    url: url,
             	    width: 700,
             	    height: 210,

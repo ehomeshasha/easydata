@@ -87,3 +87,10 @@ code {
 	color: #c7254e;
 	background-color: #f9f2f4;
 }
+.mce-i-fileupload {content:"\e034";}
+
+span[data-role="highlight"] {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+}

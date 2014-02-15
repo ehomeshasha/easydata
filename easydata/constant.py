@@ -21,8 +21,8 @@ CTYPE_DICT = {
 HOME_BREAD = {'text': _('Home'), 'href': '/'}
 
 LANGUAGE_DICT = {
-    'en': {'shortname': _("en")},
-    'zh-cn': {'shortname': _("zh")},
+    'en': {'shortname': _("en"), 'tinymce': 'en'},
+    'zh-cn': {'shortname': _("zh"), 'tinymce': 'zh_CN'},
 }
 
 PERPAGE = 20

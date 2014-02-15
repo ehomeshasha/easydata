@@ -317,3 +317,18 @@ code {font-size:100%;}
 .viewmore_td {
 	cursor:pointer;
 }
+/*end*/
+
+/*tinymce*/
+.mce-btn button {padding:2px 4px;}
+div[aria-label="Font Sizes"] button {width:3.8em;}
+div.mce-colorbutton[aria-label="Text color"] span.mce-preview, 
+div.mce-colorbutton[aria-label="Background color"] span.mce-preview {
+	margin-left:-17px;
+}
+span[data-role="highlight"] {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+}
+

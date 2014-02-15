@@ -154,3 +154,7 @@ def get_articles(articleindex_id):
         html += "<li><a href='/article/view/%d/'>%s</a></li>" % (article.id, article.title[:60])
     html += "</ul>"
     return template.defaultfilters.safe(html)
+
+@register.filter()
+def get ( item, string ):
+    return item.get(string,'')

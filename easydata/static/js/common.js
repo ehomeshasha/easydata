@@ -28,13 +28,18 @@ $(function(){
 		
 		
 	});
-	$(document).on('change', '#upload_file', function(){
+	$(document).on('change', '.upload_file', function(){
 		//var formData = new FormData($('#mark_form')[0]);
 		var formData = new FormData();
-		module = $(this).siblings(".module").val();
-		formData.append("module", module)
-		formData.append("upload_file", document.getElementById('upload_file').files[0])
+		var inputfile = $(this);
+		var module = $(this).attr("data-module");
+		var upload_type = $(this).attr("data-type");
+		
+		formData.append("module", module);
+		formData.append("upload_type", upload_type)
+		formData.append("upload_file", document.getElementById($(this).attr("id")).files[0])
 		$(this).val("");
+		var data_inputid = $(this).attr("data-inputid");
 	    $.ajax({
 			url: "/ajax_upload/",
 			type: "post",
@@ -46,11 +51,14 @@ $(function(){
 				if(response.code == -1) {
 					alert(response.msg)
 				} else if(response.code == 1) {
-					$("#"+$("#upload_file").attr("data-inputid")).val(response.target_savepath)
+					$("#"+data_inputid).val(response.target_savepath);
+					inputfile.attr("data-mimetype", response.content_type);
+					inputfile.attr("data-name", response.name);
+					
 				}
 			},
 			error: function(jqXHR, textStatus, errorMessage) {
-				alert('upload image failed');return false;
+				alert('upload failed');return false;
 			}
 		});
 	});

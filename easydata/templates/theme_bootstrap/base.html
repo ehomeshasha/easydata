@@ -35,6 +35,10 @@
         {% endblock %}
     </head>
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+    	{% block extra_head_body %}
+		<link href="{% static "css/common.css" %}" rel="stylesheet">
+    	<script type="text/javascript" src="{% static "js/common.js" %}"></script>            
+        {% endblock %}
         <div class="{% block wrapper_class %}{% endblock %}">
 
             {% block topbar_base %}
