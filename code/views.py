@@ -36,15 +36,21 @@ class CodePostView(FormView):
         
     def get(self, *args, **kwargs):
         
-        if not check_login(self.request):
-            return redirect("/account/login/?next=%s" % self.request.get_full_path())
-        if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
-            self.action = 'edit'
-            self.code_instance = Code.objects.get(pk=self.kwargs['pk'])
-        
-            if not get_auth_author_admin(self.code_instance.uid, self.request.user.id, self.request.user.is_superuser):
-                return showmessage(self.request, PERMISSION_ERROR)
-        
+        if self.request.GET.get("redirect") == "1" and \
+        'pk' in self.kwargs and self.kwargs['pk'].isdigit() and \
+        not self.request.user.is_authenticated() and \
+        not get_auth_author_admin(Code.objects.get(pk=self.kwargs['pk']).uid, self.request.user.id, self.request.user.is_superuser):
+            return redirect(self.request.META.get('HTTP_REFERER'));
+        else:
+            
+            if not check_login(self.request):
+                return redirect("/account/login/?next=%s" % self.request.get_full_path())
+            if 'pk' in self.kwargs and self.kwargs['pk'].isdigit():
+                self.action = 'edit'
+                self.code_instance = Code.objects.get(pk=self.kwargs['pk'])
+            
+                if not get_auth_author_admin(self.code_instance.uid, self.request.user.id, self.request.user.is_superuser):
+                    return showmessage(self.request, PERMISSION_ERROR)
         
         return super(CodePostView, self).get(*args, **kwargs)
     

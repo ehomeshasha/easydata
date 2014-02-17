@@ -46,6 +46,13 @@ $(document).ready(function() {
     $('#id_title').focus();
 });
 tinymce.init({
+	theme : "advanced_theme",
+	selector: '#comment_editor',
+	language:'{{ CONSTANT.tinymce.language|get:LANGUAGE_CODE }}',
+	plugins : "emoticons textcolor link anchor table code insertcode highlight_text image fileupload",
+	
+	
+	/*
 	relative_urls : false,
 	remove_script_host : false,
 	convert_urls : true,
@@ -55,7 +62,7 @@ tinymce.init({
     statusbar: true,
     selector: '#comment_editor',
     tools: "inserttable",
-    plugins: ["image", "media", "emoticons", "textcolor", "link", "table","code","fileupload","highlight_text"],
+    plugins : "emoticons textcolor link table code insertcode highlight_text image fileupload",
     toolbar: " emoticons | styleselect fontsizeselect | bold italic underline forecolor backcolor highlight_text | link insertcode image fileupload table code | alignleft aligncenter alignright | undo redo ",
     file_browser_callback: function(field_name, url, type, win) { 
     	if(type == 'image') {
@@ -67,26 +74,8 @@ tinymce.init({
     	}
          
     },
-    
-    setup: function(editor) {
-    	editor.addButton('insertcode', {
-            text: 'Code',
-            tooltip: 'insert code',
-            icon: false,
-            onclick: function() {
-            	
-            	var url = "/code/insert/";
-            	
-            	editor.windowManager.open({
-            	    title: "insert code",
-            	    url: url,
-            	    width: 700,
-            	    height: 210,
-            	});
-            }
-        });
-        
-    },
+    */
+
 });
 
 </script>

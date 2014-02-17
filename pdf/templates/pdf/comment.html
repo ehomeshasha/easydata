@@ -81,47 +81,10 @@ $(document).ready(function() {
     $('#id_title').focus();
 });
 tinymce.init({
-	relative_urls : false,
-	remove_script_host : false,
-	convert_urls : true,
+	theme : "advanced_theme",
+	selector: '#comment_editor',
 	language:'{{ CONSTANT.tinymce.language|get:LANGUAGE_CODE }}',
-	height : 300,
-	menubar:false,
-    statusbar: true,
-    selector: '#comment_editor',
-    tools: "inserttable",
-    plugins: ["image", "media", "emoticons", "textcolor", "link", "table","code","fileupload","highlight_text"],
-    toolbar: " emoticons | styleselect fontsizeselect | bold italic underline forecolor backcolor highlight_text | link insertcode image fileupload table code | alignleft aligncenter alignright | undo redo ",
-    file_browser_callback: function(field_name, url, type, win) { 
-    	if(type == 'image') {
-    		$("#upload_image").attr("data-inputid", field_name)
-    		$('#upload_image').click();
-    	} else if(type == 'file') {
-    		$("#upload_file").attr("data-inputid", field_name)
-    		$('#upload_file').click();
-    	}
-         
-    },
-    
-    setup: function(editor) {
-    	editor.addButton('insertcode', {
-            text: 'Code',
-            tooltip: 'insert code',
-            icon: false,
-            onclick: function() {
-            	
-            	var url = "/code/insert/";
-            	
-            	editor.windowManager.open({
-            	    title: "insert code",
-            	    url: url,
-            	    width: 700,
-            	    height: 210,
-            	});
-            }
-        });
-        
-    },
+	plugins : "emoticons textcolor link anchor table code insertcode highlight_text image fileupload",
 });
 </script>
 {% endblock %}

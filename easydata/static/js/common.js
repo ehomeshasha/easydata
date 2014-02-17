@@ -13,6 +13,16 @@ function closeAlertMessageBox(delay) {
 
 $(function(){
 	
+	$("a[href^='#']").each(function(){
+		var href = $(this).attr("href").substr(1);
+		var word_reg = /^\w+$/;
+		if(word_reg.test(href)) {
+			var obj = $("#"+href);
+			obj.parent().css("position", "relative");
+			obj.css("position", "absolute").css("top","-100px");
+		}
+	});
+	
 	$('.breadcrumb .addicon').tooltip();
 	
 	$(".lang_select").click(function(){

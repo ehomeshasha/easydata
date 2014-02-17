@@ -178,4 +178,5 @@ tinymce.addI18n('zh_CN',{
 "highlight text": "高亮文本",
 "insert code": "插入代码",
 "upload file": "上传文件",
+"File description": "文件描述",
 });
