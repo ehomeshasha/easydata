@@ -38,8 +38,8 @@ class CodePostView(FormView):
         
         if self.request.GET.get("redirect") == "1" and \
         'pk' in self.kwargs and self.kwargs['pk'].isdigit() and \
-        not self.request.user.is_authenticated() and \
-        not get_auth_author_admin(Code.objects.get(pk=self.kwargs['pk']).uid, self.request.user.id, self.request.user.is_superuser):
+        (not self.request.user.is_authenticated() or \
+        (self.request.user.is_authenticated() and not get_auth_author_admin(Code.objects.get(pk=self.kwargs['pk']).uid, self.request.user.id, self.request.user.is_superuser))):
             return redirect(self.request.META.get('HTTP_REFERER'));
         else:
             

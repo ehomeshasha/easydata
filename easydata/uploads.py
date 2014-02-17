@@ -94,6 +94,13 @@ class ImageAjaxUpload(AjaxUpload):
         return None
     
 class FileAjaxUpload(AjaxUpload):
-    pass
+    def clean(self):
+        if self.size > 2*1024*1024:
+            return _("file too large ( > 2mb )")
+        if self.content_type not in CONTENT_TYPE['file']:
+            return _("only compress file or plain/text file is allowed for this upload")
+        if self.ext not in UPLOAD_EXT['file']:
+            return _("file must be *.zip,*.rar,*.txt,*.gzip,*.gz,*.tar")
+        return None
     
     
