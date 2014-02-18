@@ -37,10 +37,11 @@ class AjaxUpload():
         self.upload_file = kwargs['upload_file']
         self.upload_dir = MEDIA_URL+'%s/%s/' % (self.module, self.username)
         self.name = kwargs['upload_file'].name
-        self.ext = kwargs['upload_file'].name[kwargs['upload_file'].name.rfind(".")+1:]
+        self.basename = self.name[:self.name.rfind(".")]
+        self.ext = self.name[self.name.rfind(".")+1:]
         self.size = kwargs['upload_file'].size
         self.content_type = kwargs['upload_file'].content_type
-        self.target_filename = uuid.uuid4().hex+'.'+self.ext
+        self.target_filename = self.basename+'_'+uuid.uuid4().hex+'.'+self.ext
         self.target_savepath = self.upload_dir + self.target_filename 
 
     def set_upload_dir(self, upload_dir):
