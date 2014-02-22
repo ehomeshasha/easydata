@@ -8,13 +8,146 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-13 15:19+0800\n"
+"POT-Creation-Date: 2014-02-22 11:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: account/forms.py:26 account/forms.py:105
+#: article/templates/article/list.html:18 note/templates/note/list.html:17
+msgid "Username"
+msgstr ""
+
+#: account/forms.py:32 account/forms.py:74
+msgid "Password"
+msgstr ""
+
+#: account/forms.py:36
+msgid "Password (again)"
+msgstr ""
+
+#: account/forms.py:40 account/forms.py:120 account/forms.py:166
+#: account/forms.py:195
+msgid "Email"
+msgstr ""
+
+#: account/forms.py:51
+msgid "Usernames can only contain letters, numbers and underscores."
+msgstr ""
+
+#: account/forms.py:55
+msgid "This username is already taken. Please choose another."
+msgstr ""
+
+#: account/forms.py:62 account/forms.py:215
+msgid "A user is registered with this email address."
+msgstr ""
+
+#: account/forms.py:67 account/forms.py:160 account/forms.py:189
+msgid "You must type the same password each time."
+msgstr ""
+
+#: account/forms.py:78
+msgid "Remember Me"
+msgstr ""
+
+#: account/forms.py:91
+msgid "This account is inactive."
+msgstr ""
+
+#: account/forms.py:106
+msgid "The username and/or password you specified are not correct."
+msgstr ""
+
+#: account/forms.py:121
+msgid "The email address and/or password you specified are not correct."
+msgstr ""
+
+#: account/forms.py:136
+msgid "Current Password"
+msgstr ""
+
+#: account/forms.py:140 account/forms.py:178
+msgid "New Password"
+msgstr ""
+
+#: account/forms.py:144 account/forms.py:182
+msgid "New Password (again)"
+msgstr ""
+
+#: account/forms.py:154
+msgid "Please type your current password."
+msgstr ""
+
+#: account/forms.py:171
+msgid "Email address can not be found."
+msgstr ""
+
+#: account/forms.py:197
+msgid "Timezone"
+msgstr ""
+
+#: account/forms.py:203 code/forms.py:30 code/models.py:15 code/models.py:33
+#: code/templates/code/list.html:18
+msgid "Language"
+msgstr ""
+
+#: account/models.py:33
+msgid "user"
+msgstr ""
+
+#: account/models.py:34
+msgid "timezone"
+msgstr ""
+
+#: account/models.py:35
+msgid "language"
+msgstr ""
+
+#: account/models.py:244
+msgid "email address"
+msgstr ""
+
+#: account/models.py:245
+msgid "email addresses"
+msgstr ""
+
+#: account/models.py:294
+msgid "email confirmation"
+msgstr ""
+
+#: account/models.py:295
+msgid "email confirmations"
+msgstr ""
+
+#: account/views.py:43
+msgid "Confirmation email sent to {email}."
+msgstr ""
+
+#: account/views.py:47
+msgid "The code {code} is invalid."
+msgstr ""
+
+#: account/views.py:339
+msgid "You have confirmed {email}."
+msgstr ""
+
+#: account/views.py:412 account/views.py:543
+msgid "Password successfully changed."
+msgstr ""
+
+#: account/views.py:622
+msgid "Account settings updated."
+msgstr ""
+
+#: account/views.py:706
+msgid ""
+"Your account is now inactive and your data will be expunged in the next "
+"{expunge_hours} hours."
+msgstr ""
 
 #: article/forms.py:11 article/forms.py:36
 #: article/templates/article/indexlist.html:18
@@ -58,84 +191,84 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: article/views.py:45 article/views.py:183 article/views.py:210
-#: easydata/templates/site_base.html:71
+#: article/views.py:45 article/views.py:187 article/views.py:214
+#: easydata/templates/site_base.html:69
 msgid "Article"
 msgstr ""
 
-#: article/views.py:73 article/views.py:74
+#: article/views.py:75 article/views.py:76
 msgid "Article Edit"
 msgstr ""
 
-#: article/views.py:75 article/views.py:86 article/views.py:278
-#: article/views.py:286 code/views.py:73 code/views.py:79 code/views.py:226
-#: code/views.py:256 easydata/category/templates/category/post.html:23
-#: note/views.py:55 note/views.py:61 pdf/views.py:90 pdf/views.py:352
-#: pdf/views.py:468 pdf/views.py:473 pdf/views_bak.py:90 pdf/views_bak.py:379
+#: article/views.py:77 article/views.py:88 article/views.py:284
+#: article/views.py:292 code/views.py:78 code/views.py:84 code/views.py:234
+#: code/views.py:266 easydata/category/templates/category/post.html:23
+#: note/views.py:55 note/views.py:61 pdf/views.py:93 pdf/views.py:355
+#: pdf/views.py:476 pdf/views.py:481 pdf/views_bak.py:90 pdf/views_bak.py:379
 #: pdf/views_bak.py:497 pdf/views_bak.py:502
 msgid "Submit"
 msgstr ""
 
-#: article/views.py:84 article/views.py:85
+#: article/views.py:86 article/views.py:87
 msgid "Post Article"
 msgstr ""
 
-#: article/views.py:108
+#: article/views.py:112
 msgid ""
 "ArticleIndex <a href='/article/indexnew/' target='_blank'>create "
 "ArticleIndex</a>"
 msgstr ""
 
-#: article/views.py:138
+#: article/views.py:142
 msgid "Article has been successfully posted"
 msgstr ""
 
-#: article/views.py:142
+#: article/views.py:146
 msgid "Information about this Article has been successfully modified"
 msgstr ""
 
-#: article/views.py:210
+#: article/views.py:214
 msgid "Create a new Article"
 msgstr ""
 
-#: article/views.py:223
+#: article/views.py:226
 msgid "Article List"
 msgstr ""
 
-#: article/views.py:234
+#: article/views.py:239
 msgid "This article has been deleted"
 msgstr ""
 
-#: article/views.py:248 article/views.py:383
+#: article/views.py:253 article/views.py:392
 #: article/templates/article/list.html:20
 msgid "ArticleIndex"
 msgstr ""
 
-#: article/views.py:276 article/views.py:277
+#: article/views.py:282 article/views.py:283
 msgid "ArticleIndex Edit"
 msgstr ""
 
-#: article/views.py:284 article/views.py:285
+#: article/views.py:290 article/views.py:291
 msgid "Post ArticleIndex"
 msgstr ""
 
-#: article/views.py:329
+#: article/views.py:338
 msgid "ArticleIndex has been successfully posted"
 msgstr ""
 
-#: article/views.py:333
+#: article/views.py:342
 msgid "Information about this ArticleIndex has been successfully modified"
 msgstr ""
 
-#: article/views.py:383
+#: article/views.py:392
 msgid "Create new ArticleIndex"
 msgstr ""
 
-#: article/views.py:397
+#: article/views.py:405
 msgid "ArticleIndex List"
 msgstr ""
 
-#: article/views.py:410
+#: article/views.py:420
 msgid "This articleindex has been deleted"
 msgstr ""
 
@@ -201,10 +334,6 @@ msgstr ""
 msgid "next page"
 msgstr "next"
 
-#: article/templates/article/list.html:18 note/templates/note/list.html:17
-msgid "Username"
-msgstr ""
-
 #: article/templates/article/list.html:21
 msgid "Code Detail"
 msgstr ""
@@ -219,8 +348,8 @@ msgid ""
 "\t\t\t\t"
 msgstr ""
 
-#: article/templates/article/post.html:18 note/forms.py:11
-#: note/templates/note/list.html:18 pdf/templates/pdf/comment.html:56
+#: article/templates/article/post.html:20 note/forms.py:11
+#: note/templates/note/list.html:18 pdf/templates/pdf/comment.html:57
 msgid "Content"
 msgstr ""
 
@@ -228,14 +357,9 @@ msgstr ""
 msgid "TOP"
 msgstr ""
 
-#: code/forms.py:10 code/views.py:37 code/views.py:179 code/views.py:202
-#: easydata/templates/site_base.html:72
+#: code/forms.py:10 code/views.py:34 code/views.py:187 code/views.py:210
+#: easydata/templates/site_base.html:70
 msgid "Code"
-msgstr ""
-
-#: code/forms.py:30 code/models.py:15 code/models.py:33
-#: code/templates/code/list.html:18
-msgid "Language"
 msgstr ""
 
 #: code/forms.py:32
@@ -270,35 +394,35 @@ msgstr ""
 msgid "target code"
 msgstr ""
 
-#: code/syntaxhighlighter.py:70
+#: code/syntaxhighlighter.py:71
 msgid "Code details"
 msgstr ""
 
-#: code/views.py:71 code/views.py:72
+#: code/views.py:76 code/views.py:77
 msgid "Code Edit"
 msgstr ""
 
-#: code/views.py:77 code/views.py:78
+#: code/views.py:82 code/views.py:83
 msgid "New Code"
 msgstr ""
 
-#: code/views.py:121
+#: code/views.py:129
 msgid "Code has been successfully created"
 msgstr ""
 
-#: code/views.py:125
+#: code/views.py:133
 msgid "Information about this Code has been successfully modified"
 msgstr ""
 
-#: code/views.py:179
+#: code/views.py:187
 msgid "Create new Code"
 msgstr ""
 
-#: code/views.py:192
+#: code/views.py:200
 msgid "Code List"
 msgstr ""
 
-#: code/views.py:227 code/views.py:257 pdf/views.py:353 pdf/views_bak.py:380
+#: code/views.py:235 code/views.py:267 pdf/views.py:356 pdf/views_bak.py:380
 msgid "Close"
 msgstr ""
 
@@ -362,29 +486,37 @@ msgstr ""
 msgid "Read marks"
 msgstr ""
 
-#: easydata/constant.py:21 easydata/templates/site_base.html:70
-#: pdf/views.py:62 pdf/views.py:181 pdf/views.py:309
+#: easydata/constant.py:31 easydata/templates/site_base.html:68
+#: pdf/views.py:64 pdf/views.py:187 pdf/views.py:313
 msgid "PDF"
 msgstr ""
 
-#: easydata/constant.py:22
+#: easydata/constant.py:32
 msgid "Learning System"
 msgstr ""
 
-#: easydata/constant.py:23
+#: easydata/constant.py:33
 msgid "Tiku"
 msgstr ""
 
-#: easydata/constant.py:25
+#: easydata/constant.py:35
 msgid "Home"
 msgstr ""
 
-#: easydata/constant.py:28
+#: easydata/constant.py:38
 msgid "en"
 msgstr ""
 
-#: easydata/constant.py:29
+#: easydata/constant.py:39
 msgid "zh"
+msgstr ""
+
+#: easydata/constant.py:47
+msgid "Permission Error"
+msgstr ""
+
+#: easydata/constant.py:48
+msgid "You're not allowed to handle this request"
 msgstr ""
 
 #: easydata/settings.py:81
@@ -399,16 +531,24 @@ msgstr ""
 msgid "Please login first"
 msgstr ""
 
-#: easydata/uploads.py:84
+#: easydata/uploads.py:90 easydata/uploads.py:100
 msgid "file too large ( > 2mb )"
 msgstr ""
 
-#: easydata/uploads.py:86
+#: easydata/uploads.py:92
 msgid "only image is allowed for this upload"
 msgstr ""
 
-#: easydata/uploads.py:88
+#: easydata/uploads.py:94
 msgid "file must be *.png,*.jpg,*.jpeg,*.gif,*.bmp"
+msgstr ""
+
+#: easydata/uploads.py:102
+msgid "only compress file or plain/text file is allowed for this upload"
+msgstr ""
+
+#: easydata/uploads.py:104
+msgid "file must be *.zip,*.rar,*.txt,*.gzip,*.gz,*.tar"
 msgstr ""
 
 #: easydata/validator.py:26 easydata/validator.py:70 easydata/validator.py:100
@@ -467,7 +607,7 @@ msgstr ""
 msgid "Create a new category"
 msgstr ""
 
-#: easydata/category/views.py:135
+#: easydata/category/views.py:140
 msgid "Category List"
 msgstr ""
 
@@ -575,7 +715,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: easydata/templates/site_base.html:73 note/views.py:28 note/views.py:119
+#: easydata/templates/site_base.html:71 note/views.py:28 note/views.py:119
 #: note/views.py:139
 msgid "Note"
 msgstr ""
@@ -894,55 +1034,55 @@ msgstr ""
 msgid "target pdf"
 msgstr ""
 
-#: pdf/views.py:88 pdf/views.py:89 pdf/views_bak.py:88 pdf/views_bak.py:89
+#: pdf/views.py:91 pdf/views.py:92 pdf/views_bak.py:88 pdf/views_bak.py:89
 msgid "PDF Edit"
 msgstr ""
 
-#: pdf/views.py:94 pdf/views.py:95 pdf/views_bak.py:93 pdf/views_bak.py:94
+#: pdf/views.py:97 pdf/views.py:98 pdf/views_bak.py:93 pdf/views_bak.py:94
 msgid "PDF Upload"
 msgstr ""
 
-#: pdf/views.py:96 pdf/views_bak.py:95
+#: pdf/views.py:99 pdf/views_bak.py:95
 msgid "Upload"
 msgstr ""
 
-#: pdf/views.py:142 pdf/views_bak.py:137
+#: pdf/views.py:148 pdf/views_bak.py:137
 msgid "PDF has been successfully uploaded"
 msgstr ""
 
-#: pdf/views.py:146 pdf/views_bak.py:141
+#: pdf/views.py:152 pdf/views_bak.py:141
 msgid "Information about this PDF has been successfully modified"
 msgstr ""
 
-#: pdf/views.py:192 pdf/views_bak.py:181
+#: pdf/views.py:198 pdf/views_bak.py:181
 msgid "PDF Detail"
 msgstr ""
 
-#: pdf/views.py:309
+#: pdf/views.py:313
 msgid "Upload PDF"
 msgstr ""
 
-#: pdf/views.py:317 pdf/views_bak.py:344
+#: pdf/views.py:321 pdf/views_bak.py:344
 msgid "PDF List"
 msgstr ""
 
-#: pdf/views.py:466 pdf/views.py:467 pdf/views_bak.py:495 pdf/views_bak.py:496
+#: pdf/views.py:474 pdf/views.py:475 pdf/views_bak.py:495 pdf/views_bak.py:496
 msgid "Edit Comment"
 msgstr ""
 
-#: pdf/views.py:471 pdf/views.py:472 pdf/views_bak.py:500 pdf/views_bak.py:501
+#: pdf/views.py:479 pdf/views.py:480 pdf/views_bak.py:500 pdf/views_bak.py:501
 msgid "Create Comment"
 msgstr ""
 
-#: pdf/views.py:536 pdf/views_bak.py:563
+#: pdf/views.py:547 pdf/views_bak.py:563
 msgid "Comment has been posted successfully"
 msgstr ""
 
-#: pdf/views.py:540 pdf/views_bak.py:567
+#: pdf/views.py:551 pdf/views_bak.py:567
 msgid "Comment has been successfully modified"
 msgstr ""
 
-#: pdf/templates/pdf/comment.html:18
+#: pdf/templates/pdf/comment.html:19
 msgid "How about this PDF"
 msgstr ""
 
