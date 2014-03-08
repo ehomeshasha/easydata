@@ -27,7 +27,7 @@ def hdate(value):
         elif seconds>0:
             return str(seconds)+_(" seconds ago");
         elif seconds==0:
-            return 'just now'
+            return _('just now')
     elif days == 1:
         return _("yesterday")
     elif days < 7:
