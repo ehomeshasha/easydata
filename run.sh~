@@ -1,0 +1,3 @@
+cd ~/workspace/easydata
+source ../easydata_env/bin/active
+python manage.py runserver

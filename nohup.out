@@ -1,0 +1,124 @@
+Traceback (most recent call last):
+  File "manage.py", line 7, in <module>
+    import easydata.startup as startup
+  File "/home/hadoop-user/workspace/easydata/easydata/startup.py", line 5, in <module>
+    from django.contrib import admin
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/contrib/admin/__init__.py", line 6, in <module>
+    from django.contrib.admin.sites import AdminSite, site
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/contrib/admin/sites.py", line 4, in <module>
+    from django.contrib.admin.forms import AdminAuthenticationForm
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/contrib/admin/forms.py", line 6, in <module>
+    from django.contrib.auth.forms import AuthenticationForm
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/contrib/auth/forms.py", line 17, in <module>
+    from django.contrib.auth.models import User
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/contrib/auth/models.py", line 48, in <module>
+    class Permission(models.Model):
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/models/base.py", line 96, in __new__
+    new_class.add_to_class('_meta', Options(meta, **kwargs))
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/models/base.py", line 264, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/models/options.py", line 124, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/__init__.py", line 34, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/utils.py", line 198, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/hadoop-user/workspace/accountenv/lib/python2.6/site-packages/django/db/backends/mysql/base.py", line 17, in <module>
+    raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+/home/hadoop-user/workspace/easydata_env/lib/python2.6/site-packages/metron/activity.py:2: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson as json
+[28/Feb/2014 15:29:17] "GET / HTTP/1.1" 200 6997
+[28/Feb/2014 15:29:19] "GET / HTTP/1.1" 200 6997
+[28/Feb/2014 15:29:21] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:21] "GET /code/list/ HTTP/1.1" 200 13298
+[28/Feb/2014 15:29:22] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:29] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:29] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:29] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:30] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:32] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:32] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:33] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /article/list/ HTTP/1.1" 200 18475
+[28/Feb/2014 15:29:34] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/css/common.css HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/js/common.js HTTP/1.1" 304 0
+[28/Feb/2014 15:29:34] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+/home/hadoop-user/workspace/easydata_env/lib/python2.6/site-packages/metron/activity.py:2: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson as json
+[03/Mar/2014 15:18:24] "GET / HTTP/1.1" 200 6737
+[03/Mar/2014 15:18:26] "GET /static/pinax/js/jquery.js HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/css/common.css HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/js/common.js HTTP/1.1" 304 0
+[03/Mar/2014 15:18:26] "GET /static/pinax/js/theme.js HTTP/1.1" 304 0
+[03/Mar/2014 15:18:29] "GET /article/list/ HTTP/1.1" 200 18221
+[03/Mar/2014 15:18:29] "GET /static/js/sort_table.js HTTP/1.1" 304 0
+[03/Mar/2014 15:18:29] "GET /static/image/arrow_up_down.png HTTP/1.1" 304 0
